@@ -37,6 +37,13 @@ jobs:
           hugo-version: 'latest'
           extended: true
       
+      - name: 创建简单主题（如果缺少）
+        run: |
+          if [ ! -d "themes/PaperMod" ]; then
+            echo "添加PaperMod主题作为submodule..."
+            git submodule add --force https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+          fi
+      
       - name: Build
         run: hugo --minify
       

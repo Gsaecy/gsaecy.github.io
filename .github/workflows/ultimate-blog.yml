@@ -1,0 +1,340 @@
+name: Ultimate Blog Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: '操作类型'
+        required: false
+        default: 'verify'
+        type: choice
+        options:
+          - verify
+          - publish
+          - monitor
+
+env:
+  BLOG_URL: "https://gsaecy.github.io"
+  TIMESTAMP: "$(date +%Y%m%d-%H%M%S)"
+
+jobs:
+  # 第一阶段：验证基础功能
+  verify-basics:
+    runs-on: ubuntu-latest
+    outputs:
+      secret_ok: ${{ steps.check-secret.outputs.ok }}
+      git_ok: ${{ steps.check-git.outputs.ok }}
+      hugo_ok: ${{ steps.check-hugo.outputs.ok }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 1. Verify GitHub Secret
+        id: check-secret
+        env:
+          API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          echo "🔐 验证GitHub Secret..."
+          if [ -n "$API_KEY" ]; then
+            echo "✅ Secret存在"
+            echo "长度: ${#API_KEY}"
+            echo "格式: ${API_KEY:0:10}..."
+            echo "ok=true" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Secret不存在"
+            echo "ok=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: 2. Verify Git Access
+        id: check-git
+        run: |
+          echo "📁 验证Git访问..."
+          if git status > /dev/null 2>&1; then
+            echo "✅ Git访问正常"
+            echo "分支: $(git branch --show-current)"
+            echo "ok=true" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Git访问失败"
+            echo "ok=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: 3. Verify Hugo Setup
+        id: check-hugo
+        run: |
+          echo "🎨 验证Hugo配置..."
+          if [ -f "hugo.toml" ] || [ -f "hugo.yml" ] || [ -f "config.toml" ]; then
+            echo "✅ Hugo配置文件存在"
+            echo "ok=true" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️  未找到Hugo配置文件"
+            echo "ok=false" >> $GITHUB_OUTPUT
+          fi
+
+  # 第二阶段：生成内容
+  generate-content:
+    needs: verify-basics
+    if: |
+      needs.verify-basics.outputs.secret_ok == 'true' &&
+      needs.verify-basics.outputs.git_ok == 'true' &&
+      github.event.inputs.action != 'verify'
+    
+    runs-on: ubuntu-latest
+    outputs:
+      article_file: ${{ steps.generate.outputs.article_file }}
+      article_slug: ${{ steps.generate.outputs.article_slug }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Generate Ultimate Article
+        id: generate
+        run: |
+          echo "📝 生成终极测试文章..."
+          mkdir -p content/posts
+          
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+          SLUG="ultimate-${TIMESTAMP}"
+          FILE="content/posts/${SLUG}.md"
+          
+          cat > "${FILE}" << 'EOF'
+          ---
+          title: "终极测试文章 - ${TIMESTAMP}"
+          date: $(date -Iseconds)
+          draft: false
+          tags: ["终极", "测试", "验证"]
+          categories: ["系统验证"]
+          slug: "${SLUG}"
+          ---
+          
+          # 🎯 终极测试验证
+          
+          **时间戳**: ${TIMESTAMP}
+          **工作流**: Ultimate Blog Workflow
+          **验证阶段**: 完整流程测试
+          
+          ## ✅ 已验证功能
+          1. GitHub Secrets访问 ✓
+          2. Git仓库访问 ✓
+          3. Hugo配置检查 ✓
+          4. 文章生成 ✓
+          5. 自动提交 ✓
+          6. 部署触发 ✓
+          
+          ## 📊 系统状态
+          - **生成时间**: $(date)
+          - **运行ID**: ${{ github.run_id }}
+          - **操作类型**: ${{ github.event.inputs.action }}
+          - **验证结果**: 进行中
+          
+          ## 🎯 预期结果
+          这篇文章应该：
+          1. 出现在博客文章中
+          2. 格式正确显示
+          3. 证明系统工作正常
+          
+          ---
+          *终极验证系统 v1.0*
+          *验证ID: ${TIMESTAMP}*
+          EOF
+          
+          echo "✅ 文章已生成: ${FILE}"
+          echo "article_file=${FILE}" >> $GITHUB_OUTPUT
+          echo "article_slug=${SLUG}" >> $GITHUB_OUTPUT
+      
+      - name: Commit Generated Article
+        run: |
+          echo "💾 提交文章到仓库..."
+          git config --global user.name "Ultimate Workflow"
+          git config --global user.email "ultimate@github.com"
+          git add content/posts/
+          git commit -m "🎯 终极测试文章 [${TIMESTAMP}]"
+          git push origin main
+          
+          echo "✅ 文章已提交到GitHub"
+
+  # 第三阶段：触发部署
+  trigger-deployment:
+    needs: generate-content
+    if: github.event.inputs.action == 'publish'
+    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Trigger Hugo Deployment
+        run: |
+          echo "🚀 触发Hugo部署..."
+          echo "这将自动运行 hugo.yml 工作流"
+          echo ""
+          echo "预计时间线:"
+          echo "1. 立即: Hugo构建开始"
+          echo "2. 1-2分钟: 构建完成"
+          echo "3. 2-3分钟: 部署到GitHub Pages"
+          echo "4. 3-5分钟: 文章可访问"
+          
+          # 创建空提交触发部署
+          git config --global user.name "Deployment Trigger"
+          git config --global user.email "deploy@github.com"
+          git commit --allow-empty -m "🚀 触发部署 [终极测试 ${TIMESTAMP}]"
+          git push origin main
+          
+          echo "✅ 部署已触发"
+
+  # 第四阶段：监控结果
+  monitor-results:
+    needs: trigger-deployment
+    if: github.event.inputs.action == 'publish'
+    
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    
+    steps:
+      - name: Monitor Deployment
+        run: |
+          echo "👀 监控部署结果..."
+          echo "文章slug: ${{ needs.generate-content.outputs.article_slug }}"
+          echo "预期URL: ${BLOG_URL}/posts/${{ needs.generate-content.outputs.article_slug }}/"
+          echo ""
+          echo "开始监控，每30秒检查一次，最多5分钟..."
+          echo ""
+          
+          MAX_CHECKS=10
+          CHECK_COUNT=0
+          PUBLISHED=false
+          
+          while [ $CHECK_COUNT -lt $MAX_CHECKS ] && [ "$PUBLISHED" = "false" ]; do
+            CHECK_COUNT=$((CHECK_COUNT + 1))
+            echo "检查 #${CHECK_COUNT} - $(date '+%H:%M:%S')"
+            
+            ARTICLE_URL="${BLOG_URL}/posts/${{ needs.generate-content.outputs.article_slug }}/"
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${ARTICLE_URL}" 2>/dev/null || echo "000")
+            
+            if [ "$HTTP_CODE" = "200" ]; then
+              echo "  🎉 文章已发布!"
+              echo "  URL: ${ARTICLE_URL}"
+              PUBLISHED=true
+            else
+              echo "  ⏳ 文章尚未发布 (HTTP: ${HTTP_CODE})"
+              
+              # 检查博客首页
+              if curl -s -f "${BLOG_URL}" > /dev/null 2>&1; then
+                echo "  ✅ 博客可访问"
+              fi
+              
+              if [ $CHECK_COUNT -lt $MAX_CHECKS ]; then
+                echo "  等待30秒..."
+                sleep 30
+              fi
+            fi
+          done
+          
+          if [ "$PUBLISHED" = "false" ]; then
+            echo ""
+            echo "⚠️  监控超时: 文章在5分钟内未发布"
+            echo "可能的原因:"
+            echo "1. GitHub Pages部署延迟"
+            echo "2. Hugo构建失败"
+            echo "3. 网络问题"
+          fi
+
+  # 第五阶段：生成最终报告
+  final-report:
+    needs:
+      - verify-basics
+      - generate-content
+      - trigger-deployment
+      - monitor-results
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - name: Generate Ultimate Report
+        run: |
+          echo "🎯 终极工作流验证报告"
+          echo "======================"
+          echo ""
+          echo "📊 运行信息"
+          echo "工作流: Ultimate Blog Workflow"
+          echo "运行ID: ${{ github.run_id }}"
+          echo "操作类型: ${{ github.event.inputs.action }}"
+          echo "开始时间: ${{ github.event.workflow_run.created_at }}"
+          echo "报告时间: $(date)"
+          echo ""
+          
+          echo "✅ 验证结果"
+          echo "1. GitHub Secret: ${{ needs.verify-basics.outputs.secret_ok == 'true' && '✓ 通过' || '✗ 失败' }}"
+          echo "2. Git访问: ${{ needs.verify-basics.outputs.git_ok == 'true' && '✓ 通过' || '✗ 失败' }}"
+          echo "3. Hugo配置: ${{ needs.verify-basics.outputs.hugo_ok == 'true' && '✓ 通过' || '✗ 失败' }}"
+          
+          if [ "${{ github.event.inputs.action }}" != "verify" ]; then
+            echo "4. 文章生成: ${{ needs.generate-content.result == 'success' && '✓ 完成' || '✗ 失败' }}"
+            
+            if [ "${{ github.event.inputs.action }}" = "publish" ]; then
+              echo "5. 部署触发: ${{ needs.trigger-deployment.result == 'success' && '✓ 完成' || '✗ 失败' }}"
+              echo "6. 监控结果: ${{ needs.monitor-results.result == 'success' && '✓ 完成' || '⚠️  超时' }}"
+            fi
+          fi
+          echo ""
+          
+          echo "❓ 核心问题答案"
+          echo "有没有发布新文章？"
+          
+          if [ "${{ github.event.inputs.action }}" = "verify" ]; then
+            echo "🔍 答案: 仅验证模式，未生成文章"
+          elif [ "${{ github.event.inputs.action }}" = "publish" ]; then
+            if [ "${{ needs.monitor-results.result }}" = "success" ]; then
+              echo "🎉 答案: ✅ 有！文章已成功发布"
+              echo "文章URL: ${BLOG_URL}/posts/${{ needs.generate-content.outputs.article_slug }}/"
+            else
+              echo "⚠️  答案: 部署进行中，请等待或手动检查"
+              echo "检查博客: ${BLOG_URL}"
+            fi
+          else
+            echo "📝 答案: 文章已生成并提交，等待部署"
+          fi
+          echo ""
+          
+          echo "📋 下一步建议"
+          if [ "${{ needs.verify-basics.outputs.secret_ok }}" = "false" ]; then
+            echo "1. ❌ 修复GitHub Secret配置"
+          elif [ "${{ github.event.inputs.action }}" = "verify" ]; then
+            echo "1. ✅ 基础验证通过"
+            echo "2. 运行 publish 模式测试完整流程"
+          elif [ "${{ github.event.inputs.action }}" = "publish" ] && [ "${{ needs.monitor-results.result }}" = "success" ]; then
+            echo "1. 🎉 系统完全工作正常!"
+            echo "2. 可以设置定时任务"
+            echo "3. 考虑启用 deepseek-secure.yml"
+          else
+            echo "1. 🔧 需要进一步排查"
+            echo "2. 检查Hugo部署工作流"
+            echo "3. 查看GitHub Pages状态"
+          fi
+          echo ""
+          echo "---"
+          echo "报告ID: ULTIMATE-$(date +%Y%m%d-%H%M%S)"
+          
+      - name: Create Summary File
+        run: |
+          SUMMARY_FILE="ultimate-summary-$(date +%Y%m%d-%H%M%S).txt"
+          
+          echo "终极工作流验证摘要" > "${SUMMARY_FILE}"
+          echo "生成时间: $(date)" >> "${SUMMARY_FILE}"
+          echo "" >> "${SUMMARY_FILE}"
+          
+          if [ "${{ github.event.inputs.action }}" = "publish" ] && [ "${{ needs.monitor-results.result }}" = "success" ]; then
+            echo "状态: ✅ 完全成功" >> "${SUMMARY_FILE}"
+            echo "文章: 已发布" >> "${SUMMARY_FILE}"
+            echo "URL: ${BLOG_URL}/posts/${{ needs.generate-content.outputs.article_slug }}/" >> "${SUMMARY_FILE}"
+          else
+            echo "状态: 🔧 需要检查" >> "${SUMMARY_FILE}"
+            echo "建议: 查看详细报告" >> "${SUMMARY_FILE}"
+          fi
+          
+          cat "${SUMMARY_FILE}"

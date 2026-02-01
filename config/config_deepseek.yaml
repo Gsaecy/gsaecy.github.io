@@ -16,7 +16,7 @@ analysis:
     provider: "deepseek"
     model: "deepseek-chat"
     api_base: "https://api.deepseek.com"
-    api_key: "sk-a58836f7f3f043508ecf4edbac67be57"  # 实际使用时通过环境变量注入
+    api_key: ""  # 通过环境变量 DEEPSEEK_API_KEY 注入，不要硬编码
     temperature: 0.7
     max_tokens: 2000
     timeout: 30

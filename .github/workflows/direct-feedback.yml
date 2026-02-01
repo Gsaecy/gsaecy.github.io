@@ -1,0 +1,131 @@
+name: Direct Feedback
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: '操作类型'
+        required: false
+        default: 'check'
+        type: choice
+        options:
+          - check
+          - generate
+
+jobs:
+  feedback:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Current Status
+        run: |
+          echo "🎯 直接反馈系统"
+          echo "================"
+          echo ""
+          echo "📊 系统状态检查"
+          echo "工作流: Direct Feedback"
+          echo "运行ID: ${{ github.run_id }}"
+          echo "时间: $(date)"
+          echo "操作: ${{ github.event.inputs.action }}"
+          echo ""
+      
+      - name: Generate Article if Requested
+        if: github.event.inputs.action == 'generate'
+        run: |
+          echo "📝 生成反馈测试文章..."
+          mkdir -p content/posts
+          
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+          
+          cat > content/posts/feedback-${TIMESTAMP}.md << 'EOF'
+          ---
+          title: "直接反馈测试 - ${TIMESTAMP}"
+          date: $(date -Iseconds)
+          draft: false
+          tags: ["反馈", "直接", "测试"]
+          categories: ["反馈测试"]
+          slug: "feedback-${TIMESTAMP}"
+          ---
+          
+          # 直接反馈测试文章
+          
+          **时间戳**: ${TIMESTAMP}
+          **目的**: 测试直接反馈系统
+          
+          ## 测试流程
+          1. 工作流生成此文章
+          2. 提交到GitHub仓库
+          3. 触发自动部署
+          4. 检查是否发布成功
+          
+          ## 预期结果
+          - ✅ 文章出现在博客中
+          - ✅ 反馈系统确认发布
+          - ✅ 系统工作正常
+          
+          ---
+          *直接反馈测试*
+          *生成时间: ${TIMESTAMP}*
+          EOF
+          
+          echo "✅ 文章已生成: feedback-${TIMESTAMP}.md"
+          echo "预期URL: https://gsaecy.github.io/posts/feedback-${TIMESTAMP}/"
+      
+      - name: Commit if Generated
+        if: github.event.inputs.action == 'generate'
+        run: |
+          echo "💾 提交文章到仓库..."
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions-bot@github.com"
+          git add content/posts/
+          git commit -m "📊 直接反馈测试文章 [${TIMESTAMP}]"
+          git push origin main
+          
+          echo "✅ 文章已提交"
+          echo "这将自动触发Hugo部署"
+      
+      - name: Give Direct Answer
+        run: |
+          echo ""
+          echo "❓ 核心问题答案"
+          echo "================"
+          echo ""
+          
+          if [ "${{ github.event.inputs.action }}" = "generate" ]; then
+            echo "🔴 有没有发布新文章？"
+            echo ""
+            echo "🔄 **当前状态**: 已生成并提交，部署进行中"
+            echo ""
+            echo "### 详细信息:"
+            echo "1. ✅ 文章生成: 完成"
+            echo "2. ✅ 提交仓库: 完成" 
+            echo "3. 🔄 部署触发: 进行中"
+            echo "4. ⏳ 发布检查: 等待1-2分钟"
+            echo ""
+            echo "### 检查方法:"
+            echo "1. 等待2分钟"
+            echo "2. 访问: https://gsaecy.github.io"
+            echo "3. 查看最新文章"
+            echo ""
+            echo "### 文章信息:"
+            echo "- 时间戳: $(date +%Y%m%d-%H%M%S)"
+            echo "- 预期URL: https://gsaecy.github.io/posts/feedback-$(date +%Y%m%d-%H%M%S)/"
+          else
+            echo "🔴 有没有发布新文章？"
+            echo ""
+            echo "📋 **答案**: 请手动检查博客"
+            echo ""
+            echo "### 检查步骤:"
+            echo "1. 访问: https://gsaecy.github.io"
+            echo "2. 查看是否有新文章"
+            echo "3. 或运行 generate 模式测试"
+            echo ""
+            echo "### 系统状态:"
+            echo "- 工作流: 正常运行"
+            echo "- 模式: 仅检查"
+            echo "- 建议: 使用 generate 模式测试发布"
+          fi
+          
+          echo ""
+          echo "---"
+          echo "反馈时间: $(date)"
+          echo "反馈ID: FB-$(date +%Y%m%d-%H%M%S)"

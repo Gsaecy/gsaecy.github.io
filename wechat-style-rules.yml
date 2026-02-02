@@ -1,0 +1,275 @@
+# 微信公众号排版规则
+# 适用于直接复制到微信公众号编辑器
+
+version: "1.0"
+description: "微信公众号专用排版规则"
+last_updated: "2026-02-02"
+
+# 基础规则
+rules:
+  # 1. 内容结构
+  structure:
+    required_sections:
+      - title
+      - subtitle
+      - cover_image
+      - introduction
+      - main_content
+      - conclusion
+      - references
+      - disclaimer
+    
+    section_order:
+      - 标题
+      - 副标题
+      - 封面图
+      - 引言
+      - 核心内容
+      - 数据图表
+      - 案例分析
+      - 结论
+      - 参考文献
+      - 免责声明
+    
+    max_sections: 10
+    min_sections: 5
+
+  # 2. 格式规范
+  formatting:
+    # 标题
+    title:
+      max_length: 30
+      style: "加粗，居中"
+      font_size: 20
+      no_emoji: true
+    
+    # 副标题
+    subtitle:
+      max_length: 50
+      style: "灰色，居中"
+      font_size: 15
+      no_emoji: true
+    
+    # 正文
+    body:
+      font_size: 16
+      line_height: 1.8
+      paragraph_spacing: "空一行"
+      no_emoji: true
+    
+    # 小标题
+    subheading:
+      levels: [2, 3]  # 只允许二级和三级标题
+      style: "加粗，左对齐"
+      font_size: 18
+      spacing: "前后空一行"
+      no_emoji: true
+    
+    # 列表
+    lists:
+      bullet_style: "•"
+      numbered_style: "1."
+      indent_spaces: 4
+      max_items_per_list: 10
+    
+    # 引用
+    quotes:
+      style: "灰色背景，左缩进"
+      prefix: "> "
+      max_length: 200
+    
+    # 代码块
+    code_blocks:
+      enabled: false  # 微信公众号不支持代码高亮
+      alternative: "使用等宽字体或截图"
+
+  # 3. 视觉元素
+  visual_elements:
+    # 图片
+    images:
+      required: true
+      min_count: 3
+      max_count: 10
+      placement: "均匀分布"
+      caption_required: true
+      max_width: 900
+      formats: ["jpg", "png", "gif"]
+    
+    # 表格
+    tables:
+      max_columns: 5
+      max_rows: 10
+      style: "简洁边框"
+      header_required: true
+      alternative_for_mobile: "考虑使用图片"
+    
+    # 分割线
+    dividers:
+      enabled: true
+      style: "---"
+      usage: "章节分隔"
+      max_per_article: 5
+
+  # 4. 内容质量
+  content_quality:
+    # 长度控制
+    length:
+      min_words: 800
+      max_words: 3000
+      ideal_words: 1500
+      min_paragraphs: 10
+      max_paragraphs: 30
+    
+    # 可读性
+    readability:
+      max_sentence_length: 30  # 字
+      max_paragraph_length: 200  # 字
+      use_short_paragraphs: true
+      avoid_jargon: true
+    
+    # 数据要求
+    data_requirements:
+      min_data_points: 5
+      sources_required: true
+      min_sources: 3
+      source_format: "[来源名称](URL)"
+    
+    # 关键词
+    keywords:
+      required: true
+      min_count: 3
+      max_count: 8
+      placement: "自然融入标题和正文"
+
+  # 5. 微信公众号特定规则
+  wechat_specific:
+    # 编辑器兼容性
+    editor_compatibility:
+      avoid_markdown: true
+      avoid_html: true
+      avoid_special_chars: true
+      use_plain_text: true
+    
+    # 移动端优化
+    mobile_optimization:
+      font_size_mobile: 16
+      line_height_mobile: 1.8
+      image_width_mobile: 100  # 百分比
+      table_scrollable: true
+    
+    # 分享优化
+    share_optimization:
+      description_length: 100
+      image_aspect_ratio: "16:9"
+      generate_share_card: true
+    
+    # 发布时间
+    publish_timing:
+      optimal_hours: [8, 12, 18, 21]
+      avoid_hours: [0, 1, 2, 3, 4, 5]
+
+  # 6. 禁止事项
+  prohibitions:
+    content:
+      - "表情符号"
+      - "复杂表格"
+      - "代码块"
+      - "数学公式"
+      - "外链（除非必要）"
+      - "自动播放视频"
+    
+    formatting:
+      - "多种字体"
+      - "过多颜色"
+      - "闪烁效果"
+      - "复杂布局"
+      - "固定定位元素"
+    
+    language:
+      - "网络用语"
+      - "缩写"
+      - "方言"
+      - "不正式表达"
+
+# 7. 模板示例
+templates:
+  article_structure: |
+    【标题】
+    加粗，居中，20px
+    
+    【副标题】
+    灰色，居中，15px
+    
+    【封面图】
+    16:9比例，清晰
+    
+    ---
+    
+    【引言】
+    200-300字，概述全文
+    
+    ---
+    
+    【核心内容】
+    分3-5个小节
+    每小节300-500字
+    配1-2张图
+    
+    【数据展示】
+    使用简单表格或图表
+    
+    【案例分析】
+    具体实例说明
+    
+    ---
+    
+    【结论】
+    总结要点，提出建议
+    
+    【参考文献】
+    列出所有数据来源
+    
+    【免责声明】
+    说明数据局限性和使用建议
+
+  data_table: |
+    | 指标 | 数值 | 说明 |
+    |------|------|------|
+    | {指标1} | {数值1} | {说明1} |
+    | {指标2} | {数值2} | {说明2} |
+    | {指标3} | {数值3} | {说明3} |
+
+  image_caption: |
+    图{序号}: {图片描述}
+    来源: {图片来源}
+
+# 8. 验证规则
+validation:
+  pre_publish_checks:
+    - "检查标题长度"
+    - "验证图片数量"
+    - "检查数据来源"
+    - "测试移动端显示"
+    - "验证无表情符号"
+    - "检查段落长度"
+  
+  automated_tests:
+    - "字数统计"
+    - "图片alt文本检查"
+    - "链接有效性检查"
+    - "可读性评分"
+    - "SEO关键词检查"
+
+# 9. 工作流集成
+workflow_integration:
+  github_actions:
+    - "pre-commit格式检查"
+    - "自动排版转换"
+    - "预览生成"
+    - "质量报告"
+  
+  manual_steps:
+    - "最终人工审核"
+    - "微信公众号编辑器测试"
+    - "多设备预览"
+    - "发布前确认"

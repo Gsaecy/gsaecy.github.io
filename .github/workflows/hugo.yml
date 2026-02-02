@@ -15,7 +15,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 defaults:
   run:
@@ -37,11 +37,16 @@ jobs:
           hugo-version: 'latest'
           extended: true
       
-      - name: 创建简单主题（如果缺少）
+      - name: 验证主题配置
         run: |
+          echo "检查主题配置..."
           if [ ! -d "themes/PaperMod" ]; then
-            echo "添加PaperMod主题作为submodule..."
-            git submodule add --force https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+            echo "❌ 错误: PaperMod主题目录不存在"
+            echo "请确保已正确初始化submodule: git submodule update --init --recursive"
+            exit 1
+          else
+            echo "✅ 主题目录存在"
+            ls -la themes/PaperMod/ | head -5
           fi
       
       - name: Build

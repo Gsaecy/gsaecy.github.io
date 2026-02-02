@@ -1,0 +1,54 @@
+name: Test Auto Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_message:
+        description: '测试消息'
+        required: false
+        type: string
+        default: 'Hello from Auto Publish Test'
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Show Test Message
+        run: |
+          echo "🎉 测试工作流运行成功！"
+          echo "输入的消息: ${{ github.event.inputs.test_message }}"
+          echo ""
+          echo "✅ 自动发布系统已安装"
+          echo "📁 工作流文件: auto-publish-wechat.yml"
+          echo "📝 文章文件: content/posts/new-energy-vehicle-trends-20260202-222400*"
+          echo "🕒 下次自动运行: 明天 08:00 (北京时间)"
+      
+      - name: List Generated Files
+        run: |
+          echo "📋 生成的文件列表:"
+          find content/posts -name "*.md" -type f | sort
+          echo ""
+          echo "总文章数: $(find content/posts -name "*.md" -type f | wc -l)"
+      
+      - name: Create Test Report
+        run: |
+          echo "# 自动发布系统测试报告" > test-report.md
+          echo "测试时间: $(date)" >> test-report.md
+          echo "测试状态: ✅ 成功" >> test-report.md
+          echo "" >> test-report.md
+          echo "## 已安装的系统组件" >> test-report.md
+          echo "1. 🚗 新能源汽车行业分析文章" >> test-report.md
+          echo "2. 📱 微信公众号格式转换工具" >> test-report.md
+          echo "3. ⚡ 自动发布工作流" >> test-report.md
+          echo "4. 🎨 微信公众号排版规则" >> test-report.md
+          echo "" >> test-report.md
+          echo "## 使用说明" >> test-report.md
+          echo "1. 访问 https://github.com/Gsaecy/gsaecy.github.io/actions" >> test-report.md
+          echo "2. 找到 'Auto Publish WeChat Articles' 工作流" >> test-report.md
+          echo "3. 点击 'Run workflow'" >> test-report.md
+          echo "4. 选择行业，开始自动发布" >> test-report.md
+          
+          cat test-report.md

@@ -17,12 +17,21 @@ env:
   BLOG_URL: "https://gsaecy.github.io"
 
 jobs:
-  # 简化版本，先确保能运行
-  simple-test:
+  blog-pipeline:  # 修改job名称
     runs-on: ubuntu-latest
+    
+    # 🔧 关键修复：添加权限配置
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+      
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # 🔧 修复：使用正确的token
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Simple Verification
         run: |

@@ -1,0 +1,197 @@
+# AI智汇观察 - DeepSeek专用配置
+# 版本: 2.1
+# 更新时间: 2026-02-02
+
+# 系统信息
+system:
+  name: "AI智汇观察"
+  version: "2.1"
+  description: "基于DeepSeek的AI驱动行业分析博客"
+  author: "AI智汇观察系统"
+  llm_provider: "deepseek"
+
+# AI模型配置 - DeepSeek
+analysis:
+  ai_model:
+    provider: "deepseek"
+    model: "deepseek-chat"
+    api_base: "https://api.deepseek.com"
+    api_key: ""  # 通过环境变量 DEEPSEEK_API_KEY 注入，不要硬编码
+    temperature: 0.7
+    max_tokens: 2000
+    timeout: 30
+    
+  # 针对DeepSeek优化的提示词
+  prompts:
+    daily_summary: |
+      你是一个专业的行业分析师。请基于以下今日行业信息，生成一份结构化的日报。
+      
+      要求：
+      1. 提取关键事件和趋势
+      2. 分析影响和机会
+      3. 给出实用建议
+      4. 使用中文，专业但易懂
+      
+      今日信息：{content}
+    
+    trend_analysis: |
+      作为资深行业分析师，请对以下行业数据进行深度趋势分析：
+      
+      分析维度：
+      1. 短期趋势（1-3个月）
+      2. 中期机会（3-12个月）
+      3. 长期影响（1-3年）
+      4. 风险提示
+      
+      数据：{data}
+    
+    article_generation: |
+      根据以下分析结果，生成一篇专业的行业分析文章：
+      
+      文章结构：
+      1. 吸引人的标题
+      2. 执行摘要
+      3. 详细分析（分点说明）
+      4. 数据支持
+      5. 结论和建议
+      
+      分析结果：{analysis}
+
+# 行业优先级配置（基于你的资源）
+industries:
+  priority_1:  # 重点分析（75%资源）
+    - name: "科技"
+      weight: 30
+      focus: ["AI技术", "跨境电商工具", "SaaS服务", "数字化转型"]
+      
+    - name: "电商"
+      weight: 25
+      focus: ["跨境电商", "平台政策", "消费趋势", "物流支付"]
+      
+    - name: "制造"
+      weight: 20
+      focus: ["智能制造", "供应链", "工业4.0", "新材料"]
+  
+  priority_2:  # 辅助分析（25%资源）
+    - name: "金融"
+      weight: 15
+      focus: ["跨境支付", "供应链金融", "科技金融"]
+      
+    - name: "教育"
+      weight: 5
+      focus: ["在线教育", "职业培训", "企业培训"]
+      
+    - name: "医疗"
+      weight: 5
+      focus: ["数字医疗", "健康科技", "医疗设备"]
+
+# 数据源配置（针对你的需求优化）
+collectors:
+  # 科技类数据源
+  tech_sources:
+    - name: "36氪"
+      url: "https://36kr.com"
+      type: "tech_news"
+      priority: 1
+      categories: ["AI", "云计算", "跨境电商"]
+      
+    - name: "虎嗅"
+      url: "https://huxiu.com"
+      type: "tech_news"
+      priority: 1
+      categories: ["科技趋势", "商业分析"]
+      
+    - name: "钛媒体"
+      url: "https://tmtpost.com"
+      type: "tech_news"
+      priority: 2
+  
+  # 电商类数据源
+  ecommerce_sources:
+    - name: "亿邦动力"
+      url: "https://www.ebrun.com"
+      type: "ecommerce_news"
+      priority: 1
+      
+    - name: "雨果网"
+      url: "https://www.cifnews.com"
+      type: "crossborder_news"
+      priority: 1
+      
+    - name: "AMZ123"
+      url: "https://www.amz123.com"
+      type: "amazon_news"
+      priority: 2
+  
+  # 制造类数据源
+  manufacturing_sources:
+    - name: "工控网"
+      url: "https://www.gongkong.com"
+      type: "industrial_news"
+      priority: 1
+      
+    - name: "OFweek"
+      url: "https://www.ofweek.com"
+      type: "manufacturing_news"
+      priority: 2
+
+# 内容生成配置
+content_generation:
+  daily_schedule:
+    - time: "10:00"
+      type: "行业日报"
+      length: "中等（800-1200字）"
+      industries: ["科技", "电商", "制造"]
+      
+    - time: "14:00"
+      type: "深度分析"
+      length: "较长（1500-2000字）"
+      industries: ["科技"]  # 每天一个深度行业
+      
+    - time: "18:00"
+      type: "晚间简报"
+      length: "简短（300-500字）"
+      industries: ["金融", "教育", "医疗"]
+  
+  weekly_schedule:
+    - day: "sunday"
+      time: "20:00"
+      type: "周度总结"
+      length: "详细（2000-3000字）"
+  
+  monthly_schedule:
+    - day: "last_day"
+      time: "22:00"
+      type: "月度报告"
+      length: "全面（3000-5000字）"
+
+# 发布配置
+publishing:
+  auto_publish: true
+  quality_check: true
+  min_quality_score: 0.7  # 内容质量阈值
+  
+  # 社交媒体同步（可选）
+  social_media:
+    enabled: false
+    platforms: ["weibo", "zhihu"]
+
+# 监控和优化
+monitoring:
+  deepseek_usage:
+    track_tokens: true
+    budget_limit: 100  # 每月预算（美元）
+    alert_threshold: 80  # 预算使用告警阈值（%）
+  
+  content_quality:
+    check_originality: true
+    min_originality_score: 0.8
+    check_readability: true
+    min_readability_score: 0.7
+
+# 备份和版本控制
+backup:
+  enabled: true
+  frequency: "daily"
+  keep_versions: 30
+  include_ai_training_data: true

@@ -39,7 +39,7 @@ class SimpleAIBlogAutomation:
                     "provider": "deepseek",
                     "model": "deepseek-chat",
                     "temperature": 0.7,
-                    "max_tokens": 2000
+                    "max_tokens": 4000
                 }
             },
             "collectors": {
@@ -227,7 +227,7 @@ class SimpleAIBlogAutomation:
         
         prompt += """请按照以下结构提供分析报告：
 
-## 今日行业热点总结
+## 今日AI与产业观察（非“行业热点”）
 
 ### 1. 主要趋势
 - 列出2-3个主要行业趋势
@@ -248,7 +248,13 @@ class SimpleAIBlogAutomation:
 - 短期（1-3个月）展望
 - 长期（6-12个月）展望
 
-请使用专业但易懂的语言，确保分析深入且有洞察力。"""
+请使用专业但易懂的语言，确保分析深入且有洞察力。
+
+硬性要求：
+- 正文不少于 1500 字
+- 至少包含 2 个小节的“数据化表达”（可以是对比、分组、占比、区间等，不一定要真实精确数值，但要逻辑自洽）
+- 结尾给出 3 条可执行的行动建议（分别面向：企业/从业者/投资者）
+"""
         
         return prompt
     
@@ -256,7 +262,7 @@ class SimpleAIBlogAutomation:
         """模拟AI分析（当API不可用时使用）"""
         logger.info("使用模拟AI分析...")
         
-        analysis = """## 今日行业热点总结
+        analysis = """## 今日AI与产业观察（非“行业热点”）
 
 ### 1. 主要趋势
 - **AI技术应用深化**：人工智能在医疗、金融等领域的应用不断深入，技术成熟度显著提升

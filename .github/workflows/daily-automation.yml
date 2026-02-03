@@ -1,9 +1,12 @@
 name: Daily AI Blog Automation
 
 on:
-  # 每天北京时间上午10点运行（UTC时间2点）
+  # 每天在非中午时段生成“非行业热点”的其他内容（北京时间 08:00 / 18:00 / 21:00）
+  # 说明：行业热点由 auto-publish-wechat.yml 在 12:00 单独生成
   schedule:
-    - cron: '0 2 * * *'
+    # UTC 00:00/10:00/13:00 = 北京时间 08:00/18:00/21:00
+    - cron: '0 0,10,13 * * *'
+
   # 允许手动触发
   workflow_dispatch:
     inputs:
@@ -12,9 +15,6 @@ on:
         required: false
         default: false
         type: boolean
-  # 当有代码推送到main分支时也运行（用于测试）
-  push:
-    branches: [main]
 
 env:
   BLOG_URL: "https://gsaecy.github.io"

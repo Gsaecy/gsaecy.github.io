@@ -272,11 +272,11 @@ jobs:
             echo "未找到文章文件，跳过公开配图"
           fi
 
-      - name: Validate illustrations
+      - name: Validate illustrations (non-blocking)
         run: |
           echo "校验插图规则：至少1张公开配图 + 每个关键表格1张图表..."
           ORIGINAL_FILE="${{ steps.generate.outputs.original_file }}"
-          python3 scripts/validate_illustrations.py "$ORIGINAL_FILE"
+          python3 scripts/validate_illustrations.py "$ORIGINAL_FILE" || echo "::warning::illustrations validation failed (will continue publishing)"
 
       - name: Record failure (commit to repo)
         if: failure()

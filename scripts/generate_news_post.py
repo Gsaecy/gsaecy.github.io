@@ -1,0 +1,176 @@
+#!/usr/bin/env python3
+"""Generate a Hugo post from collected news payload.
+
+Input: JSON from scripts/collect_news.py
+Output:
+- content/posts/<slug>.md
+- downloads cover image into static/images/posts/<slug>/cover.(jpg|png|webp) when possible
+
+Guarantees:
+- Adds YAML front matter
+- Includes citations with URLs
+- Instructs model: do NOT fabricate data; only use provided sources
+
+Usage:
+  python3 scripts/generate_news_post.py --in data/raw/news.json --slug technology-20260203-080000 --title "..." --out content/posts/<slug>.md
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+from datetime import datetime, timezone, timedelta
+from pathlib import Path
+from typing import Any, Dict, Optional, Tuple
+
+import requests
+
+
+def slugify(s: str) -> str:
+    s = s.lower().strip()
+    s = re.sub(r"[^a-z0-9\-\s]", "", s)
+    s = re.sub(r"\s+", "-", s)
+    s = re.sub(r"-+", "-", s)
+    return s[:80].strip("-")
+
+
+def download_cover(url: str, out_dir: Path) -> Optional[str]:
+    if not url:
+        return None
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    # guess extension
+    ext = "jpg"
+    m = re.search(r"\.(jpg|jpeg|png|webp)(\?|$)", url.lower())
+    if m:
+        ext = "jpg" if m.group(1) == "jpeg" else m.group(1)
+
+    out_path = out_dir / f"cover.{ext}"
+
+    try:
+        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=25)
+        r.raise_for_status()
+        out_path.write_bytes(r.content)
+        return f"/images/posts/{out_dir.name}/{out_path.name}"
+    except Exception:
+        return None
+
+
+def build_prompt(payload: Dict[str, Any], title: str, industry: str) -> str:
+    items = payload.get("items", [])[:10]
+    # Keep context small but rich: title, source, url, published, key excerpts
+    def clip(s: str, n: int) -> str:
+        s = (s or "").strip()
+        return s[:n] + ("..." if len(s) > n else "")
+
+    source_blocks = []
+    for i, it in enumerate(items, 1):
+        source_blocks.append(
+            f"[{i}] {it.get('title','').strip()}\n"
+            f"source: {it.get('source','')}\n"
+            f"published: {it.get('published','')}\n"
+            f"url: {it.get('url','')}\n"
+            f"excerpt: {clip(it.get('content_text','') or it.get('summary',''), 1200)}\n"
+        )
+
+    return (
+        "你是一个严谨的行业研究编辑。请基于【提供的素材】写一篇高质量行业文章，并适配微信公众号排版。\n\n"
+        "硬性规则（非常重要）：\n"
+        "1) 只允许使用素材里出现的事实/数字/结论；不要编造任何数据、公司动作、政策细节。\n"
+        "2) 文中出现的数据/结论必须在段尾用[编号]标注引用来源（例如：[1][3]）。\n"
+        "3) 文末给出“来源列表”，按[编号]列出标题+URL。\n"
+        "4) 文章不少于 1800 字，结构清晰：\n"
+        "   - 核心摘要（3-5条）\n"
+        "   - 今日要点（按主题分3-5节）\n"
+        "   - 数据与指标（至少2节，尽量用素材里的数字；如果素材无数字，要明确写‘来源未披露具体数值’）\n"
+        "   - 影响与机会（企业/从业者/投资者分别给建议）\n"
+        "5) 语言：中文，专业但易读。\n\n"
+        f"文章主题/标题：{title}\n"
+        f"行业：{industry}\n\n"
+        "素材如下（最多10条）：\n\n"
+        + "\n---\n".join(source_blocks)
+    )
+
+
+def call_deepseek(prompt: str) -> str:
+    api_key = os.getenv("DEEPSEEK_API_KEY")
+    if not api_key:
+        raise RuntimeError("DEEPSEEK_API_KEY not set")
+
+    url = "https://api.deepseek.com/chat/completions"
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+    payload = {
+        "model": "deepseek-chat",
+        "messages": [
+            {"role": "system", "content": "你是严谨的行业研究编辑与事实核查员。"},
+            {"role": "user", "content": prompt},
+        ],
+        "temperature": 0.4,
+        "max_tokens": 4000,
+    }
+
+    r = requests.post(url, headers=headers, json=payload, timeout=60)
+    r.raise_for_status()
+    data = r.json()
+    return data["choices"][0]["message"]["content"].strip()
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--in", dest="inp", required=True)
+    ap.add_argument("--slug", required=True)
+    ap.add_argument("--title", required=True)
+    ap.add_argument("--industry", required=True)
+    ap.add_argument("--out", required=True)
+    args = ap.parse_args()
+
+    payload = json.loads(Path(args.inp).read_text(encoding="utf-8"))
+
+    # cover: pick first available
+    cover_url = None
+    for it in payload.get("items", [])[:10]:
+        if it.get("cover_image_url"):
+            cover_url = it["cover_image_url"]
+            break
+
+    cover_rel = None
+    if cover_url:
+        cover_rel = download_cover(cover_url, Path("static/images/posts") / args.slug)
+
+    prompt = build_prompt(payload, args.title, args.industry)
+    article_md = call_deepseek(prompt)
+
+    now_cn = datetime.now(timezone(timedelta(hours=8)))
+    front = {
+        "title": args.title,
+        "date": now_cn.isoformat(timespec="seconds"),
+        "draft": False,
+        "categories": [args.industry],
+        "tags": [args.industry, "news", "AI分析"],
+        "author": "AI智汇观察",
+        "slug": args.slug,
+    }
+    if cover_rel:
+        front["image"] = cover_rel
+
+    # YAML front matter
+    fm_lines = ["---"]
+    for k, v in front.items():
+        if isinstance(v, bool):
+            fm_lines.append(f"{k}: {'true' if v else 'false'}")
+        elif isinstance(v, list):
+            fm_lines.append(f"{k}: {json.dumps(v, ensure_ascii=False)}")
+        else:
+            fm_lines.append(f"{k}: {json.dumps(v, ensure_ascii=False)}")
+    fm_lines.append("---\n")
+
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text("\n".join(fm_lines) + article_md.strip() + "\n", encoding="utf-8")
+    print(f"✅ wrote post -> {out_path}")
+
+
+if __name__ == "__main__":
+    main()

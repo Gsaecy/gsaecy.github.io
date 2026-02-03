@@ -28,6 +28,8 @@ schedule>=1.2.0
 # 网络工具
 aiohttp>=3.8.0
 httpx>=0.24.0
+feedparser>=6.0.11
+readability-lxml>=0.8.1
 
 # 工具类
 tqdm>=4.65.0

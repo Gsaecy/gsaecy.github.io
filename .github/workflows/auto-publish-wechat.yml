@@ -5,10 +5,10 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  # 定时触发：每天多时段自动生成文章（北京时间 08:00 / 10:00 / 12:00 / 18:00 / 21:00）
+  # 定时触发：每天发布 2 篇（北京时间 08:00 / 18:00）
   schedule:
-    # UTC: 00:00, 02:00, 04:00, 10:00, 13:00  (CN: 08/10/12/18/21)
-    - cron: '0 0,2,4,10,13 * * *'
+    # UTC: 00:00, 10:00  (CN: 08:00, 18:00)
+    - cron: '0 0,10 * * *'
 
   # 手动触发
   workflow_dispatch:
@@ -81,7 +81,19 @@ jobs:
           # schedule 触发时 github.event.inputs 为空，这里兜底
           INDUSTRY="${{ github.event.inputs.industry }}"
           if [ -z "$INDUSTRY" ]; then
-            INDUSTRY="technology"
+            # 根据北京时间选择行业：早上偏科技，晚上偏金融/产业
+            HOUR=$(TZ=Asia/Shanghai date +%H)
+            DAY=$(TZ=Asia/Shanghai date +%d)
+            if [ "$HOUR" -lt 12 ]; then
+              INDUSTRY="technology"
+            else
+              # 晚上在 finance/automotive 之间轮换
+              if [ $((10#$DAY % 2)) -eq 0 ]; then
+                INDUSTRY="finance"
+              else
+                INDUSTRY="automotive"
+              fi
+            fi
           fi
 
           # 如果手动指定了主题
@@ -118,157 +130,44 @@ jobs:
           echo "filename=$FILENAME" >> $GITHUB_OUTPUT
           echo "timestamp=$TIMESTAMP" >> $GITHUB_OUTPUT
       
-      - name: Generate article
+      - name: Generate article (from top media)
         id: generate
         env:
           TOPIC: ${{ steps.topic.outputs.topic }}
           INDUSTRY: ${{ steps.topic.outputs.industry }}
           FILENAME: ${{ steps.topic.outputs.filename }}
-          BLOG_URL: ${{ env.BLOG_URL }}
         run: |
-          echo "📝 生成文章..."
+          echo "🗞️ 采集行业头部媒体RSS并生成文章..."
 
           ORIGINAL_FILE="content/posts/${FILENAME}.md"
           WECHAT_FILE="content/posts/${FILENAME}-wechat.md"
+          NEWS_JSON="data/raw/news_${FILENAME}.json"
 
-          mkdir -p content/posts
+          mkdir -p content/posts data/raw
 
-          ORIGINAL_FILE="$ORIGINAL_FILE" python3 - <<'PY'
-          from pathlib import Path
-          import os, datetime
-          
-          original_file = Path(os.environ["ORIGINAL_FILE"])
-          topic = os.environ["TOPIC"]
-          industry = os.environ["INDUSTRY"]
-          filename = os.environ["FILENAME"]
-          blog_url = os.environ["BLOG_URL"]
-          
-          now_cn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8)))
-          now_cn_str = now_cn.strftime("%Y-%m-%d %H:%M:%S %z")
-          analysis_time = now_cn.strftime("%Y年%m月%d日 %H:%M")
-          
-          # 根据行业选择不同的Unsplash图片主题
-          industry_themes = {
-              "technology": ["ai", "technology", "computer", "innovation"],
-              "finance": ["finance", "money", "banking", "investment"],
-              "healthcare": ["healthcare", "medical", "hospital", "wellness"],
-              "education": ["education", "learning", "school", "knowledge"],
-              "automotive": ["automotive", "car", "electric-vehicle", "transportation"],
-              "retail": ["retail", "shopping", "ecommerce", "consumer"],
-              "manufacturing": ["manufacturing", "factory", "industry", "production"]
-          }
-          
-          theme_keywords = industry_themes.get(industry, ["business", "analysis", "data"])
-          cover_keyword = theme_keywords[0]
-          content_keyword1 = theme_keywords[1] if len(theme_keywords) > 1 else "data"
-          content_keyword2 = theme_keywords[2] if len(theme_keywords) > 2 else "analysis"
-          
-          # 图片策略：不再使用随机/泛化图库图。
-          # 正文配图由后续步骤生成：
-          # - 数据图表（auto_illustrate）
-          # - Wikimedia Commons 公开配图（auto_add_public_images，含来源与许可）
-          
-          tpl = f"""---
-          title: \"{topic}\"
-          date: {now_cn_str}
-          draft: false
-          categories: [\"{industry}\"]
-          tags: [\"{industry}\", \"auto\", \"AI分析\"]
-          author: "AI智汇观察"
-          ---
-          
-          # {topic}
-          
-          *分析时间：{analysis_time} | 数据驱动分析 | 作者：AI智汇观察系统*
-          
-          ---
-          
-          ## 核心摘要
-          
-          本文基于最新行业数据和趋势分析，深入探讨{topic}。通过多维度数据对比和专家观点，为读者提供全面的行业洞察和决策参考。
-          
-          ## 市场现状
-          
-          根据最新行业报告，当前市场呈现以下特点：
-          
-          | 指标 | 当前状态 | 同比增长 | 数据来源 |
-          |------|----------|----------|----------|
-          | 市场规模 | 待更新 | 待更新 | 行业报告 |
-          | 用户规模 | 待更新 | 待更新 | 官方统计 |
-          | 渗透率 | 待更新 | 待更新 | 调研数据 |
-          
-          ## 技术发展
-          
-          关键技术领域取得重要进展：
-          
-          1. **技术创新**：多项技术实现突破性进展
-          2. **应用落地**：从实验室走向商业化应用
-          3. **标准建立**：行业标准体系逐步完善
-          4. **生态建设**：产业链协同发展
-          
-          ## 趋势预测
-          
-          基于当前发展态势，预计未来将呈现以下趋势：
-          
-          ### 短期趋势（1年内）
-          1. 市场规模持续扩大
-          2. 技术应用加速普及
-          3. 竞争格局进一步分化
-          4. 政策环境更加完善
-          
-          ### 中期展望（2-3年）
-          1. 行业进入成熟发展阶段
-          2. 技术创新成为核心竞争力
-          3. 产业链协同效应显现
-          4. 国际化程度显著提升
-          
-          ## 投资机会
-          
-          建议关注以下投资方向：
-          
-          1. **技术创新领域**：具有技术壁垒的细分赛道
-          2. **应用场景拓展**：新兴应用场景的商业化机会
-          3. **产业链关键环节**：供应链中的核心环节
-          4. **服务模式创新**：基于新技术的新型服务模式
-          
-          ## 风险提示
-          
-          需关注以下风险因素：
-          
-          1. **技术风险**：技术路线不确定性和迭代风险
-          2. **政策风险**：监管政策变化可能影响行业发展
-          3. **市场风险**：市场竞争加剧和需求波动
-          4. **供应链风险**：关键原材料和零部件供应风险
-          
-          ---
-          
-          ## 数据来源说明
-          
-          本文数据主要来源于：
-          
-          1. 行业权威机构发布的统计数据
-          2. 上市公司财报和公开信息
-          3. 专业研究机构的分析报告
-          4. 政府部门发布的政策文件
-          
-          所有数据均经过交叉验证，确保准确性和时效性。
-          
-          ---
-          
-          *本文由AI智汇观察系统自动生成，基于多源数据分析和趋势预测。数据仅供参考，决策需结合具体情况。*
-          
-          **报告版本**：v1.0  
-          **生成时间**：{now_cn.strftime('%Y-%m-%d %H:%M:%S')}  
-          **数据更新**：基于最新可用数据
-          
-          **原文链接**：{blog_url}/posts/{filename}/
-          """
-          
-          original_file.parent.mkdir(parents=True, exist_ok=True)
-          original_file.write_text(tpl, encoding="utf-8")
-          print(f"✅ 原始文章已生成: {original_file}")
-          PY
+          python3 scripts/collect_news.py --industry "${INDUSTRY}" --hours 24 --limit 25 --out "${NEWS_JSON}"
 
+          # 标题：必须包含行业，避免读者不知道默认行业
+          CN_DATE=$(TZ=Asia/Shanghai date +%Y-%m-%d)
+          case $INDUSTRY in
+            technology) IND_CN="科技";;
+            finance) IND_CN="金融";;
+            healthcare) IND_CN="医疗";;
+            education) IND_CN="教育";;
+            automotive) IND_CN="汽车";;
+            retail) IND_CN="零售";;
+            manufacturing) IND_CN="制造";;
+            *) IND_CN="$INDUSTRY";;
+          esac
+
+          TITLE="【${IND_CN}】${TOPIC}（${CN_DATE}）"
+
+          python3 scripts/generate_news_post.py --in "${NEWS_JSON}" --slug "${FILENAME}" --industry "${INDUSTRY}" --title "${TITLE}" --out "${ORIGINAL_FILE}"
+
+          # 复制一份用于公众号格式转换
+          cp "${ORIGINAL_FILE}" "${WECHAT_FILE}"
+
+          echo "✅ 文章已生成: ${ORIGINAL_FILE}"
           echo "original_file=${ORIGINAL_FILE}" >> $GITHUB_OUTPUT
           echo "wechat_file=${WECHAT_FILE}" >> $GITHUB_OUTPUT
         shell: bash

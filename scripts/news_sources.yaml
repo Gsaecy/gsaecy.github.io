@@ -1,0 +1,72 @@
+# RSS sources by industry (aim: top media/communities with stable feeds)
+# Note: some sites may be paywalled or block bots; the collector will skip failures.
+
+global:
+  user_agent: "AIInsightBot/1.0 (+https://gsaecy.github.io)"
+
+industries:
+  technology:
+    - name: TechCrunch
+      rss: https://techcrunch.com/feed/
+    - name: The Verge
+      rss: https://www.theverge.com/rss/index.xml
+    - name: Ars Technica
+      rss: https://feeds.arstechnica.com/arstechnica/index
+    - name: Wired
+      rss: https://www.wired.com/feed/rss
+    - name: MIT Technology Review
+      rss: https://www.technologyreview.com/feed/
+    - name: VentureBeat
+      rss: https://venturebeat.com/feed/
+    - name: Hacker News (Frontpage)
+      rss: https://hnrss.org/frontpage
+    - name: GitHub Blog
+      rss: https://github.blog/feed/
+    - name: OpenAI Blog
+      rss: https://openai.com/blog/rss.xml
+    - name: Google AI Blog
+      rss: https://blog.research.google/feeds/posts/default?alt=rss
+
+  finance:
+    - name: CNBC Top News
+      rss: https://www.cnbc.com/id/100003114/device/rss/rss.html
+    - name: CNBC Markets
+      rss: https://www.cnbc.com/id/15839069/device/rss/rss.html
+    - name: MarketWatch Top Stories
+      rss: https://feeds.marketwatch.com/marketwatch/topstories/
+    - name: Seeking Alpha Market News
+      rss: https://seekingalpha.com/market_currents.xml
+    - name: The Economist Finance & economics
+      rss: https://www.economist.com/finance-and-economics/rss.xml
+    - name: IMF Blog
+      rss: https://www.imf.org/en/Blogs/rss
+    - name: World Bank Blogs
+      rss: https://blogs.worldbank.org/rss.xml
+    - name: CoinDesk
+      rss: https://www.coindesk.com/arc/outboundfeeds/rss/
+    - name: Finextra
+      rss: https://www.finextra.com/rss/headlines.aspx
+    - name: Bank for International Settlements
+      rss: https://www.bis.org/rssfeed/index.htm
+
+  automotive:
+    - name: Electrek
+      rss: https://electrek.co/feed/
+    - name: InsideEVs
+      rss: https://insideevs.com/rss/news/
+    - name: CleanTechnica (Transport)
+      rss: https://cleantechnica.com/category/transport/feed/
+    - name: Car and Driver
+      rss: https://www.caranddriver.com/rss/all.xml/
+    - name: Road & Track
+      rss: https://www.roadandtrack.com/rss/all.xml/
+    - name: Autocar
+      rss: https://www.autocar.co.uk/rss
+    - name: SAE International News
+      rss: https://www.sae.org/rss/news
+    - name: IEA - Transport
+      rss: https://www.iea.org/feeds/news.xml
+    - name: EV Volumes (news)
+      rss: https://www.ev-volumes.com/feed/
+    - name: Tesla Newswire (community)
+      rss: https://www.teslarati.com/feed/

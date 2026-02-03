@@ -1,13 +1,8 @@
 name: Daily AI Blog Automation
 
 on:
-  # 每天在非中午时段生成“非行业热点”的其他内容（北京时间 08:00 / 18:00 / 21:00）
-  # 说明：行业热点由 auto-publish-wechat.yml 在 12:00 单独生成
-  schedule:
-    # UTC 00:00/10:00/13:00 = 北京时间 08:00/18:00/21:00
-    - cron: '0 0,10,13 * * *'
-
-  # 允许手动触发
+  # 已切换到 RSS 聚合发布模式（auto-publish-wechat.yml）。
+  # 此工作流保留仅供手动触发/回归测试。
   workflow_dispatch:
     inputs:
       test_mode:

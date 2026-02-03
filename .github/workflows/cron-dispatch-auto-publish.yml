@@ -1,9 +1,8 @@
 name: Cron Dispatch Auto Publish
 
 on:
-  schedule:
-    # UTC: 00:00, 02:00, 04:00, 10:00, 13:00  (CN: 08/10/12/18/21)
-    - cron: '0 0,2,4,10,13 * * *'
+  # 已由 auto-publish-wechat.yml 直接定时发布；此工作流保留仅供手动触发/调试
+  workflow_dispatch:
 
 jobs:
   dispatch:

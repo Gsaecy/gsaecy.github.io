@@ -46,6 +46,22 @@
   padding: 14px 16px;
 }
 
+/* Card bottom meta row: published time + author */
+.article-list .article-details .article-time {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.article-list .article-details .article-time > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.9;
+}
+
 /* Avoid overly wide cards on large screens */
 @media (min-width: 1200px) {
   .main-container {

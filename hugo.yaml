@@ -21,6 +21,7 @@ permalinks:
 params:
   mainSections: ["posts"]
   rssFullContent: true
+  customCSS: ["css/custom.css"]
   
   sidebar:
     emoji: "🤖"

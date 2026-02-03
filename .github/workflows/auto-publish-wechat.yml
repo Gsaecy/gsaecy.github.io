@@ -171,7 +171,8 @@ jobs:
           draft: false
           categories: [\"{industry}\"]
           tags: [\"{industry}\", \"auto\", \"AI分析\"]
-          coverImage: "{cover_image}"
+          image: "{cover_image}"
+          author: "AI智汇观察"
           ---
           
           # {topic}

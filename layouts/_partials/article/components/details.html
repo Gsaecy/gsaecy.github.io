@@ -1,0 +1,23 @@
+<div class="article-details">
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="{{ .RelPermalink }}">{{- .Title -}}</a>
+        </h2>
+    </div>
+
+    <footer class="article-time">
+        <div>
+            {{ partial "helper/icon" "date" }}
+            <time class="article-time--published" datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>
+                {{- .Date | time.Format .Site.Params.dateFormat.published -}}
+            </time>
+        </div>
+
+        {{ with (.Params.author | default .Site.Author.name | default .Site.Author) }}
+        <div>
+            {{ partial "helper/icon" "user" }}
+            <span class="article-time--author">{{ . }}</span>
+        </div>
+        {{ end }}
+    </footer>
+</div>

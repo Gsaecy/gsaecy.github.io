@@ -1,0 +1,25 @@
+{{- $alt := .PlainText | safeHTML -}}
+{{- $image := partial "helper/image" (dict "Resources" .Page.Resources "Image" .Destination) -}}
+
+{{/*
+  Stack theme's helper/image returns "" when the image cannot be resolved as a Page Resource/remote resource.
+  In that case, fallback to a plain <img> using the original destination.
+*/}}
+{{- if not $image -}}
+  <img src="{{ .Destination | safeURL }}" loading="lazy" {{ with $alt }}alt="{{ . }}"{{ end }}>
+{{- else -}}
+  {{/* SVG and external images won't work with gallery layout, because their width and height attributes are unknown */}}
+  {{- $galleryImage := and $image.Height $image.Width -}}
+
+  <img src="{{ $image.Permalink }}"
+    {{ with $image.Width }}width="{{ . }}"{{ end }}
+    {{ with $image.Height }}height="{{ . }}"{{ end }}
+    loading="lazy"
+    {{ with $alt }}alt="{{ . }}"{{ end }}
+    {{ if $galleryImage }}
+      class="gallery-image" 
+      data-flex-grow="{{ div (mul $image.Width 100) $image.Height }}"
+      data-flex-basis="{{ div (mul $image.Width 240) $image.Height }}px"
+    {{ end }}
+  >
+{{- end -}}

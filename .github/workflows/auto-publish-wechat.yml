@@ -5,10 +5,10 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  # 定时触发：每天12:00（北京时间）只生成 1 篇「行业热点」
+  # 定时触发：每天多时段自动生成文章（北京时间 08:00 / 10:00 / 12:00 / 18:00 / 21:00）
   schedule:
-    # UTC 04:00 = 北京时间 12:00
-    - cron: '0 4 * * *'
+    # UTC: 00:00, 02:00, 04:00, 10:00, 13:00  (CN: 08/10/12/18/21)
+    - cron: '0 0,2,4,10,13 * * *'
 
   # 手动触发
   workflow_dispatch:
@@ -402,8 +402,12 @@ jobs:
           echo "" >> deployment-report.md
           
           echo "## ⏰ 下次发布时间" >> deployment-report.md
-          echo "系统将在以下时间自动发布【行业热点】：" >> deployment-report.md
+          echo "系统将在以下时间自动发布新文章：" >> deployment-report.md
+          echo "- 08:00 (北京时间)" >> deployment-report.md
+          echo "- 10:00 (北京时间)" >> deployment-report.md
           echo "- 12:00 (北京时间)" >> deployment-report.md
+          echo "- 18:00 (北京时间)" >> deployment-report.md
+          echo "- 21:00 (北京时间)" >> deployment-report.md
           echo "" >> deployment-report.md
           
           echo "## 🔧 手动触发" >> deployment-report.md

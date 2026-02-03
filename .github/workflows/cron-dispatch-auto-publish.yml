@@ -2,8 +2,8 @@ name: Cron Dispatch Auto Publish
 
 on:
   schedule:
-    # UTC 04:00 = 北京时间 12:00（每天只触发一次行业热点）
-    - cron: '0 4 * * *'
+    # UTC: 00:00, 02:00, 04:00, 10:00, 13:00  (CN: 08/10/12/18/21)
+    - cron: '0 0,2,4,10,13 * * *'
 
 jobs:
   dispatch:

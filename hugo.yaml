@@ -1,55 +1,69 @@
 baseURL: "https://gsaecy.github.io/"
 languageCode: "zh-cn"
+defaultContentLanguage: "zh-cn"
+hasCJKLanguage: true
+
 title: "AI智汇观察"
+author: "AI智汇观察"
 
 timeZone: "Asia/Shanghai"
 
-# Use Hugo Modules to pull the Stack theme during build (no need to vendor theme files)
-module:
-  imports:
-    - path: github.com/CaiJimmy/hugo-theme-stack/v3
+theme: "dream"
 
 pagination:
-  pagerSize: 10
+  pagerSize: 12
 
 enableRobotsTXT: true
 
-# Stack theme params
+permalinks:
+  posts: "/posts/:slug/"
+
 params:
-  mainSections:
-    - posts
+  # Themes
+  lightTheme: "emerald"
+  darkTheme: "forest"
+
+  author: "AI智汇观察"
+  description: "AI驱动的行业洞察：科技 / 金融 / 新能源汽车"
+  avatar: "img/avatar.svg"
+
+  headerTitle: "AI智汇观察"
+  motto: "每天 08:00 / 10:00 / 12:00 / 18:00 / 21:00 自动发布"
+
+  siteStartYear: 2026
+
+  # Options (keep it simple first)
+  stickyNav: true
+  showTableOfContents: true
+  showSummaryCoverInPost: true
+  imageZoomableInPost: true
+  showPrevNextPost: true
 
   # Enable custom styles
-  customCSS:
-    - css/custom.css
-
-  # Optional: basic site info
-  sidebar:
-    emoji: ""
-    subtitle: "每日AI生成行业洞察"
-
-  article:
-    math: false
-    toc: true
-    readingTime: true
+  advanced:
+    customCSS:
+      - "css/custom.css"
 
 menu:
   main:
-    - identifier: home
-      name: 首页
-      url: /
+    - identifier: posts
+      name: "文章"
+      url: "/posts/"
       weight: 1
-    - identifier: archives
-      name: 归档
-      url: /archives/
+    - identifier: categories
+      name: "分类"
+      url: "/categories/"
       weight: 2
-    - identifier: about
-      name: 关于
-      url: /about/
+    - identifier: tags
+      name: "标签"
+      url: "/tags/"
       weight: 3
+    - identifier: about
+      name: "关于"
+      url: "/about/"
+      weight: 4
 
 outputs:
   home:
     - HTML
     - RSS
-    - JSON

@@ -48,7 +48,7 @@ def commons_search(query: str, limit: int = 5) -> List[str]:
         "srlimit": str(limit),
         "srnamespace": "6",  # File:
     }
-    r = requests.get(API, params=params, timeout=30)
+    r = requests.get(API, params=params, timeout=30, headers={"User-Agent": UA})
     r.raise_for_status()
     data = r.json()
     return [item["title"] for item in data.get("query", {}).get("search", [])]
@@ -65,7 +65,7 @@ def commons_imageinfo(titles: List[str]) -> List[Dict]:
         "iiprop": "url|extmetadata",
         "iiurlwidth": "1600",
     }
-    r = requests.get(API, params=params, timeout=30)
+    r = requests.get(API, params=params, timeout=30, headers={"User-Agent": UA})
     r.raise_for_status()
     pages = r.json().get("query", {}).get("pages", {})
     out = []

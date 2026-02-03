@@ -1,9 +1,8 @@
 name: Auto Publish WeChat Articles
 
 concurrency:
-  # 允许同一天手动补发多篇，不互相取消（Pages 部署仍会在 GitHub 侧排队）
-  group: auto-publish-${{ github.workflow }}
-  cancel-in-progress: false
+  group: pages-deploy
+  cancel-in-progress: true
 
 on:
   # 定时触发：每天发布 2 篇（北京时间 08:00 / 18:00）
@@ -166,7 +165,8 @@ jobs:
 
           python3 scripts/generate_news_post.py --in "${NEWS_JSON}" --slug "${FILENAME}" --industry "${INDUSTRY}" --title "${TITLE}" --out "${ORIGINAL_FILE}"
 
-          # 微信公众号格式转换直接在 ORIGINAL_FILE 上进行（不创建重复文章）
+          # 复制一份用于公众号格式转换
+          cp "${ORIGINAL_FILE}" "${WECHAT_FILE}"
 
           echo "✅ 文章已生成: ${ORIGINAL_FILE}"
           echo "original_file=${ORIGINAL_FILE}" >> $GITHUB_OUTPUT

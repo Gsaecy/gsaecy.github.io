@@ -22,7 +22,7 @@ SortBy = "default"
 [sidebar]
   emoji    = "🤖"
   subtitle = "每日 AI 驱动的行业深度分析｜科技 / 金融 / 新能源汽车"
-  avatar   = "img/avatar.svg"
+  avatar   = "img/avatar.png"
 
 [article]
   headingAnchor = true

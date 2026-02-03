@@ -89,10 +89,25 @@ def already_has_public_images(md_text: str) -> bool:
 
 
 def insert_after_intro(lines: List[str], block: List[str]) -> List[str]:
-    # Insert after first horizontal rule or after the metadata paragraph
-    for i in range(min(len(lines), 80)):
+    """Insert block after front matter (if any) or after the first horizontal rule.
+
+    Important: Hugo YAML front matter is delimited by two '---' lines at the top.
+    We must NOT insert between them, otherwise the page front matter breaks.
+    """
+
+    # If file starts with front matter, find the closing delimiter.
+    if lines and lines[0].strip() == "---":
+        for i in range(1, min(len(lines), 200)):
+            if lines[i].strip() == "---":
+                # insert after the closing front matter line
+                return lines[: i + 1] + [""] + block + [""] + lines[i + 1 :]
+
+    # Fallback: insert after the first horizontal rule in the first 200 lines
+    for i in range(min(len(lines), 200)):
         if lines[i].strip() == "---":
             return lines[: i + 1] + [""] + block + [""] + lines[i + 1 :]
+
+    # Otherwise just prepend
     return block + [""] + lines
 
 

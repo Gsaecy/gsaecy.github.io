@@ -281,16 +281,21 @@ jobs:
           git push origin main || true
 
       - name: Notify Feishu (optional)
-        if: failure() && secrets.FEISHU_WEBHOOK_URL != ''
+        if: failure()
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
         run: |
+          if [ -z "$FEISHU_WEBHOOK_URL" ]; then
+            echo "未配置 FEISHU_WEBHOOK_URL secret，跳过飞书通知"
+            exit 0
+          fi
+
           echo "发送飞书失败提醒..."
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           TS="$(date '+%Y-%m-%d %H:%M:%S')"
           curl -sS -X POST "$FEISHU_WEBHOOK_URL" \
             -H 'Content-Type: application/json' \
             -d "{\"msg_type\":\"text\",\"content\":{\"text\":\"【博客自动发布失败】${TS}\\n${RUN_URL}\\n请查看失败步骤并重试。\"}}" || true
-        env:
-          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
       
       - name: Format for WeChat
         run: |

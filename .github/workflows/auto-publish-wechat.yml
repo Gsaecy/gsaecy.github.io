@@ -163,10 +163,10 @@ jobs:
           content_keyword1 = theme_keywords[1] if len(theme_keywords) > 1 else "data"
           content_keyword2 = theme_keywords[2] if len(theme_keywords) > 2 else "analysis"
           
-          # Unsplash图片URL（使用固定尺寸和主题）
-          cover_image = f"https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&h=600&q=80&crop=entropy"
-          content_image1 = f"https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=400&q=80"
-          content_image2 = f"https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&h=400&q=80"
+          # 图片策略：不再使用随机/泛化图库图。
+          # 正文配图由后续步骤生成：
+          # - 数据图表（auto_illustrate）
+          # - Wikimedia Commons 公开配图（auto_add_public_images，含来源与许可）
           
           tpl = f"""---
           title: \"{topic}\"
@@ -174,13 +174,10 @@ jobs:
           draft: false
           categories: [\"{industry}\"]
           tags: [\"{industry}\", \"auto\", \"AI分析\"]
-          image: "{cover_image}"
           author: "AI智汇观察"
           ---
           
           # {topic}
-          
-          ![]({cover_image})
           
           *分析时间：{analysis_time} | 数据驱动分析 | 作者：AI智汇观察系统*
           
@@ -189,9 +186,6 @@ jobs:
           ## 核心摘要
           
           本文基于最新行业数据和趋势分析，深入探讨{topic}。通过多维度数据对比和专家观点，为读者提供全面的行业洞察和决策参考。
-          
-          ![]({content_image1})
-          *行业发展趋势示意图*
           
           ## 市场现状
           
@@ -211,9 +205,6 @@ jobs:
           2. **应用落地**：从实验室走向商业化应用
           3. **标准建立**：行业标准体系逐步完善
           4. **生态建设**：产业链协同发展
-          
-          ![]({content_image2})
-          *技术应用场景示意图*
           
           ## 趋势预测
           

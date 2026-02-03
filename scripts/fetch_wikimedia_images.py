@@ -28,6 +28,9 @@ import requests
 
 API = "https://commons.wikimedia.org/w/api.php"
 
+# Wikimedia APIs may return 403 without a proper User-Agent.
+UA = "AI-Zhihui-Observer/1.0 (https://gsaecy.github.io/; contact: github.com/Gsaecy)"
+
 
 def clean_filename(name: str) -> str:
     name = re.sub(r"\s+", "-", name.strip())
@@ -91,7 +94,7 @@ def commons_imageinfo(titles: List[str]) -> List[Dict]:
 
 def download(url: str, out_path: Path) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    r = requests.get(url, timeout=60)
+    r = requests.get(url, timeout=60, headers={"User-Agent": UA})
     r.raise_for_status()
     out_path.write_bytes(r.content)
 

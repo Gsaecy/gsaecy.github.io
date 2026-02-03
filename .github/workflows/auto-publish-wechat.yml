@@ -254,6 +254,43 @@ jobs:
           echo "校验插图规则：至少1张公开配图 + 每个关键表格1张图表..."
           ORIGINAL_FILE="${{ steps.generate.outputs.original_file }}"
           python3 scripts/validate_illustrations.py "$ORIGINAL_FILE"
+
+      - name: Record failure (commit to repo)
+        if: failure()
+        run: |
+          echo "记录失败信息到仓库..."
+          mkdir -p logs/auto-publish-failures
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          TS="$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+          FILE="logs/auto-publish-failures/${{ github.run_id }}.md"
+          {
+            echo "# Auto Publish Failure";
+            echo "";
+            echo "- time(UTC): ${TS}";
+            echo "- run: ${RUN_URL}";
+            echo "- event: ${{ github.event_name }}";
+            echo "- ref: ${{ github.ref }}";
+            echo "";
+            echo "This file is generated automatically when the workflow fails.";
+          } > "$FILE"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$FILE" || true
+          git commit -m "🧾 记录自动发布失败：run ${{ github.run_id }}" || true
+          git push origin main || true
+
+      - name: Notify Feishu (optional)
+        if: failure() && secrets.FEISHU_WEBHOOK_URL != ''
+        run: |
+          echo "发送飞书失败提醒..."
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          TS="$(date '+%Y-%m-%d %H:%M:%S')"
+          curl -sS -X POST "$FEISHU_WEBHOOK_URL" \
+            -H 'Content-Type: application/json' \
+            -d "{\"msg_type\":\"text\",\"content\":{\"text\":\"【博客自动发布失败】${TS}\\n${RUN_URL}\\n请查看失败步骤并重试。\"}}" || true
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
       
       - name: Format for WeChat
         run: |

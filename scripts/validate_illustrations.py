@@ -56,6 +56,11 @@ def parse_markdown_tables(lines: List[str]) -> List[Table]:
 
 
 def is_key_table(t: Table) -> bool:
+    joined = " ".join(" ".join(r) for r in t.rows)
+    # placeholder tables should not be considered key tables
+    if "待更新" in joined:
+        return False
+
     header_text = " ".join(t.header)
     if any(k in header_text for k in ["来源", "数据来源"]):
         return True

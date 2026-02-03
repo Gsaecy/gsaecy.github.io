@@ -28,6 +28,11 @@ on:
           - automotive
           - retail
           - manufacturing
+      force_timestamp:
+        description: '强制时间戳（用于补发/复现，例如 20260203-080000；留空则自动生成北京时间时间戳）'
+        required: false
+        type: string
+        default: ''
 
 env:
   HUGO_VERSION: '0.155.1'
@@ -69,51 +74,43 @@ jobs:
         id: topic
         run: |
           echo "🎯 确定文章主题..."
-          
+
+          # schedule 触发时 github.event.inputs 为空，这里兜底
+          INDUSTRY="${{ github.event.inputs.industry }}"
+          if [ -z "$INDUSTRY" ]; then
+            INDUSTRY="technology"
+          fi
+
           # 如果手动指定了主题
           if [ -n "${{ github.event.inputs.topic }}" ]; then
             TOPIC="${{ github.event.inputs.topic }}"
             echo "使用手动指定主题: $TOPIC"
-          
-          # 否则根据行业选择预设主题
           else
-            INDUSTRY="${{ github.event.inputs.industry }}"
-            
             case $INDUSTRY in
-              technology)
-                TOPIC="AI技术发展趋势与行业应用"
-                ;;
-              finance)
-                TOPIC="数字金融创新与风险管理"
-                ;;
-              healthcare)
-                TOPIC="智慧医疗技术突破与市场前景"
-                ;;
-              education)
-                TOPIC="在线教育模式创新与未来趋势"
-                ;;
-              automotive)
-                TOPIC="新能源汽车产业链分析与投资机会"
-                ;;
-              retail)
-                TOPIC="新零售数字化转型与消费趋势"
-                ;;
-              manufacturing)
-                TOPIC="智能制造技术升级与产业变革"
-                ;;
-              *)
-                TOPIC="行业技术发展趋势分析"
-                ;;
+              technology) TOPIC="AI技术发展趋势与行业应用";;
+              finance) TOPIC="数字金融创新与风险管理";;
+              healthcare) TOPIC="智慧医疗技术突破与市场前景";;
+              education) TOPIC="在线教育模式创新与未来趋势";;
+              automotive) TOPIC="新能源汽车产业链分析与投资机会";;
+              retail) TOPIC="新零售数字化转型与消费趋势";;
+              manufacturing) TOPIC="智能制造技术升级与产业变革";;
+              *) TOPIC="行业技术发展趋势分析";;
             esac
-            
             echo "使用预设主题 [$INDUSTRY]: $TOPIC"
           fi
-          
-          # 生成安全的文件名
-          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-          TOPIC_SLUG=$(echo "$TOPIC" | tr ' ' '-' | tr '[:upper:]' '[:lower:]' | tr -cd '[:alnum:]-')
-          FILENAME="${TOPIC_SLUG}-${TIMESTAMP}"
-          
+
+          FORCE_TS="${{ github.event.inputs.force_timestamp }}"
+          if [ -n "$FORCE_TS" ]; then
+            TIMESTAMP="$FORCE_TS"
+          else
+            # 统一用北京时间生成时间戳，便于对齐“8点/10点”这种承诺
+            TIMESTAMP=$(TZ=Asia/Shanghai date +%Y%m%d-%H%M%S)
+          fi
+
+          # 文件名只用英文，避免中文 slug 为空导致路径异常
+          FILENAME="${INDUSTRY}-${TIMESTAMP}"
+
+          echo "industry=$INDUSTRY" >> $GITHUB_OUTPUT
           echo "topic=$TOPIC" >> $GITHUB_OUTPUT
           echo "filename=$FILENAME" >> $GITHUB_OUTPUT
           echo "timestamp=$TIMESTAMP" >> $GITHUB_OUTPUT
@@ -124,6 +121,7 @@ jobs:
           echo "📝 生成文章..."
           
           TOPIC="${{ steps.topic.outputs.topic }}"
+          INDUSTRY="${{ steps.topic.outputs.industry }}"
           FILENAME="${{ steps.topic.outputs.filename }}"
           TIMESTAMP="${{ steps.topic.outputs.timestamp }}"
           
@@ -132,11 +130,20 @@ jobs:
           
           mkdir -p content/posts
           
-          # 生成文章模板
-          cat > "${ORIGINAL_FILE}" << 'EOF'
-          # $TOPIC
-          
-          *分析时间：$(date '+%Y年%m月%d日 %H:%M') | 数据驱动分析 | 作者：AI智汇观察系统*
+          # 生成文章模板（包含 Hugo front matter，确保能被站点识别并展示）
+          NOW_CN=$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S %z')
+          cat > "${ORIGINAL_FILE}" <<EOF
+---
+title: "${TOPIC}"
+date: ${NOW_CN}
+draft: false
+categories: ["${INDUSTRY}"]
+tags: ["${INDUSTRY}", "auto"]
+---
+
+# ${TOPIC}
+
+*分析时间：$(TZ=Asia/Shanghai date '+%Y年%m月%d日 %H:%M') | 数据驱动分析 | 作者：AI智汇观察系统*
           
           ---
           
@@ -219,7 +226,7 @@ jobs:
           **数据更新**：基于最新可用数据
           
           **原文链接**：${BLOG_URL}/posts/${FILENAME}/
-          EOF
+EOF
           
           echo "✅ 原始文章已生成: ${ORIGINAL_FILE}"
           echo "original_file=${ORIGINAL_FILE}" >> $GITHUB_OUTPUT

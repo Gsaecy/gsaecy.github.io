@@ -411,11 +411,8 @@ jobs:
           echo "" >> deployment-report.md
           
           echo "## ⏰ 下次发布时间" >> deployment-report.md
-          echo "系统将在以下时间自动发布新文章：" >> deployment-report.md
-          echo "- 08:00 (北京时间)" >> deployment-report.md
+          echo "系统将在以下时间自动发布【行业热点】：" >> deployment-report.md
           echo "- 12:00 (北京时间)" >> deployment-report.md
-          echo "- 18:00 (北京时间)" >> deployment-report.md
-          echo "- 21:00 (北京时间)" >> deployment-report.md
           echo "" >> deployment-report.md
           
           echo "## 🔧 手动触发" >> deployment-report.md

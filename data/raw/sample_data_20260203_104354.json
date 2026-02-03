@@ -1,0 +1,26 @@
+[
+  {
+    "title": "人工智能在医疗诊断中的应用取得突破",
+    "content": "最新研究表明，AI算法在医学影像诊断方面的准确率已达到95%，超过人类专家水平。",
+    "source": "科技新闻",
+    "category": "科技",
+    "timestamp": "2026-02-03T10:43:54.430843",
+    "url": "https://example.com/ai-medical-breakthrough"
+  },
+  {
+    "title": "金融科技推动普惠金融发展",
+    "content": "随着移动支付和数字银行的普及，金融服务覆盖范围显著扩大，特别是在农村地区。",
+    "source": "金融资讯",
+    "category": "金融",
+    "timestamp": "2026-02-03T10:43:54.430849",
+    "url": "https://example.com/fintech-inclusion"
+  },
+  {
+    "title": "在线教育平台用户数量激增",
+    "content": "疫情期间，在线教育平台用户增长超过300%，数字化学习成为新常态。",
+    "source": "教育动态",
+    "category": "教育",
+    "timestamp": "2026-02-03T10:43:54.430850",
+    "url": "https://example.com/online-education-growth"
+  }
+]

@@ -14,6 +14,10 @@ class WeChatFormatter:
         """初始化格式化器"""
         with open(rules_file, 'r', encoding='utf-8') as f:
             self.rules = yaml.safe_load(f)
+
+        # 兼容 wechat-style-rules.yml 的结构：顶层包含 rules
+        if isinstance(self.rules, dict) and "rules" in self.rules and isinstance(self.rules["rules"], dict):
+            self.rules = self.rules["rules"]
         
         # 编译正则表达式
         self.patterns = {

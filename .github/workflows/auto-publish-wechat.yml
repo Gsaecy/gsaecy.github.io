@@ -247,6 +247,7 @@ jobs:
             -d "{\"msg_type\":\"text\",\"content\":{\"text\":\"【博客自动发布失败】${TS}\\n${RUN_URL}\\n请查看失败步骤并重试。\"}}" || true
       
       - name: Format for WeChat
+        id: wechat
         run: |
           echo "转换为微信公众号格式..."
           ORIGINAL_FILE="${{ steps.generate.outputs.original_file }}"
@@ -256,7 +257,7 @@ jobs:
             exit 1
           fi
 
-          # 使用仓库内的排版脚本，避免 sed 的 Unicode/emoji 范围兼容性问题
+          # 生成公众号排版文件（注意：不要让它参与 Hugo 构建，否则会导致博客出现重复文章）
           python3 format-wechat.py "$ORIGINAL_FILE"
 
           WECHAT_FILE="${ORIGINAL_FILE%.md}-wechat.md"
@@ -265,7 +266,13 @@ jobs:
             exit 1
           fi
 
-          echo "微信公众号格式已生成: $WECHAT_FILE"
+          # 将公众号文件移出 content/posts，避免 Hugo 生成第二个同 slug 页面
+          mkdir -p logs/wechat
+          MOVED="logs/wechat/$(basename "$WECHAT_FILE")"
+          mv "$WECHAT_FILE" "$MOVED"
+
+          echo "微信公众号格式已生成(不发布到博客): $MOVED"
+          echo "wechat_file=$MOVED" >> $GITHUB_OUTPUT
       
       - name: Build Hugo site
         run: |
@@ -293,7 +300,7 @@ jobs:
           echo "- 文章主题: ${{ steps.topic.outputs.topic }}" >> deployment-report.md
           echo "- 生成时间: ${{ steps.topic.outputs.timestamp }}" >> deployment-report.md
           echo "- 原始文章: ${{ steps.generate.outputs.original_file }}" >> deployment-report.md
-          echo "- 微信公众号格式: ${{ steps.generate.outputs.wechat_file }}" >> deployment-report.md
+          echo "- 微信公众号格式: ${{ steps.wechat.outputs.wechat_file }}" >> deployment-report.md
           echo "" >> deployment-report.md
           
           echo "## 🌐 访问链接" >> deployment-report.md
@@ -305,10 +312,7 @@ jobs:
           echo "## ⏰ 下次发布时间" >> deployment-report.md
           echo "系统将在以下时间自动发布新文章：" >> deployment-report.md
           echo "- 08:00 (北京时间)" >> deployment-report.md
-          echo "- 10:00 (北京时间)" >> deployment-report.md
-          echo "- 12:00 (北京时间)" >> deployment-report.md
           echo "- 18:00 (北京时间)" >> deployment-report.md
-          echo "- 21:00 (北京时间)" >> deployment-report.md
           echo "" >> deployment-report.md
           
           echo "## 🔧 手动触发" >> deployment-report.md

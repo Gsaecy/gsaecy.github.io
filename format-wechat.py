@@ -23,7 +23,8 @@ class WeChatFormatter:
         self.patterns = {
             'emoji': re.compile(r'[\U0001F600-\U0001F64F\U0001F300-\U0001F5FF\U0001F680-\U0001F6FF\U0001F1E0-\U0001F1FF]'),
             'markdown_headers': re.compile(r'^(#{1,6})\s+(.*)$', re.MULTILINE),
-            'markdown_links': re.compile(r'\[([^\]]+)\]\(([^)]+)\)'),
+            # 注意：不要把图片语法 ![alt](url) 当成普通链接转换，否则会破坏图片显示
+            'markdown_links': re.compile(r'(?<!!)\[([^\]]+)\]\(([^)]+)\)'),
             'markdown_bold': re.compile(r'\*\*(.*?)\*\*'),
             'markdown_italic': re.compile(r'\*(.*?)\*'),
             'code_blocks': re.compile(r'```[\s\S]*?```'),

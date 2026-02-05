@@ -82,6 +82,13 @@ html[data-scheme="dark"] body {
     rgba(246, 240, 225, 0.55);
   border: 1px solid rgba(18,14,10,0.10);
 }
+
+/* Left sidebar: remove frame/border to feel like open desk */
+.sidebar.left-sidebar {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
 html[data-scheme="dark"] #main-menu {
   background: rgba(22, 18, 14, 0.60);
   border-color: rgba(255, 200, 120, 0.10);
@@ -468,9 +475,10 @@ html[data-scheme="dark"] .np-back-pin {
 /* Lamp toggle (image-based, matches reference) */
 .np-lamp {
   position: relative;
-  width: 92px;
-  height: 96px;
-  margin: 10px auto;
+  /* 3x bigger */
+  width: 276px;
+  height: 288px;
+  margin: 12px auto 6px;
   cursor: pointer;
   user-select: none;
 }
@@ -479,58 +487,25 @@ html[data-scheme="dark"] .np-back-pin {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 92px;
-  height: 96px;
+  width: 276px;
+  height: 288px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  filter: drop-shadow(0 12px 18px rgba(0,0,0,0.16));
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,0.16));
   background-image: url('/img/lamp/lamp-day.png');
 }
 html[data-scheme="dark"] .np-lamp__img {
   background-image: url('/img/lamp/lamp-night.png');
-  filter: drop-shadow(0 16px 22px rgba(0,0,0,0.42));
-}
-
-.np-lamp__cord {
-  position: absolute;
-  right: 8px;
-  top: 16px;
-  width: 16px;
-  height: 64px;
-}
-.np-lamp__cord-line {
-  position: absolute;
-  left: 6px;
-  top: 0;
-  width: 2px;
-  height: 40px;
-  background: rgba(18,14,10,0.52);
-}
-.np-lamp__cord-knob {
-  position: absolute;
-  left: 1px;
-  bottom: 0;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(18,14,10,0.62);
-  box-shadow: 0 2px 0 rgba(0,0,0,0.18);
-}
-html[data-scheme="dark"] .np-lamp__cord-line { background: rgba(255, 220, 170, 0.35); }
-html[data-scheme="dark"] .np-lamp__cord-knob { background: rgba(255, 220, 170, 0.40); }
-
-html.np-cord-pull .np-lamp__cord {
-  transform: translateY(4px);
-  transition: transform 160ms ease;
+  filter: drop-shadow(0 22px 32px rgba(0,0,0,0.45));
 }
 
 .np-lamp__glow {
   position: absolute;
-  left: -18px;
-  top: -18px;
-  width: 130px;
-  height: 130px;
+  left: -60px;
+  top: -60px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
@@ -541,15 +516,15 @@ html.np-cord-pull .np-lamp__cord {
 /* night: glow up + subtle desk spill */
 html.np-lamp-on .np-lamp__glow {
   opacity: 1;
-  filter: blur(0.8px);
+  filter: blur(1px);
 }
 html.np-lamp-on .np-lamp__glow::after {
   content: "";
   position: absolute;
-  left: 18px;
-  top: 70px;
-  width: 94px;
-  height: 48px;
-  background: radial-gradient(ellipse at 50% 50%, rgba(255,170,85,0.22), rgba(255,170,85,0.0) 70%);
+  left: 90px;
+  top: 235px;
+  width: 220px;
+  height: 110px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,170,85,0.20), rgba(255,170,85,0.0) 70%);
   transform: rotate(6deg);
 }

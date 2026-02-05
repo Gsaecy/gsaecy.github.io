@@ -93,10 +93,6 @@
     holder.innerHTML = `
       <div class="np-lamp" role="button" tabindex="0" aria-label="切换明暗模式">
         <div class="np-lamp__img" aria-hidden="true"></div>
-        <div class="np-lamp__cord" aria-hidden="true">
-          <span class="np-lamp__cord-line"></span>
-          <span class="np-lamp__cord-knob"></span>
-        </div>
         <div class="np-lamp__glow" aria-hidden="true"></div>
       </div>
     `;
@@ -105,8 +101,6 @@
     const toggle = () => {
       const cur = currentScheme();
       const next = cur === 'dark' ? 'light' : 'dark';
-      document.documentElement.classList.add('np-cord-pull');
-      setTimeout(() => document.documentElement.classList.remove('np-cord-pull'), 260);
       setColorScheme(next);
       // Let Stack's own scripts re-init cleanly
       setTimeout(() => window.location.reload(), 120);

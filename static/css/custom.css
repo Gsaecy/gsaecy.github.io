@@ -99,6 +99,32 @@ html[data-scheme="dark"] body {
   width: 0;
   height: 0;
 }
+
+/* Pin avatar + site title/description to viewport so scrolling doesn't move them */
+.sidebar.left-sidebar > header {
+  position: fixed;
+  left: 22px;
+  top: 18px;
+  z-index: 9998;
+  width: 260px;
+  pointer-events: auto;
+}
+/* Keep menu from going under the fixed header */
+.sidebar.left-sidebar {
+  padding-top: 170px;
+}
+@media (max-width: 768px) {
+  .sidebar.left-sidebar > header {
+    left: 14px;
+    top: 12px;
+    width: 220px;
+    transform: scale(0.92);
+    transform-origin: left top;
+  }
+  .sidebar.left-sidebar {
+    padding-top: 150px;
+  }
+}
 html[data-scheme="dark"] #main-menu {
   background: transparent;
   border-color: transparent;
@@ -451,7 +477,7 @@ body.article-page .article-title {
 /* Avatar ring: thinner */
 .site-avatar img,
 .site-avatar .site-logo {
-  border: 2px solid rgba(255,255,255,0.35) !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
   box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 html[data-scheme="dark"] .site-avatar img,

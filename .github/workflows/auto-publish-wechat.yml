@@ -81,20 +81,16 @@ jobs:
 
           # schedule 触发时 github.event.inputs 为空，这里兜底
           INDUSTRY="${{ github.event.inputs.industry }}"
+
+          # ✅ 自动轮换行业（每天 2 篇，直到所有行业都至少发布 1 次才进入下一轮）
+          # 轮换状态写入 data/rotation_state.json，并在后续步骤随文章一起 commit 回 main
+          # - 若手动指定 industry，则完全尊重用户输入（不参与轮换）
           if [ -z "$INDUSTRY" ]; then
-            # 根据北京时间选择行业：早上偏科技，晚上偏金融/产业
-            HOUR=$(TZ=Asia/Shanghai date +%H)
-            DAY=$(TZ=Asia/Shanghai date +%d)
-            if [ "$HOUR" -lt 12 ]; then
-              INDUSTRY="technology"
-            else
-              # 晚上在 finance/automotive 之间轮换
-              if [ $((10#$DAY % 2)) -eq 0 ]; then
-                INDUSTRY="finance"
-              else
-                INDUSTRY="automotive"
-              fi
-            fi
+            CN_HOUR=$(TZ=Asia/Shanghai date +%H)
+            CN_WDAY=$(TZ=Asia/Shanghai date +%u)  # 1(Mon)-7(Sun)
+            CN_DATE=$(TZ=Asia/Shanghai date +%F)
+
+            INDUSTRY=$(python3 -c "import json; from pathlib import Path; industries=['technology','finance','healthcare','education','automotive','retail','manufacturing']; sp=Path('data/rotation_state.json'); sp.parent.mkdir(parents=True, exist_ok=True); state=json.loads(sp.read_text(encoding='utf-8')) if sp.exists() else {}; counts={k:int(state.get('counts',{}).get(k,0)) for k in industries}; minc=min(counts.values()) if counts else 0; cands=[k for k in industries if counts.get(k,0)==minc]; hour=int('$CN_HOUR'); wday=int('$CN_WDAY'); is_weekend=(wday>=6); scores={k:0 for k in cands}; [ scores.__setitem__(k, scores[k] + (3 if ((not is_weekend and k in ('technology','finance','manufacturing')) or (is_weekend and k in ('retail','automotive','healthcare'))) else 0) + (1 if ((not is_weekend and k in ('education','healthcare')) or (is_weekend and k in ('technology','finance'))) else 0) + (2 if ((hour<12 and k in ('technology','education','manufacturing')) or (hour>=12 and k in ('finance','automotive','retail','healthcare'))) else 0)) for k in cands ]; pick=sorted(cands, key=lambda x: (-scores.get(x,0), industries.index(x)))[0]; counts[pick]=counts.get(pick,0)+1; state['counts']=counts; state['last']={'industry':pick,'date':'$CN_DATE','hour':hour}; sp.write_text(json.dumps(state, ensure_ascii=False, indent=2)+'\\n', encoding='utf-8'); print(pick)")
           fi
 
           # 如果手动指定了主题
@@ -282,7 +278,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # 新文章 + 静态资源 + 数据（用于审计/回溯，可按需删减）
-          git add content/posts static/images data/raw logs/wechat || true
+          git add content/posts static/images data/raw logs/wechat data/rotation_state.json || true
 
           if git diff --cached --quiet; then
             echo "没有需要提交的变更（可能是重复时间戳/无新增资源）"

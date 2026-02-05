@@ -94,13 +94,15 @@ html[data-scheme="dark"] body {
     width: 320px !important;
     flex: 0 0 320px !important;
   }
-  /* List pages: hide right sidebar (search/tags) to give main more room */
-  body:not(.article-page) .sidebar.right-sidebar {
-    display: none !important;
+  /* List pages: keep right sidebar but make it compact and useful */
+  .sidebar.right-sidebar {
+    width: 260px !important;
+    flex: 0 0 260px !important;
   }
-  body:not(.article-page) .main {
+  .main {
     max-width: none;
     flex: 1 1 auto;
+    min-width: 520px;
   }
 }
 .sidebar.left-sidebar.sticky {
@@ -134,12 +136,21 @@ html[data-scheme="dark"] body {
 .sidebar.left-sidebar .site-description {
   text-align: left;
 }
+.sidebar.left-sidebar .site-name {
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+.sidebar.left-sidebar .site-description {
+  line-height: 1.2;
+  font-size: 0.95em;
+  max-width: 300px;
+}
 
 /* Pin main menu to viewport as well */
 #main-menu {
   position: fixed;
   left: 22px;
-  top: 190px;
+  top: 242px; /* below header (avoid overlap when description wraps) */
   z-index: 9997;
   width: 300px;
 }
@@ -161,7 +172,7 @@ html[data-scheme="dark"] body {
 
   #main-menu {
     left: 14px;
-    top: 170px;
+    top: 190px;
     width: 220px;
     transform: scale(0.95);
     transform-origin: left top;
@@ -193,6 +204,31 @@ html[data-scheme="dark"] #main-menu {
 .sidebar.left-sidebar {
   padding-bottom: 320px;
 }
+
+/* Right sidebar (tags) as neat chips */
+.sidebar.right-sidebar .widget {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+.sidebar.right-sidebar .tagCloud-tags a,
+.sidebar.right-sidebar a[href^="/tags/"] {
+  display: inline-block;
+  margin: 6px 6px 0 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid rgba(18,14,10,0.14);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.18)),
+    rgba(246, 240, 225, 0.55);
+}
+html[data-scheme="dark"] .sidebar.right-sidebar .tagCloud-tags a,
+html[data-scheme="dark"] .sidebar.right-sidebar a[href^="/tags/"] {
+  border-color: rgba(255, 200, 120, 0.14);
+  background: rgba(22, 18, 14, 0.60);
+}
+
 @media (max-width: 768px) {
   .np-lamp {
     left: 14px;

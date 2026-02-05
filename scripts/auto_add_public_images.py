@@ -85,7 +85,11 @@ def extract_queries(md_text: str) -> List[str]:
 
 
 def already_has_public_images(md_text: str) -> bool:
-    return "/images/posts/" in md_text and "图片来源" in md_text
+    # Treat either Wikimedia-inserted images or default cover as “has image”.
+    return (
+        ("/images/posts/" in md_text and "图片来源" in md_text)
+        or ("/images/default-cover." in md_text)
+    )
 
 
 def insert_after_intro(lines: List[str], block: List[str]) -> List[str]:
@@ -159,7 +163,26 @@ def main() -> None:
                 break
 
     if not picked:
-        print("No suitable Wikimedia image found")
+        # Fallback: insert a default cover image (user-provided) so every post has a visual.
+        default_cover = root / "static" / "images" / "default-cover.png"
+        if default_cover.exists():
+            rel_url = "/images/default-cover.png"
+            alt = "封面图"
+            source_line = "图片来源：自制封面图（AI智汇观察）"
+
+            lines = txt.splitlines()
+            fig_no = 1
+            m = re.findall(r"图(\d+)：", txt)
+            if m:
+                fig_no = max(int(x) for x in m) + 1
+
+            block = build_block(rel_url, alt, fig_no, source_line)
+            lines2 = insert_after_intro(lines, block)
+            md_path.write_text("\n".join(lines2) + "\n", encoding="utf-8")
+            print(f"Inserted default cover image into {md_path}")
+            return
+
+        print("No suitable Wikimedia image found and no default cover present")
         return
 
     # Build insertion

@@ -54,6 +54,89 @@
     content.appendChild(wrap);
   }
 
+  function setColorScheme(next) {
+    // Stack theme uses localStorage key: StackColorScheme (auto|dark|light)
+    try {
+      localStorage.setItem('StackColorScheme', next);
+    } catch (_) {}
+    // Apply immediately (basic)
+    if (next === 'dark') {
+      document.documentElement.dataset.scheme = 'dark';
+      document.documentElement.classList.add('np-lamp-on');
+    } else if (next === 'light') {
+      document.documentElement.dataset.scheme = 'light';
+      document.documentElement.classList.remove('np-lamp-on');
+    } else {
+      // auto
+      document.documentElement.dataset.scheme = '';
+      document.documentElement.classList.remove('np-lamp-on');
+    }
+  }
+
+  function currentScheme() {
+    const d = document.documentElement && document.documentElement.dataset && document.documentElement.dataset.scheme;
+    if (d === 'dark' || d === 'light') return d;
+    // fallback to localStorage
+    try {
+      const v = localStorage.getItem('StackColorScheme');
+      if (v === 'dark' || v === 'light') return v;
+    } catch (_) {}
+    // fallback to prefers
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function installLampToggle() {
+    const holder = document.querySelector('#dark-mode-toggle');
+    if (!holder) return;
+
+    // Replace existing toggle UI with a vintage desk lamp + pull cord
+    holder.innerHTML = `
+      <div class="np-lamp" role="button" tabindex="0" aria-label="切换明暗模式">
+        <div class="np-lamp__shade"></div>
+        <div class="np-lamp__stem"></div>
+        <div class="np-lamp__base"></div>
+        <div class="np-lamp__cord" aria-hidden="true"><span class="np-lamp__cord-line"></span><span class="np-lamp__cord-knob"></span></div>
+        <div class="np-lamp__glow" aria-hidden="true"></div>
+      </div>
+    `;
+
+    const lamp = holder.querySelector('.np-lamp');
+    const toggle = () => {
+      const cur = currentScheme();
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.classList.add('np-cord-pull');
+      setTimeout(() => document.documentElement.classList.remove('np-cord-pull'), 260);
+      setColorScheme(next);
+      // Let Stack's own scripts re-init cleanly
+      setTimeout(() => window.location.reload(), 120);
+    };
+
+    lamp.addEventListener('click', toggle);
+    lamp.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle();
+      }
+    });
+
+    // set initial lamp state
+    if (currentScheme() === 'dark') document.documentElement.classList.add('np-lamp-on');
+  }
+
+  function addBackPin() {
+    if (!isArticlePage()) return;
+    if (document.querySelector('[data-np-back="1"]')) return;
+
+    const a = document.createElement('a');
+    a.href = '/posts/';
+    a.className = 'np-back-pin';
+    a.setAttribute('data-np-back', '1');
+    a.setAttribute('aria-label', '返回桌面');
+    a.title = '返回桌面';
+    a.innerHTML = '<span class="np-back-pin__head"></span><span class="np-back-pin__label">返回</span>';
+    document.body.appendChild(a);
+  }
+
   function wireCardOpenTransition() {
     const cards = document.querySelectorAll(
       'section.article-list--compact article > a, section.article-list--tile article > a'
@@ -83,12 +166,16 @@
   }
 
   onReady(() => {
+    // Sidebar lamp toggle exists on most pages
+    installLampToggle();
+
     if (isListPage()) {
       wireCardOpenTransition();
     }
     if (isArticlePage()) {
       addEnterAnimation();
       addPromoSlogan();
+      addBackPin();
     }
   });
 })();

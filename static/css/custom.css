@@ -451,6 +451,36 @@ body.article-page .main-article {
     0 10px 22px var(--np-shadow);
 }
 
+/* Dark mode: make article paper dark so white text is readable */
+html[data-scheme="dark"] body.article-page .main-article {
+  background:
+    linear-gradient(180deg, rgba(255, 220, 160, 0.06), rgba(0,0,0,0.22)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 220, 160, 0.00) 0px,
+      rgba(255, 220, 160, 0.00) 18px,
+      rgba(255, 220, 160, 0.03) 20px,
+      rgba(255, 220, 160, 0.00) 38px
+    ),
+    radial-gradient(circle at 18px 18px, rgba(255, 220, 160, 0.03) 1px, transparent 0),
+    rgba(18, 15, 12, 0.92);
+  border-color: rgba(255, 200, 120, 0.12);
+}
+
+html[data-scheme="dark"] .article-content,
+html[data-scheme="dark"] .article-content p,
+html[data-scheme="dark"] .article-content li {
+  color: rgba(245, 240, 225, 0.92);
+}
+html[data-scheme="dark"] .article-content h1,
+html[data-scheme="dark"] .article-content h2,
+html[data-scheme="dark"] .article-content h3 {
+  color: rgba(255, 245, 225, 0.94);
+}
+html[data-scheme="dark"] .article-content h2 {
+  border-top-color: rgba(255, 200, 120, 0.18);
+}
+
 /* Enter animation (unfold) */
 html.np-enter body.article-page .main-article {
   transform: translateY(10px) scale(0.985);

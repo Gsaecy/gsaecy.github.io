@@ -274,6 +274,23 @@ jobs:
           echo "微信公众号格式已生成(不发布到博客): $MOVED"
           echo "wechat_file=$MOVED" >> $GITHUB_OUTPUT
       
+      - name: Commit generated post & assets (persist history)
+        run: |
+          echo "📝 将新文章与图片写回 main 分支，保证历史文章不会被覆盖..."
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 新文章 + 静态资源 + 数据（用于审计/回溯，可按需删减）
+          git add content/posts static/images data/raw logs/wechat || true
+
+          if git diff --cached --quiet; then
+            echo "没有需要提交的变更（可能是重复时间戳/无新增资源）"
+          else
+            git commit -m "📝 保存新文章源文件与资源: ${{ steps.topic.outputs.filename }}"
+            git push origin HEAD:main
+          fi
+
       - name: Build Hugo site
         run: |
           echo "🏗️ 构建Hugo网站..."
@@ -285,7 +302,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
-          force_orphan: true
+          # 不强制 orphan，保留 pages 分支提交历史（可选，但有助排查）
+          force_orphan: false
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: '🚀 自动发布文章: ${{ steps.topic.outputs.topic }} [$(date +%Y%m%d-%H%M%S)]'

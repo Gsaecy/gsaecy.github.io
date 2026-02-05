@@ -92,10 +92,11 @@
     // Replace existing toggle UI with a vintage desk lamp + pull cord
     holder.innerHTML = `
       <div class="np-lamp" role="button" tabindex="0" aria-label="切换明暗模式">
-        <div class="np-lamp__shade"></div>
-        <div class="np-lamp__stem"></div>
-        <div class="np-lamp__base"></div>
-        <div class="np-lamp__cord" aria-hidden="true"><span class="np-lamp__cord-line"></span><span class="np-lamp__cord-knob"></span></div>
+        <div class="np-lamp__img" aria-hidden="true"></div>
+        <div class="np-lamp__cord" aria-hidden="true">
+          <span class="np-lamp__cord-line"></span>
+          <span class="np-lamp__cord-knob"></span>
+        </div>
         <div class="np-lamp__glow" aria-hidden="true"></div>
       </div>
     `;

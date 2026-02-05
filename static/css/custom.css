@@ -87,6 +87,22 @@ html[data-scheme="dark"] body {
   box-shadow: none !important;
   background: transparent !important;
 }
+
+/* Desktop layout tuning: wider left rail, less empty right */
+@media (min-width: 1024px) {
+  .sidebar.left-sidebar {
+    width: 320px !important;
+    flex: 0 0 320px !important;
+  }
+  /* List pages: hide right sidebar (search/tags) to give main more room */
+  body:not(.article-page) .sidebar.right-sidebar {
+    display: none !important;
+  }
+  body:not(.article-page) .main {
+    max-width: none;
+    flex: 1 1 auto;
+  }
+}
 .sidebar.left-sidebar.sticky {
   max-height: none !important;
   height: auto !important;
@@ -106,7 +122,7 @@ html[data-scheme="dark"] body {
   left: 22px;
   top: 18px;
   z-index: 9998;
-  width: 260px;
+  width: 300px;
   pointer-events: auto;
 }
 
@@ -125,7 +141,7 @@ html[data-scheme="dark"] body {
   left: 22px;
   top: 190px;
   z-index: 9997;
-  width: 260px;
+  width: 300px;
 }
 
 /* Leave room for fixed header/menu/lamp so content won't be hidden */

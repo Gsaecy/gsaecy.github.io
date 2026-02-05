@@ -4,27 +4,44 @@
 */
 
 :root {
-  --np-tablecloth: #f7f3ec;
-  --np-tablecloth-2: rgba(120, 105, 90, 0.06);
-  --np-ink: rgba(20, 18, 16, 0.92);
-  --np-paper: #fbf7ef;
-  --np-paper-2: rgba(120, 105, 90, 0.08);
-  --np-border: rgba(20, 18, 16, 0.10);
-  --np-shadow: rgba(0, 0, 0, 0.10);
-  --np-shadow-soft: rgba(0, 0, 0, 0.06);
+  /* B方案：复古旧报纸（更暖、更旧、更有纤维纸纹，但仍保持浅色不刺眼） */
+  --np-tablecloth: #f3eee4;
+  --np-tablecloth-2: rgba(106, 86, 66, 0.07);
+
+  --np-ink: rgba(18, 14, 10, 0.92);
+
+  /* Old newspaper paper tone */
+  --np-paper: #f6f0e1;
+  --np-paper-warm: rgba(190, 150, 100, 0.10);
+  --np-paper-fiber: rgba(120, 90, 60, 0.06);
+
+  --np-border: rgba(18, 14, 10, 0.12);
+  --np-shadow: rgba(0, 0, 0, 0.14);
+  --np-shadow-soft: rgba(0, 0, 0, 0.08);
+
   --np-radius: 14px;
   --np-content-max: 980px;
 }
 
-/* 1) Desk/tablecloth background (light, textured, subtle) */
+/* 1) Desk/tablecloth background (vintage, but subtle) */
 body {
   color: var(--np-ink);
   background-color: var(--np-tablecloth);
   background-image:
+    /* tablecloth weave dots */
     radial-gradient(circle at 1px 1px, var(--np-tablecloth-2) 1px, transparent 0),
-    radial-gradient(circle at 7px 7px, rgba(120, 105, 90, 0.035) 1px, transparent 0),
-    linear-gradient(0deg, rgba(255,255,255,0.32), rgba(255,255,255,0.32));
-  background-size: 12px 12px, 18px 18px, 100% 100%;
+    radial-gradient(circle at 7px 7px, rgba(106, 86, 66, 0.04) 1px, transparent 0),
+    /* very subtle diagonal fabric grain */
+    repeating-linear-gradient(
+      135deg,
+      rgba(106, 86, 66, 0.028) 0px,
+      rgba(106, 86, 66, 0.028) 1px,
+      rgba(255, 255, 255, 0) 9px,
+      rgba(255, 255, 255, 0) 18px
+    ),
+    /* lift brightness */
+    linear-gradient(0deg, rgba(255,255,255,0.34), rgba(255,255,255,0.34));
+  background-size: 12px 12px, 18px 18px, 22px 22px, 100% 100%;
   background-attachment: fixed;
 
   /* Newspaper-ish system serif first */
@@ -52,13 +69,20 @@ section.article-list--compact article > a {
   padding: 18px 18px;
   border-radius: var(--np-radius);
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.48)),
-    linear-gradient(135deg, rgba(20,18,16,0.05) 0%, rgba(20,18,16,0.0) 46%, rgba(20,18,16,0.03) 100%),
+    /* warm aged paper */
+    linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.25)),
+    linear-gradient(180deg, var(--np-paper-warm), rgba(255,255,255,0)),
+    /* fiber dots */
+    radial-gradient(circle at 2px 2px, var(--np-paper-fiber) 1px, transparent 0),
+    radial-gradient(circle at 10px 14px, rgba(120, 90, 60, 0.04) 1px, transparent 0),
+    /* subtle uneven inking */
+    linear-gradient(135deg, rgba(18,14,10,0.06) 0%, rgba(18,14,10,0.00) 52%, rgba(18,14,10,0.04) 100%),
     var(--np-paper);
+  background-size: 100% 100%, 100% 100%, 12px 12px, 18px 18px, 100% 100%, 100% 100%;
   border: 1px solid var(--np-border);
   box-shadow:
-    0 18px 40px var(--np-shadow-soft),
-    0 4px 12px var(--np-shadow);
+    0 22px 60px var(--np-shadow-soft),
+    0 6px 16px var(--np-shadow);
   transform: rotate(-0.2deg);
   transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
 }
@@ -81,14 +105,15 @@ section.article-list--compact article > a::after {
   border-radius: calc(var(--np-radius) - 6px);
   pointer-events: none;
   background:
+    /* stronger fold crease for vintage newspaper */
     linear-gradient(90deg,
-      rgba(20,18,16,0.00) 0%,
-      rgba(20,18,16,0.03) 48%,
-      rgba(20,18,16,0.08) 50%,
-      rgba(255,255,255,0.18) 52%,
-      rgba(20,18,16,0.02) 55%,
-      rgba(20,18,16,0.00) 100%);
-  opacity: 0.55;
+      rgba(18,14,10,0.00) 0%,
+      rgba(18,14,10,0.04) 46%,
+      rgba(18,14,10,0.12) 50%,
+      rgba(255,255,255,0.20) 53%,
+      rgba(18,14,10,0.03) 57%,
+      rgba(18,14,10,0.00) 100%);
+  opacity: 0.70;
   mix-blend-mode: multiply;
 }
 
@@ -120,15 +145,27 @@ html.np-navigate section.article-list--compact article:not(.np-opening) > a {
 /* 3) Article page as “unfolded newspaper” */
 body.article-page .main-article {
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.74), rgba(255,255,255,0.52)),
-    radial-gradient(circle at 18px 18px, rgba(20,18,16,0.035) 1px, transparent 0),
+    /* aged paper + slightly uneven tone */
+    linear-gradient(180deg, rgba(255,255,255,0.50), rgba(255,255,255,0.18)),
+    linear-gradient(180deg, var(--np-paper-warm), rgba(255,255,255,0)),
+    /* paper fibers */
+    radial-gradient(circle at 18px 18px, rgba(120, 90, 60, 0.055) 1px, transparent 0),
+    radial-gradient(circle at 6px 10px, rgba(120, 90, 60, 0.035) 1px, transparent 0),
+    /* faint vertical print banding */
+    repeating-linear-gradient(
+      90deg,
+      rgba(18,14,10,0.00) 0px,
+      rgba(18,14,10,0.00) 18px,
+      rgba(18,14,10,0.018) 20px,
+      rgba(18,14,10,0.00) 38px
+    ),
     var(--np-paper);
-  background-size: 100% 100%, 14px 14px, 100% 100%;
+  background-size: 100% 100%, 100% 100%, 14px 14px, 22px 22px, 40px 40px, 100% 100%;
   border: 1px solid var(--np-border);
   border-radius: var(--np-radius);
   box-shadow:
-    0 26px 80px var(--np-shadow-soft),
-    0 8px 18px var(--np-shadow);
+    0 30px 90px var(--np-shadow-soft),
+    0 10px 22px var(--np-shadow);
 }
 
 /* Enter animation (unfold) */
@@ -146,6 +183,8 @@ html.np-enter-active body.article-page .main-article {
 .article-content {
   font-size: 1.03rem;
   line-height: 1.86;
+  /* slightly more like printed ink */
+  filter: contrast(1.02);
 }
 
 .article-content p {

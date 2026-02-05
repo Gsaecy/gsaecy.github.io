@@ -81,11 +81,23 @@ html[data-scheme="dark"] body {
   box-shadow: none;
 }
 
-/* Left sidebar: remove frame/border to feel like open desk */
+/* Left sidebar: remove frame/border + disable internal scrollbars */
 .sidebar.left-sidebar {
   border: none !important;
   box-shadow: none !important;
   background: transparent !important;
+}
+.sidebar.left-sidebar.sticky {
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+.sidebar.left-sidebar * {
+  scrollbar-width: none;
+}
+.sidebar.left-sidebar *::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 html[data-scheme="dark"] #main-menu {
   background: transparent;
@@ -500,29 +512,21 @@ html[data-scheme="dark"] .np-lamp__img {
 
 .np-lamp__glow {
   position: absolute;
-  left: -60px;
-  top: -60px;
-  width: 400px;
-  height: 400px;
+  left: -18px;
+  top: -22px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
+  /* keep light mostly around lamp */
   background:
-    radial-gradient(circle at 50% 42%, rgba(255,180,95,0.55), rgba(255,180,95,0.0) 62%),
-    radial-gradient(circle at 50% 65%, rgba(255,140,60,0.22), rgba(255,140,60,0.0) 70%);
+    radial-gradient(circle at 50% 45%, rgba(255,180,95,0.50), rgba(255,180,95,0.0) 60%),
+    radial-gradient(circle at 50% 62%, rgba(255,140,60,0.16), rgba(255,140,60,0.0) 72%);
 }
 /* night: glow up + subtle desk spill */
-html.np-lamp-on .np-lamp__glow {
+html.np-lamp-on .np-lamp__glow,
+html[data-scheme="dark"] .np-lamp__glow {
   opacity: 1;
   filter: blur(1px);
-}
-html.np-lamp-on .np-lamp__glow::after {
-  content: "";
-  position: absolute;
-  left: 90px;
-  top: 235px;
-  width: 220px;
-  height: 110px;
-  background: radial-gradient(ellipse at 50% 50%, rgba(255,170,85,0.20), rgba(255,170,85,0.0) 70%);
-  transform: rotate(6deg);
 }

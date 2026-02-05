@@ -1,0 +1,70 @@
+/* Custom polish for hugo-theme-stack
+   Keep changes minimal and theme-agnostic.
+*/
+
+:root {
+  --clawd-content-max: 920px;
+}
+
+body {
+  /* Better Chinese + Latin typography */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+    "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  letter-spacing: 0.2px;
+}
+
+/* Improve readability */
+.article-content {
+  font-size: 1.04rem;
+  line-height: 1.85;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3 {
+  letter-spacing: 0.2px;
+}
+
+/* Make content area a bit wider on desktop */
+@media (min-width: 1200px) {
+  .main-container .main.full-width {
+    max-width: var(--clawd-content-max);
+  }
+}
+
+/* Link styling */
+a {
+  text-underline-offset: 3px;
+}
+
+/* Images: rounded + subtle shadow */
+.article-content img {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Tables */
+.article-content table {
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Code blocks */
+.article-content pre {
+  border-radius: 12px;
+}
+
+/* Sidebar subtitle: slightly smaller */
+.site-description {
+  opacity: 0.9;
+}
+
+/* Slightly cleaner list cards */
+.article-list--tile .article-title a:hover,
+.article-title a:hover {
+  text-decoration: underline;
+}

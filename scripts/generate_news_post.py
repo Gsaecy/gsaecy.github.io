@@ -21,6 +21,7 @@ import argparse
 import json
 import os
 import re
+import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple
@@ -111,10 +112,22 @@ def call_deepseek(prompt: str) -> str:
         "max_tokens": 4000,
     }
 
-    r = requests.post(url, headers=headers, json=payload, timeout=60)
-    r.raise_for_status()
-    data = r.json()
-    return data["choices"][0]["message"]["content"].strip()
+    # Network/API can occasionally timeout on GitHub runners.
+    # Retry a few times with backoff to keep scheduled publishing stable.
+    last_err: Exception | None = None
+    for attempt in range(1, 4):
+        try:
+            r = requests.post(url, headers=headers, json=payload, timeout=180)
+            r.raise_for_status()
+            data = r.json()
+            return data["choices"][0]["message"]["content"].strip()
+        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
+            last_err = e
+            sleep_s = 5 * attempt
+            print(f"⚠️ deepseek request timeout (attempt {attempt}/3), retry in {sleep_s}s: {e}")
+            time.sleep(sleep_s)
+
+    raise RuntimeError(f"DeepSeek request failed after retries: {last_err}")
 
 
 def main() -> None:

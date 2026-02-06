@@ -1,0 +1,8 @@
+{
+  "industry": "foreign_trade",
+  "topic": "中日外贸交易动态与产业机会",
+  "force_timestamp": "20260206-122442",
+  "next_retry_epoch": 1770359149,
+  "reason": "workflow_failed",
+  "run": "https://github.com/Gsaecy/gsaecy.github.io/actions/runs/21738627794"
+}

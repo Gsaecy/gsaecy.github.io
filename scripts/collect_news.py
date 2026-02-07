@@ -120,7 +120,11 @@ def collect(industry: str, hours: int, limit: int, sources_yaml: Path) -> Dict[s
         if not rss:
             continue
         try:
-            parsed = feedparser.parse(rss)
+            # Some feeds block non-browser UAs when fetched by feedparser directly.
+            # Fetch via requests with UA first, then let feedparser parse the content.
+            resp = requests.get(rss, headers={"User-Agent": ua}, timeout=20)
+            resp.raise_for_status()
+            parsed = feedparser.parse(resp.content)
             for e in parsed.entries[: max(limit, 20)]:
                 url = getattr(e, "link", None)
                 if not url:

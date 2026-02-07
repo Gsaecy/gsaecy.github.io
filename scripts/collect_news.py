@@ -145,24 +145,34 @@ def collect(industry: str, hours: int, limit: int, sources_yaml: Path) -> Dict[s
         if key in seen:
             continue
         seen.add(key)
+        # Try to fetch full article text; if blocked/timeout, fall back to RSS summary
+        page_title = title
+        readable = summary
+        cover = None
         try:
             html = fetch_html(url, ua)
             page_title, readable = extract_readable(html, url)
             cover = pick_cover_image(html, url)
-            items.append(
-                NewsItem(
-                    industry=industry,
-                    source=source,
-                    title=page_title or title,
-                    url=url,
-                    published=published_dt.isoformat(),
-                    summary=summary[:4000],
-                    content_text=readable[:16000],
-                    cover_image_url=cover,
-                )
-            )
         except Exception:
+            # Keep RSS-based content so we can still publish instead of producing 0 items
+            pass
+
+        # Skip entries that are completely empty
+        if not norm_space(page_title) and not norm_space(readable):
             continue
+
+        items.append(
+            NewsItem(
+                industry=industry,
+                source=source,
+                title=page_title or title,
+                url=url,
+                published=published_dt.isoformat(),
+                summary=(summary or "")[:4000],
+                content_text=(readable or "")[:16000],
+                cover_image_url=cover,
+            )
+        )
         if len(items) >= limit:
             break
 

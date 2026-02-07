@@ -511,16 +511,16 @@ html.np-enter-active body.article-page .main-article {
 /* 4) Keep WeChat-friendly article typography, but with newspaper feel */
 .article-content {
   /* Larger type for readability, especially in dark mode */
-  font-size: 1.15rem;
-  line-height: 1.92;
+  font-size: 1.28rem;
+  line-height: 1.95;
   /* slightly more like printed ink */
   filter: contrast(1.02);
 }
 
 @media (max-width: 768px) {
   .article-content {
-    font-size: 1.06rem;
-    line-height: 1.88;
+    font-size: 1.14rem;
+    line-height: 1.90;
   }
 }
 

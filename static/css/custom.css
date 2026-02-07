@@ -141,18 +141,26 @@ html[data-scheme="dark"] body {
   margin-bottom: 4px;
 }
 .sidebar.left-sidebar .site-description {
-  line-height: 1.2;
-  font-size: 0.95em;
+  line-height: 1.25;
+  font-size: 0.86em; /* long industry list: shrink to avoid overlap */
   max-width: 300px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* Pin main menu to viewport as well */
 #main-menu {
   position: fixed;
   left: 22px;
-  top: 242px; /* below header (avoid overlap when description wraps) */
+  top: 286px; /* below header (subtitle may wrap to 2-3 lines) */
   z-index: 9997;
   width: 300px;
+}
+
+/* Menu typography: slightly smaller to fit more items without overlap */
+#main-menu li a span {
+  font-size: 0.96em;
+  line-height: 1.25;
 }
 
 /* Leave room for fixed header/menu/lamp so content won't be hidden */

@@ -1,12 +1,8 @@
 name: Feishu Alarm Test
 
 on:
-  workflow_dispatch:
-    inputs:
-      note:
-        description: '测试备注'
-        required: false
-        default: ''
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs:
   alarm-test:
@@ -24,7 +20,7 @@ jobs:
           FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
           FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
           FEISHU_ALERT_CHAT_ID: ${{ secrets.FEISHU_ALERT_CHAT_ID }}
-          NOTE: ${{ inputs.note }}
+          NOTE: "scheduled alarm test"
         run: |
           if [ "${{ steps.fail.outcome }}" != "failure" ]; then
             echo "Not a failure; skip"

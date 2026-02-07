@@ -282,62 +282,24 @@ jobs:
           git commit -m "🧾 记录自动发布失败并排队重试：run ${{ github.run_id }}" || true
           git push origin main || true
 
-      - name: Notify Feishu (optional)
+      - name: Notify Feishu via Flow Webhook (optional)
         if: failure()
         env:
-          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
-          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
-          FEISHU_ALERT_CHAT_ID: ${{ secrets.FEISHU_ALERT_CHAT_ID }}
-          FEISHU_MENTION_OPEN_ID: ${{ secrets.FEISHU_MENTION_OPEN_ID }}
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
         run: |
-          if [ -z "$FEISHU_APP_ID" ] || [ -z "$FEISHU_APP_SECRET" ] || [ -z "$FEISHU_ALERT_CHAT_ID" ]; then
-            echo "未配置飞书应用告警所需 secrets（FEISHU_APP_ID/FEISHU_APP_SECRET/FEISHU_ALERT_CHAT_ID），跳过通知"
+          if [ -z "$FEISHU_WEBHOOK_URL" ]; then
+            echo "未配置 FEISHU_WEBHOOK_URL secret，跳过飞书通知"
             exit 0
           fi
 
-          echo "发送飞书失败提醒（应用机器人）..."
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           TS_CN="$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')"
-
-          # 取 tenant_access_token
-          TOKEN_JSON=$(curl -sS -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal" \
-            -H 'Content-Type: application/json' \
-            -d "{\"app_id\":\"${FEISHU_APP_ID}\",\"app_secret\":\"${FEISHU_APP_SECRET}\"}")
-          TENANT_TOKEN=$(python3 - <<'PY'
-import json,sys
-try:
-  j=json.loads(sys.stdin.read())
-  print(j.get('tenant_access_token',''))
-except Exception:
-  print('')
-PY
-          <<<"$TOKEN_JSON")
-
-          if [ -z "$TENANT_TOKEN" ]; then
-            echo "获取 tenant_access_token 失败：$TOKEN_JSON"
-            exit 0
-          fi
-
           TEXT="【博客自动发布失败】${TS_CN}\n${RUN_URL}\n请查看失败步骤并重试。"
 
-          # 如果提供了 open_id，则在群里 @该用户；否则仅发送文本
-          if [ -n "$FEISHU_MENTION_OPEN_ID" ]; then
-            CONTENT=$(python3 - <<PY
-import json
-open_id="${FEISHU_MENTION_OPEN_ID}"
-text="${TEXT}"
-print(json.dumps({"text": text, "mentions": [{"key": "@user", "id": open_id}]}, ensure_ascii=False))
-PY
-            )
-            MSG="{\"receive_id\":\"${FEISHU_ALERT_CHAT_ID}\",\"msg_type\":\"text\",\"content\":${CONTENT}}"
-          else
-            MSG="{\"receive_id\":\"${FEISHU_ALERT_CHAT_ID}\",\"msg_type\":\"text\",\"content\":{\"text\":\"${TEXT}\"}}"
-          fi
-
-          curl -sS -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type=chat_id" \
+          # 发送给飞书 Flow 触发器，由 Flow 负责转发到警报群（可在 Flow 内配置 @对象）
+          curl -sS -X POST "$FEISHU_WEBHOOK_URL" \
             -H 'Content-Type: application/json' \
-            -H "Authorization: Bearer ${TENANT_TOKEN}" \
-            -d "$MSG" \
+            -d "{\"event\":\"auto_publish_failed\",\"text\":\"${TEXT}\",\"run_url\":\"${RUN_URL}\",\"time_cn\":\"${TS_CN}\"}" \
             || true
       
       - name: Format for WeChat

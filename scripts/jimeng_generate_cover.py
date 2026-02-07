@@ -157,10 +157,12 @@ def get_result(task_id: str, return_url: bool = True) -> Dict[str, Any]:
 
 def build_prompt(title: str, industry: str) -> str:
     # Style: safe, professional, consistent
+    # Important: force COLOR output (the previous result may drift to B&W "newspaper" style)
     return (
-        "为一个行业资讯博客生成封面图。风格：现代、专业、科技感扁平插画，干净背景，低饱和配色，细节适中。"
-        "画面包含抽象的行业元素与数据可视化符号（折线/柱状/网格）。不要出现具体品牌Logo。"
-        "不要出现长段文字；如需文字，只允许 6-10 个中文以内的短标题。"
+        "为一个行业资讯博客生成封面图。风格：现代、专业、扁平插画、干净背景，信息图可视化风。"
+        "必须是【彩色】（不要黑白/灰度/复古旧报纸单色）。配色：2-4种主色+中性色，低饱和但有明显色彩区分。"
+        "画面包含抽象的行业元素与数据可视化符号（折线/柱状/网格/地图定位点等），与主题强相关。"
+        "不要出现具体品牌Logo。不要出现长段文字；如需文字，只允许 6-10 个中文以内的短标题。"
         f"主题：{title}。行业：{industry}。"
         "构图：居中主体，留白充足，适合作为文章封面。"
     )

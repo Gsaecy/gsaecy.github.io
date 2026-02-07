@@ -342,7 +342,10 @@ jobs:
           fi
 
           # 新文章 + 静态资源 + 数据（用于审计/回溯，可按需删减）
-          git add content/posts static/images data/raw logs/wechat data/pending_retry.json || true
+          # 注意：不要把“可能不存在”的路径放进同一个 git add，否则会导致整条命令失败，从而一个文件也没被 stage。
+          git add content/posts static/images logs/wechat || true
+          if [ -d data/raw ]; then git add -f data/raw || true; fi
+          if [ -f data/pending_retry.json ]; then git add data/pending_retry.json || true; fi
 
           if git diff --cached --quiet; then
             echo "没有需要提交的变更（可能是重复时间戳/无新增资源）"

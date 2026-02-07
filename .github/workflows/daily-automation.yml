@@ -10,6 +10,11 @@ on:
         required: false
         default: false
         type: boolean
+      alarm_test:
+        description: '为 true 时：故意失败并发送飞书告警（用于联通测试）'
+        required: false
+        default: false
+        type: boolean
 
 env:
   BLOG_URL: "https://gsaecy.github.io"
@@ -28,6 +33,55 @@ jobs:
       article_slug: ${{ steps.run-automation.outputs.article_slug }}
     
     steps:
+      - name: Intentional failure (alarm test)
+        id: alarm-fail
+        if: ${{ inputs.alarm_test }}
+        run: |
+          echo "Intentional failure for Feishu alarm test"
+          exit 1
+
+      - name: Notify Feishu (app bot) (alarm test)
+        if: ${{ always() && inputs.alarm_test }}
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          FEISHU_ALERT_CHAT_ID: ${{ secrets.FEISHU_ALERT_CHAT_ID }}
+        run: |
+          if [ -z "$FEISHU_APP_ID" ] || [ -z "$FEISHU_APP_SECRET" ] || [ -z "$FEISHU_ALERT_CHAT_ID" ]; then
+            echo "Missing FEISHU_APP_ID/FEISHU_APP_SECRET/FEISHU_ALERT_CHAT_ID; skip"
+            exit 0
+          fi
+
+          TS_CN="$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')"
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          TEXT="【告警联通测试】${TS_CN}\n${RUN_URL}\nDaily AI Blog Automation 故意失败测试"
+
+          TOKEN_JSON=$(curl -sS -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal" \
+            -H 'Content-Type: application/json' \
+            -d "{\"app_id\":\"${FEISHU_APP_ID}\",\"app_secret\":\"${FEISHU_APP_SECRET}\"}")
+          TENANT_TOKEN=$(python3 - <<'PY'
+import json,sys
+try:
+  j=json.loads(sys.stdin.read())
+  print(j.get('tenant_access_token',''))
+except Exception:
+  print('')
+PY
+          <<<"$TOKEN_JSON")
+
+          if [ -z "$TENANT_TOKEN" ]; then
+            echo "Failed to get tenant token: $TOKEN_JSON"
+            exit 0
+          fi
+
+          MSG="{\"receive_id\":\"${FEISHU_ALERT_CHAT_ID}\",\"msg_type\":\"text\",\"content\":{\"text\":\"${TEXT}\"}}"
+
+          curl -sS -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type=chat_id" \
+            -H 'Content-Type: application/json' \
+            -H "Authorization: Bearer ${TENANT_TOKEN}" \
+            -d "$MSG" \
+            || true
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:

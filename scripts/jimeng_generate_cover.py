@@ -179,8 +179,8 @@ def main() -> None:
     ap.add_argument("--title", required=True)
     ap.add_argument("--industry", required=True)
     ap.add_argument("--out", required=True)
-    ap.add_argument("--width", type=int, default=2560)
-    ap.add_argument("--height", type=int, default=1440)
+    ap.add_argument("--width", type=int, default=1664)
+    ap.add_argument("--height", type=int, default=936)
     ap.add_argument("--poll-seconds", type=int, default=120)
     args = ap.parse_args()
 

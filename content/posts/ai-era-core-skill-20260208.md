@@ -1,15 +1,15 @@
 ---
-title: "AI时代，人最重要的能力是什么？（面向职场、创业与学生的生存赚钱指南）"
-date: "2026-02-08T01:55:00+08:00"
+title: "AI时代，人最重要的能力是什么？"
+date: "2026-02-08T01:40:00+08:00"
 draft: false
 categories: ["general"]
 tags: ["AI", "职业发展", "创业", "学习方法", "判断力", "系统思维"]
 author: "AI智汇观察"
 slug: "ai-era-core-skill-20260208"
-image: "/images/default-cover.png"
+image: "/images/posts/ai-era-core-skill-20260208/cover.jpg"
 ---
 
-![封面图](/images/default-cover.png)
+![封面图](/images/posts/ai-era-core-skill-20260208/cover.jpg)
 
 AI 把很多“会做”的门槛打穿了：写一篇像样的文案、做一份能看的 PPT、产出一段可跑的代码、甚至搭一个最小产品（MVP）——都比过去更容易。
 

@@ -29,6 +29,89 @@ jobs:
           hugo-version: '0.155.1'
           extended: true
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python deps (for cover generation)
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Generate Jimeng cover for new posts (optional)
+        env:
+          VOLC_ACCESS_KEY_ID: ${{ secrets.VOLC_ACCESS_KEY_ID }}
+          VOLC_SECRET_ACCESS_KEY: ${{ secrets.VOLC_SECRET_ACCESS_KEY }}
+        run: |
+          set -e
+          if [ -z "$VOLC_ACCESS_KEY_ID" ] || [ -z "$VOLC_SECRET_ACCESS_KEY" ]; then
+            echo "VOLC secrets not set; skip cover generation"
+            exit 0
+          fi
+
+          BEFORE_SHA="${{ github.event.before }}"
+          AFTER_SHA="${{ github.sha }}"
+
+          # If BEFORE_SHA is empty (workflow_dispatch), fall back to last commit only
+          if [ -z "$BEFORE_SHA" ] || [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ]; then
+            BEFORE_SHA=$(git rev-parse HEAD~1 || echo "")
+          fi
+
+          echo "Diff range: ${BEFORE_SHA}..${AFTER_SHA}"
+
+          CHANGED=$(git diff --name-only "$BEFORE_SHA" "$AFTER_SHA" | grep '^content/posts/.*\.md$' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "No changed posts; skip"
+            exit 0
+          fi
+
+          echo "$CHANGED"
+
+          python3 - <<'PY'
+import re, subprocess, pathlib, sys
+changed = subprocess.check_output(['bash','-lc', 'git diff --name-only "$BEFORE_SHA" "$AFTER_SHA" | grep "^content/posts/.*\\.md$" || true'], text=True)
+paths = [p.strip() for p in changed.splitlines() if p.strip()]
+if not paths:
+    sys.exit(0)
+
+def parse_front_matter(text):
+    # YAML front matter between ---
+    m = re.match(r'^---\n(.*?)\n---\n', text, flags=re.S)
+    if not m:
+        return None, None
+    fm = m.group(1)
+    title = None
+    slug = None
+    image = None
+    for line in fm.splitlines():
+        if line.startswith('title:'):
+            title = line.split(':',1)[1].strip().strip('"')
+        if line.startswith('slug:'):
+            slug = line.split(':',1)[1].strip().strip('"')
+        if line.startswith('image:'):
+            image = line.split(':',1)[1].strip().strip('"')
+    return title, slug, image
+
+for p in paths:
+    path = pathlib.Path(p)
+    text = path.read_text(encoding='utf-8')
+    title, slug, image = parse_front_matter(text)
+    if not title or not slug:
+        continue
+    # Only generate when image points to posts/<slug>/cover.jpg
+    target = f"/images/posts/{slug}/cover.jpg"
+    if image != target:
+        continue
+    out_file = pathlib.Path('static') / 'images' / 'posts' / slug / 'cover.jpg'
+    if out_file.exists():
+        print(f"cover exists: {out_file}")
+        continue
+    print(f"Generating cover for {slug} -> {out_file}")
+    cmd = ['python3','scripts/jimeng_generate_cover.py','--slug',slug,'--title',title,'--industry','综合','--out',str(out_file)]
+    subprocess.check_call(cmd)
+PY
+
       - name: Build
         run: |
           hugo --minify

@@ -199,9 +199,34 @@ jobs:
           COUNT=$(python3 -c "import json; print(json.load(open('${NEWS_JSON}','r',encoding='utf-8')).get('count',0))")
           echo "RSS collected count=${COUNT} (industry=${INDUSTRY})"
 
-          # 兜底：如果抓不到资讯，从热门话题池子里挑一个高热度主题/行业再试一次
+          # 兜底1：RSS=0 时，优先用“全网热榜聚合”选题（更实时），并生成可引用的来源列表
           if [ "${COUNT}" = "0" ]; then
-            echo "⚠️ 当前行业 RSS=0，启用热门话题池兜底..."
+            echo "⚠️ 当前行业 RSS=0，尝试从热榜聚合API选择热点选题..."
+            if read HB_INDUSTRY HB_TOPIC < <(python3 scripts/fetch_hotboard_topics.py --out "${NEWS_JSON}" --shell); then
+              echo "hotboard pick industry=${HB_INDUSTRY} topic=${HB_TOPIC}"
+              INDUSTRY="${HB_INDUSTRY}"
+              TOPIC="${HB_TOPIC}"
+              FILENAME="${INDUSTRY}-${TIMESTAMP}"
+              ORIGINAL_FILE="content/posts/${FILENAME}.md"
+              WECHAT_FILE="content/posts/${FILENAME}-wechat.md"
+
+              # 将热榜素材文件改名到与新 FILENAME 一致，便于追踪
+              NEW_NEWS_JSON="data/raw/news_${FILENAME}.json"
+              if [ "${NEWS_JSON}" != "${NEW_NEWS_JSON}" ]; then
+                mv "${NEWS_JSON}" "${NEW_NEWS_JSON}" || true
+                NEWS_JSON="${NEW_NEWS_JSON}"
+              fi
+
+              COUNT=$(python3 -c "import json; print(json.load(open('${NEWS_JSON}','r',encoding='utf-8')).get('count',0))")
+              echo "hotboard sources count=${COUNT}"
+            else
+              echo "⚠️ hotboard API 失败，继续使用本地热门话题池兜底"
+            fi
+          fi
+
+          # 兜底2：如果热榜也不可用（COUNT仍为0 或脚本失败），使用本地热门话题池并再抓一次RSS
+          if [ "${COUNT}" = "0" ]; then
+            echo "⚠️ 热榜不可用或无候选，启用本地热门话题池兜底..."
             read FB_INDUSTRY FB_TOPIC < <(python3 scripts/pick_hot_topic.py --shell)
             echo "fallback industry=${FB_INDUSTRY} topic=${FB_TOPIC}"
             INDUSTRY="${FB_INDUSTRY}"

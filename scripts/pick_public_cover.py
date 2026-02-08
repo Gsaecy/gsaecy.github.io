@@ -23,7 +23,7 @@ import re
 from pathlib import Path
 
 import requests
-import yaml
+import yaml  # kept for backward compat; pool may be YAML or JSON
 
 
 def norm(s: str) -> str:
@@ -105,8 +105,13 @@ def main() -> None:
     ap.add_argument("--news-json", default="")
     args = ap.parse_args()
 
-    doc = yaml.safe_load(Path(args.pool).read_text(encoding="utf-8")) or {}
-    pool = list(doc.get("pool") or [])
+    raw = Path(args.pool).read_text(encoding="utf-8")
+    if args.pool.endswith('.json'):
+        doc = json.loads(raw) if raw.strip() else {}
+        pool = list(doc.get("items") or doc.get("pool") or [])
+    else:
+        doc = yaml.safe_load(raw) or {}
+        pool = list(doc.get("pool") or [])
 
     ctx = build_context_text(norm(args.title), args.md or None, args.news_json or None)
 

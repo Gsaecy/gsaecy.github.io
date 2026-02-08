@@ -77,7 +77,8 @@ def build_prompt(payload: Dict[str, Any], title: str, industry: str) -> str:
         )
 
     return (
-        "你是一个严谨的行业研究编辑。请基于【提供的素材】写一篇高质量行业文章，并适配微信公众号排版。\n\n"
+        "你是一个严谨的行业研究编辑。请基于【提供的素材】写一篇高质量行业文章，并适配微信公众号排版。"
+        "如果【提供的素材】为空（items=0），请改写为‘趋势解读/方法论/框架型’文章：围绕主题给出背景、核心矛盾、关键变量、可操作建议，并明确说明‘今日素材为空，以下为基于公开常识与历史趋势的分析’。\n\n"
         "注意：封面图由系统另行生成并插入，请不要在正文中输出任何封面图/图片占位符/‘图1’之类说明。\n\n"
         "硬性规则（非常重要）：\n"
         "1) 只允许使用素材里出现的事实/数字/结论；不要编造任何数据、公司动作、政策细节。\n"
@@ -149,7 +150,9 @@ def main() -> None:
     payload = json.loads(Path(args.inp).read_text(encoding="utf-8"))
 
     if not payload.get("items"):
-        raise SystemExit(f"No news items collected for industry={args.industry} (input={args.inp})")
+        # Soft-fallback: still generate an evergreen/analysis-style post driven by the topic/title.
+        # This prevents the whole scheduled publish from failing when RSS temporarily returns 0 items.
+        payload["items"] = []
 
     # cover
     cover_rel = (args.cover or "").strip() or None

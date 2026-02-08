@@ -20,6 +20,26 @@ from commons_fetch import search_images
 from image_pool import cap_pool, load_pool, merge_items, save_pool
 
 
+def maybe_cache_thumbnail(cache_dir: str, key: str, url: str) -> bool:
+    if not cache_dir:
+        return False
+    try:
+        import requests
+
+        from pathlib import Path
+
+        Path(cache_dir).mkdir(parents=True, exist_ok=True)
+        out = Path(cache_dir) / f"{re.sub(r'[^A-Za-z0-9:_-]+', '_', key)}.jpg"
+        if out.exists() and out.stat().st_size > 0:
+            return True
+        r = requests.get(url, timeout=20, headers={"User-Agent": "Mozilla/5.0"})
+        r.raise_for_status()
+        out.write_bytes(r.content)
+        return True
+    except Exception:
+        return False
+
+
 def _text(s: str) -> str:
     return (s or "").strip()
 
@@ -59,6 +79,9 @@ def main() -> None:
     ap.add_argument("--md", required=True)
     ap.add_argument("--news-json", default="")
     ap.add_argument("--page-size", type=int, default=20)
+    # Optional local cache (metadata-only pool still lives in JSON; cache stores thumbnails for quality checks)
+    ap.add_argument("--cache-dir", default="")
+    ap.add_argument("--cache-max-per-run", type=int, default=30)
     args = ap.parse_args()
 
     md_text = Path(args.md).read_text(encoding="utf-8")
@@ -93,6 +116,7 @@ def main() -> None:
     ])
 
     new_items = []
+    cached = 0
     for q in queries[:10]:
         cands = search_images(q, limit=max(5, min(args.page_size, 50)))
         for c in cands:
@@ -113,13 +137,20 @@ def main() -> None:
             it["key"] = f"wikimedia:{it.get('id')}"
             new_items.append(it)
 
+            # Optional: cache thumbnail locally for future quality checks
+            if args.cache_dir and cached < args.cache_max_per_run:
+                thumb = _text(c.get("thumbnail")) or _text(c.get("image_url"))
+                if thumb:
+                    if maybe_cache_thumbnail(args.cache_dir, it["key"], thumb):
+                        cached += 1
+
     pool = load_pool(args.pool)
     items = merge_items(pool.get("items") or [], new_items)
     items = cap_pool(items, cap=args.cap)
 
     save_pool({"version": 1, "items": items, "updated_at": pool.get("updated_at", "")}, path=args.pool)
 
-    print(json.dumps({"added": len(new_items), "kept": len(items), "queries": queries[:5]}, ensure_ascii=False))
+    print(json.dumps({"added": len(new_items), "kept": len(items), "cached": cached, "queries": queries[:5]}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

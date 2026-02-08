@@ -113,13 +113,14 @@ def already_has_public_images(md_text: str) -> bool:
 def insert_near_explainer_section(lines: List[str], block: List[str]) -> List[str]:
     """Insert block *not* at the very top.
 
-    Requirement:
-    - Do NOT place 2 images at the beginning (cover is already there).
+    Hard rule:
+    - The beginning of the article should contain ONLY ONE image (the cover).
 
-    Strategy:
-    - insert after the first matching H2 section among: 数据/指标/原理/方法/机制
-    - else insert after the 2nd H2
-    - else insert after front matter
+    Strategy (in order):
+    1) If a cover image line exists ("![封面图](...)"), insert AFTER that cover line.
+    2) Else insert after the first matching H2 section among: 数据/指标/原理/方法/机制
+    3) Else insert after the 2nd H2
+    4) Else insert after the first non-empty paragraph line (never right after front matter)
 
     Important: never insert inside YAML front matter.
     """
@@ -132,24 +133,36 @@ def insert_near_explainer_section(lines: List[str], block: List[str]) -> List[st
                 fm_end = i + 1
                 break
 
+    # 1) after cover image
+    for i in range(fm_end, min(len(lines), fm_end + 120)):
+        ln = lines[i].strip()
+        if ln.startswith("![封面图]") and "(/images/posts/" in ln:
+            return lines[: i + 1] + [""] + block + [""] + lines[i + 1 :]
+
     # find H2 anchors
     h2_idx = []
     for i, ln in enumerate(lines):
         if ln.startswith("## "):
             h2_idx.append(i)
 
-    # preferred keywords
+    # 2) preferred keywords
     keywords = ["数据", "指标", "原理", "机制", "方法", "模型", "技术栈"]
     for i in h2_idx:
         if any(k in lines[i] for k in keywords):
             return lines[: i + 1] + [""] + block + [""] + lines[i + 1 :]
 
+    # 3) after 2nd H2
     if len(h2_idx) >= 2:
         i = h2_idx[1]
         return lines[: i + 1] + [""] + block + [""] + lines[i + 1 :]
 
-    if fm_end:
-        return lines[:fm_end] + [""] + block + [""] + lines[fm_end:]
+    # 4) after first non-empty paragraph (skip front matter + blank lines)
+    start = fm_end
+    while start < len(lines) and not lines[start].strip():
+        start += 1
+    # insert after that line, but ensure we don't end up at file end
+    if start < len(lines):
+        return lines[: start + 1] + [""] + block + [""] + lines[start + 1 :]
 
     return lines + [""] + block
 

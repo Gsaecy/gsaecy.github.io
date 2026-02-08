@@ -358,26 +358,6 @@ jobs:
           git add "$FILE" data/pending_retry.json || true
           git commit -m "🧾 记录自动发布失败并排队重试：run ${{ github.run_id }}" || true
           git push origin main || true
-
-      - name: Notify Feishu via Flow Webhook (optional)
-        if: failure()
-        env:
-          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
-        run: |
-          if [ -z "$FEISHU_WEBHOOK_URL" ]; then
-            echo "未配置 FEISHU_WEBHOOK_URL secret，跳过飞书通知"
-            exit 0
-          fi
-
-          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          TS_CN="$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')"
-          TEXT="【博客自动发布失败】${TS_CN}\n${RUN_URL}\n请查看失败步骤并重试。"
-
-          # 发送给飞书 Flow 触发器，由 Flow 负责转发到警报群（可在 Flow 内配置 @对象）
-          curl -sS -X POST "$FEISHU_WEBHOOK_URL" \
-            -H 'Content-Type: application/json' \
-            -d "{\"event\":\"auto_publish_failed\",\"text\":\"${TEXT}\",\"run_url\":\"${RUN_URL}\",\"time_cn\":\"${TS_CN}\"}" \
-            || true
       
       - name: Format for WeChat
         if: steps.topic.outputs.skip != 'true'
@@ -512,17 +492,3 @@ jobs:
             USAGE="Jimeng本月 用量：暂无统计"
           fi
           echo "$USAGE"
-
-          # Optional: send usage summary to Flow (low-noise: only at CN 18:xx publish)
-          if [ -n "$FEISHU_WEBHOOK_URL" ]; then
-            CN_HOUR=$(TZ=Asia/Shanghai date +%H)
-            if [ "$CN_HOUR" = "18" ]; then
-              RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-              TS_CN="$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')"
-              TEXT="【即梦额度监控(自统计)】${TS_CN}\\n${USAGE}\\n最新文章: ${BLOG_URL}/posts/${{ steps.topic.outputs.filename }}/\\nRun: ${RUN_URL}"
-              curl -sS -X POST "$FEISHU_WEBHOOK_URL" \
-                -H 'Content-Type: application/json' \
-                -d "{\"event\":\"jimeng_usage\",\"text\":\"${TEXT}\"}" \
-                || true
-            fi
-          fi

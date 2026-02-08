@@ -6,7 +6,8 @@ If no match is found or download fails, workflow falls back to Jimeng.
 
 Usage:
   python3 scripts/pick_public_cover.py --pool scripts/public_image_pool.yaml \
-    --industry technology --title "..." --slug xxx --out static/images/posts/<slug>/cover.jpg
+    --industry technology --title "..." --slug xxx --out static/images/posts/<slug>/cover.jpg \
+    --md content/posts/<slug>.md --news-json data/raw/news_<slug>.json
 
 Exit codes:
   0: success (cover downloaded and attribution printed)
@@ -29,16 +30,56 @@ def norm(s: str) -> str:
     return re.sub(r"\s+", " ", (s or "").strip())
 
 
-def score_item(item: dict, title: str) -> float:
-    title = title or ""
+def build_context_text(title: str, md_path: str | None, news_json: str | None) -> str:
+    parts = [title or ""]
+
+    # markdown headings
+    if md_path:
+        try:
+            txt = Path(md_path).read_text(encoding="utf-8")
+            for ln in txt.splitlines():
+                if ln.startswith("## ") or ln.startswith("### "):
+                    parts.append(ln.lstrip("# ").strip())
+        except Exception:
+            pass
+
+    # news sources titles
+    if news_json:
+        try:
+            data = json.loads(Path(news_json).read_text(encoding="utf-8"))
+            for it in (data.get("items") or [])[:25]:
+                t = it.get("title") or ""
+                if t:
+                    parts.append(t)
+                src = it.get("source") or it.get("site") or ""
+                if src:
+                    parts.append(src)
+        except Exception:
+            pass
+
+    return "\n".join([p for p in parts if p])
+
+
+def score_item(item: dict, ctx: str) -> float:
+    ctx_l = (ctx or "").lower()
     tags = item.get("tags") or []
     score = float(item.get("weight", 0))
+
+    # tag substring matches (CN/EN)
     for t in tags:
-        if t and t in title:
-            score += 50
-    # small bonus if AI appears and item has AI tag
-    if ("AI" in title or "人工智能" in title) and any(x in ["AI", "人工智能"] for x in tags):
+        if not t:
+            continue
+        if t.lower() in ctx_l:
+            score += 30
+
+    # boost: AI-related
+    if ("ai" in ctx_l or "人工智能" in ctx) and any((x or "").lower() in ("ai", "人工智能") for x in tags):
         score += 20
+
+    # penalize overly generic candidates (very few tags)
+    if len(tags) < 4:
+        score -= 10
+
     return score
 
 
@@ -60,18 +101,20 @@ def main() -> None:
     ap.add_argument("--title", required=True)
     ap.add_argument("--slug", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--md", default="")
+    ap.add_argument("--news-json", default="")
     args = ap.parse_args()
 
     doc = yaml.safe_load(Path(args.pool).read_text(encoding="utf-8")) or {}
     pool = list(doc.get("pool") or [])
 
-    title = norm(args.title)
+    ctx = build_context_text(norm(args.title), args.md or None, args.news_json or None)
 
     candidates = [x for x in pool if x.get("industry") == args.industry and (x.get("image_url") or "").strip()]
     if not candidates:
         raise SystemExit(2)
 
-    candidates.sort(key=lambda x: score_item(x, title), reverse=True)
+    candidates.sort(key=lambda x: score_item(x, ctx), reverse=True)
     pick = candidates[0]
 
     img_url = (pick.get("image_url") or "").strip()

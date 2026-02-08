@@ -21,6 +21,13 @@ import requests
 
 
 def fetch(query: str, limit: int = 5, timeout: int = 25) -> list[dict[str, Any]]:
+    """Fetch Openverse image results.
+
+    NOTE: Openverse returns multiple URL-ish fields. Here we normalize:
+    - url: landing page (best-effort)
+    - image_url: direct image url when available
+    """
+
     url = "https://api.openverse.engineering/v1/images"
     params = {
         "q": query,
@@ -38,8 +45,8 @@ def fetch(query: str, limit: int = 5, timeout: int = 25) -> list[dict[str, Any]]
             {
                 "id": it.get("id"),
                 "title": it.get("title") or "",
-                "url": it.get("url") or it.get("foreign_landing_url") or "",
-                "image_url": it.get("url") or "",
+                "url": it.get("foreign_landing_url") or it.get("url") or "",
+                "image_url": it.get("url") or it.get("thumbnail") or "",
                 "thumbnail": it.get("thumbnail") or "",
                 "provider": it.get("provider") or "openverse",
                 "license": (it.get("license") or "").upper(),

@@ -64,6 +64,8 @@ data/raw/
 data/processed/
 # Local flowing image cache (5GB cap, not committed)
 data/local_image_cache/
+# Local metadata pool for daily training (not committed)
+data/local_public_image_pool.json
 *.db
 *.sqlite
 

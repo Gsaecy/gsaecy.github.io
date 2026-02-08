@@ -9,11 +9,11 @@ slug: "education-20260208-085218"
 image: "/images/posts/education-20260208-085218/cover.jpg"
 ---
 
+![封面图](/images/posts/education-20260208-085218/cover.jpg)
+
 ![相关配图（公共素材）](/images/posts/education-20260208-085218/wikimedia-1.jpg)
 图1：相关配图（公共素材）
 图片来源：Wikimedia Commons（https://commons.wikimedia.org/wiki/File:7_Measures_of_Quality_in_Online_Learning_(10164585803).jpg）；许可：CC0（http://creativecommons.org/publicdomain/zero/1.0/deed.en）
-
-![封面图](/images/posts/education-20260208-085218/cover.jpg)
 
 好的，作为一名严谨的行业研究编辑，我将根据您提供的指令和素材，撰写一篇符合要求的行业文章。
 
@@ -140,7 +140,7 @@ image: "/images/posts/education-20260208-085218/cover.jpg"
 
 ---
 本文由AI智汇观察系统自动生成
-生成时间：2026年02月08日 08:06
+生成时间：2026年02月08日 12:05
 数据来源：文中已标注
 使用建议：数据仅供参考，投资需谨慎
 

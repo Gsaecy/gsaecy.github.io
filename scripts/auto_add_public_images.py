@@ -133,15 +133,20 @@ def insert_near_explainer_section(lines: List[str], block: List[str]) -> List[st
                 fm_end = i + 1
                 break
 
-    # 1) after cover image
+    # 1) detect cover image line (but DO NOT insert immediately after it;
+    # we must keep the beginning with only one image.)
+    cover_idx = -1
     for i in range(fm_end, min(len(lines), fm_end + 120)):
         ln = lines[i].strip()
         if ln.startswith("![封面图]") and "(/images/posts/" in ln:
-            return lines[: i + 1] + [""] + block + [""] + lines[i + 1 :]
+            cover_idx = i
+            break
 
-    # find H2 anchors
+    # find H2 anchors (after cover if present)
     h2_idx = []
     for i, ln in enumerate(lines):
+        if cover_idx != -1 and i <= cover_idx:
+            continue
         if ln.startswith("## "):
             h2_idx.append(i)
 
@@ -156,11 +161,18 @@ def insert_near_explainer_section(lines: List[str], block: List[str]) -> List[st
         i = h2_idx[1]
         return lines[: i + 1] + [""] + block + [""] + lines[i + 1 :]
 
-    # 4) after first non-empty paragraph (skip front matter + blank lines)
+    # 4) after first non-empty paragraph (skip front matter/cover/blank lines)
     start = fm_end
+    if cover_idx != -1:
+        start = cover_idx + 1
     while start < len(lines) and not lines[start].strip():
         start += 1
-    # insert after that line, but ensure we don't end up at file end
+    # If the first non-empty line is still an image/blockquote/hr, advance a bit.
+    while start < len(lines) and (lines[start].strip().startswith("!") or lines[start].strip().startswith(">") or lines[start].strip() == "---"):
+        start += 1
+        while start < len(lines) and not lines[start].strip():
+            start += 1
+
     if start < len(lines):
         return lines[: start + 1] + [""] + block + [""] + lines[start + 1 :]
 

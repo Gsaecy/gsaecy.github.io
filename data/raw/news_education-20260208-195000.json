@@ -1,0 +1,19 @@
+{
+  "industry": "education",
+  "collected_at": "2026-02-08T11:49:45.527074+00:00",
+  "hours": 24,
+  "limit": 25,
+  "count": 1,
+  "items": [
+    {
+      "industry": "education",
+      "source": "Google News - Education",
+      "title": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQc3plN0JDMndvekdkN0Z4RVU2eTVfcjE4SHpUNUdWeGlTeTZDQV9qZEpHY2dJQUVMV296UjN2RU1PcmoxVVB0VUQ1cmt5TC13bnJwN21xTTZocG9MVHlYZ0YyOG1Mdk1VUEliamdoM0xPNjlnSTV0WFFxOEs3X3dEMUQwU3N6MERrR2JUa2RhZC16X29JSDBtREZLUTFuOS14N1lMTGQ0V0RubnA0Qk44djdWV2owNmwwWXE4bg?oc=5",
+      "published": "2026-02-08T05:45:12+00:00",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQc3plN0JDMndvekdkN0Z4RVU2eTVfcjE4SHpUNUdWeGlTeTZDQV9qZEpHY2dJQUVMV296UjN2RU1PcmoxVVB0VUQ1cmt5TC13bnJwN21xTTZocG9MVHlYZ0YyOG1Mdk1VUEliamdoM0xPNjlnSTV0WFFxOEs3X3dEMUQwU3N6MERrR2JUa2RhZC16X29JSDBtREZLUTFuOS14N1lMTGQ0V0RubnA0Qk44djdWV2owNmwwWXE4bg?oc=5\" target=\"_blank\">Notre Dame strengthens STEM, education technology opportunities with new Innovation Space</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">NKyTribune</font>",
+      "content_text": "",
+      "cover_image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300"
+    }
+  ]
+}

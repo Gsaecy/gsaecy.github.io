@@ -274,8 +274,11 @@ jobs:
           # 先生成文章（封面路径先固定为 /images/.../cover.jpg），便于后续用“标题+小标题+来源关键词”选封面
           python3 scripts/generate_news_post.py --in "${NEWS_JSON}" --slug "${FILENAME}" --industry "${INDUSTRY}" --title "${TITLE}" --out "${ORIGINAL_FILE}" --cover "${COVER_REL}"
 
+          # ✅ 训练：更新“活水”公共图片池（仅元数据，global cap=2000）
+          python3 scripts/update_public_image_pool.py --industry "${INDUSTRY}" --title "${TITLE}" --md "${ORIGINAL_FILE}" --news-json "${NEWS_JSON}" --pool "data/public_image_pool.json" --cap 2000 --page-size 25 || true
+
           # 封面优先：公共图片池（免费、可控）；即梦作为保底（超额收费）
-          if python3 scripts/pick_public_cover.py --industry "${INDUSTRY}" --title "${TITLE}" --slug "${FILENAME}" --out "${COVER_OUT_FILE}" --md "${ORIGINAL_FILE}" --news-json "${NEWS_JSON}" >/tmp/cover_meta.json; then
+          if python3 scripts/pick_public_cover.py --pool "data/public_image_pool.json" --industry "${INDUSTRY}" --title "${TITLE}" --slug "${FILENAME}" --out "${COVER_OUT_FILE}" --md "${ORIGINAL_FILE}" --news-json "${NEWS_JSON}" >/tmp/cover_meta.json; then
             echo "✅ cover from public pool"
           else
             echo "⚠️ public cover not available, fallback to jimeng"

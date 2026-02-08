@@ -62,6 +62,8 @@ Thumbs.db
 # Data
 data/raw/
 data/processed/
+# Local flowing image cache (5GB cap, not committed)
+data/local_image_cache/
 *.db
 *.sqlite
 

@@ -83,6 +83,16 @@ def score_item(item: dict, ctx: str) -> float:
     return score
 
 
+def threshold_for(article_type: str) -> int:
+    t = (article_type or "").strip().lower()
+    if t == "event":
+        return 170
+    if t == "analysis":
+        return 150
+    # mixed/unknown
+    return 160
+
+
 def download(url: str, out_path: Path) -> bool:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -119,8 +129,35 @@ def main() -> None:
     if not candidates:
         raise SystemExit(2)
 
+    # classify article type for thresholding
+    article_type = "mixed"
+    try:
+        import subprocess
+
+        cmd = [
+            "python3",
+            "scripts/extract_keywords.py",
+            "--md",
+            args.md,
+            "--news-json",
+            args.news_json,
+            "--industry",
+            args.industry,
+            "--title",
+            args.title,
+        ]
+        out = subprocess.check_output(cmd, text=True)
+        article_type = (json.loads(out).get("type") or "mixed")
+    except Exception:
+        pass
+
     candidates.sort(key=lambda x: score_item(x, ctx), reverse=True)
     pick = candidates[0]
+    best_score = score_item(pick, ctx)
+    thr = threshold_for(article_type)
+    if best_score < thr:
+        # low relevance -> force fallback (Jimeng) by returning non-zero code
+        raise SystemExit(2)
 
     img_url = (pick.get("image_url") or "").strip()
     if not img_url:
@@ -135,6 +172,9 @@ def main() -> None:
         "mode": "public_pool",
         "picked": pick,
         "slug": args.slug,
+        "article_type": article_type,
+        "best_score": best_score,
+        "threshold": thr,
     }
     meta_path = Path(args.out).with_suffix(".meta.json")
     meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")

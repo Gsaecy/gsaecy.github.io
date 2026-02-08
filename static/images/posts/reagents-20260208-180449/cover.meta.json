@@ -1,0 +1,43 @@
+{
+  "mode": "public_pool",
+  "picked": {
+    "provider": "wikimedia_commons",
+    "id": "127026953",
+    "industry": "reagents",
+    "title": "File:Aliran Proses Untuk Pembuatan Insulin.png",
+    "url": "https://commons.wikimedia.org/wiki/File:Aliran_Proses_Untuk_Pembuatan_Insulin.png",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Aliran_Proses_Untuk_Pembuatan_Insulin.png",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "tags": [
+      "分析",
+      "趋势",
+      "框架",
+      "原理",
+      "融资",
+      "收购",
+      "监管",
+      "Medtronic",
+      "CathWorks",
+      "FDA",
+      "Abbott",
+      "Libre",
+      "Preclinical",
+      "SPAC",
+      "Nasdaq",
+      "Hims",
+      "Hers",
+      "Grail’s Galleri",
+      "Novartis"
+    ],
+    "score": 70.0,
+    "key": "wikimedia:127026953",
+    "first_seen": 1770545236,
+    "last_seen": 1770545236,
+    "used_count": 0
+  },
+  "slug": "reagents-20260208-180449",
+  "article_type": "analysis",
+  "best_score": 420.0,
+  "threshold": 150
+}

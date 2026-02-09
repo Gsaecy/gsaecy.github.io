@@ -2,7 +2,7 @@
 """监控 GitHub Actions 发布状态，在固定时间点检查是否成功发布。
 
 使用场景：
-- 08:10, 08:20, 08:30（检查 08:00 那篇）
+- 08:10, 08:20, 08:30（检查 08:00 那篇）← 所有时间都是 CST（北京时间）
 - 18:10, 18:20, 18:30（检查 18:00 那篇）
 
 如果到 08:30/18:30 还没发布，判定为失败，尝试自动修复并手动触发重试。
@@ -21,6 +21,19 @@ from pathlib import Path
 from typing import Optional, Tuple
 
 import requests
+
+# 导入时间转换工具
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from time_utils import cst_to_utc, utc_to_cst, cst_hour_to_utc_hour
+except ImportError:
+    # 备用实现
+    def cst_to_utc(cst_dt: datetime) -> datetime:
+        return cst_dt - timedelta(hours=8)
+    def utc_to_cst(utc_dt: datetime) -> datetime:
+        return utc_dt + timedelta(hours=8)
+    def cst_hour_to_utc_hour(cst_hour: int) -> int:
+        return (cst_hour - 8) % 24
 
 
 def gh_api(endpoint: str, method: str = "GET", data: Optional[dict] = None) -> dict:
@@ -58,14 +71,14 @@ def get_recent_runs(hours: int = 1) -> list[dict]:
     return runs.get("workflow_runs", [])
 
 
-def check_publish_success(target_hour_cn: int) -> Tuple[bool, Optional[dict]]:
-    """检查目标小时（北京时间）的发布是否成功
+def check_publish_success(target_hour_cst: int) -> Tuple[bool, Optional[dict]]:
+    """检查目标小时（CST 北京时间）的发布是否成功
     
-    检查目标小时段内（如 08:00-09:00）是否有成功运行。
+    检查目标小时段内（如 08:00-09:30 CST）是否有成功运行。
     允许一定的延迟（schedule 可能因为队列延迟在 08:xx 运行）。
     """
-    # 计算 UTC 时间（CN -8）
-    target_hour_utc = (target_hour_cn - 8) % 24
+    # CST 转 UTC
+    target_hour_utc = cst_hour_to_utc_hour(target_hour_cst)
     now_utc = datetime.utcnow()
     # 如果当前 UTC 小时小于目标 UTC 小时，说明目标时间是“昨天”的
     if now_utc.hour < target_hour_utc:
@@ -79,7 +92,7 @@ def check_publish_success(target_hour_cn: int) -> Tuple[bool, Optional[dict]]:
     # 放宽到目标小时 + 90 分钟（应对 schedule 延迟和 retry checker）
     target_end = target_start + timedelta(minutes=90)
 
-    runs = get_recent_runs(hours=6)
+    runs = get_recent_runs(hours=12)
     for run in runs:
         created_str = run["created_at"].replace("Z", "+00:00")
         created = datetime.fromisoformat(created_str).replace(tzinfo=None)
@@ -102,9 +115,9 @@ def check_publish_success(target_hour_cn: int) -> Tuple[bool, Optional[dict]]:
     return False, None
 
 
-def try_fix_and_retry(target_hour_cn: int) -> bool:
+def try_fix_and_retry(target_hour_cst: int) -> bool:
     """尝试自动修复并手动触发重试"""
-    print(f"尝试自动修复 {target_hour_cn}:00 的发布失败...")
+    print(f"尝试自动修复 {target_hour_cst}:00 CST 的发布失败...")
 
     # 1) 检查常见问题：公共图片池是否为空
     pool_path = Path("data/public_image_pool.json")
@@ -180,44 +193,44 @@ def send_alert_to_feishu_group(message: str) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--target-hour-cn", type=int, required=True, help="目标发布时间（北京时间小时，如 8 或 18）")
+    ap.add_argument("--target-hour-cst", type=int, required=True, help="目标发布时间（CST 北京时间小时，如 8 或 18）")
     ap.add_argument("--check-phase", type=int, required=True, help="检查阶段：10=发布后10分,20=20分,30=30分")
     args = ap.parse_args()
 
-    if args.target_hour_cn not in (8, 18):
-        print(f"错误：target-hour-cn 必须是 8 或 18，得到 {args.target_hour_cn}")
+    if args.target_hour_cst not in (8, 18):
+        print(f"错误：target-hour-cst 必须是 8 或 18，得到 {args.target_hour_cst}")
         sys.exit(1)
 
     if args.check_phase not in (10, 20, 30):
         print(f"错误：check-phase 必须是 10,20,30，得到 {args.check_phase}")
         sys.exit(1)
 
-    success, run = check_publish_success(args.target_hour_cn)
-    now_cn = (datetime.utcnow() + timedelta(hours=8)).strftime("%H:%M")
+    success, run = check_publish_success(args.target_hour_cst)
+    now_cst = utc_to_cst(datetime.utcnow()).strftime("%H:%M")
 
     if success:
-        print(f"✅ {args.target_hour_cn}:00 发布成功（{now_cn} 检查）")
+        print(f"✅ {args.target_hour_cst}:00 CST 发布成功（{now_cst} CST 检查）")
         # 不需要通知
         sys.exit(0)
 
     # 发布失败或未运行
     if args.check_phase < 30:
         # 08:10 或 08:20（18:10/18:20）阶段，只记录不处理
-        print(f"⚠️ {args.target_hour_cn}:00 发布尚未成功（{now_cn} 检查，阶段{args.check_phase}）")
+        print(f"⚠️ {args.target_hour_cst}:00 CST 发布尚未成功（{now_cst} CST 检查，阶段{args.check_phase}）")
         if run:
             print(f"   运行状态: {run.get('conclusion', 'unknown')} - {run.get('html_url')}")
         sys.exit(0)
 
     # 08:30 或 18:30 阶段，判定为失败，尝试修复
-    print(f"❌ {args.target_hour_cn}:00 发布失败（{now_cn} 检查，阶段30）")
+    print(f"❌ {args.target_hour_cst}:00 CST 发布失败（{now_cst} CST 检查，阶段30）")
     if run:
         print(f"   失败运行: {run.get('html_url')}")
 
     # 尝试自动修复并重试
-    if try_fix_and_retry(args.target_hour_cn):
-        alert = f"【发布监控】{args.target_hour_cn}:00 文章发布失败，已自动修复并手动触发重试。"
+    if try_fix_and_retry(args.target_hour_cst):
+        alert = f"【发布监控】{args.target_hour_cst}:00 CST 文章发布失败，已自动修复并手动触发重试。"
     else:
-        alert = f"【发布监控】{args.target_hour_cn}:00 文章发布失败，自动修复尝试未成功，请手动检查。"
+        alert = f"【发布监控】{args.target_hour_cst}:00 CST 文章发布失败，自动修复尝试未成功，请手动检查。"
 
     # 输出告警消息（主会话会捕获并发送到飞书群）
     print(f"::alert::{alert}")

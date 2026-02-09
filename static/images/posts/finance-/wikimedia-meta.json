@@ -1,17 +1,17 @@
 {
-  "query": "medical technology financial technology",
+  "query": "financial technology",
   "count": 1,
   "items": [
     {
-      "title": "File:Immunohistochemistry technologies with AI.png",
-      "pageid": 142455962,
-      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Immunohistochemistry_technologies_with_AI.png",
-      "file_page": "https://commons.wikimedia.org/wiki/File:Immunohistochemistry_technologies_with_AI.png",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Immunohistochemistry_technologies_with_AI.png",
+      "title": "File:FinTech Segments.png",
+      "pageid": 68997858,
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:FinTech_Segments.png",
+      "file_page": "https://commons.wikimedia.org/wiki/File:FinTech_Segments.png",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/FinTech_Segments.png",
       "mime": null,
-      "license": "CC BY 4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0",
-      "artist": "MykhailoPervak",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Kevin_Moseri&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Kevin Moseri (page does not exist)\">Kevin Moseri</a>",
       "credit": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
       "attribution": null,
       "saved_as": "/home/runner/work/gsaecy.github.io/gsaecy.github.io/static/images/posts/finance-/wikimedia-1.jpg"

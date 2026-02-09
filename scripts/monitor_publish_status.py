@@ -59,7 +59,11 @@ def get_recent_runs(hours: int = 1) -> list[dict]:
 
 
 def check_publish_success(target_hour_cn: int) -> Tuple[bool, Optional[dict]]:
-    """检查目标小时（北京时间）的发布是否成功"""
+    """检查目标小时（北京时间）的发布是否成功
+    
+    检查目标小时段内（如 08:00-09:00）是否有成功运行。
+    允许一定的延迟（schedule 可能因为队列延迟在 08:xx 运行）。
+    """
     # 计算 UTC 时间（CN -8）
     target_hour_utc = (target_hour_cn - 8) % 24
     now_utc = datetime.utcnow()
@@ -72,9 +76,10 @@ def check_publish_success(target_hour_cn: int) -> Tuple[bool, Optional[dict]]:
     target_start = datetime.combine(target_date, datetime.min.time()).replace(
         hour=target_hour_utc, minute=0, second=0, tzinfo=None
     )
-    target_end = target_start + timedelta(hours=1)
+    # 放宽到目标小时 + 90 分钟（应对 schedule 延迟和 retry checker）
+    target_end = target_start + timedelta(minutes=90)
 
-    runs = get_recent_runs(hours=2)
+    runs = get_recent_runs(hours=6)
     for run in runs:
         created_str = run["created_at"].replace("Z", "+00:00")
         created = datetime.fromisoformat(created_str).replace(tzinfo=None)

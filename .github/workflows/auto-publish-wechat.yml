@@ -69,6 +69,20 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       
+      - name: Clean up any residual submodule configs
+        run: |
+          # 移除可能残留的 chrome-extension submodule 配置
+          if [ -f .gitmodules ]; then
+            # 备份原文件
+            cp .gitmodules .gitmodules.backup
+            # 移除 chrome-extension 相关行
+            grep -v "chrome-extension" .gitmodules > .gitmodules.tmp && mv .gitmodules.tmp .gitmodules
+          fi
+          # 从 git config 中移除
+          git config --local --remove-section submodule.chrome-extension 2>/dev/null || true
+          git config --local --remove-section submodule."chrome-extension/" 2>/dev/null || true
+          echo "Submodule cleanup completed"
+      
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:

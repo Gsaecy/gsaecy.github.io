@@ -161,22 +161,38 @@ def insert_near_explainer_section(lines: List[str], block: List[str]) -> List[st
         i = h2_idx[1]
         return lines[: i + 1] + [""] + block + [""] + lines[i + 1 :]
 
-    # 4) after first non-empty paragraph (skip front matter/cover/blank lines)
+    # 4) after first non-empty paragraph that is NOT a heading (H2/H3) or image
+    # 硬规则：公共图必须与封面图至少间隔一个自然段落（非标题、非图片）
     start = fm_end
     if cover_idx != -1:
         start = cover_idx + 1
+    
+    # 跳过空白行
     while start < len(lines) and not lines[start].strip():
         start += 1
-    # If the first non-empty line is still an image/blockquote/hr, advance a bit.
-    while start < len(lines) and (lines[start].strip().startswith("!") or lines[start].strip().startswith(">") or lines[start].strip() == "---"):
-        start += 1
-        while start < len(lines) and not lines[start].strip():
+    
+    # 如果封面后直接是标题（## 或 ###）或另一个图片，继续往下找
+    while start < len(lines):
+        line = lines[start].strip()
+        if not line:
             start += 1
-
-    if start < len(lines):
-        return lines[: start + 1] + [""] + block + [""] + lines[start + 1 :]
-
-    return lines + [""] + block
+            continue
+        # 如果是标题或图片，跳过
+        if line.startswith("## ") or line.startswith("### ") or line.startswith("![") or line == "---":
+            start += 1
+            # 跳过可能的空白行
+            while start < len(lines) and not lines[start].strip():
+                start += 1
+            continue
+        # 找到第一个非标题、非图片的行（应该是正文段落）
+        break
+    
+    # 如果没找到合适的插入点，放到文件末尾
+    if start >= len(lines):
+        return lines + [""] + block
+    
+    # 插入在这个段落之后
+    return lines[: start + 1] + [""] + block + [""] + lines[start + 1 :]
 
 
 def build_block(rel_url: str, alt: str, fig_no: int, source_line: str) -> List[str]:

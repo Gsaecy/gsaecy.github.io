@@ -113,8 +113,10 @@ def cap_pool(items: list[dict[str, Any]], cap: int = 2000) -> list[dict[str, Any
         score = float(it.get("score", 0))
         last = int(it.get("last_seen", 0))
         used = int(it.get("used_count", 0))
-        # prefer recent + higher score; slightly prefer items that were used before (stability)
-        return score + (last / 1e9) + min(used, 10) * 0.5
+        # 新增：优先匹配度高的图片（match_score 0-1）
+        match_score = float(it.get("match_score", 0.3))
+        # 权重：匹配度 > 质量分 > 新鲜度 > 使用次数
+        return (match_score * 50) + score + (last / 1e9) + min(used, 10) * 0.5
 
     items.sort(key=rank, reverse=True)
     return items[:cap]

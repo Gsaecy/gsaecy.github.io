@@ -228,9 +228,9 @@ def main() -> None:
 
     # 尝试自动修复并重试
     if try_fix_and_retry(args.target_hour_cst):
-        alert = f"【发布监控】{args.target_hour_cst}:00 CST 文章发布失败，已自动修复并手动触发重试。"
+        alert = f"【发布监控】{args.target_hour_cst}:00 CST 文章发布失败（{now_cst} CST 检查），已自动修复并手动触发重试。"
     else:
-        alert = f"【发布监控】{args.target_hour_cst}:00 CST 文章发布失败，自动修复尝试未成功，请手动检查。"
+        alert = f"【发布监控】{args.target_hour_cst}:00 CST 文章发布失败（{now_cst} CST 检查），自动修复尝试未成功，请手动检查。"
 
     # 输出告警消息（主会话会捕获并发送到飞书群）
     print(f"::alert::{alert}")

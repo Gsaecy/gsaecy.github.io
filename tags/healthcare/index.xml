@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Healthcare on AI智汇观察</title><link>https://gsaecy.github.io/tags/healthcare/</link><description>Recent content in Healthcare on AI智汇观察</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 07 Feb 2026 09:05:12 +0800</lastBuildDate><atom:link href="https://gsaecy.github.io/tags/healthcare/index.xml" rel="self" type="application/rss+xml"/><item><title>【医疗】智慧医疗技术突破与市场前景（2026-02-07）</title><link>https://gsaecy.github.io/posts/healthcare-20260207-090328/</link><pubDate>Sat, 07 Feb 2026 09:05:12 +0800</pubDate><guid>https://gsaecy.github.io/posts/healthcare-20260207-090328/</guid><description>&lt;p&gt;&lt;img src="https://gsaecy.github.io/images/posts/healthcare-20260207-090328/wikimedia-1.jpg" loading="lazy" alt="相关配图（公共素材）"&gt;
+图1：相关配图（公共素材）
+图片来源：Wikimedia Commons（https://commons.wikimedia.org/wiki/File:Moore_evermore_in_Computer_History_%E2%80%94_Happy_50th_Birthday_to_the_Law!_(16318918399).png）；许可：CC BY 2.0（https://creativecommons.org/licenses/by/2.0）&lt;/p&gt;
+&lt;h1 id="智慧医疗技术突破与市场前景从疫苗革新到心脏康复技术如何重塑健康未来"&gt;&lt;a href="#%e6%99%ba%e6%85%a7%e5%8c%bb%e7%96%97%e6%8a%80%e6%9c%af%e7%aa%81%e7%a0%b4%e4%b8%8e%e5%b8%82%e5%9c%ba%e5%89%8d%e6%99%af%e4%bb%8e%e7%96%ab%e8%8b%97%e9%9d%a9%e6%96%b0%e5%88%b0%e5%bf%83%e8%84%8f%e5%ba%b7%e5%a4%8d%e6%8a%80%e6%9c%af%e5%a6%82%e4%bd%95%e9%87%8d%e5%a1%91%e5%81%a5%e5%ba%b7%e6%9c%aa%e6%9d%a5" class="header-anchor"&gt;&lt;/a&gt;智慧医疗技术突破与市场前景：从疫苗革新到心脏康复，技术如何重塑健康未来？
+&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;核心摘要&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;疫苗递送技术革新&lt;/strong&gt;：3D打印技术被用于增强微针阵列贴片（MAP）的疫苗递送效率，这种无痛、室温稳定且可自我施用的技术，有望极大提升大规模免疫接种的可及性和速度[10]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;术后康复与预防医学的量化关联&lt;/strong&gt;：最新研究为心脏健康管理提供了具体量化指导，房颤消融术后患者每周进行90分钟（如每周三次，每次30分钟）的中等强度体育活动，可显著降低房颤复发风险[6]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;替代疗法的潜在公共卫生价值&lt;/strong&gt;：研究揭示，在美国同时将大麻合法化用于医疗和成人娱乐用途的州，与仅医疗合法化的州相比，注射吸毒者的每日阿片类药物使用率下降了9至11个百分点，提示大麻的可及性可能成为一种减少阿片类药物危害的替代策略[4]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;外科术式选择影响患者预后&lt;/strong&gt;：由经验丰富的外科医生进行的非体外循环冠状动脉旁路移植术（OPCAB），与体外循环手术（ONCAB）相比，显示出&lt;strong&gt;略微降低&lt;/strong&gt;的围手术期发病率和死亡率，尽管OPCAB患者不完全血运重建的发生率更高（14.4% vs 8.1%）[7]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公众认知与健康风险的巨大鸿沟&lt;/strong&gt;：一项调查显示，尽管72%的美国人对维持老年心脏健康有信心，但69%的人至少有一个已知的心脏病风险因素，24%的人甚至不确定自己是否面临更高风险，揭示了健康乐观主义与实际风险认知之间的脱节[9]。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id="今日要点"&gt;&lt;a href="#%e4%bb%8a%e6%97%a5%e8%a6%81%e7%82%b9" class="header-anchor"&gt;&lt;/a&gt;&lt;strong&gt;今日要点&lt;/strong&gt;
+&lt;/h3&gt;&lt;h4 id="一-技术创新疫苗递送进入贴片时代"&gt;&lt;a href="#%e4%b8%80-%e6%8a%80%e6%9c%af%e5%88%9b%e6%96%b0%e7%96%ab%e8%8b%97%e9%80%92%e9%80%81%e8%bf%9b%e5%85%a5%e8%b4%b4%e7%89%87%e6%97%b6%e4%bb%a3" class="header-anchor"&gt;&lt;/a&gt;&lt;strong&gt;一、 技术创新：疫苗递送进入“贴片时代”&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;新冠疫情加速了疫苗技术的迭代，其中，微针阵列贴片（MAP）因其独特优势成为焦点。与传统注射疫苗需要专业医护人员操作不同，MAPs无痛、室温下更稳定，且关键是可以&lt;strong&gt;自我施用&lt;/strong&gt;[10]。这为解决偏远地区接种、快速大规模免疫以及提升接种依从性提供了革命性方案。&lt;/p&gt;
+&lt;p&gt;然而，MAPs的效能提升是关键挑战。近日，东京大学的研究团队利用&lt;strong&gt;3D打印技术&lt;/strong&gt;改进了MAPs的制造工艺，成功提高了病毒滴度，并在小鼠实验中证明了其能引发有效的免疫原性并提供感染保护[10]。这项技术突破意味着，未来我们可能像使用创可贴一样接种疫苗，极大地降低了医疗系统的分发与执行负担，为应对下一次大流行提供了强有力的技术储备。&lt;/p&gt;
+&lt;h4 id="二-公共卫生传统传染病与新政策挑战并存"&gt;&lt;a href="#%e4%ba%8c-%e5%85%ac%e5%85%b1%e5%8d%ab%e7%94%9f%e4%bc%a0%e7%bb%9f%e4%bc%a0%e6%9f%93%e7%97%85%e4%b8%8e%e6%96%b0%e6%94%bf%e7%ad%96%e6%8c%91%e6%88%98%e5%b9%b6%e5%ad%98" class="header-anchor"&gt;&lt;/a&gt;&lt;strong&gt;二、 公共卫生：传统传染病与新政策挑战并存&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;在技术高歌猛进的同时，传统传染病的威胁并未远离，甚至因社会因素而加剧。近期，卡罗来纳地区麻疹病例攀升，梅克伦堡县报告了3例病例，附近的联合县因一名受感染儿童上学而发出了&lt;strong&gt;170多份&lt;/strong&gt;隔离令[2]。这一局地情况与全国病例激增同步，揭示了&lt;strong&gt;疫苗犹豫情绪上升&lt;/strong&gt;带来的直接后果。&lt;/p&gt;
+&lt;p&gt;公共卫生专家指出，克服日益增长的疫苗犹豫是防止麻疹进一步传播的关键，但这在美国反疫苗接种运动兴起的背景下变得愈发困难[2]。与此同时，政策层面也在试图干预医疗市场。特朗普政府推出的TrumpRx网站宣称提供43种品牌药的世界最低价，但STAT分析发现，其中至少&lt;strong&gt;18种&lt;/strong&gt;药物在GoodRx或Mark Cuban的Cost Plus Drugs等平台上已有更便宜的仿制药可供选择[3]。这凸显出，在复杂的医药市场中，单纯的价格公示工具可能无法触及药价高昂的结构性核心，消费者仍需多方比价。&lt;/p&gt;
+&lt;h4 id="三-临床实践与健康管理从精准手术到量化生活方式干预"&gt;&lt;a href="#%e4%b8%89-%e4%b8%b4%e5%ba%8a%e5%ae%9e%e8%b7%b5%e4%b8%8e%e5%81%a5%e5%ba%b7%e7%ae%a1%e7%90%86%e4%bb%8e%e7%b2%be%e5%87%86%e6%89%8b%e6%9c%af%e5%88%b0%e9%87%8f%e5%8c%96%e7%94%9f%e6%b4%bb%e6%96%b9%e5%bc%8f%e5%b9%b2%e9%a2%84" class="header-anchor"&gt;&lt;/a&gt;&lt;strong&gt;三、 临床实践与健康管理：从精准手术到量化生活方式干预&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;临床医学的进步体现在手术技术的精进与术后管理的科学化。胸外科医师学会年会公布的研究显示，由经验丰富的外科医生执行的非体外循环冠脉搭桥术（OPCAB），在围手术期发病率和死亡率上&lt;strong&gt;略优于&lt;/strong&gt;传统的体外循环手术（ONCAB）[7]。尽管OPCAB组的不完全血运重建率更高（14.4% vs 8.1%），且患者平均少接受0.20支桥血管，但其多动脉桥使用更频繁（14.5% vs 9.6%），并获得了&lt;strong&gt;显著更好&lt;/strong&gt;的短期结果[7]。这为特定患者群体的术式选择提供了高级别证据支持。&lt;/p&gt;
+&lt;p&gt;术后康复和慢性病管理日益强调生活方式的量化干预。科罗拉多大学安舒茨医学院的研究给出了明确“处方”：房颤消融术后，每周进行&lt;strong&gt;90分钟&lt;/strong&gt;中等强度体育活动（如每周三次，每次30分钟）的患者，房颤复发率显著低于活动量少的患者[6]。这种低成本、高可行性的干预措施，将疾病管理从医院延伸至患者的日常生活中，体现了预防医学和康复医学的核心价值。&lt;/p&gt;
+&lt;h4 id="四-社会与认知系统性与个体性的健康鸿沟"&gt;&lt;a href="#%e5%9b%9b-%e7%a4%be%e4%bc%9a%e4%b8%8e%e8%ae%a4%e7%9f%a5%e7%b3%bb%e7%bb%9f%e6%80%a7%e4%b8%8e%e4%b8%aa%e4%bd%93%e6%80%a7%e7%9a%84%e5%81%a5%e5%ba%b7%e9%b8%bf%e6%b2%9f" class="header-anchor"&gt;&lt;/a&gt;&lt;strong&gt;四、 社会与认知：系统性与个体性的健康鸿沟&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;健康结局不仅取决于技术与医疗，更深植于社会认知与系统公正之中。一项针对加州高等法院法官的研究发现了令人担忧的认知缺口：法官们对自闭症谱系障碍（ASD）的知识存在&lt;strong&gt;显著不足&lt;/strong&gt;，这可能导致ASD患者在法律环境中受到不公正对待[1]。研究建议采取补救措施以解决这些缺陷[1]。这表明，即便在司法这样的关键社会系统中，对特定健康障碍的理解缺失也会直接影响公平正义，智慧医疗的范畴需要扩展到司法教育等更广阔的领域。&lt;/p&gt;
+&lt;p&gt;在个体层面，认知与行为的脱节同样明显。克利夫兰诊所的一项民意调查描绘了一幅矛盾图景：高达&lt;strong&gt;72%&lt;/strong&gt; 的美国人对随着年龄增长保持心脏健康的能力充满信心；然而，&lt;strong&gt;69%&lt;/strong&gt; 的人承认自己至少有一个心脏病风险因素（如高血压31%，高胆固醇24%），还有&lt;strong&gt;24%&lt;/strong&gt; 的人根本不确定自己风险如何[9]。这种“乐观的偏见”是慢性病预防的主要障碍之一，提示健康宣教需要更有效地将宏观风险转化为个人化的、可感知的紧迫感。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="数据与指标"&gt;&lt;a href="#%e6%95%b0%e6%8d%ae%e4%b8%8e%e6%8c%87%e6%a0%87" class="header-anchor"&gt;&lt;/a&gt;&lt;strong&gt;数据与指标&lt;/strong&gt;
+&lt;/h3&gt;&lt;h4 id="一-心血管健康与疾病管理关键数据"&gt;&lt;a href="#%e4%b8%80-%e5%bf%83%e8%a1%80%e7%ae%a1%e5%81%a5%e5%ba%b7%e4%b8%8e%e7%96%be%e7%97%85%e7%ae%a1%e7%90%86%e5%85%b3%e9%94%ae%e6%95%b0%e6%8d%ae" class="header-anchor"&gt;&lt;/a&gt;&lt;strong&gt;一、 心血管健康与疾病管理关键数据&lt;/strong&gt;
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;房颤术后康复量化指标&lt;/strong&gt;：消融术后患者，坚持每周 &lt;strong&gt;90分钟&lt;/strong&gt; 中等强度体育活动，与房颤复发率降低显著相关[6]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公众心脏疾病风险普遍性&lt;/strong&gt;：&lt;strong&gt;69%&lt;/strong&gt; 的美国成年人拥有至少一项已认知的心脏病风险因素[9]。具体风险因素流行率从高到低包括：高血压（&lt;strong&gt;31%&lt;/strong&gt;）、高胆固醇（&lt;strong&gt;24%&lt;/strong&gt;）、家族史（&lt;strong&gt;23%&lt;/strong&gt;）、肥胖（&lt;strong&gt;20%&lt;/strong&gt;）、不良饮食（&lt;strong&gt;18%&lt;/strong&gt;）、久坐生活方式（&lt;strong&gt;17%&lt;/strong&gt;）、每日未管理的压力（&lt;strong&gt;16%&lt;/strong&gt;）、睡眠呼吸暂停（&lt;strong&gt;15%&lt;/strong&gt;）、吸烟（&lt;strong&gt;14%&lt;/strong&gt;）、糖尿病（&lt;strong&gt;13%&lt;/strong&gt;）[9]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;冠脉搭桥术式对比数据&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;不完全血运重建发生率：非体外循环（OPCAB）为 &lt;strong&gt;14.4%&lt;/strong&gt;，体外循环（ONCAB）为 &lt;strong&gt;8.1%&lt;/strong&gt;[7]。&lt;/li&gt;
+&lt;li&gt;患者平均接受桥血管数量：OPCAB患者比ONCAB患者平均少 &lt;strong&gt;0.20&lt;/strong&gt; 支[7]。&lt;/li&gt;
+&lt;li&gt;多动脉桥使用频率：OPCAB为 &lt;strong&gt;14.5%&lt;/strong&gt;，ONCAB为 &lt;strong&gt;9.6%&lt;/strong&gt;[7]。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="二-公共卫生与政策相关数据"&gt;&lt;a href="#%e4%ba%8c-%e5%85%ac%e5%85%b1%e5%8d%ab%e7%94%9f%e4%b8%8e%e6%94%bf%e7%ad%96%e7%9b%b8%e5%85%b3%e6%95%b0%e6%8d%ae" class="header-anchor"&gt;&lt;/a&gt;&lt;strong&gt;二、 公共卫生与政策相关数据&lt;/strong&gt;
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;传染病防控局部压力&lt;/strong&gt;：北卡罗来纳州联合县因一例学校麻疹病例，发出了 &lt;strong&gt;170多份&lt;/strong&gt; 隔离令[2]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;药物价格政策对比&lt;/strong&gt;：TrumpRx网站宣称提供最低价的43种品牌药中，至少有 &lt;strong&gt;18种&lt;/strong&gt; 已有更便宜的仿制药通过其他平台流通[3]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;物质使用与政策关联&lt;/strong&gt;：在同时实行医疗与娱乐大麻合法化的州，注射吸毒者的每日阿片类药物使用率，比仅实行医疗合法化的州低 &lt;strong&gt;9至11&lt;/strong&gt; 个百分点[4]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;司法系统认知研究样本量&lt;/strong&gt;：针对加州法官对自闭症认知的研究，共有 &lt;strong&gt;61名&lt;/strong&gt; 加州高等法院法官完成了调查[1]。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="影响与机会"&gt;&lt;a href="#%e5%bd%b1%e5%93%8d%e4%b8%8e%e6%9c%ba%e4%bc%9a" class="header-anchor"&gt;&lt;/a&gt;&lt;strong&gt;影响与机会&lt;/strong&gt;
+&lt;/h3&gt;&lt;h4 id="对医疗科技企业与研发机构"&gt;&lt;a href="#%e5%af%b9%e5%8c%bb%e7%96%97%e7%a7%91%e6%8a%80%e4%bc%81%e4%b8%9a%e4%b8%8e%e7%a0%94%e5%8f%91%e6%9c%ba%e6%9e%84" class="header-anchor"&gt;&lt;/a&gt;&lt;strong&gt;对医疗科技企业与研发机构&lt;/strong&gt;
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;重点投资递送技术平台&lt;/strong&gt;：微针阵列贴片（MAP）结合3D打印制造技术已显示出明确潜力[10]。企业应加大对无痛、自施用、热稳定疫苗/药物递送平台的研发，这不仅是技术高地，更是未来应对公共卫生危机和提升慢性病管理依从性的关键基础设施。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开发数字化、量化康复解决方案&lt;/strong&gt;：研究已明确将运动量（如每周90分钟）与特定临床结局（房颤复发率）挂钩[6]。企业可开发整合可穿戴设备、提供个性化运动处方与依从性追踪的数字疗法产品，与医院术后管理流程深度融合，创造新的价值市场。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关注替代疗法与减害产品的临床证据生成&lt;/strong&gt;：关于大麻合法化与阿片类药物使用减少的关联性研究[4]，提示了特定物质在公共卫生层面的潜在价值。相关企业应致力于开展严谨的临床研究，用高质量数据阐明产品在疼痛管理、成瘾替代治疗等领域的具体作用和风险，为政策与医疗决策提供依据。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="对医疗机构与从业者"&gt;&lt;a href="#%e5%af%b9%e5%8c%bb%e7%96%97%e6%9c%ba%e6%9e%84%e4%b8%8e%e4%bb%8e%e4%b8%9a%e8%80%85" class="header-anchor"&gt;&lt;/a&gt;&lt;strong&gt;对医疗机构与从业者&lt;/strong&gt;
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;推行基于证据的术式选择与患者沟通&lt;/strong&gt;：外科团队应充分了解不同术式（如OPCAB与ONCAB）的详细利弊数据[7]，在 multidisciplinary team（MDT）讨论中，结合患者具体情况进行个性化推荐，并与患者透明沟通不同选择在血运重建程度、短期风险等方面的权衡。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;将“运动处方”标准化、流程化&lt;/strong&gt;：心脏康复、术后管理及慢性病预防门诊应借鉴最新研究，将“每周90分钟中等强度活动”等具体、易行的运动建议转化为标准护理的一部分[6]。这需要医生、护士、康复治疗师协同工作，并提供简单的追踪工具或日志。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;加强跨系统专业知识普及&lt;/strong&gt;：法官对自闭症认知的缺失警示我们，医疗知识在其他社会系统中的普及至关重要[1]。医疗从业者，特别是精神心理、发育行为领域的专家，应主动参与司法、教育等系统的培训工作，充当知识桥梁，以减少因误解导致的不公。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="对投资者与行业观察者"&gt;&lt;a href="#%e5%af%b9%e6%8a%95%e8%b5%84%e8%80%85%e4%b8%8e%e8%a1%8c%e4%b8%9a%e8%a7%82%e5%af%9f%e8%80%85" class="header-anchor"&gt;&lt;/a&gt;&lt;strong&gt;对投资者与行业观察者&lt;/strong&gt;
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;甄别“真创新”与“伪解决方案”&lt;/strong&gt;：在关注如TrumpRx这类政策驱动的市场举措时，需保持清醒[3]。投资应聚焦于能真正解决底层问题（如药品定价复杂性和供应链成本）的技术或商业模式，而非仅停留在价格信息聚合层面的工具。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;布局预防与康复赛道&lt;/strong&gt;：公众健康认知与实际情况的鸿沟[9]，以及量化生活方式干预的有效性[6]，共同指向了预防医学和院外康复管理的巨大市场缺口。投资于能有效进行风险教育、提供个性化预防方案、并提升患者长期依从性的数字健康公司，前景广阔。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关注政策风险与科研独立性&lt;/strong&gt;：NIH资助评审人员对“Schedule F”分类可能政治化科学工作的担忧[8]，是一个重要的风险信号。投资生物医药研发时，需评估其核心研究是否过度依赖于可能受政治风向变化影响的单一公共资金渠道，并关注那些能维护科研独立性的机构和平台。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;来源列表&lt;/strong&gt;
+[1] California state court judges found to have gaps in their understanding of autism
+&lt;a class="link" href="https://medicalxpress.com/news/2026-02-california-state-court-gaps-autism.html" target="_blank" rel="noopener"
+ &gt;https://medicalxpress.com/news/2026-02-california-state-court-gaps-autism.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] Is Charlotte at risk for bigger measles outbreak as cases climb in the Carolinas?
+&lt;a class="link" href="https://medicalxpress.com/news/2026-02-charlotte-bigger-measles-outbreak-cases.html" target="_blank" rel="noopener"
+ &gt;https://medicalxpress.com/news/2026-02-charlotte-bigger-measles-outbreak-cases.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] TrumpRx promises cheapest drugs. Many cost less already
+&lt;a class="link" href="https://www.statnews.com/2026/02/06/trumprx-discount-drug-website-undercut-by-cheaper-generics/?utm_campaign=rss" target="_blank" rel="noopener"
+ &gt;https://www.statnews.com/2026/02/06/trumprx-discount-drug-website-undercut-by-cheaper-generics/?utm_campaign=rss&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[4] Study finds daily opioid use fell 9 to 11 points after recreational cannabis legalization
+&lt;a class="link" href="https://medicalxpress.com/news/2026-02-daily-opioid-fell-recreational-cannabis.html" target="_blank" rel="noopener"
+ &gt;https://medicalxpress.com/news/2026-02-daily-opioid-fell-recreational-cannabis.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[5] Physical education can boost children&amp;rsquo;s health and education-let&amp;rsquo;s make it central to the curriculum
+&lt;a class="link" href="https://medicalxpress.com/news/2026-02-physical-boost-children-health-central.html" target="_blank" rel="noopener"
+ &gt;https://medicalxpress.com/news/2026-02-physical-boost-children-health-central.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[6] Study finds 90 minutes weekly activity after ablation linked to fewer atrial fibrillation relapses
+&lt;a class="link" href="https://medicalxpress.com/news/2026-02-minutes-weekly-ablation-linked-atrial.html" target="_blank" rel="noopener"
+ &gt;https://medicalxpress.com/news/2026-02-minutes-weekly-ablation-linked-atrial.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[7] STS: Off-pump coronary artery bypass grafting shows lower perioperative morbidity, mortality than on-pump
+&lt;a class="link" href="https://medicalxpress.com/news/2026-02-sts-coronary-artery-bypass-grafting.html" target="_blank" rel="noopener"
+ &gt;https://medicalxpress.com/news/2026-02-sts-coronary-artery-bypass-grafting.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[8] NIH grant reviewers fear Schedule F status will politicize their jobs
+&lt;a class="link" href="https://www.statnews.com/2026/02/06/nih-grant-reviewers-schedule-f-designation-politicizes-science/?utm_campaign=rss" target="_blank" rel="noopener"
+ &gt;https://www.statnews.com/2026/02/06/nih-grant-reviewers-schedule-f-designation-politicizes-science/?utm_campaign=rss&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[9] Americans optimistic about heart health prospects, but face an uphill battle, survey suggests
+&lt;a class="link" href="https://medicalxpress.com/news/2026-02-americans-optimistic-heart-health-prospects.html" target="_blank" rel="noopener"
+ &gt;https://medicalxpress.com/news/2026-02-americans-optimistic-heart-health-prospects.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[10] A 3D-printed delivery system enhances vaccine delivery via microneedle array patch
+&lt;a class="link" href="https://medicalxpress.com/news/2026-02-3d-delivery-vaccine-microneedle-array.html" target="_blank" rel="noopener"
+ &gt;https://medicalxpress.com/news/2026-02-3d-delivery-vaccine-microneedle-array.html&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

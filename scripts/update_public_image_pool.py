@@ -199,11 +199,20 @@ def main() -> None:
             if not _text(c.get("image_url")):
                 continue
             
-            # 获取图片元数据并计算匹配度
+            # 获取图片元数据并计算匹配度（限制频率，避免API过载）
             image_id = c.get("id", "")
-            image_meta = get_image_metadata(image_id) if image_id else {}
-            image_tags = image_meta.get("tags", [])
-            match_score = calculate_match_score(tags, image_tags, args.title, c.get("title", ""))
+            image_meta = {}
+            image_tags = []
+            match_score = 0.3  # 默认分
+            
+            # 只对前10个候选图片获取详细元数据
+            if len(new_items) < 10 and image_id:
+                image_meta = get_image_metadata(image_id)
+                image_tags = image_meta.get("tags", [])
+                match_score = calculate_match_score(tags, image_tags, args.title, c.get("title", ""))
+            else:
+                # 后续图片使用基础匹配度
+                match_score = 0.3
             
             it = {
                 "provider": "wikimedia_commons",

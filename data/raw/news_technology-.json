@@ -1,6 +1,6 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-10T20:13:27.559979+00:00",
+  "collected_at": "2026-02-11T00:47:30.285224+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
@@ -8,11 +8,11 @@
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "如何看待米哈游宣布终止与上海市汇业律师事务所的合作?",
-      "url": "https://www.zhihu.com/question/2004550049594622284",
-      "published": "2026-02-10T20:13:27.559946+00:00",
-      "summary": "hot_value: 963 万热度 platform: zhihu",
-      "content_text": "热榜信号：如何看待米哈游宣布终止与上海市汇业律师事务所的合作?｜热度：963 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004550049594622284",
+      "title": "Seedance 2.0 将对视频行业带来怎样的冲击与颠覆？为什么冯骥称深感震撼的同时也有一丝迷茫？",
+      "url": "https://www.zhihu.com/question/2004525707066306750",
+      "published": "2026-02-11T00:47:30.285194+00:00",
+      "summary": "hot_value: 382 万热度 platform: zhihu",
+      "content_text": "热榜信号：Seedance 2.0 将对视频行业带来怎样的冲击与颠覆？为什么冯骥称深感震撼的同时也有一丝迷茫？｜热度：382 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004525707066306750",
       "cover_image_url": null
     },
     {
@@ -20,19 +20,69 @@
       "source": "hotboard:zhihu",
       "title": "意大利发生运钞车抢劫案，劫匪用炸药炸开车尾，与到场警方交火，具体情况如何？",
       "url": "https://www.zhihu.com/question/2004561082279228394",
-      "published": "2026-02-10T20:13:27.559946+00:00",
-      "summary": "hot_value: 354 万热度 platform: zhihu",
-      "content_text": "热榜信号：意大利发生运钞车抢劫案，劫匪用炸药炸开车尾，与到场警方交火，具体情况如何？｜热度：354 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004561082279228394",
+      "published": "2026-02-11T00:47:30.285194+00:00",
+      "summary": "hot_value: 334 万热度 platform: zhihu",
+      "content_text": "热榜信号：意大利发生运钞车抢劫案，劫匪用炸药炸开车尾，与到场警方交火，具体情况如何？｜热度：334 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004561082279228394",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "男生帮女儿倒垃圾，班主任不允许，说自己的事自己做，让女儿把垃圾捡回来重扔，妈妈觉得老师没事找事，谁对？",
-      "url": "https://www.zhihu.com/question/1913980568154149322",
-      "published": "2026-02-10T20:13:27.559946+00:00",
-      "summary": "hot_value: 123 万热度 platform: zhihu",
-      "content_text": "热榜信号：男生帮女儿倒垃圾，班主任不允许，说自己的事自己做，让女儿把垃圾捡回来重扔，妈妈觉得老师没事找事，谁对？｜热度：123 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/1913980568154149322",
+      "title": "来做客的孩子临走时带走几只玩具，我的孩子抗拒并一直哭，要怎么开导？",
+      "url": "https://www.zhihu.com/question/36246233",
+      "published": "2026-02-11T00:47:30.285194+00:00",
+      "summary": "hot_value: 292 万热度 platform: zhihu",
+      "content_text": "热榜信号：来做客的孩子临走时带走几只玩具，我的孩子抗拒并一直哭，要怎么开导？｜热度：292 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/36246233",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "李阳疯狂英语为什么没落了？",
+      "url": "https://www.zhihu.com/question/19656357",
+      "published": "2026-02-11T00:47:30.285194+00:00",
+      "summary": "hot_value: 220 万热度 platform: zhihu",
+      "content_text": "热榜信号：李阳疯狂英语为什么没落了？｜热度：220 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/19656357",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "爸妈突然分房睡，说因为老妈受不了老爸酒味，我该做什么？",
+      "url": "https://www.zhihu.com/question/2003982529590498889",
+      "published": "2026-02-11T00:47:30.285194+00:00",
+      "summary": "hot_value: 192 万热度 platform: zhihu",
+      "content_text": "热榜信号：爸妈突然分房睡，说因为老妈受不了老爸酒味，我该做什么？｜热度：192 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2003982529590498889",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "网传某女生的北京 19 天的旅游计划引热议，这个行程强度合理吗？值得参考吗？",
+      "url": "https://www.zhihu.com/question/2004074918078326064",
+      "published": "2026-02-11T00:47:30.285194+00:00",
+      "summary": "hot_value: 168 万热度 platform: zhihu",
+      "content_text": "热榜信号：网传某女生的北京 19 天的旅游计划引热议，这个行程强度合理吗？值得参考吗？｜热度：168 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004074918078326064",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "为什么明明是我在照顾猫，但是猫却更喜欢我老公？",
+      "url": "https://www.zhihu.com/question/598606116",
+      "published": "2026-02-11T00:47:30.285194+00:00",
+      "summary": "hot_value: 157 万热度 platform: zhihu",
+      "content_text": "热榜信号：为什么明明是我在照顾猫，但是猫却更喜欢我老公？｜热度：157 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/598606116",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "如何评价电视剧《太平年》44 集？",
+      "url": "https://www.zhihu.com/question/2004636663045955950",
+      "published": "2026-02-11T00:47:30.285194+00:00",
+      "summary": "hot_value: 126 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何评价电视剧《太平年》44 集？｜热度：126 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004636663045955950",
       "cover_image_url": null
     },
     {
@@ -40,59 +90,9 @@
       "source": "hotboard:zhihu",
       "title": "时隔 18 年《职工带薪年休假条例》首次修订，你期待有哪些改变?",
       "url": "https://www.zhihu.com/question/1999487696737957463",
-      "published": "2026-02-10T20:13:27.559946+00:00",
-      "summary": "hot_value: 127 万热度 platform: zhihu",
-      "content_text": "热榜信号：时隔 18 年《职工带薪年休假条例》首次修订，你期待有哪些改变?｜热度：127 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/1999487696737957463",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "比亚迪车主们，再买车你们还会继续选择比亚迪吗？",
-      "url": "https://www.zhihu.com/question/2002044616925524488",
-      "published": "2026-02-10T20:13:27.559946+00:00",
-      "summary": "hot_value: 125 万热度 platform: zhihu",
-      "content_text": "热榜信号：比亚迪车主们，再买车你们还会继续选择比亚迪吗？｜热度：125 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2002044616925524488",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "《黑神话：钟馗》发布 6 分钟实机预告，如何评价该预告中展现出的信息？",
-      "url": "https://www.zhihu.com/question/2004496502488327792",
-      "published": "2026-02-10T20:13:27.559946+00:00",
-      "summary": "hot_value: 120 万热度 platform: zhihu",
-      "content_text": "热榜信号：《黑神话：钟馗》发布 6 分钟实机预告，如何评价该预告中展现出的信息？｜热度：120 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004496502488327792",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "华晨宇宣布拿下三块地，建立含演出餐饮住宿的演唱会乐园，实现从租赁场地到自建基地升级，怎样看待这种模式？",
-      "url": "https://www.zhihu.com/question/2004467152388841545",
-      "published": "2026-02-10T20:13:27.559946+00:00",
-      "summary": "hot_value: 112 万热度 platform: zhihu",
-      "content_text": "热榜信号：华晨宇宣布拿下三块地，建立含演出餐饮住宿的演唱会乐园，实现从租赁场地到自建基地升级，怎样看待这种模式？｜热度：112 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004467152388841545",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "有没有可能可控核聚变根本实现不了，宇宙中的文明也无法星际航行？",
-      "url": "https://www.zhihu.com/question/392450233",
-      "published": "2026-02-10T20:13:27.559946+00:00",
-      "summary": "hot_value: 112 万热度 platform: zhihu",
-      "content_text": "热榜信号：有没有可能可控核聚变根本实现不了，宇宙中的文明也无法星际航行？｜热度：112 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/392450233",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "为什么 AI 会建议我走路去洗车？AI 还提出过什么壮举？",
-      "url": "https://www.zhihu.com/question/2004524090598323141",
-      "published": "2026-02-10T20:13:27.559946+00:00",
-      "summary": "hot_value: 96 万热度 platform: zhihu",
-      "content_text": "热榜信号：为什么 AI 会建议我走路去洗车？AI 还提出过什么壮举？｜热度：96 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004524090598323141",
+      "published": "2026-02-11T00:47:30.285194+00:00",
+      "summary": "hot_value: 117 万热度 platform: zhihu",
+      "content_text": "热榜信号：时隔 18 年《职工带薪年休假条例》首次修订，你期待有哪些改变?｜热度：117 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/1999487696737957463",
       "cover_image_url": null
     },
     {
@@ -100,27 +100,27 @@
       "source": "hotboard:zhihu",
       "title": "米兰冬奥会短道混合团体接力项目，中国队获得第四，如何评价本场比赛？",
       "url": "https://www.zhihu.com/question/2004563660178215547",
-      "published": "2026-02-10T20:13:27.559946+00:00",
-      "summary": "hot_value: 92 万热度 platform: zhihu",
-      "content_text": "热榜信号：米兰冬奥会短道混合团体接力项目，中国队获得第四，如何评价本场比赛？｜热度：92 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004563660178215547",
+      "published": "2026-02-11T00:47:30.285194+00:00",
+      "summary": "hot_value: 117 万热度 platform: zhihu",
+      "content_text": "热榜信号：米兰冬奥会短道混合团体接力项目，中国队获得第四，如何评价本场比赛？｜热度：117 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004563660178215547",
       "cover_image_url": null
     }
   ],
   "meta": {
     "mode": "hotboard",
     "types_fetched": [
+      "juejin",
       "ithome",
-      "36kr",
-      "huxiu",
-      "zhihu"
+      "zhihu",
+      "huxiu"
     ],
     "live_ok": true,
     "picked": {
       "platform": "zhihu",
-      "title": "如何看待米哈游宣布终止与上海市汇业律师事务所的合作?",
-      "url": "https://www.zhihu.com/question/2004550049594622284",
-      "hot_value": "963 万热度",
-      "score": 13903312.500000004
+      "title": "Seedance 2.0 将对视频行业带来怎样的冲击与颠覆？为什么冯骥称深感震撼的同时也有一丝迷茫？",
+      "url": "https://www.zhihu.com/question/2004525707066306750",
+      "hot_value": "382 万热度",
+      "score": 5790881.250000001
     }
   }
 }

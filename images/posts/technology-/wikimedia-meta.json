@@ -1,18 +1,18 @@
 {
-  "query": "online learning",
+  "query": "battery medical technology",
   "count": 1,
   "items": [
     {
-      "title": "File:7 Measures of Quality in Online Learning (10164585803).jpg",
-      "pageid": 97648704,
-      "descriptionurl": "https://commons.wikimedia.org/wiki/File:7_Measures_of_Quality_in_Online_Learning_(10164585803).jpg",
-      "file_page": "https://commons.wikimedia.org/wiki/File:7_Measures_of_Quality_in_Online_Learning_(10164585803).jpg",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/7_Measures_of_Quality_in_Online_Learning_%2810164585803%29.jpg/1920px-7_Measures_of_Quality_in_Online_Learning_%2810164585803%29.jpg",
+      "title": "File:BibopTED.jpg",
+      "pageid": 77196302,
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:BibopTED.jpg",
+      "file_page": "https://commons.wikimedia.org/wiki/File:BibopTED.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/BibopTED.jpg",
       "mime": null,
-      "license": "CC0",
-      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/59217476@N00\">Giulia Forsythe</a>",
-      "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gforsythe/10164585803/\">7 Measures of Quality in Online Learning</a>",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Kris Krug",
+      "credit": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
       "attribution": null,
       "saved_as": "/home/runner/work/gsaecy.github.io/gsaecy.github.io/static/images/posts/technology-/wikimedia-1.jpg"
     }

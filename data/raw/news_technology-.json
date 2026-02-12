@@ -1,6 +1,6 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-12T10:16:32.037473+00:00",
+  "collected_at": "2026-02-12T10:23:11.111403+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
@@ -10,7 +10,7 @@
       "source": "hotboard:juejin",
       "title": "一个月手搓 JavaScript runtime",
       "url": "https://juejin.cn/post/7603393977476546586",
-      "published": "2026-02-12T10:16:32.037444+00:00",
+      "published": "2026-02-12T10:23:11.111374+00:00",
       "summary": "hot_value: 热度:1818 platform: juejin",
       "content_text": "热榜信号：一个月手搓 JavaScript runtime｜热度：热度:1818｜平台：juejin\n链接：https://juejin.cn/post/7603393977476546586",
       "cover_image_url": null
@@ -20,7 +20,7 @@
       "source": "hotboard:juejin",
       "title": "Flutter Zero 是什么？它的出现有什么意义？为什么你需要了解下？",
       "url": "https://juejin.cn/post/7603769956976377897",
-      "published": "2026-02-12T10:16:32.037444+00:00",
+      "published": "2026-02-12T10:23:11.111374+00:00",
       "summary": "hot_value: 热度:1080 platform: juejin",
       "content_text": "热榜信号：Flutter Zero 是什么？它的出现有什么意义？为什么你需要了解下？｜热度：热度:1080｜平台：juejin\n链接：https://juejin.cn/post/7603769956976377897",
       "cover_image_url": null
@@ -30,7 +30,7 @@
       "source": "hotboard:juejin",
       "title": "150万开发者“被偷家”！这两款浓眉大眼的 VS Code 插件竟然是间谍",
       "url": "https://juejin.cn/post/7603783314713640996",
-      "published": "2026-02-12T10:16:32.037444+00:00",
+      "published": "2026-02-12T10:23:11.111374+00:00",
       "summary": "hot_value: 热度:1071 platform: juejin",
       "content_text": "热榜信号：150万开发者“被偷家”！这两款浓眉大眼的 VS Code 插件竟然是间谍｜热度：热度:1071｜平台：juejin\n链接：https://juejin.cn/post/7603783314713640996",
       "cover_image_url": null
@@ -40,7 +40,7 @@
       "source": "hotboard:juejin",
       "title": "写了 10 年 MyBatis，一直以为“去 XML”=写注解，直到看到了这个项目",
       "url": "https://juejin.cn/post/7603656494904737798",
-      "published": "2026-02-12T10:16:32.037444+00:00",
+      "published": "2026-02-12T10:23:11.111374+00:00",
       "summary": "hot_value: 热度:576 platform: juejin",
       "content_text": "热榜信号：写了 10 年 MyBatis，一直以为“去 XML”=写注解，直到看到了这个项目｜热度：热度:576｜平台：juejin\n链接：https://juejin.cn/post/7603656494904737798",
       "cover_image_url": null
@@ -50,7 +50,7 @@
       "source": "hotboard:juejin",
       "title": "我的很多朋友，都消失了…",
       "url": "https://juejin.cn/post/7604665952320454707",
-      "published": "2026-02-12T10:16:32.037444+00:00",
+      "published": "2026-02-12T10:23:11.111374+00:00",
       "summary": "hot_value: 热度:558 platform: juejin",
       "content_text": "热榜信号：我的很多朋友，都消失了…｜热度：热度:558｜平台：juejin\n链接：https://juejin.cn/post/7604665952320454707",
       "cover_image_url": null
@@ -60,7 +60,7 @@
       "source": "hotboard:juejin",
       "title": "Spring Batch实战",
       "url": "https://juejin.cn/post/7603575763786874906",
-      "published": "2026-02-12T10:16:32.037444+00:00",
+      "published": "2026-02-12T10:23:11.111374+00:00",
       "summary": "hot_value: 热度:513 platform: juejin",
       "content_text": "热榜信号：Spring Batch实战｜热度：热度:513｜平台：juejin\n链接：https://juejin.cn/post/7603575763786874906",
       "cover_image_url": null
@@ -70,7 +70,7 @@
       "source": "hotboard:juejin",
       "title": "Claude4.5+Gemini3 接管电脑桌面，这回是真无敌了..",
       "url": "https://juejin.cn/post/7603854784864632872",
-      "published": "2026-02-12T10:16:32.037444+00:00",
+      "published": "2026-02-12T10:23:11.111374+00:00",
       "summary": "hot_value: 热度:504 platform: juejin",
       "content_text": "热榜信号：Claude4.5+Gemini3 接管电脑桌面，这回是真无敌了..｜热度：热度:504｜平台：juejin\n链接：https://juejin.cn/post/7603854784864632872",
       "cover_image_url": null
@@ -80,7 +80,7 @@
       "source": "hotboard:juejin",
       "title": "业务方上压力了，前端仔速通RGB转CMYK",
       "url": "https://juejin.cn/post/7604093823957860371",
-      "published": "2026-02-12T10:16:32.037444+00:00",
+      "published": "2026-02-12T10:23:11.111374+00:00",
       "summary": "hot_value: 热度:441 platform: juejin",
       "content_text": "热榜信号：业务方上压力了，前端仔速通RGB转CMYK｜热度：热度:441｜平台：juejin\n链接：https://juejin.cn/post/7604093823957860371",
       "cover_image_url": null
@@ -90,7 +90,7 @@
       "source": "hotboard:juejin",
       "title": "富文本编辑器在 AI 时代为什么这么受欢迎",
       "url": "https://juejin.cn/post/7604037348607508518",
-      "published": "2026-02-12T10:16:32.037444+00:00",
+      "published": "2026-02-12T10:23:11.111374+00:00",
       "summary": "hot_value: 热度:378 platform: juejin",
       "content_text": "热榜信号：富文本编辑器在 AI 时代为什么这么受欢迎｜热度：热度:378｜平台：juejin\n链接：https://juejin.cn/post/7604037348607508518",
       "cover_image_url": null
@@ -100,7 +100,7 @@
       "source": "hotboard:juejin",
       "title": "Android 17 再曝猛料：通知栏和快捷设置终于分家了，这操作等了十年",
       "url": "https://juejin.cn/post/7603721514204676105",
-      "published": "2026-02-12T10:16:32.037444+00:00",
+      "published": "2026-02-12T10:23:11.111374+00:00",
       "summary": "hot_value: 热度:360 platform: juejin",
       "content_text": "热榜信号：Android 17 再曝猛料：通知栏和快捷设置终于分家了，这操作等了十年｜热度：热度:360｜平台：juejin\n链接：https://juejin.cn/post/7603721514204676105",
       "cover_image_url": null
@@ -109,10 +109,10 @@
   "meta": {
     "mode": "hotboard",
     "types_fetched": [
-      "juejin",
       "sspai",
       "huxiu",
-      "36kr"
+      "juejin",
+      "ithome"
     ],
     "live_ok": true,
     "picked": {

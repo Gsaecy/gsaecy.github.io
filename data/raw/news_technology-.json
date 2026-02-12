@@ -1,6 +1,6 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-12T00:14:27.935317+00:00",
+  "collected_at": "2026-02-12T00:42:38.860283+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
@@ -8,31 +8,21 @@
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
+      "title": "如何评价中国 2 支女子特警队参加 2026 阿联酋国际警察挑战赛的表现？",
+      "url": "https://www.zhihu.com/question/2004362260286574779",
+      "published": "2026-02-12T00:42:38.860250+00:00",
+      "summary": "hot_value: 355 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何评价中国 2 支女子特警队参加 2026 阿联酋国际警察挑战赛的表现？｜热度：355 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004362260286574779",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
       "title": "如何评价 2 月 11 日上线的 DeepSeek 新模型？",
       "url": "https://www.zhihu.com/question/2004971546536585165",
-      "published": "2026-02-12T00:14:27.935285+00:00",
-      "summary": "hot_value: 346 万热度 platform: zhihu",
-      "content_text": "热榜信号：如何评价 2 月 11 日上线的 DeepSeek 新模型？｜热度：346 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004971546536585165",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "男子云闪付显示欠款 1000 万亿，相当于恒大负债 417 倍，远超全球 GDP，银行 App 却没显示，怎么回事？",
-      "url": "https://www.zhihu.com/question/2003815760456348215",
-      "published": "2026-02-12T00:14:27.935285+00:00",
-      "summary": "hot_value: 185 万热度 platform: zhihu",
-      "content_text": "热榜信号：男子云闪付显示欠款 1000 万亿，相当于恒大负债 417 倍，远超全球 GDP，银行 App 却没显示，怎么回事？｜热度：185 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2003815760456348215",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "于东来宣布年后退休，转为顾问，胖东来工作由决策委员会主持，如何看待这一选择？将如何影响胖东来未来发展？",
-      "url": "https://www.zhihu.com/question/2004960170007107386",
-      "published": "2026-02-12T00:14:27.935285+00:00",
-      "summary": "hot_value: 179 万热度 platform: zhihu",
-      "content_text": "热榜信号：于东来宣布年后退休，转为顾问，胖东来工作由决策委员会主持，如何看待这一选择？将如何影响胖东来未来发展？｜热度：179 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004960170007107386",
+      "published": "2026-02-12T00:42:38.860250+00:00",
+      "summary": "hot_value: 318 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何评价 2 月 11 日上线的 DeepSeek 新模型？｜热度：318 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004971546536585165",
       "cover_image_url": null
     },
     {
@@ -40,9 +30,49 @@
       "source": "hotboard:zhihu",
       "title": "15 元无人洗车机洗坏上百万的保时捷，对方只肯承担 1000 元，此事故中责任应如何划分？车主能如何维权？",
       "url": "https://www.zhihu.com/question/2003846940299847117",
-      "published": "2026-02-12T00:14:27.935285+00:00",
-      "summary": "hot_value: 172 万热度 platform: zhihu",
-      "content_text": "热榜信号：15 元无人洗车机洗坏上百万的保时捷，对方只肯承担 1000 元，此事故中责任应如何划分？车主能如何维权？｜热度：172 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2003846940299847117",
+      "published": "2026-02-12T00:42:38.860250+00:00",
+      "summary": "hot_value: 196 万热度 platform: zhihu",
+      "content_text": "热榜信号：15 元无人洗车机洗坏上百万的保时捷，对方只肯承担 1000 元，此事故中责任应如何划分？车主能如何维权？｜热度：196 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2003846940299847117",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "男子云闪付显示欠款 1000 万亿，相当于恒大负债 417 倍，远超全球 GDP，银行 App 却没显示，怎么回事？",
+      "url": "https://www.zhihu.com/question/2003815760456348215",
+      "published": "2026-02-12T00:42:38.860250+00:00",
+      "summary": "hot_value: 167 万热度 platform: zhihu",
+      "content_text": "热榜信号：男子云闪付显示欠款 1000 万亿，相当于恒大负债 417 倍，远超全球 GDP，银行 App 却没显示，怎么回事？｜热度：167 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2003815760456348215",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "雷军宣布初代小米 SU7 停产，交付量近 37 万，如何评价其作为「初代车」的生命周期与市场表现？",
+      "url": "https://www.zhihu.com/question/2004679465389749940",
+      "published": "2026-02-12T00:42:38.860250+00:00",
+      "summary": "hot_value: 167 万热度 platform: zhihu",
+      "content_text": "热榜信号：雷军宣布初代小米 SU7 停产，交付量近 37 万，如何评价其作为「初代车」的生命周期与市场表现？｜热度：167 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004679465389749940",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "于东来宣布年后退休，转为顾问，胖东来工作由决策委员会主持，如何看待这一选择？将如何影响胖东来未来发展？",
+      "url": "https://www.zhihu.com/question/2004960170007107386",
+      "published": "2026-02-12T00:42:38.860250+00:00",
+      "summary": "hot_value: 167 万热度 platform: zhihu",
+      "content_text": "热榜信号：于东来宣布年后退休，转为顾问，胖东来工作由决策委员会主持，如何看待这一选择？将如何影响胖东来未来发展？｜热度：167 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004960170007107386",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "如何评价《崩坏：星穹铁道》「齐乐绒绒大冒险」公益短片：《星穹下的格桑花》？",
+      "url": "https://www.zhihu.com/question/2004907473551770525",
+      "published": "2026-02-12T00:42:38.860250+00:00",
+      "summary": "hot_value: 168 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何评价《崩坏：星穹铁道》「齐乐绒绒大冒险」公益短片：《星穹下的格桑花》？｜热度：168 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004907473551770525",
       "cover_image_url": null
     },
     {
@@ -50,29 +80,9 @@
       "source": "hotboard:zhihu",
       "title": "为什么世界名著大多是严肃文学？",
       "url": "https://www.zhihu.com/question/653896355",
-      "published": "2026-02-12T00:14:27.935285+00:00",
-      "summary": "hot_value: 159 万热度 platform: zhihu",
-      "content_text": "热榜信号：为什么世界名著大多是严肃文学？｜热度：159 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/653896355",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "「最快女护士」张水华离职后首次与品牌签约，品牌方称欣赏她敢于为梦想付出，她的商业价值究竟有多大？",
-      "url": "https://www.zhihu.com/question/2004936861781600011",
-      "published": "2026-02-12T00:14:27.935285+00:00",
-      "summary": "hot_value: 147 万热度 platform: zhihu",
-      "content_text": "热榜信号：「最快女护士」张水华离职后首次与品牌签约，品牌方称欣赏她敢于为梦想付出，她的商业价值究竟有多大？｜热度：147 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004936861781600011",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "Seedance 2.0 让「一人剧组」成为现实，面对新技术，视频行业内更多的是兴奋还是焦虑？",
-      "url": "https://www.zhihu.com/question/2004621240074199741",
-      "published": "2026-02-12T00:14:27.935285+00:00",
-      "summary": "hot_value: 120 万热度 platform: zhihu",
-      "content_text": "热榜信号：Seedance 2.0 让「一人剧组」成为现实，面对新技术，视频行业内更多的是兴奋还是焦虑？｜热度：120 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004621240074199741",
+      "published": "2026-02-12T00:42:38.860250+00:00",
+      "summary": "hot_value: 167 万热度 platform: zhihu",
+      "content_text": "热榜信号：为什么世界名著大多是严肃文学？｜热度：167 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/653896355",
       "cover_image_url": null
     },
     {
@@ -80,47 +90,37 @@
       "source": "hotboard:zhihu",
       "title": "鸡生大号鸡蛋的时候会不会觉得很痛苦？",
       "url": "https://www.zhihu.com/question/1971979529015785137",
-      "published": "2026-02-12T00:14:27.935285+00:00",
-      "summary": "hot_value: 120 万热度 platform: zhihu",
-      "content_text": "热榜信号：鸡生大号鸡蛋的时候会不会觉得很痛苦？｜热度：120 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/1971979529015785137",
+      "published": "2026-02-12T00:42:38.860250+00:00",
+      "summary": "hot_value: 167 万热度 platform: zhihu",
+      "content_text": "热榜信号：鸡生大号鸡蛋的时候会不会觉得很痛苦？｜热度：167 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/1971979529015785137",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "王宝强称「电影失败是导演的问题，别去找任何理由」，如何看待他的导演理念？",
-      "url": "https://www.zhihu.com/question/1997951146183112114",
-      "published": "2026-02-12T00:14:27.935285+00:00",
-      "summary": "hot_value: 119 万热度 platform: zhihu",
-      "content_text": "热榜信号：王宝强称「电影失败是导演的问题，别去找任何理由」，如何看待他的导演理念？｜热度：119 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/1997951146183112114",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "网红「保罗在美国」晒妻子私密分娩过程，并在其中带货，被指过度消费伴侣隐私，如何看待内容创作的伦理边界？",
-      "url": "https://www.zhihu.com/question/2004666271950725740",
-      "published": "2026-02-12T00:14:27.935285+00:00",
-      "summary": "hot_value: 110 万热度 platform: zhihu",
-      "content_text": "热榜信号：网红「保罗在美国」晒妻子私密分娩过程，并在其中带货，被指过度消费伴侣隐私，如何看待内容创作的伦理边界？｜热度：110 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004666271950725740",
+      "title": "「最快女护士」张水华离职后首次与品牌签约，品牌方称欣赏她敢于为梦想付出，她的商业价值究竟有多大？",
+      "url": "https://www.zhihu.com/question/2004936861781600011",
+      "published": "2026-02-12T00:42:38.860250+00:00",
+      "summary": "hot_value: 154 万热度 platform: zhihu",
+      "content_text": "热榜信号：「最快女护士」张水华离职后首次与品牌签约，品牌方称欣赏她敢于为梦想付出，她的商业价值究竟有多大？｜热度：154 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2004936861781600011",
       "cover_image_url": null
     }
   ],
   "meta": {
     "mode": "hotboard",
     "types_fetched": [
-      "zhihu",
+      "ithome",
       "huxiu",
-      "sspai",
+      "zhihu",
       "36kr"
     ],
     "live_ok": true,
     "picked": {
       "platform": "zhihu",
-      "title": "如何评价 2 月 11 日上线的 DeepSeek 新模型？",
-      "url": "https://www.zhihu.com/question/2004971546536585165",
-      "hot_value": "346 万热度",
-      "score": 4995375.000000001
+      "title": "如何评价中国 2 支女子特警队参加 2026 阿联酋国际警察挑战赛的表现？",
+      "url": "https://www.zhihu.com/question/2004362260286574779",
+      "hot_value": "355 万热度",
+      "score": 5125312.500000001
     }
   }
 }

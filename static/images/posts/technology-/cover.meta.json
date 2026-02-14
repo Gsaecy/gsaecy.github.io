@@ -22,8 +22,6 @@
       "Flutter",
       "GLM",
       "JDK",
-      "Pinia",
-      "Axios",
       "Android"
     ],
     "image_tags": [],
@@ -32,12 +30,12 @@
     "meta_categories": [],
     "score": 10.0,
     "key": "wikimedia:106142219",
-    "first_seen": 1771029747,
-    "last_seen": 1771029747,
+    "first_seen": 1771063572,
+    "last_seen": 1771063572,
     "used_count": 0
   },
   "slug": "technology-",
   "article_type": "analysis",
-  "best_score": 330.0,
+  "best_score": 270.0,
   "threshold": 150
 }

@@ -15,12 +15,11 @@
       "框架",
       "原理",
       "发布",
-      "ThreadForge",
+      "GLM",
+      "Flutter",
       "Android Studio Panda",
       "Gradle",
       "XML",
-      "Flutter",
-      "GLM",
       "JDK",
       "Android"
     ],
@@ -28,14 +27,14 @@
     "match_score": 0.3,
     "meta_description": "",
     "meta_categories": [],
-    "score": 10.0,
+    "score": 30.0,
     "key": "wikimedia:106142219",
-    "first_seen": 1771063883,
-    "last_seen": 1771063883,
+    "first_seen": 1771149991,
+    "last_seen": 1771149991,
     "used_count": 0
   },
   "slug": "technology-",
   "article_type": "analysis",
-  "best_score": 270.0,
+  "best_score": 240.0,
   "threshold": 150
 }

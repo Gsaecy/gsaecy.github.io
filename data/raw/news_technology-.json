@@ -1,6 +1,6 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-17T00:42:17.377045+00:00",
+  "collected_at": "2026-02-17T10:16:46.866368+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
@@ -8,21 +8,11 @@
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "2026 年央视春晚中有哪些亮点？哪个节目最让你印象深刻？",
-      "url": "https://www.zhihu.com/question/2006817906369979378",
-      "published": "2026-02-17T00:42:17.377019+00:00",
-      "summary": "hot_value: 4824 万热度 platform: zhihu",
-      "content_text": "热榜信号：2026 年央视春晚中有哪些亮点？哪个节目最让你印象深刻？｜热度：4824 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006817906369979378",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "如何评价宇树科技机器人在 2026 年春晚的武术表演《武 BOT》？与去年的《秧 BOT》相比有哪些进步？",
-      "url": "https://www.zhihu.com/question/2006826244814104012",
-      "published": "2026-02-17T00:42:17.377019+00:00",
-      "summary": "hot_value: 2291 万热度 platform: zhihu",
-      "content_text": "热榜信号：如何评价宇树科技机器人在 2026 年春晚的武术表演《武 BOT》？与去年的《秧 BOT》相比有哪些进步？｜热度：2291 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006826244814104012",
+      "title": "如何看待 2026 央视春晚成龙领衔演唱的歌曲《我们是世界》（We are the World）？",
+      "url": "https://www.zhihu.com/question/2006845748885595569",
+      "published": "2026-02-17T10:16:46.866337+00:00",
+      "summary": "hot_value: 1670 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何看待 2026 央视春晚成龙领衔演唱的歌曲《我们是世界》（We are the World）？｜热度：1670 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006845748885595569",
       "cover_image_url": null
     },
     {
@@ -30,97 +20,107 @@
       "source": "hotboard:zhihu",
       "title": "如何评价宇树机器人在 2026 年春晚的表现？相比去年，你观察到了哪些进步？",
       "url": "https://www.zhihu.com/question/2006736136949691490",
-      "published": "2026-02-17T00:42:17.377019+00:00",
-      "summary": "hot_value: 306 万热度 platform: zhihu",
-      "content_text": "热榜信号：如何评价宇树机器人在 2026 年春晚的表现？相比去年，你观察到了哪些进步？｜热度：306 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006736136949691490",
+      "published": "2026-02-17T10:16:46.866337+00:00",
+      "summary": "hot_value: 1697 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何评价宇树机器人在 2026 年春晚的表现？相比去年，你观察到了哪些进步？｜热度：1697 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006736136949691490",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "如何评价沈腾、马丽、银河通用机器人等 2026 年春晚上表演的贺岁微电影《我最难忘的今宵》？",
-      "url": "https://www.zhihu.com/question/2006865473459942662",
-      "published": "2026-02-17T00:42:17.377019+00:00",
-      "summary": "hot_value: 272 万热度 platform: zhihu",
-      "content_text": "热榜信号：如何评价沈腾、马丽、银河通用机器人等 2026 年春晚上表演的贺岁微电影《我最难忘的今宵》？｜热度：272 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006865473459942662",
+      "title": "如何评价韩寒执导，沈腾主演的电影《飞驰人生 3》？",
+      "url": "https://www.zhihu.com/question/2006880678701199609",
+      "published": "2026-02-17T10:16:46.866337+00:00",
+      "summary": "hot_value: 1022 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何评价韩寒执导，沈腾主演的电影《飞驰人生 3》？｜热度：1022 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006880678701199609",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "有没有高级且不俗的春节文案？",
-      "url": "https://www.zhihu.com/question/513651842",
-      "published": "2026-02-17T00:42:17.377019+00:00",
-      "summary": "hot_value: 235 万热度 platform: zhihu",
-      "content_text": "热榜信号：有没有高级且不俗的春节文案？｜热度：235 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/513651842",
+      "title": "如何评价袁和平执导，根据同名漫画改编的武侠动作电影《镖人：风起大漠》？",
+      "url": "https://www.zhihu.com/question/2006881994836043383",
+      "published": "2026-02-17T10:16:46.866337+00:00",
+      "summary": "hot_value: 413 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何评价袁和平执导，根据同名漫画改编的武侠动作电影《镖人：风起大漠》？｜热度：413 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006881994836043383",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "如何评价 2026 年春晚王菲表演的歌曲《你我经历的一刻》？",
-      "url": "https://www.zhihu.com/question/2006854372475232588",
-      "published": "2026-02-17T00:42:17.377019+00:00",
-      "summary": "hot_value: 220 万热度 platform: zhihu",
-      "content_text": "热榜信号：如何评价 2026 年春晚王菲表演的歌曲《你我经历的一刻》？｜热度：220 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006854372475232588",
+      "title": "过年亲戚给我家孩子红包 500，我家就一个孩子，对方家有 3 个孩子，我该怎么办？",
+      "url": "https://www.zhihu.com/question/1996554714406482481",
+      "published": "2026-02-17T10:16:46.866337+00:00",
+      "summary": "hot_value: 361 万热度 platform: zhihu",
+      "content_text": "热榜信号：过年亲戚给我家孩子红包 500，我家就一个孩子，对方家有 3 个孩子，我该怎么办？｜热度：361 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/1996554714406482481",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "2026 央视春晚无相声节目，怎样看待这一变化？相声这种艺术形式真的过时了吗？",
-      "url": "https://www.zhihu.com/question/2006741289241113569",
-      "published": "2026-02-17T00:42:17.377019+00:00",
-      "summary": "hot_value: 205 万热度 platform: zhihu",
-      "content_text": "热榜信号：2026 央视春晚无相声节目，怎样看待这一变化？相声这种艺术形式真的过时了吗？｜热度：205 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006741289241113569",
+      "title": "春晚邓男子的计算器魔术是怎么做到的？为什么会正好卡在 22:27？",
+      "url": "https://www.zhihu.com/question/2006859300203623164",
+      "published": "2026-02-17T10:16:46.866337+00:00",
+      "summary": "hot_value: 300 万热度 platform: zhihu",
+      "content_text": "热榜信号：春晚邓男子的计算器魔术是怎么做到的？为什么会正好卡在 22:27？｜热度：300 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006859300203623164",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "电视剧《大明王朝》里，司礼监大太监们夜宵就是吃碗面条，是不是太寒酸了点，真实吗？",
-      "url": "https://www.zhihu.com/question/2006058834934916188",
-      "published": "2026-02-17T00:42:17.377019+00:00",
-      "summary": "hot_value: 176 万热度 platform: zhihu",
-      "content_text": "热榜信号：电视剧《大明王朝》里，司礼监大太监们夜宵就是吃碗面条，是不是太寒酸了点，真实吗？｜热度：176 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006058834934916188",
+      "title": "如何评价张艺谋执导的首部当代国家安全题材影片《惊蛰无声》？",
+      "url": "https://www.zhihu.com/question/2006891554887917646",
+      "published": "2026-02-17T10:16:46.866337+00:00",
+      "summary": "hot_value: 267 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何评价张艺谋执导的首部当代国家安全题材影片《惊蛰无声》？｜热度：267 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006891554887917646",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "2026 春节档总票房含预售突破 6 亿，《飞驰人生 3》预售破 2 亿，今年春节档是否格局已定？",
-      "url": "https://www.zhihu.com/question/2006732300956694383",
-      "published": "2026-02-17T00:42:17.377019+00:00",
-      "summary": "hot_value: 137 万热度 platform: zhihu",
-      "content_text": "热榜信号：2026 春节档总票房含预售突破 6 亿，《飞驰人生 3》预售破 2 亿，今年春节档是否格局已定？｜热度：137 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006732300956694383",
+      "title": "如何评价极客湾视频《手机游戏性能大横评：厂商作弊太疯狂！》？",
+      "url": "https://www.zhihu.com/question/2006523831091733383",
+      "published": "2026-02-17T10:16:46.866337+00:00",
+      "summary": "hot_value: 261 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何评价极客湾视频《手机游戏性能大横评：厂商作弊太疯狂！》？｜热度：261 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006523831091733383",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "洛天依新歌被曝抄袭薛之谦，发行方已开除相关人员，虚拟歌手的作品为什么会涉及抄袭？和普通明星有不同吗？",
-      "url": "https://www.zhihu.com/question/2005228516074020928",
-      "published": "2026-02-17T00:42:17.377019+00:00",
-      "summary": "hot_value: 136 万热度 platform: zhihu",
-      "content_text": "热榜信号：洛天依新歌被曝抄袭薛之谦，发行方已开除相关人员，虚拟歌手的作品为什么会涉及抄袭？和普通明星有不同吗？｜热度：136 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2005228516074020928",
+      "title": "谷爱凌几乎整个周期 4 年没有跳过大跳台，为什么一复出就能夺银？",
+      "url": "https://www.zhihu.com/question/2006967349631218659",
+      "published": "2026-02-17T10:16:46.866337+00:00",
+      "summary": "hot_value: 195 万热度 platform: zhihu",
+      "content_text": "热榜信号：谷爱凌几乎整个周期 4 年没有跳过大跳台，为什么一复出就能夺银？｜热度：195 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006967349631218659",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "如何评价春晚西城男孩的歌曲《My Love》？给你带来哪些感触？",
+      "url": "https://www.zhihu.com/question/2006889102734223019",
+      "published": "2026-02-17T10:16:46.866337+00:00",
+      "summary": "hot_value: 154 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何评价春晚西城男孩的歌曲《My Love》？给你带来哪些感触？｜热度：154 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2006889102734223019",
       "cover_image_url": null
     }
   ],
   "meta": {
     "mode": "hotboard",
     "types_fetched": [
-      "zhihu",
+      "juejin",
+      "huxiu",
       "sspai",
-      "36kr",
-      "ithome"
+      "zhihu"
     ],
     "live_ok": true,
     "picked": {
       "platform": "zhihu",
-      "title": "2026 年央视春晚中有哪些亮点？哪个节目最让你印象深刻？",
-      "url": "https://www.zhihu.com/question/2006817906369979378",
-      "hot_value": "4824 万热度",
-      "score": 69646500.00000001
+      "title": "如何看待 2026 央视春晚成龙领衔演唱的歌曲《我们是世界》（We are the World）？",
+      "url": "https://www.zhihu.com/question/2006845748885595569",
+      "hot_value": "1670 万热度",
+      "score": 25316156.250000004
     }
   }
 }

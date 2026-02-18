@@ -1,6 +1,6 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-18T00:15:28.498139+00:00",
+  "collected_at": "2026-02-18T00:42:34.663850+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
@@ -10,7 +10,7 @@
       "source": "hotboard:juejin",
       "title": "Claude Code 已经 100% 自己写代码，为什么 Anthropic 还有上百个工程职位空缺？",
       "url": "https://juejin.cn/post/7606519452976807986",
-      "published": "2026-02-18T00:15:28.498107+00:00",
+      "published": "2026-02-18T00:42:34.663822+00:00",
       "summary": "hot_value: 热度:990 platform: juejin",
       "content_text": "热榜信号：Claude Code 已经 100% 自己写代码，为什么 Anthropic 还有上百个工程职位空缺？｜热度：热度:990｜平台：juejin\n链接：https://juejin.cn/post/7606519452976807986",
       "cover_image_url": null
@@ -20,9 +20,9 @@
       "source": "hotboard:juejin",
       "title": "2026 春晚魔术大揭秘：作为程序员，分分钟复刻一个（附源码）",
       "url": "https://juejin.cn/post/7606728595557384227",
-      "published": "2026-02-18T00:15:28.498107+00:00",
-      "summary": "hot_value: 热度:468 platform: juejin",
-      "content_text": "热榜信号：2026 春晚魔术大揭秘：作为程序员，分分钟复刻一个（附源码）｜热度：热度:468｜平台：juejin\n链接：https://juejin.cn/post/7606728595557384227",
+      "published": "2026-02-18T00:42:34.663822+00:00",
+      "summary": "hot_value: 热度:486 platform: juejin",
+      "content_text": "热榜信号：2026 春晚魔术大揭秘：作为程序员，分分钟复刻一个（附源码）｜热度：热度:486｜平台：juejin\n链接：https://juejin.cn/post/7606728595557384227",
       "cover_image_url": null
     },
     {
@@ -30,7 +30,7 @@
       "source": "hotboard:juejin",
       "title": "Flutter 正在计划提供 Packaged AI Assets 的支持，让你的包/插件可以更好被 AI 理解和选择",
       "url": "https://juejin.cn/post/7606236473279692826",
-      "published": "2026-02-18T00:15:28.498107+00:00",
+      "published": "2026-02-18T00:42:34.663822+00:00",
       "summary": "hot_value: 热度:360 platform: juejin",
       "content_text": "热榜信号：Flutter 正在计划提供 Packaged AI Assets 的支持，让你的包/插件可以更好被 AI 理解和选择｜热度：热度:360｜平台：juejin\n链接：https://juejin.cn/post/7606236473279692826",
       "cover_image_url": null
@@ -40,7 +40,7 @@
       "source": "hotboard:juejin",
       "title": "写了个 Spring Boot 接口防护的轮子：防重提交 + 限流，已发到 Maven Central",
       "url": "https://juejin.cn/post/7606195582512627750",
-      "published": "2026-02-18T00:15:28.498107+00:00",
+      "published": "2026-02-18T00:42:34.663822+00:00",
       "summary": "hot_value: 热度:360 platform: juejin",
       "content_text": "热榜信号：写了个 Spring Boot 接口防护的轮子：防重提交 + 限流，已发到 Maven Central｜热度：热度:360｜平台：juejin\n链接：https://juejin.cn/post/7606195582512627750",
       "cover_image_url": null
@@ -50,7 +50,7 @@
       "source": "hotboard:juejin",
       "title": "密码正在死亡 —— 从 MFA 到无密码登录（2020–2026）",
       "url": "https://juejin.cn/post/7606183276773785663",
-      "published": "2026-02-18T00:15:28.498107+00:00",
+      "published": "2026-02-18T00:42:34.663822+00:00",
       "summary": "hot_value: 热度:189 platform: juejin",
       "content_text": "热榜信号：密码正在死亡 —— 从 MFA 到无密码登录（2020–2026）｜热度：热度:189｜平台：juejin\n链接：https://juejin.cn/post/7606183276773785663",
       "cover_image_url": null
@@ -60,7 +60,7 @@
       "source": "hotboard:juejin",
       "title": "手把手从 0 诠释大模型 API 的本质: Tools + MCP + Skills",
       "url": "https://juejin.cn/post/7606548472221990954",
-      "published": "2026-02-18T00:15:28.498107+00:00",
+      "published": "2026-02-18T00:42:34.663822+00:00",
       "summary": "hot_value: 热度:126 platform: juejin",
       "content_text": "热榜信号：手把手从 0 诠释大模型 API 的本质: Tools + MCP + Skills｜热度：热度:126｜平台：juejin\n链接：https://juejin.cn/post/7606548472221990954",
       "cover_image_url": null
@@ -70,7 +70,7 @@
       "source": "hotboard:juejin",
       "title": "AI 共舞，还是被“注意力刺客”偷袭？——程序员的数字专注力守护指南",
       "url": "https://juejin.cn/post/7606102187207704618",
-      "published": "2026-02-18T00:15:28.498107+00:00",
+      "published": "2026-02-18T00:42:34.663822+00:00",
       "summary": "hot_value: 热度:117 platform: juejin",
       "content_text": "热榜信号：AI 共舞，还是被“注意力刺客”偷袭？——程序员的数字专注力守护指南｜热度：热度:117｜平台：juejin\n链接：https://juejin.cn/post/7606102187207704618",
       "cover_image_url": null
@@ -80,7 +80,7 @@
       "source": "hotboard:juejin",
       "title": "我给Mac做了一个 Windows 任务栏，用了之后再也回不去 Dock 了",
       "url": "https://juejin.cn/post/7606702049910554670",
-      "published": "2026-02-18T00:15:28.498107+00:00",
+      "published": "2026-02-18T00:42:34.663822+00:00",
       "summary": "hot_value: 热度:117 platform: juejin",
       "content_text": "热榜信号：我给Mac做了一个 Windows 任务栏，用了之后再也回不去 Dock 了｜热度：热度:117｜平台：juejin\n链接：https://juejin.cn/post/7606702049910554670",
       "cover_image_url": null
@@ -90,7 +90,7 @@
       "source": "hotboard:juejin",
       "title": "删掉 40 行代码，性能飙 400 倍？OpenJDK 这次把“慢如 /proc”按在地上摩擦！",
       "url": "https://juejin.cn/post/7605905414473990150",
-      "published": "2026-02-18T00:15:28.498107+00:00",
+      "published": "2026-02-18T00:42:34.663822+00:00",
       "summary": "hot_value: 热度:99 platform: juejin",
       "content_text": "热榜信号：删掉 40 行代码，性能飙 400 倍？OpenJDK 这次把“慢如 /proc”按在地上摩擦！｜热度：热度:99｜平台：juejin\n链接：https://juejin.cn/post/7605905414473990150",
       "cover_image_url": null
@@ -100,7 +100,7 @@
       "source": "hotboard:juejin",
       "title": "AI Coding 时代下， 关于你会写代码这件事儿， 还重要吗？",
       "url": "https://juejin.cn/post/7606245109203992628",
-      "published": "2026-02-18T00:15:28.498107+00:00",
+      "published": "2026-02-18T00:42:34.663822+00:00",
       "summary": "hot_value: 热度:90 platform: juejin",
       "content_text": "热榜信号：AI Coding 时代下， 关于你会写代码这件事儿， 还重要吗？｜热度：热度:90｜平台：juejin\n链接：https://juejin.cn/post/7606245109203992628",
       "cover_image_url": null
@@ -109,10 +109,10 @@
   "meta": {
     "mode": "hotboard",
     "types_fetched": [
-      "juejin",
-      "36kr",
       "ithome",
-      "huxiu"
+      "sspai",
+      "36kr",
+      "juejin"
     ],
     "live_ok": true,
     "picked": {

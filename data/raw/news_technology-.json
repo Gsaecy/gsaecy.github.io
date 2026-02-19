@@ -1,6 +1,6 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-18T10:22:43.301302+00:00",
+  "collected_at": "2026-02-19T00:15:48.079234+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
@@ -10,9 +10,9 @@
       "source": "hotboard:juejin",
       "title": "Claude Code 已经 100% 自己写代码，为什么 Anthropic 还有上百个工程职位空缺？",
       "url": "https://juejin.cn/post/7606519452976807986",
-      "published": "2026-02-18T10:22:43.301272+00:00",
-      "summary": "hot_value: 热度:1134 platform: juejin",
-      "content_text": "热榜信号：Claude Code 已经 100% 自己写代码，为什么 Anthropic 还有上百个工程职位空缺？｜热度：热度:1134｜平台：juejin\n链接：https://juejin.cn/post/7606519452976807986",
+      "published": "2026-02-19T00:15:48.079207+00:00",
+      "summary": "hot_value: 热度:1260 platform: juejin",
+      "content_text": "热榜信号：Claude Code 已经 100% 自己写代码，为什么 Anthropic 还有上百个工程职位空缺？｜热度：热度:1260｜平台：juejin\n链接：https://juejin.cn/post/7606519452976807986",
       "cover_image_url": null
     },
     {
@@ -20,9 +20,9 @@
       "source": "hotboard:juejin",
       "title": "2026 春晚魔术大揭秘：作为程序员，分分钟复刻一个（附源码）",
       "url": "https://juejin.cn/post/7606728595557384227",
-      "published": "2026-02-18T10:22:43.301272+00:00",
-      "summary": "hot_value: 热度:936 platform: juejin",
-      "content_text": "热榜信号：2026 春晚魔术大揭秘：作为程序员，分分钟复刻一个（附源码）｜热度：热度:936｜平台：juejin\n链接：https://juejin.cn/post/7606728595557384227",
+      "published": "2026-02-19T00:15:48.079207+00:00",
+      "summary": "hot_value: 热度:1152 platform: juejin",
+      "content_text": "热榜信号：2026 春晚魔术大揭秘：作为程序员，分分钟复刻一个（附源码）｜热度：热度:1152｜平台：juejin\n链接：https://juejin.cn/post/7606728595557384227",
       "cover_image_url": null
     },
     {
@@ -30,9 +30,9 @@
       "source": "hotboard:juejin",
       "title": "丰田正在使用 Flutter 开发游戏引擎 Fluorite",
       "url": "https://juejin.cn/post/7607112994061549595",
-      "published": "2026-02-18T10:22:43.301272+00:00",
-      "summary": "hot_value: 热度:378 platform: juejin",
-      "content_text": "热榜信号：丰田正在使用 Flutter 开发游戏引擎 Fluorite｜热度：热度:378｜平台：juejin\n链接：https://juejin.cn/post/7607112994061549595",
+      "published": "2026-02-19T00:15:48.079207+00:00",
+      "summary": "hot_value: 热度:531 platform: juejin",
+      "content_text": "热榜信号：丰田正在使用 Flutter 开发游戏引擎 Fluorite｜热度：热度:531｜平台：juejin\n链接：https://juejin.cn/post/7607112994061549595",
       "cover_image_url": null
     },
     {
@@ -40,9 +40,9 @@
       "source": "hotboard:juejin",
       "title": "我给Mac做了一个 Windows 任务栏，用了之后再也回不去 Dock 了",
       "url": "https://juejin.cn/post/7606702049910554670",
-      "published": "2026-02-18T10:22:43.301272+00:00",
-      "summary": "hot_value: 热度:189 platform: juejin",
-      "content_text": "热榜信号：我给Mac做了一个 Windows 任务栏，用了之后再也回不去 Dock 了｜热度：热度:189｜平台：juejin\n链接：https://juejin.cn/post/7606702049910554670",
+      "published": "2026-02-19T00:15:48.079207+00:00",
+      "summary": "hot_value: 热度:279 platform: juejin",
+      "content_text": "热榜信号：我给Mac做了一个 Windows 任务栏，用了之后再也回不去 Dock 了｜热度：热度:279｜平台：juejin\n链接：https://juejin.cn/post/7606702049910554670",
       "cover_image_url": null
     },
     {
@@ -50,9 +50,19 @@
       "source": "hotboard:juejin",
       "title": "你知道不，你现在给 AI 用的 Agent Skills 可能毫无作用，甚至还拖后腿？",
       "url": "https://juejin.cn/post/7606702049910439982",
-      "published": "2026-02-18T10:22:43.301272+00:00",
-      "summary": "hot_value: 热度:153 platform: juejin",
-      "content_text": "热榜信号：你知道不，你现在给 AI 用的 Agent Skills 可能毫无作用，甚至还拖后腿？｜热度：热度:153｜平台：juejin\n链接：https://juejin.cn/post/7606702049910439982",
+      "published": "2026-02-19T00:15:48.079207+00:00",
+      "summary": "hot_value: 热度:225 platform: juejin",
+      "content_text": "热榜信号：你知道不，你现在给 AI 用的 Agent Skills 可能毫无作用，甚至还拖后腿？｜热度：热度:225｜平台：juejin\n链接：https://juejin.cn/post/7606702049910439982",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "我写了个 code-review 的 Agent Skill, 没想到火了",
+      "url": "https://juejin.cn/post/7606548472223137834",
+      "published": "2026-02-19T00:15:48.079207+00:00",
+      "summary": "hot_value: 热度:189 platform: juejin",
+      "content_text": "热榜信号：我写了个 code-review 的 Agent Skill, 没想到火了｜热度：热度:189｜平台：juejin\n链接：https://juejin.cn/post/7606548472223137834",
       "cover_image_url": null
     },
     {
@@ -60,19 +70,9 @@
       "source": "hotboard:juejin",
       "title": "你不知道的JS（中）：Promise与生成器",
       "url": "https://juejin.cn/post/7606269980598255616",
-      "published": "2026-02-18T10:22:43.301272+00:00",
-      "summary": "hot_value: 热度:144 platform: juejin",
-      "content_text": "热榜信号：你不知道的JS（中）：Promise与生成器｜热度：热度:144｜平台：juejin\n链接：https://juejin.cn/post/7606269980598255616",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "AI Coding 时代下， 关于你会写代码这件事儿， 还重要吗？",
-      "url": "https://juejin.cn/post/7606245109203992628",
-      "published": "2026-02-18T10:22:43.301272+00:00",
-      "summary": "hot_value: 热度:108 platform: juejin",
-      "content_text": "热榜信号：AI Coding 时代下， 关于你会写代码这件事儿， 还重要吗？｜热度：热度:108｜平台：juejin\n链接：https://juejin.cn/post/7606245109203992628",
+      "published": "2026-02-19T00:15:48.079207+00:00",
+      "summary": "hot_value: 热度:189 platform: juejin",
+      "content_text": "热榜信号：你不知道的JS（中）：Promise与生成器｜热度：热度:189｜平台：juejin\n链接：https://juejin.cn/post/7606269980598255616",
       "cover_image_url": null
     },
     {
@@ -80,9 +80,19 @@
       "source": "hotboard:juejin",
       "title": "Spring Task 任务调度可视化管理",
       "url": "https://juejin.cn/post/7606594349582204954",
-      "published": "2026-02-18T10:22:43.301272+00:00",
-      "summary": "hot_value: 热度:108 platform: juejin",
-      "content_text": "热榜信号：Spring Task 任务调度可视化管理｜热度：热度:108｜平台：juejin\n链接：https://juejin.cn/post/7606594349582204954",
+      "published": "2026-02-19T00:15:48.079207+00:00",
+      "summary": "hot_value: 热度:171 platform: juejin",
+      "content_text": "热榜信号：Spring Task 任务调度可视化管理｜热度：热度:171｜平台：juejin\n链接：https://juejin.cn/post/7606594349582204954",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "AI Coding 时代下， 关于你会写代码这件事儿， 还重要吗？",
+      "url": "https://juejin.cn/post/7606245109203992628",
+      "published": "2026-02-19T00:15:48.079207+00:00",
+      "summary": "hot_value: 热度:135 platform: juejin",
+      "content_text": "热榜信号：AI Coding 时代下， 关于你会写代码这件事儿， 还重要吗？｜热度：热度:135｜平台：juejin\n链接：https://juejin.cn/post/7606245109203992628",
       "cover_image_url": null
     },
     {
@@ -90,37 +100,27 @@
       "source": "hotboard:juejin",
       "title": "用 ASCII 草图 + AI 快速生成前端代码",
       "url": "https://juejin.cn/post/7606548472222695466",
-      "published": "2026-02-18T10:22:43.301272+00:00",
-      "summary": "hot_value: 热度:99 platform: juejin",
-      "content_text": "热榜信号：用 ASCII 草图 + AI 快速生成前端代码｜热度：热度:99｜平台：juejin\n链接：https://juejin.cn/post/7606548472222695466",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "腾讯云完整部署方案：CODING + CI/CD + Docker + Nginx + K8s 扩展",
-      "url": "https://juejin.cn/post/7606729649491066930",
-      "published": "2026-02-18T10:22:43.301272+00:00",
-      "summary": "hot_value: 热度:90 platform: juejin",
-      "content_text": "热榜信号：腾讯云完整部署方案：CODING + CI/CD + Docker + Nginx + K8s 扩展｜热度：热度:90｜平台：juejin\n链接：https://juejin.cn/post/7606729649491066930",
+      "published": "2026-02-19T00:15:48.079207+00:00",
+      "summary": "hot_value: 热度:135 platform: juejin",
+      "content_text": "热榜信号：用 ASCII 草图 + AI 快速生成前端代码｜热度：热度:135｜平台：juejin\n链接：https://juejin.cn/post/7606548472222695466",
       "cover_image_url": null
     }
   ],
   "meta": {
     "mode": "hotboard",
     "types_fetched": [
-      "huxiu",
+      "juejin",
       "ithome",
-      "36kr",
-      "juejin"
+      "sspai",
+      "huxiu"
     ],
     "live_ok": true,
     "picked": {
       "platform": "juejin",
       "title": "Claude Code 已经 100% 自己写代码，为什么 Anthropic 还有上百个工程职位空缺？",
       "url": "https://juejin.cn/post/7606519452976807986",
-      "hot_value": "热度:1134",
-      "score": 1375.2585000000001
+      "hot_value": "热度:1260",
+      "score": 1528.0650000000003
     }
   }
 }

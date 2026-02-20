@@ -1,6 +1,6 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-20T00:39:50.514613+00:00",
+  "collected_at": "2026-02-20T10:11:29.303064+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
@@ -8,61 +8,11 @@
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "自行车与电瓶车路口相遇后一方摔倒，另一方被定次责并遭索赔 22 万元，责任是如何认定的？这个金额合理吗？",
-      "url": "https://www.zhihu.com/question/2007882312713467624",
-      "published": "2026-02-20T00:39:50.514583+00:00",
-      "summary": "hot_value: 166 万热度 platform: zhihu",
-      "content_text": "热榜信号：自行车与电瓶车路口相遇后一方摔倒，另一方被定次责并遭索赔 22 万元，责任是如何认定的？这个金额合理吗？｜热度：166 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2007882312713467624",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "婴儿期记忆普遍会消失，这是为什么？未来能否通过科学手段保留这些记忆？",
-      "url": "https://www.zhihu.com/question/1999635607996101724",
-      "published": "2026-02-20T00:39:50.514583+00:00",
-      "summary": "hot_value: 145 万热度 platform: zhihu",
-      "content_text": "热榜信号：婴儿期记忆普遍会消失，这是为什么？未来能否通过科学手段保留这些记忆？｜热度：145 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/1999635607996101724",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "有什么曾被热捧的数码产品，最终成了你最想扔掉的「电子垃圾」？",
-      "url": "https://www.zhihu.com/question/2003091839461389180",
-      "published": "2026-02-20T00:39:50.514583+00:00",
-      "summary": "hot_value: 141 万热度 platform: zhihu",
-      "content_text": "热榜信号：有什么曾被热捧的数码产品，最终成了你最想扔掉的「电子垃圾」？｜热度：141 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2003091839461389180",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "如何看待猫眼将《飞驰人生 3》总票房预测由 50.4 亿大幅下调至 40.1 亿？",
-      "url": "https://www.zhihu.com/question/2007587218311632536",
-      "published": "2026-02-20T00:39:50.514583+00:00",
-      "summary": "hot_value: 95 万热度 platform: zhihu",
-      "content_text": "热榜信号：如何看待猫眼将《飞驰人生 3》总票房预测由 50.4 亿大幅下调至 40.1 亿？｜热度：95 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2007587218311632536",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "从中山靖王到刘备相差 270 多年，为什么整个三国时代都没有人质疑刘备的出身？",
-      "url": "https://www.zhihu.com/question/335901347",
-      "published": "2026-02-20T00:39:50.514583+00:00",
-      "summary": "hot_value: 98 万热度 platform: zhihu",
-      "content_text": "热榜信号：从中山靖王到刘备相差 270 多年，为什么整个三国时代都没有人质疑刘备的出身？｜热度：98 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/335901347",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "情侣在日常小事上是否应该向伴侣让步？",
-      "url": "https://www.zhihu.com/question/2005315453728334536",
-      "published": "2026-02-20T00:39:50.514583+00:00",
-      "summary": "hot_value: 97 万热度 platform: zhihu",
-      "content_text": "热榜信号：情侣在日常小事上是否应该向伴侣让步？｜热度：97 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2005315453728334536",
+      "title": "如何看待《镖人》2 月 19 日票房超过前一天，成为今年春节档首部实现单日票房逆跌的新片？",
+      "url": "https://www.zhihu.com/question/2007930464128759344",
+      "published": "2026-02-20T10:11:29.303035+00:00",
+      "summary": "hot_value: 454 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何看待《镖人》2 月 19 日票房超过前一天，成为今年春节档首部实现单日票房逆跌的新片？｜热度：454 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2007930464128759344",
       "cover_image_url": null
     },
     {
@@ -70,57 +20,107 @@
       "source": "hotboard:zhihu",
       "title": "如果电影院某一场电影在放映开始前最后一分钟仍然没有一个人买票，那这场电影会不放吗？",
       "url": "https://www.zhihu.com/question/2001611624402931838",
-      "published": "2026-02-20T00:39:50.514583+00:00",
-      "summary": "hot_value: 91 万热度 platform: zhihu",
-      "content_text": "热榜信号：如果电影院某一场电影在放映开始前最后一分钟仍然没有一个人买票，那这场电影会不放吗？｜热度：91 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2001611624402931838",
+      "published": "2026-02-20T10:11:29.303035+00:00",
+      "summary": "hot_value: 329 万热度 platform: zhihu",
+      "content_text": "热榜信号：如果电影院某一场电影在放映开始前最后一分钟仍然没有一个人买票，那这场电影会不放吗？｜热度：329 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2001611624402931838",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "秦始皇的相貌真的十分俊美吗？",
-      "url": "https://www.zhihu.com/question/46887576",
-      "published": "2026-02-20T00:39:50.514583+00:00",
-      "summary": "hot_value: 87 万热度 platform: zhihu",
-      "content_text": "热榜信号：秦始皇的相貌真的十分俊美吗？｜热度：87 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/46887576",
+      "title": "印度大学买中国机器狗冒充自研被揭穿，为何会出现此类学术不端行为？",
+      "url": "https://www.zhihu.com/question/2007458920709514706",
+      "published": "2026-02-20T10:11:29.303035+00:00",
+      "summary": "hot_value: 324 万热度 platform: zhihu",
+      "content_text": "热榜信号：印度大学买中国机器狗冒充自研被揭穿，为何会出现此类学术不端行为？｜热度：324 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2007458920709514706",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "宋江杀李逵的本质原因是什么？",
-      "url": "https://www.zhihu.com/question/11993095170",
-      "published": "2026-02-20T00:39:50.514583+00:00",
-      "summary": "hot_value: 80 万热度 platform: zhihu",
-      "content_text": "热榜信号：宋江杀李逵的本质原因是什么？｜热度：80 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/11993095170",
+      "title": "过年吃得太油，常说「喝茶可以刮油」，是真的吗？背后有什么科学依据吗？",
+      "url": "https://www.zhihu.com/question/2007738541166261303",
+      "published": "2026-02-20T10:11:29.303035+00:00",
+      "summary": "hot_value: 318 万热度 platform: zhihu",
+      "content_text": "热榜信号：过年吃得太油，常说「喝茶可以刮油」，是真的吗？背后有什么科学依据吗？｜热度：318 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2007738541166261303",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "如何提高麻将水平？",
-      "url": "https://www.zhihu.com/question/31108561",
-      "published": "2026-02-20T00:39:50.514583+00:00",
-      "summary": "hot_value: 100 万热度 platform: zhihu",
-      "content_text": "热榜信号：如何提高麻将水平？｜热度：100 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/31108561",
+      "title": "8 岁小姨给晚辈发红包视频走红，家属称最大的侄女读大学，如何看待此事？你有哪些感慨？",
+      "url": "https://www.zhihu.com/question/2007786245330268298",
+      "published": "2026-02-20T10:11:29.303035+00:00",
+      "summary": "hot_value: 293 万热度 platform: zhihu",
+      "content_text": "热榜信号：8 岁小姨给晚辈发红包视频走红，家属称最大的侄女读大学，如何看待此事？你有哪些感慨？｜热度：293 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2007786245330268298",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "美军在中东集结近 23 年来最大空中兵力，伊朗致信联合国称若遭军事侵略将反击，局势会怎样发展？",
+      "url": "https://www.zhihu.com/question/2008093003923808772",
+      "published": "2026-02-20T10:11:29.303035+00:00",
+      "summary": "hot_value: 223 万热度 platform: zhihu",
+      "content_text": "热榜信号：美军在中东集结近 23 年来最大空中兵力，伊朗致信联合国称若遭军事侵略将反击，局势会怎样发展？｜热度：223 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2008093003923808772",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "我一直很好奇，二十年前起点是用了哪一招，能积累这么多付费用户？",
+      "url": "https://www.zhihu.com/question/2005445045948552874",
+      "published": "2026-02-20T10:11:29.303035+00:00",
+      "summary": "hot_value: 154 万热度 platform: zhihu",
+      "content_text": "热榜信号：我一直很好奇，二十年前起点是用了哪一招，能积累这么多付费用户？｜热度：154 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2005445045948552874",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "美国 2025 年贸易逆差录得 9015 亿美元，较去年仅下降 20 亿美元，对此你怎么看？",
+      "url": "https://www.zhihu.com/question/2007954812189295280",
+      "published": "2026-02-20T10:11:29.303035+00:00",
+      "summary": "hot_value: 142 万热度 platform: zhihu",
+      "content_text": "热榜信号：美国 2025 年贸易逆差录得 9015 亿美元，较去年仅下降 20 亿美元，对此你怎么看？｜热度：142 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2007954812189295280",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "短道速滑男子 500 米，林孝埈、孙龙、刘少昂全军覆没未进最终决赛，为何会这样？",
+      "url": "https://www.zhihu.com/question/2007666989561296833",
+      "published": "2026-02-20T10:11:29.303035+00:00",
+      "summary": "hot_value: 130 万热度 platform: zhihu",
+      "content_text": "热榜信号：短道速滑男子 500 米，林孝埈、孙龙、刘少昂全军覆没未进最终决赛，为何会这样？｜热度：130 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2007666989561296833",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "2026 春节档总票房破 35 亿，《飞驰人 3》《惊蛰无声》《熊出没》分列前三位，你去影院看了哪部电影？",
+      "url": "https://www.zhihu.com/question/2007790232666333465",
+      "published": "2026-02-20T10:11:29.303035+00:00",
+      "summary": "hot_value: 122 万热度 platform: zhihu",
+      "content_text": "热榜信号：2026 春节档总票房破 35 亿，《飞驰人 3》《惊蛰无声》《熊出没》分列前三位，你去影院看了哪部电影？｜热度：122 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2007790232666333465",
       "cover_image_url": null
     }
   ],
   "meta": {
     "mode": "hotboard",
     "types_fetched": [
-      "sspai",
-      "36kr",
-      "ithome",
-      "zhihu"
+      "juejin",
+      "zhihu",
+      "huxiu",
+      "sspai"
     ],
     "live_ok": true,
     "picked": {
       "platform": "zhihu",
-      "title": "自行车与电瓶车路口相遇后一方摔倒，另一方被定次责并遭索赔 22 万元，责任是如何认定的？这个金额合理吗？",
-      "url": "https://www.zhihu.com/question/2007882312713467624",
-      "hot_value": "166 万热度",
-      "score": 2516456.2500000005
+      "title": "如何看待《镖人》2 月 19 日票房超过前一天，成为今年春节档首部实现单日票房逆跌的新片？",
+      "url": "https://www.zhihu.com/question/2007930464128759344",
+      "hot_value": "454 万热度",
+      "score": 6882356.250000001
     }
   }
 }

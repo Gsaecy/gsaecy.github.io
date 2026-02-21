@@ -1,6 +1,6 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-20T10:17:37.358331+00:00",
+  "collected_at": "2026-02-21T00:14:20.247018+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
@@ -8,21 +8,11 @@
     {
       "industry": "technology",
       "source": "hotboard:juejin",
-      "title": "丰田正在使用 Flutter 开发游戏引擎 Fluorite",
-      "url": "https://juejin.cn/post/7607112994061549595",
-      "published": "2026-02-20T10:17:37.358309+00:00",
-      "summary": "hot_value: 热度:738 platform: juejin",
-      "content_text": "热榜信号：丰田正在使用 Flutter 开发游戏引擎 Fluorite｜热度：热度:738｜平台：juejin\n链接：https://juejin.cn/post/7607112994061549595",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "我给Mac做了一个 Windows 任务栏，用了之后再也回不去 Dock 了",
-      "url": "https://juejin.cn/post/7606702049910554670",
-      "published": "2026-02-20T10:17:37.358309+00:00",
-      "summary": "hot_value: 热度:477 platform: juejin",
-      "content_text": "热榜信号：我给Mac做了一个 Windows 任务栏，用了之后再也回不去 Dock 了｜热度：热度:477｜平台：juejin\n链接：https://juejin.cn/post/7606702049910554670",
+      "title": "Flutter 为什么能运行在 HarmonyOS 上",
+      "url": "https://juejin.cn/post/7607097714300174346",
+      "published": "2026-02-21T00:14:20.246989+00:00",
+      "summary": "hot_value: 热度:486 platform: juejin",
+      "content_text": "热榜信号：Flutter 为什么能运行在 HarmonyOS 上｜热度：热度:486｜平台：juejin\n链接：https://juejin.cn/post/7607097714300174346",
       "cover_image_url": null
     },
     {
@@ -30,9 +20,9 @@
       "source": "hotboard:juejin",
       "title": "你知道不，你现在给 AI 用的 Agent Skills 可能毫无作用，甚至还拖后腿？",
       "url": "https://juejin.cn/post/7606702049910439982",
-      "published": "2026-02-20T10:17:37.358309+00:00",
-      "summary": "hot_value: 热度:369 platform: juejin",
-      "content_text": "热榜信号：你知道不，你现在给 AI 用的 Agent Skills 可能毫无作用，甚至还拖后腿？｜热度：热度:369｜平台：juejin\n链接：https://juejin.cn/post/7606702049910439982",
+      "published": "2026-02-21T00:14:20.246989+00:00",
+      "summary": "hot_value: 热度:423 platform: juejin",
+      "content_text": "热榜信号：你知道不，你现在给 AI 用的 Agent Skills 可能毫无作用，甚至还拖后腿？｜热度：热度:423｜平台：juejin\n链接：https://juejin.cn/post/7606702049910439982",
       "cover_image_url": null
     },
     {
@@ -40,19 +30,9 @@
       "source": "hotboard:juejin",
       "title": "Flutter 设计包解耦新进展，material_ui 和 cupertino_ui 发布预告",
       "url": "https://juejin.cn/post/7607261340567404563",
-      "published": "2026-02-20T10:17:37.358309+00:00",
-      "summary": "hot_value: 热度:360 platform: juejin",
-      "content_text": "热榜信号：Flutter 设计包解耦新进展，material_ui 和 cupertino_ui 发布预告｜热度：热度:360｜平台：juejin\n链接：https://juejin.cn/post/7607261340567404563",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "Flutter 为什么能运行在 HarmonyOS 上",
-      "url": "https://juejin.cn/post/7607097714300174346",
-      "published": "2026-02-20T10:17:37.358309+00:00",
-      "summary": "hot_value: 热度:333 platform: juejin",
-      "content_text": "热榜信号：Flutter 为什么能运行在 HarmonyOS 上｜热度：热度:333｜平台：juejin\n链接：https://juejin.cn/post/7607097714300174346",
+      "published": "2026-02-21T00:14:20.246989+00:00",
+      "summary": "hot_value: 热度:414 platform: juejin",
+      "content_text": "热榜信号：Flutter 设计包解耦新进展，material_ui 和 cupertino_ui 发布预告｜热度：热度:414｜平台：juejin\n链接：https://juejin.cn/post/7607261340567404563",
       "cover_image_url": null
     },
     {
@@ -60,19 +40,9 @@
       "source": "hotboard:juejin",
       "title": "用OpenClaw搭了16个AI Agent，一个人运营13个自媒体平台",
       "url": "https://juejin.cn/post/7607082524309061672",
-      "published": "2026-02-20T10:17:37.358309+00:00",
-      "summary": "hot_value: 热度:279 platform: juejin",
-      "content_text": "热榜信号：用OpenClaw搭了16个AI Agent，一个人运营13个自媒体平台｜热度：热度:279｜平台：juejin\n链接：https://juejin.cn/post/7607082524309061672",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "腾讯云完整部署方案：CODING + CI/CD + Docker + Nginx + K8s 扩展",
-      "url": "https://juejin.cn/post/7606729649491066930",
-      "published": "2026-02-20T10:17:37.358309+00:00",
-      "summary": "hot_value: 热度:234 platform: juejin",
-      "content_text": "热榜信号：腾讯云完整部署方案：CODING + CI/CD + Docker + Nginx + K8s 扩展｜热度：热度:234｜平台：juejin\n链接：https://juejin.cn/post/7606729649491066930",
+      "published": "2026-02-21T00:14:20.246989+00:00",
+      "summary": "hot_value: 热度:414 platform: juejin",
+      "content_text": "热榜信号：用OpenClaw搭了16个AI Agent，一个人运营13个自媒体平台｜热度：热度:414｜平台：juejin\n链接：https://juejin.cn/post/7607082524309061672",
       "cover_image_url": null
     },
     {
@@ -80,19 +50,9 @@
       "source": "hotboard:juejin",
       "title": "一站式了解Agent Skills",
       "url": "https://juejin.cn/post/7606895921020370950",
-      "published": "2026-02-20T10:17:37.358309+00:00",
-      "summary": "hot_value: 热度:225 platform: juejin",
-      "content_text": "热榜信号：一站式了解Agent Skills｜热度：热度:225｜平台：juejin\n链接：https://juejin.cn/post/7606895921020370950",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "一天一个开源项目（第26篇）：ZeroClaw - 零开销、全 Rust 的自主 AI 助手基础设施，与 OpenClaw 的关系与对比",
-      "url": "https://juejin.cn/post/7606988289873068083",
-      "published": "2026-02-20T10:17:37.358309+00:00",
-      "summary": "hot_value: 热度:189 platform: juejin",
-      "content_text": "热榜信号：一天一个开源项目（第26篇）：ZeroClaw - 零开销、全 Rust 的自主 AI 助手基础设施，与 OpenClaw 的关系与对比｜热度：热度:189｜平台：juejin\n链接：https://juejin.cn/post/7606988289873068083",
+      "published": "2026-02-21T00:14:20.246989+00:00",
+      "summary": "hot_value: 热度:288 platform: juejin",
+      "content_text": "热榜信号：一站式了解Agent Skills｜热度：热度:288｜平台：juejin\n链接：https://juejin.cn/post/7606895921020370950",
       "cover_image_url": null
     },
     {
@@ -100,9 +60,49 @@
       "source": "hotboard:juejin",
       "title": "Tailwind CSS vs UnoCSS 深度对比",
       "url": "https://juejin.cn/post/7607636614357024794",
-      "published": "2026-02-20T10:17:37.358309+00:00",
+      "published": "2026-02-21T00:14:20.246989+00:00",
+      "summary": "hot_value: 热度:279 platform: juejin",
+      "content_text": "热榜信号：Tailwind CSS vs UnoCSS 深度对比｜热度：热度:279｜平台：juejin\n链接：https://juejin.cn/post/7607636614357024794",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "一天一个开源项目（第26篇）：ZeroClaw - 零开销、全 Rust 的自主 AI 助手基础设施，与 OpenClaw 的关系与对比",
+      "url": "https://juejin.cn/post/7606988289873068083",
+      "published": "2026-02-21T00:14:20.246989+00:00",
+      "summary": "hot_value: 热度:234 platform: juejin",
+      "content_text": "热榜信号：一天一个开源项目（第26篇）：ZeroClaw - 零开销、全 Rust 的自主 AI 助手基础设施，与 OpenClaw 的关系与对比｜热度：热度:234｜平台：juejin\n链接：https://juejin.cn/post/7606988289873068083",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "Rust 编写的 40MB 大小 MicroVM 运行时，完美替代 Docker 作为 AI Agent Sandbox",
+      "url": "https://juejin.cn/post/7607597361293230118",
+      "published": "2026-02-21T00:14:20.246989+00:00",
+      "summary": "hot_value: 热度:234 platform: juejin",
+      "content_text": "热榜信号：Rust 编写的 40MB 大小 MicroVM 运行时，完美替代 Docker 作为 AI Agent Sandbox｜热度：热度:234｜平台：juejin\n链接：https://juejin.cn/post/7607597361293230118",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "一、初识 Linux 与基本命令",
+      "url": "https://juejin.cn/post/7606555427166093354",
+      "published": "2026-02-21T00:14:20.246989+00:00",
+      "summary": "hot_value: 热度:207 platform: juejin",
+      "content_text": "热榜信号：一、初识 Linux 与基本命令｜热度：热度:207｜平台：juejin\n链接：https://juejin.cn/post/7606555427166093354",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "面试官 : “ 请问你实际开发中用过 函数柯理化 吗? 能讲一下吗 ?”",
+      "url": "https://juejin.cn/post/7606621855852986368",
+      "published": "2026-02-21T00:14:20.246989+00:00",
       "summary": "hot_value: 热度:180 platform: juejin",
-      "content_text": "热榜信号：Tailwind CSS vs UnoCSS 深度对比｜热度：热度:180｜平台：juejin\n链接：https://juejin.cn/post/7607636614357024794",
+      "content_text": "热榜信号：面试官 : “ 请问你实际开发中用过 函数柯理化 吗? 能讲一下吗 ?”｜热度：热度:180｜平台：juejin\n链接：https://juejin.cn/post/7606621855852986368",
       "cover_image_url": null
     }
   ],
@@ -110,17 +110,17 @@
     "mode": "hotboard",
     "types_fetched": [
       "juejin",
-      "36kr",
       "sspai",
+      "36kr",
       "ithome"
     ],
     "live_ok": true,
     "picked": {
       "platform": "juejin",
-      "title": "丰田正在使用 Flutter 开发游戏引擎 Fluorite",
-      "url": "https://juejin.cn/post/7607112994061549595",
-      "hot_value": "热度:738",
-      "score": 811.8000000000001
+      "title": "Flutter 为什么能运行在 HarmonyOS 上",
+      "url": "https://juejin.cn/post/7607097714300174346",
+      "hot_value": "热度:486",
+      "score": 534.6
     }
   }
 }

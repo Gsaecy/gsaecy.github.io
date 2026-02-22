@@ -107,11 +107,15 @@ jobs:
           INDUSTRY="${{ github.event.inputs.industry }}"
 
           # retry checker: schedule 事件在非 08:00/18:00（CN）时，只做失败重试检查，不正常发文
-          CN_HOUR=$(TZ=Asia/Shanghai date +%H)
+          # 使用 UTC 时间判断更可靠：00:00/10:00 UTC = 08:00/18:00 CST
+          UTC_HOUR=$(date -u +%H)
           CN_EVENT="${{ github.event_name }}"
           IS_MAIN_WINDOW=0
-          if [ "$CN_HOUR" = "08" ] || [ "$CN_HOUR" = "18" ]; then
+          if [ "$UTC_HOUR" = "0" ] || [ "$UTC_HOUR" = "10" ]; then
             IS_MAIN_WINDOW=1
+            echo "🎯 主发布窗口：UTC $UTC_HOUR:00 = 北京时间 $(($UTC_HOUR + 8)):00"
+          else
+            echo "⏰ 重试检查窗口：UTC $UTC_HOUR:00 = 北京时间 $(($UTC_HOUR + 8)):00"
           fi
 
           if [ "$CN_EVENT" = "schedule" ] && [ "$IS_MAIN_WINDOW" = "0" ]; then

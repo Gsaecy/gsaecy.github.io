@@ -1,8 +1,8 @@
 {
   "industry": "",
-  "topic": "",
-  "force_timestamp": "",
-  "next_retry_epoch": 1771762197,
+  "topic": "行业技术发展趋势分析",
+  "force_timestamp": "20260223-161305",
+  "next_retry_epoch": 1771841585,
   "reason": "workflow_failed",
-  "run": "https://github.com/Gsaecy/gsaecy.github.io/actions/runs/22275096163"
+  "run": "https://github.com/Gsaecy/gsaecy.github.io/actions/runs/22297832172"
 }

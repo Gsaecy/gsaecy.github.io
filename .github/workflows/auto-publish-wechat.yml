@@ -108,14 +108,15 @@ jobs:
 
           # retry checker: schedule 事件在非 08:00/18:00（CN）时，只做失败重试检查，不正常发文
           # 使用 UTC 时间判断更可靠：00:00/10:00 UTC = 08:00/18:00 CST
-          UTC_HOUR=$(date -u +%H)
+          # 注意：date +%H 返回带前导零的小时（如 "08"），需要去除前导零避免八进制错误
+          UTC_HOUR=$(date -u +%H | sed 's/^0//')  # 去除前导零
           CN_EVENT="${{ github.event_name }}"
           IS_MAIN_WINDOW=0
           if [ "$UTC_HOUR" = "0" ] || [ "$UTC_HOUR" = "10" ]; then
             IS_MAIN_WINDOW=1
-            echo "🎯 主发布窗口：UTC $UTC_HOUR:00 = 北京时间 $(($UTC_HOUR + 8)):00"
+            echo "🎯 主发布窗口：UTC $UTC_HOUR:00 = 北京时间 $((10#$UTC_HOUR + 8)):00"
           else
-            echo "⏰ 重试检查窗口：UTC $UTC_HOUR:00 = 北京时间 $(($UTC_HOUR + 8)):00"
+            echo "⏰ 重试检查窗口：UTC $UTC_HOUR:00 = 北京时间 $((10#$UTC_HOUR + 8)):00"
           fi
 
           if [ "$CN_EVENT" = "schedule" ] && [ "$IS_MAIN_WINDOW" = "0" ]; then
@@ -146,7 +147,8 @@ jobs:
             CN_WDAY=$(TZ=Asia/Shanghai date +%u)  # 1(Mon)-7(Sun)
             CN_DATE=$(TZ=Asia/Shanghai date +%F)
             # 将 UTC 小时转换为 CST 小时用于行业选择逻辑
-            CST_HOUR=$(( (UTC_HOUR + 8) % 24 ))
+            # 使用 10# 前缀强制十进制，避免八进制错误
+            CST_HOUR=$(( (10#$UTC_HOUR + 8) % 24 ))
             INDUSTRY=$(python3 -c "import re; from pathlib import Path; industries=['technology','finance','healthcare','education','automotive','retail','manufacturing','foreign_trade','scientific_instruments','reagents','lab_consumables']; pat={k:re.compile(r'^'+re.escape(k)+r'-\\d{8}-\\d{6}\\.md$') for k in industries}; counts={k:0 for k in industries}; [counts.__setitem__(k, counts[k]+(1 if pat[k].match(p.name) else 0)) for p in Path('content/posts').glob('*.md') for k in industries]; minc=min(counts.values()) if counts else 0; cands=[k for k,v in counts.items() if v==minc]; hour=int('$CST_HOUR'); wday=int('$CN_WDAY'); is_weekend=(wday>=6); scores={k:0 for k in cands}; [scores.__setitem__(k, scores[k] + (3 if ((not is_weekend and k in ('technology','finance','manufacturing','foreign_trade')) or (is_weekend and k in ('retail','automotive','healthcare'))) else 0) + (2 if ((hour<12 and k in ('technology','education','manufacturing','scientific_instruments')) or (hour>=12 and k in ('finance','foreign_trade','retail','healthcare'))) else 0) + (1 if k in ('reagents','lab_consumables') else 0)) for k in cands]; print(sorted(cands, key=lambda x:(-scores.get(x,0), industries.index(x)))[0])")
           fi
 

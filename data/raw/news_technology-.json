@@ -1,6 +1,6 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-23T06:22:48.870965+00:00",
+  "collected_at": "2026-02-23T10:18:36.817689+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
@@ -8,41 +8,11 @@
     {
       "industry": "technology",
       "source": "hotboard:juejin",
-      "title": "用OpenClaw搭了16个AI Agent，一个人运营13个自媒体平台",
-      "url": "https://juejin.cn/post/7607082524309061672",
-      "published": "2026-02-23T06:22:48.870932+00:00",
-      "summary": "hot_value: 热度:1440 platform: juejin",
-      "content_text": "热榜信号：用OpenClaw搭了16个AI Agent，一个人运营13个自媒体平台｜热度：热度:1440｜平台：juejin\n链接：https://juejin.cn/post/7607082524309061672",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "Flutter 设计包解耦新进展，material_ui 和 cupertino_ui 发布预告",
-      "url": "https://juejin.cn/post/7607261340567404563",
-      "published": "2026-02-23T06:22:48.870932+00:00",
-      "summary": "hot_value: 热度:666 platform: juejin",
-      "content_text": "热榜信号：Flutter 设计包解耦新进展，material_ui 和 cupertino_ui 发布预告｜热度：热度:666｜平台：juejin\n链接：https://juejin.cn/post/7607261340567404563",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
       "title": "程序员就业率暴跌27.5%：我离开大厂5个月后，看懂了这件事",
       "url": "https://juejin.cn/post/7607472072286306338",
-      "published": "2026-02-23T06:22:48.870932+00:00",
-      "summary": "hot_value: 热度:621 platform: juejin",
-      "content_text": "热榜信号：程序员就业率暴跌27.5%：我离开大厂5个月后，看懂了这件事｜热度：热度:621｜平台：juejin\n链接：https://juejin.cn/post/7607472072286306338",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "Rust 编写的 40MB 大小 MicroVM 运行时，完美替代 Docker 作为 AI Agent Sandbox",
-      "url": "https://juejin.cn/post/7607597361293230118",
-      "published": "2026-02-23T06:22:48.870932+00:00",
-      "summary": "hot_value: 热度:513 platform: juejin",
-      "content_text": "热榜信号：Rust 编写的 40MB 大小 MicroVM 运行时，完美替代 Docker 作为 AI Agent Sandbox｜热度：热度:513｜平台：juejin\n链接：https://juejin.cn/post/7607597361293230118",
+      "published": "2026-02-23T10:18:36.817660+00:00",
+      "summary": "hot_value: 热度:729 platform: juejin",
+      "content_text": "热榜信号：程序员就业率暴跌27.5%：我离开大厂5个月后，看懂了这件事｜热度：热度:729｜平台：juejin\n链接：https://juejin.cn/post/7607472072286306338",
       "cover_image_url": null
     },
     {
@@ -50,19 +20,9 @@
       "source": "hotboard:juejin",
       "title": "你是不是觉得 R8 很讨厌，但 Android 为什么选择 R8 ？也许你对 R8 还不够了解",
       "url": "https://juejin.cn/post/7607332124488466495",
-      "published": "2026-02-23T06:22:48.870932+00:00",
-      "summary": "hot_value: 热度:468 platform: juejin",
-      "content_text": "热榜信号：你是不是觉得 R8 很讨厌，但 Android 为什么选择 R8 ？也许你对 R8 还不够了解｜热度：热度:468｜平台：juejin\n链接：https://juejin.cn/post/7607332124488466495",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "WebMCP 实战指南：让你的网站瞬间变成 AI 的“大脑外挂”",
-      "url": "https://juejin.cn/post/7607097714301042698",
-      "published": "2026-02-23T06:22:48.870932+00:00",
-      "summary": "hot_value: 热度:342 platform: juejin",
-      "content_text": "热榜信号：WebMCP 实战指南：让你的网站瞬间变成 AI 的“大脑外挂”｜热度：热度:342｜平台：juejin\n链接：https://juejin.cn/post/7607097714301042698",
+      "published": "2026-02-23T10:18:36.817660+00:00",
+      "summary": "hot_value: 热度:495 platform: juejin",
+      "content_text": "热榜信号：你是不是觉得 R8 很讨厌，但 Android 为什么选择 R8 ？也许你对 R8 还不够了解｜热度：热度:495｜平台：juejin\n链接：https://juejin.cn/post/7607332124488466495",
       "cover_image_url": null
     },
     {
@@ -70,29 +30,9 @@
       "source": "hotboard:juejin",
       "title": "iOS + AI ，国外一个叫 Rork Max 的项目打算替换掉 Xcode",
       "url": "https://juejin.cn/post/7607565063080083498",
-      "published": "2026-02-23T06:22:48.870932+00:00",
-      "summary": "hot_value: 热度:306 platform: juejin",
-      "content_text": "热榜信号：iOS + AI ，国外一个叫 Rork Max 的项目打算替换掉 Xcode｜热度：热度:306｜平台：juejin\n链接：https://juejin.cn/post/7607565063080083498",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "谷歌重磅发布 Gemini 3.1 Pro：更强推理，更强生产力",
-      "url": "https://juejin.cn/post/7607565063079542826",
-      "published": "2026-02-23T06:22:48.870932+00:00",
-      "summary": "hot_value: 热度:243 platform: juejin",
-      "content_text": "热榜信号：谷歌重磅发布 Gemini 3.1 Pro：更强推理，更强生产力｜热度：热度:243｜平台：juejin\n链接：https://juejin.cn/post/7607565063079542826",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "HTML 早已不是标签了，它现在是系统级接口：这 9 个 API 直接干翻常用 JS 库",
-      "url": "https://juejin.cn/post/7608102583496720393",
-      "published": "2026-02-23T06:22:48.870932+00:00",
-      "summary": "hot_value: 热度:225 platform: juejin",
-      "content_text": "热榜信号：HTML 早已不是标签了，它现在是系统级接口：这 9 个 API 直接干翻常用 JS 库｜热度：热度:225｜平台：juejin\n链接：https://juejin.cn/post/7608102583496720393",
+      "published": "2026-02-23T10:18:36.817660+00:00",
+      "summary": "hot_value: 热度:405 platform: juejin",
+      "content_text": "热榜信号：iOS + AI ，国外一个叫 Rork Max 的项目打算替换掉 Xcode｜热度：热度:405｜平台：juejin\n链接：https://juejin.cn/post/7607565063080083498",
       "cover_image_url": null
     },
     {
@@ -100,27 +40,87 @@
       "source": "hotboard:juejin",
       "title": "从安装到实测：基于 Claude Code + GLM-4.7 的前端生成与评测实战",
       "url": "https://juejin.cn/post/7607358297458196480",
-      "published": "2026-02-23T06:22:48.870932+00:00",
-      "summary": "hot_value: 热度:225 platform: juejin",
-      "content_text": "热榜信号：从安装到实测：基于 Claude Code + GLM-4.7 的前端生成与评测实战｜热度：热度:225｜平台：juejin\n链接：https://juejin.cn/post/7607358297458196480",
+      "published": "2026-02-23T10:18:36.817660+00:00",
+      "summary": "hot_value: 热度:315 platform: juejin",
+      "content_text": "热榜信号：从安装到实测：基于 Claude Code + GLM-4.7 的前端生成与评测实战｜热度：热度:315｜平台：juejin\n链接：https://juejin.cn/post/7607358297458196480",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "HTML 早已不是标签了，它现在是系统级接口：这 9 个 API 直接干翻常用 JS 库",
+      "url": "https://juejin.cn/post/7608102583496720393",
+      "published": "2026-02-23T10:18:36.817660+00:00",
+      "summary": "hot_value: 热度:279 platform: juejin",
+      "content_text": "热榜信号：HTML 早已不是标签了，它现在是系统级接口：这 9 个 API 直接干翻常用 JS 库｜热度：热度:279｜平台：juejin\n链接：https://juejin.cn/post/7608102583496720393",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "谷歌重磅发布 Gemini 3.1 Pro：更强推理，更强生产力",
+      "url": "https://juejin.cn/post/7607565063079542826",
+      "published": "2026-02-23T10:18:36.817660+00:00",
+      "summary": "hot_value: 热度:270 platform: juejin",
+      "content_text": "热榜信号：谷歌重磅发布 Gemini 3.1 Pro：更强推理，更强生产力｜热度：热度:270｜平台：juejin\n链接：https://juejin.cn/post/7607565063079542826",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "AGENTS.md 真的对 AI Coding 有用吗？或许在此之前你没用对？",
+      "url": "https://juejin.cn/post/7608214035263569974",
+      "published": "2026-02-23T10:18:36.817660+00:00",
+      "summary": "hot_value: 热度:252 platform: juejin",
+      "content_text": "热榜信号：AGENTS.md 真的对 AI Coding 有用吗？或许在此之前你没用对？｜热度：热度:252｜平台：juejin\n链接：https://juejin.cn/post/7608214035263569974",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "ThreadForge v1.1.0 发布：让 Java 并发更接近 Go 的开发体验",
+      "url": "https://juejin.cn/post/7608382961723146290",
+      "published": "2026-02-23T10:18:36.817660+00:00",
+      "summary": "hot_value: 热度:216 platform: juejin",
+      "content_text": "热榜信号：ThreadForge v1.1.0 发布：让 Java 并发更接近 Go 的开发体验｜热度：热度:216｜平台：juejin\n链接：https://juejin.cn/post/7608382961723146290",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "六、Linux核心服务与包管理",
+      "url": "https://juejin.cn/post/7607078636966314027",
+      "published": "2026-02-23T10:18:36.817660+00:00",
+      "summary": "hot_value: 热度:180 platform: juejin",
+      "content_text": "热榜信号：六、Linux核心服务与包管理｜热度：热度:180｜平台：juejin\n链接：https://juejin.cn/post/7607078636966314027",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "六合一 Spring Boot API 防护框架：防重、限流、幂等、自动Trim、慢接口检测、链路追踪，一个 Starter 搞定",
+      "url": "https://juejin.cn/post/7608919800932204590",
+      "published": "2026-02-23T10:18:36.817660+00:00",
+      "summary": "hot_value: 热度:153 platform: juejin",
+      "content_text": "热榜信号：六合一 Spring Boot API 防护框架：防重、限流、幂等、自动Trim、慢接口检测、链路追踪，一个 Starter 搞定｜热度：热度:153｜平台：juejin\n链接：https://juejin.cn/post/7608919800932204590",
       "cover_image_url": null
     }
   ],
   "meta": {
     "mode": "hotboard",
     "types_fetched": [
-      "huxiu",
       "ithome",
+      "huxiu",
       "juejin",
       "sspai"
     ],
     "live_ok": true,
     "picked": {
       "platform": "juejin",
-      "title": "用OpenClaw搭了16个AI Agent，一个人运营13个自媒体平台",
-      "url": "https://juejin.cn/post/7607082524309061672",
-      "hot_value": "热度:1440",
-      "score": 1584.0000000000002
+      "title": "程序员就业率暴跌27.5%：我离开大厂5个月后，看懂了这件事",
+      "url": "https://juejin.cn/post/7607472072286306338",
+      "hot_value": "热度:729",
+      "score": 801.9000000000001
     }
   }
 }

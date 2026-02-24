@@ -181,7 +181,16 @@ jobs:
           if [ -n "$FORCE_TS_INPUT" ]; then
             TIMESTAMP="$FORCE_TS_INPUT"
           elif [ -n "$FORCE_TS" ]; then
-            TIMESTAMP="$FORCE_TS"
+            # 检查 FORCE_TS 的日期是否是今天，避免使用昨天的旧时间戳
+            FORCE_DATE=$(echo "$FORCE_TS" | cut -d'-' -f1)
+            TODAY=$(TZ=Asia/Shanghai date +%Y%m%d)
+            if [ "$FORCE_DATE" = "$TODAY" ]; then
+              TIMESTAMP="$FORCE_TS"
+              echo "使用今天的重试时间戳: $TIMESTAMP"
+            else
+              TIMESTAMP=$(TZ=Asia/Shanghai date +%Y%m%d-%H%M%S)
+              echo "重试时间戳是昨天($FORCE_DATE)，使用当前时间: $TIMESTAMP"
+            fi
           else
             # 统一用北京时间生成时间戳，便于对齐“8点/10点”这种承诺
             TIMESTAMP=$(TZ=Asia/Shanghai date +%Y%m%d-%H%M%S)

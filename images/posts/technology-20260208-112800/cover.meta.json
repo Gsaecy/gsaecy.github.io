@@ -1,0 +1,25 @@
+{
+  "mode": "public_pool",
+  "picked": {
+    "id": "tech_ai_circuit_1",
+    "industry": "technology",
+    "tags": [
+      "AI",
+      "人工智能",
+      "chip",
+      "circuit",
+      "semiconductor",
+      "data center",
+      "cloud",
+      "模型"
+    ],
+    "title": "AI / 芯片 / 电路板抽象图",
+    "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL2ZsNTIyMTExMTgzMjMtaW1hZ2UuanBn.jpg",
+    "image_url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL2ZsNTIyMTExMTgzMjMtaW1hZ2UuanBn.jpg",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "provider": "rawpixel",
+    "weight": 100
+  },
+  "slug": "technology-20260208-112800"
+}

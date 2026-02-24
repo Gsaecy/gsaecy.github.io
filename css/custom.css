@@ -1,0 +1,733 @@
+/* Newspaper UI for hugo-theme-stack
+   Goal: like newspapers on a desk (subtle tablecloth bg, folded cards, paper texture).
+   Keep it light, readable, and not distracting.
+*/
+
+:root {
+  /* B方案：复古旧报纸（更暖、更旧、更有纤维纸纹，但仍保持浅色不刺眼） */
+  --np-tablecloth: #f3eee4;
+  --np-tablecloth-2: rgba(106, 86, 66, 0.07);
+
+  --np-ink: rgba(18, 14, 10, 0.92);
+
+  /* Old newspaper paper tone */
+  --np-paper: #f6f0e1;
+  --np-paper-warm: rgba(190, 150, 100, 0.10);
+  --np-paper-fiber: rgba(120, 90, 60, 0.06);
+
+  --np-border: rgba(18, 14, 10, 0.12);
+  --np-shadow: rgba(0, 0, 0, 0.14);
+  --np-shadow-soft: rgba(0, 0, 0, 0.08);
+
+  --np-radius: 14px;
+  --np-content-max: 980px;
+}
+
+/* 1) Desk/tablecloth background (vintage, but subtle) */
+body {
+  color: var(--np-ink);
+  background-color: var(--np-tablecloth);
+  background-image:
+    /* tablecloth weave dots */
+    radial-gradient(circle at 1px 1px, var(--np-tablecloth-2) 1px, transparent 0),
+    radial-gradient(circle at 7px 7px, rgba(106, 86, 66, 0.04) 1px, transparent 0),
+    /* very subtle diagonal fabric grain */
+    repeating-linear-gradient(
+      135deg,
+      rgba(106, 86, 66, 0.028) 0px,
+      rgba(106, 86, 66, 0.028) 1px,
+      rgba(255, 255, 255, 0) 9px,
+      rgba(255, 255, 255, 0) 18px
+    ),
+    /* lift brightness */
+    linear-gradient(0deg, rgba(255,255,255,0.34), rgba(255,255,255,0.34));
+  background-size: 12px 12px, 18px 18px, 22px 22px, 100% 100%;
+  background-attachment: fixed;
+
+  /* Newspaper-ish system serif first */
+  font-family: ui-serif, Georgia, "Times New Roman", Times,
+    "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC",
+    "SimSun", serif;
+  letter-spacing: 0.15px;
+}
+
+/* Dark mode: desk becomes dark, paper becomes dim; fix "only cards change" issue */
+html[data-scheme="dark"] body {
+  /* Dark mode should prioritize readability over texture */
+  background-color: #0f0e0c;
+  background-image: none;
+}
+
+/* Keep UI (menus) clean: titles can stay a bit more modern */
+.site-name a,
+.menu a,
+.section-term,
+.article-title {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+    "Noto Sans", sans-serif;
+}
+
+/* Sidebar menu: keep it directly on the desk (no card background) */
+#main-menu {
+  padding: 6px 2px;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Left sidebar: remove frame/border + disable internal scrollbars */
+.sidebar.left-sidebar {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Desktop layout tuning: wider left rail, less empty right */
+@media (min-width: 1024px) {
+  .sidebar.left-sidebar {
+    width: 320px !important;
+    flex: 0 0 320px !important;
+  }
+  /* List pages: keep right sidebar but make it compact and useful */
+  .sidebar.right-sidebar {
+    width: 260px !important;
+    flex: 0 0 260px !important;
+  }
+  .main {
+    max-width: none;
+    flex: 1 1 auto;
+    min-width: 520px;
+  }
+}
+.sidebar.left-sidebar.sticky {
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+.sidebar.left-sidebar * {
+  scrollbar-width: none;
+}
+.sidebar.left-sidebar *::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Pin avatar + site title/description to viewport so scrolling doesn't move them */
+.sidebar.left-sidebar > header {
+  position: fixed;
+  left: 22px;
+  top: 18px;
+  z-index: 9998;
+  width: 300px;
+  pointer-events: auto;
+}
+
+/* Site meta: left aligned (match desk/newspaper layout) */
+.sidebar.left-sidebar .site-meta {
+  text-align: left;
+}
+.sidebar.left-sidebar .site-name,
+.sidebar.left-sidebar .site-description {
+  text-align: left;
+}
+.sidebar.left-sidebar .site-name {
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+.sidebar.left-sidebar .site-description {
+  line-height: 1.25;
+  font-size: 0.86em; /* long industry list: shrink to avoid overlap */
+  max-width: 300px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Pin main menu to viewport as well */
+#main-menu {
+  position: fixed;
+  left: 22px;
+  top: 286px; /* below header (subtitle may wrap to 2-3 lines) */
+  z-index: 9997;
+  width: 300px;
+}
+
+/* Menu typography: slightly smaller to fit more items without overlap */
+#main-menu li a span {
+  font-size: 0.96em;
+  line-height: 1.25;
+}
+
+/* Leave room for fixed header/menu/lamp so content won't be hidden */
+.sidebar.left-sidebar {
+  padding-top: 0;
+  padding-bottom: 320px;
+}
+
+@media (max-width: 768px) {
+  /* Mobile: avoid fixed left sidebar/menu stealing screen space.
+     Keep the same features, but flow naturally so content can use full width. */
+  .sidebar.left-sidebar > header {
+    position: static;
+    left: auto;
+    top: auto;
+    width: auto;
+    transform: none;
+  }
+
+  #main-menu {
+    position: static;
+    left: auto;
+    top: auto;
+    width: auto;
+    transform: none;
+  }
+
+  .sidebar.left-sidebar {
+    padding-bottom: 0;
+  }
+
+  /* Article list: reduce “desk” stacking so cards don't get clipped on narrow screens */
+  section.article-list--compact article,
+  section.article-list article {
+    margin-top: 12px;
+  }
+
+  section.article-list--compact article > a,
+  section.article-list article {
+    padding: 14px 14px;
+    transform: none !important;
+  }
+
+  section.article-list--compact article > a::before,
+  section.article-list article::before,
+  section.article-list--compact article > a::after,
+  section.article-list article::after {
+    display: none;
+  }
+}
+html[data-scheme="dark"] #main-menu {
+  background: transparent;
+  border-color: transparent;
+}
+
+#main-menu li a span {
+  position: relative;
+  padding-left: 14px;
+}
+#main-menu li a span::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-size: 0.78em;
+  opacity: 0.65;
+}
+
+/* Give some breathing room so fixed lamp doesn't overlap menu too much */
+.sidebar.left-sidebar {
+  padding-bottom: 320px;
+}
+
+/* Right sidebar (tags) as neat chips */
+.sidebar.right-sidebar .widget {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+.sidebar.right-sidebar .tagCloud-tags a,
+.sidebar.right-sidebar a[href^="/tags/"] {
+  display: inline-block;
+  margin: 6px 6px 0 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid rgba(18,14,10,0.14);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.18)),
+    rgba(246, 240, 225, 0.55);
+}
+html[data-scheme="dark"] .sidebar.right-sidebar .tagCloud-tags a,
+html[data-scheme="dark"] .sidebar.right-sidebar a[href^="/tags/"] {
+  border-color: rgba(255, 200, 120, 0.14);
+  background: rgba(22, 18, 14, 0.60);
+}
+
+@media (max-width: 768px) {
+  .np-lamp {
+    left: 12px;
+    bottom: 12px;
+    transform: scale(0.74);
+    transform-origin: left bottom;
+  }
+}
+#main-menu li.current a span::before {
+  content: "◇";
+  opacity: 0.9;
+}
+
+/* 2) Article list cards as “folded newspaper” (stacked on desk)
+   Stack theme uses different layouts:
+   - Home:  section.article-list > article (link is inside h2)
+   - /posts: section.article-list--compact > article > a
+*/
+section.article-list--compact,
+section.article-list {
+  position: relative;
+}
+
+section.article-list--compact article,
+section.article-list article {
+  position: relative;
+  margin-top: -10px;
+}
+section.article-list--compact article:first-child,
+section.article-list article:first-child {
+  margin-top: 0;
+}
+
+section.article-list--compact article:nth-child(1),
+section.article-list article:nth-child(1) { z-index: 6; }
+section.article-list--compact article:nth-child(2),
+section.article-list article:nth-child(2) { z-index: 5; }
+section.article-list--compact article:nth-child(3),
+section.article-list article:nth-child(3) { z-index: 4; }
+section.article-list--compact article:nth-child(4),
+section.article-list article:nth-child(4) { z-index: 3; }
+section.article-list--compact article:nth-child(5),
+section.article-list article:nth-child(5) { z-index: 2; }
+section.article-list--compact article:nth-child(6),
+section.article-list article:nth-child(6) { z-index: 1; }
+
+/* Card container: apply paper style to both */
+section.article-list--compact article > a,
+section.article-list article {
+  display: block;
+  position: relative;
+  padding: 18px 18px;
+  border-radius: var(--np-radius);
+  background:
+    /* keep readability */
+    linear-gradient(180deg, rgba(255,255,255,0.66), rgba(255,255,255,0.24)),
+    /* user-provided newspaper texture */
+    url('/img/paper/newspaper-texture-sm.png'),
+    var(--np-paper);
+  background-size: 100% 100%, cover, 100% 100%;
+  background-position: center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-blend-mode: normal, multiply, normal;
+  border: 1px solid var(--np-border);
+  box-shadow:
+    0 22px 60px var(--np-shadow-soft),
+    0 6px 16px var(--np-shadow);
+  transform: rotate(-0.2deg);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+section.article-list--compact article:nth-child(3n) > a,
+section.article-list article:nth-child(3n) { transform: translateX(3px) rotate(0.45deg); }
+section.article-list--compact article:nth-child(3n+1) > a,
+section.article-list article:nth-child(3n+1) { transform: translateX(-2px) rotate(-0.55deg); }
+section.article-list--compact article:nth-child(4n) > a,
+section.article-list article:nth-child(4n) { transform: translateX(5px) rotate(0.15deg); }
+
+section.article-list--compact article > a:hover,
+section.article-list article:hover {
+  transform: translateY(-2px) rotate(0deg);
+  box-shadow:
+    0 22px 60px var(--np-shadow-soft),
+    0 6px 16px var(--np-shadow);
+}
+
+/* Give list titles a more “front page” vibe */
+section.article-list--compact .article-title {
+  font-weight: 750;
+  letter-spacing: 0.25px;
+}
+
+/* Fold crease */
+section.article-list--compact article > a::after,
+section.article-list article::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: calc(var(--np-radius) - 6px);
+  pointer-events: none;
+  background:
+    /* stronger fold crease for vintage newspaper */
+    linear-gradient(90deg,
+      rgba(18,14,10,0.00) 0%,
+      rgba(18,14,10,0.04) 46%,
+      rgba(18,14,10,0.12) 50%,
+      rgba(255,255,255,0.20) 53%,
+      rgba(18,14,10,0.03) 57%,
+      rgba(18,14,10,0.00) 100%);
+  opacity: 0.70;
+  mix-blend-mode: multiply;
+}
+
+/* A small folded corner */
+section.article-list--compact article > a::before,
+section.article-list article::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.0) 50%, rgba(18,14,10,0.14) 52%, rgba(255,255,255,0.55) 100%);
+  border-top-right-radius: calc(var(--np-radius) - 6px);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  opacity: 0.65;
+}
+
+/* Dark mode cards: still paper-ish but darker */
+html[data-scheme="dark"] section.article-list--compact article > a,
+html[data-scheme="dark"] section.article-list article {
+  color: rgba(245, 240, 225, 0.92);
+  border-color: rgba(255, 200, 120, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 220, 160, 0.08), rgba(0,0,0,0.16)),
+    url('/img/paper/newspaper-texture-sm.png'),
+    rgba(22, 18, 14, 0.92);
+  background-size: 100% 100%, cover, 100% 100%;
+  background-position: center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-blend-mode: normal, soft-light, normal;
+}
+html[data-scheme="dark"] section.article-list--compact article > a::after,
+html[data-scheme="dark"] section.article-list article::after {
+  opacity: 0.35;
+}
+
+/* Click-to-open effect */
+section.article-list--compact article.np-opening > a {
+  transform: translateY(-1px) rotate(0deg) scale(1.02);
+  filter: saturate(1.02) contrast(1.02);
+}
+
+html.np-navigate section.article-list--compact article:not(.np-opening) > a {
+  opacity: 0.75;
+  transform: translateY(0) rotate(0deg) scale(0.995);
+}
+
+/* Article divider: replace centered short line with a "—AI智汇观察—" mini card */
+.article-content hr {
+  border: 0;
+  height: 1px;
+  margin: 26px auto;
+  position: relative;
+  background: linear-gradient(90deg, rgba(18,14,10,0.00), rgba(18,14,10,0.25), rgba(18,14,10,0.00));
+}
+.article-content hr::after {
+  content: "— AI智汇观察 —";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  color: rgba(18,14,10,0.78);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.60), rgba(255,255,255,0.22)),
+    var(--np-paper);
+  border: 1px solid rgba(18,14,10,0.12);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  white-space: nowrap;
+}
+html[data-scheme="dark"] .article-content hr {
+  background: linear-gradient(90deg, rgba(255,200,120,0.00), rgba(255,200,120,0.22), rgba(255,200,120,0.00));
+}
+html[data-scheme="dark"] .article-content hr::after {
+  color: rgba(245,240,225,0.86);
+  background: rgba(22, 18, 14, 0.82);
+  border-color: rgba(255, 200, 120, 0.14);
+}
+
+/* 3) Article page as “unfolded newspaper” */
+body.article-page .main-article {
+  background:
+    /* aged paper + slightly uneven tone */
+    linear-gradient(180deg, rgba(255,255,255,0.50), rgba(255,255,255,0.18)),
+    linear-gradient(180deg, var(--np-paper-warm), rgba(255,255,255,0)),
+    /* paper fibers */
+    radial-gradient(circle at 18px 18px, rgba(120, 90, 60, 0.055) 1px, transparent 0),
+    radial-gradient(circle at 6px 10px, rgba(120, 90, 60, 0.035) 1px, transparent 0),
+    /* faint vertical print banding */
+    repeating-linear-gradient(
+      90deg,
+      rgba(18,14,10,0.00) 0px,
+      rgba(18,14,10,0.00) 18px,
+      rgba(18,14,10,0.018) 20px,
+      rgba(18,14,10,0.00) 38px
+    ),
+    var(--np-paper);
+  background-size: 100% 100%, 100% 100%, 14px 14px, 22px 22px, 40px 40px, 100% 100%;
+  border: 1px solid var(--np-border);
+  border-radius: var(--np-radius);
+  box-shadow:
+    0 30px 90px var(--np-shadow-soft),
+    0 10px 22px var(--np-shadow);
+}
+
+/* Dark mode: make article paper dark so white text is readable */
+html[data-scheme="dark"] body.article-page .main-article {
+  /* Reduce texture in dark mode (too busy + hurts legibility) */
+  background:
+    linear-gradient(180deg, rgba(255, 220, 160, 0.04), rgba(0,0,0,0.28)),
+    rgba(18, 15, 12, 0.94);
+  border-color: rgba(255, 200, 120, 0.10);
+}
+
+html[data-scheme="dark"] .article-content,
+html[data-scheme="dark"] .article-content p,
+html[data-scheme="dark"] .article-content li {
+  color: rgba(245, 240, 225, 0.92);
+}
+html[data-scheme="dark"] .article-content h1,
+html[data-scheme="dark"] .article-content h2,
+html[data-scheme="dark"] .article-content h3 {
+  color: rgba(255, 245, 225, 0.94);
+}
+html[data-scheme="dark"] .article-content h2 {
+  border-top-color: rgba(255, 200, 120, 0.18);
+}
+
+/* Enter animation (unfold) */
+html.np-enter body.article-page .main-article {
+  transform: translateY(10px) scale(0.985);
+  opacity: 0.0;
+}
+html.np-enter-active body.article-page .main-article {
+  transition: transform 520ms ease, opacity 520ms ease;
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* 4) Keep WeChat-friendly article typography, but with newspaper feel */
+.article-content {
+  /* Larger type for readability, especially in dark mode */
+  font-size: 1.28rem;
+  line-height: 1.95;
+  /* slightly more like printed ink */
+  filter: contrast(1.02);
+}
+
+@media (max-width: 768px) {
+  .article-content {
+    font-size: 1.14rem;
+    line-height: 1.90;
+  }
+}
+
+.article-content p {
+  margin: 0.85em 0;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3 {
+  letter-spacing: 0.2px;
+}
+
+/* Images: slightly less rounded for “printed” feeling */
+.article-content img {
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+}
+
+.article-content table,
+.article-content pre {
+  border-radius: 12px;
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+/* --- Magazine-newspaper polish (more designed, still vintage) --- */
+
+/* Big headline feel */
+body.article-page .article-title {
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  line-height: 1.12;
+}
+
+/* Section headers in content feel like newspaper blocks */
+.article-content h2 {
+  border-top: 1px solid rgba(18,14,10,0.18);
+  padding-top: 0.85rem;
+  margin-top: 1.8rem;
+}
+
+.article-content h3 {
+  font-weight: 700;
+}
+
+/* Drop cap: first paragraph */
+.article-content > p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.2em;
+  line-height: 0.88;
+  padding-right: 0.18em;
+  padding-top: 0.06em;
+  font-weight: 800;
+  color: rgba(18,14,10,0.92);
+}
+
+/* Subtle “print” underline for links on hover */
+.article-content a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Promo slogan */
+.np-promo {
+  margin-top: 2.2rem;
+  padding-top: 1.4rem;
+}
+.np-promo__rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(20,18,16,0.25), transparent);
+  margin-bottom: 1rem;
+}
+.np-promo__text {
+  margin: 0;
+  font-size: 0.98rem;
+  opacity: 0.86;
+  text-align: center;
+}
+
+/* Wider content on desktop */
+@media (min-width: 1200px) {
+  .main-container .main.full-width {
+    max-width: var(--np-content-max);
+  }
+}
+
+.site-description {
+  opacity: 0.9;
+}
+
+/* Avatar ring: thinner */
+.site-avatar img,
+.site-avatar .site-logo {
+  border: 1px solid rgba(255,255,255,0.35) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+html[data-scheme="dark"] .site-avatar img,
+html[data-scheme="dark"] .site-avatar .site-logo {
+  border-color: rgba(255, 200, 120, 0.18) !important;
+}
+
+/* Back pin button */
+.np-back-pin {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 10002;
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: rgba(18,14,10,0.92);
+  background:
+    radial-gradient(circle at 10px 10px, rgba(120, 90, 60, 0.06) 1px, transparent 0),
+    linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.15)),
+    var(--np-paper);
+  border: 1px solid rgba(18,14,10,0.14);
+  box-shadow: 0 16px 38px rgba(0,0,0,0.10);
+}
+.np-back-pin__head {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(180, 40, 40, 0.85);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.25);
+}
+.np-back-pin__label {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+html[data-scheme="dark"] .np-back-pin {
+  color: rgba(245,240,225,0.92);
+  background: rgba(22, 18, 14, 0.82);
+  border-color: rgba(255, 200, 120, 0.14);
+}
+
+/* Ensure no overlay steals clicks */
+.np-back-pin,
+.np-back-pin * {
+  pointer-events: auto;
+}
+
+/* Lamp toggle (image-based, matches reference) */
+.np-lamp {
+  /* Always float at fixed position for easy theme toggle */
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  z-index: 9999;
+
+  /* 3x bigger */
+  width: 276px;
+  height: 288px;
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+}
+.np-lamp__img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 276px;
+  height: 288px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,0.16));
+  background-image: url('/img/lamp/lamp-day.png');
+}
+html[data-scheme="dark"] .np-lamp__img {
+  background-image: url('/img/lamp/lamp-night.png');
+  filter: drop-shadow(0 22px 32px rgba(0,0,0,0.45));
+}
+
+.np-lamp__glow {
+  position: absolute;
+  left: -18px;
+  top: -22px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10000; /* top-most, avoid clipping */
+  /* keep light mostly around lamp */
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255,180,95,0.50), rgba(255,180,95,0.0) 60%),
+    radial-gradient(circle at 50% 62%, rgba(255,140,60,0.16), rgba(255,140,60,0.0) 72%);
+}
+/* night: glow up + subtle desk spill */
+html.np-lamp-on .np-lamp__glow,
+html[data-scheme="dark"] .np-lamp__glow {
+  opacity: 1;
+  filter: blur(1px);
+}
+
+/* Make sure any parent containers won't clip the glow */
+#dark-mode-toggle,
+.sidebar.left-sidebar,
+.sidebar.left-sidebar.sticky {
+  overflow: visible !important;
+}

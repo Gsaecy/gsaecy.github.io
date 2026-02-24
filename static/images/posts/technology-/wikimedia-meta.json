@@ -1,18 +1,18 @@
 {
-  "query": "charging station financial technology",
+  "query": "medical technology financial technology",
   "count": 1,
   "items": [
     {
-      "title": "File:Rootes Maidstone building.jpg",
-      "pageid": 122982289,
-      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Rootes_Maidstone_building.jpg",
-      "file_page": "https://commons.wikimedia.org/wiki/File:Rootes_Maidstone_building.jpg",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Rootes_Maidstone_building.jpg/1920px-Rootes_Maidstone_building.jpg",
+      "title": "File:Immunohistochemistry technologies with AI.png",
+      "pageid": 142455962,
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Immunohistochemistry_technologies_with_AI.png",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Immunohistochemistry_technologies_with_AI.png",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Immunohistochemistry_technologies_with_AI.png",
       "mime": null,
-      "license": "CC0",
-      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "artist": "John K  Thorne",
-      "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/seattlecamera/51995264325/\">https://www.flickr.com/photos/seattlecamera/51995264325/</a>",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "artist": "MykhailoPervak",
+      "credit": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
       "attribution": null,
       "saved_as": "/home/runner/work/gsaecy.github.io/gsaecy.github.io/static/images/posts/technology-/wikimedia-1.jpg"
     }

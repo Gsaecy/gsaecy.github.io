@@ -1,126 +1,126 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-26T00:13:39.277656+00:00",
+  "collected_at": "2026-02-26T00:39:36.973916+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
   "items": [
     {
       "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "重庆一家四口爬山祈福，妻子深夜失踪，10 天后遗体在山顶悬崖处被发现，哪些信息值得关注？",
+      "url": "https://www.zhihu.com/question/2010101507849154680",
+      "published": "2026-02-26T00:39:36.973885+00:00",
+      "summary": "hot_value: 597 万热度 platform: zhihu",
+      "content_text": "热榜信号：重庆一家四口爬山祈福，妻子深夜失踪，10 天后遗体在山顶悬崖处被发现，哪些信息值得关注？｜热度：597 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010101507849154680",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "腾讯天美蒙特利尔工作室被曝 5 年 0 作品解散，明明是大厂都很精明，为何当初想投资这种摸鱼的老外工作室?",
+      "url": "https://www.zhihu.com/question/2009427191889408931",
+      "published": "2026-02-26T00:39:36.973885+00:00",
+      "summary": "hot_value: 381 万热度 platform: zhihu",
+      "content_text": "热榜信号：腾讯天美蒙特利尔工作室被曝 5 年 0 作品解散，明明是大厂都很精明，为何当初想投资这种摸鱼的老外工作室?｜热度：381 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2009427191889408931",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "如何评价文章「文科生 72 小时杀入 GitHub 全球榜：我没写一行代码但指挥了一支 AI 军队」？",
+      "url": "https://www.zhihu.com/question/2009666916382421190",
+      "published": "2026-02-26T00:39:36.973885+00:00",
+      "summary": "hot_value: 369 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何评价文章「文科生 72 小时杀入 GitHub 全球榜：我没写一行代码但指挥了一支 AI 军队」？｜热度：369 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2009666916382421190",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "刘强东宣布投资 50 亿进军游艇业，已接 5 个大型游艇订单，为何此时布局？能助力国内游艇业破局吗？",
+      "url": "https://www.zhihu.com/question/2009772496086376558",
+      "published": "2026-02-26T00:39:36.973885+00:00",
+      "summary": "hot_value: 179 万热度 platform: zhihu",
+      "content_text": "热榜信号：刘强东宣布投资 50 亿进军游艇业，已接 5 个大型游艇订单，为何此时布局？能助力国内游艇业破局吗？｜热度：179 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2009772496086376558",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "俄乌冲突爆发 4 周年后，距离和平还有多远？双方到底还有多大劲儿？",
+      "url": "https://www.zhihu.com/question/2009626926139076979",
+      "published": "2026-02-26T00:39:36.973885+00:00",
+      "summary": "hot_value: 167 万热度 platform: zhihu",
+      "content_text": "热榜信号：俄乌冲突爆发 4 周年后，距离和平还有多远？双方到底还有多大劲儿？｜热度：167 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2009626926139076979",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "离岸人民币兑美元升破 6.9 元关口创新高，驱动因素是什么？人民币升值后续空间还有多大？",
+      "url": "https://www.zhihu.com/question/2005218688282941128",
+      "published": "2026-02-26T00:39:36.973885+00:00",
+      "summary": "hot_value: 155 万热度 platform: zhihu",
+      "content_text": "热榜信号：离岸人民币兑美元升破 6.9 元关口创新高，驱动因素是什么？人民币升值后续空间还有多大？｜热度：155 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2005218688282941128",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "雷军揭幕新一代小米 SU7「赤霞红」，新车预计 2026 年 4 月上市，你对这款车有哪些期待？",
+      "url": "https://www.zhihu.com/question/2009569124448232152",
+      "published": "2026-02-26T00:39:36.973885+00:00",
+      "summary": "hot_value: 151 万热度 platform: zhihu",
+      "content_text": "热榜信号：雷军揭幕新一代小米 SU7「赤霞红」，新车预计 2026 年 4 月上市，你对这款车有哪些期待？｜热度：151 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2009569124448232152",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "上海发布楼市「沪七条」，符合条件非沪籍居民可在外环内增购 1 套住房，对房地产市场有何影响？",
+      "url": "https://www.zhihu.com/question/2009980674069778899",
+      "published": "2026-02-26T00:39:36.973885+00:00",
+      "summary": "hot_value: 149 万热度 platform: zhihu",
+      "content_text": "热榜信号：上海发布楼市「沪七条」，符合条件非沪籍居民可在外环内增购 1 套住房，对房地产市场有何影响？｜热度：149 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2009980674069778899",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "为什么马拉松比赛几乎被黑人运动员垄断，环法比赛中却很少有黑人运动员？",
+      "url": "https://www.zhihu.com/question/336958095",
+      "published": "2026-02-26T00:39:36.973885+00:00",
+      "summary": "hot_value: 113 万热度 platform: zhihu",
+      "content_text": "热榜信号：为什么马拉松比赛几乎被黑人运动员垄断，环法比赛中却很少有黑人运动员？｜热度：113 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/336958095",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
       "source": "hotboard:juejin",
       "title": "我的网站被黑了：一天灌入 227 万条垃圾数据，AI 写的代码差点让我社死",
       "url": "https://juejin.cn/post/7608953699230384168",
-      "published": "2026-02-26T00:13:39.277627+00:00",
-      "summary": "hot_value: 热度:1899 platform: juejin",
-      "content_text": "热榜信号：我的网站被黑了：一天灌入 227 万条垃圾数据，AI 写的代码差点让我社死｜热度：热度:1899｜平台：juejin\n链接：https://juejin.cn/post/7608953699230384168",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "豆包2.0来了！中国版Trae免费用～",
-      "url": "https://juejin.cn/post/7608751148120850458",
-      "published": "2026-02-26T00:13:39.277627+00:00",
-      "summary": "hot_value: 热度:1827 platform: juejin",
-      "content_text": "热榜信号：豆包2.0来了！中国版Trae免费用～｜热度：热度:1827｜平台：juejin\n链接：https://juejin.cn/post/7608751148120850458",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "智谱GLM-5这次开源，让高级程序员也危险了...",
-      "url": "https://juejin.cn/post/7609925885416390665",
-      "published": "2026-02-26T00:13:39.277627+00:00",
-      "summary": "hot_value: 热度:1584 platform: juejin",
-      "content_text": "热榜信号：智谱GLM-5这次开源，让高级程序员也危险了...｜热度：热度:1584｜平台：juejin\n链接：https://juejin.cn/post/7609925885416390665",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "2026年必学：Vibe Coding几个实用技巧，老手都在偷偷用！",
-      "url": "https://juejin.cn/post/7609504603010662415",
-      "published": "2026-02-26T00:13:39.277627+00:00",
-      "summary": "hot_value: 热度:990 platform: juejin",
-      "content_text": "热榜信号：2026年必学：Vibe Coding几个实用技巧，老手都在偷偷用！｜热度：热度:990｜平台：juejin\n链接：https://juejin.cn/post/7609504603010662415",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "Flutter 2026 Roadmap 发布，未来计划是什么？",
-      "url": "https://juejin.cn/post/7609927980681314310",
-      "published": "2026-02-26T00:13:39.277627+00:00",
-      "summary": "hot_value: 热度:756 platform: juejin",
-      "content_text": "热榜信号：Flutter 2026 Roadmap 发布，未来计划是什么？｜热度：热度:756｜平台：juejin\n链接：https://juejin.cn/post/7609927980681314310",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "uniapp开发的鸿蒙应用上架后，竟然月入4000+",
-      "url": "https://juejin.cn/post/7610338991925936162",
-      "published": "2026-02-26T00:13:39.277627+00:00",
-      "summary": "hot_value: 热度:774 platform: juejin",
-      "content_text": "热榜信号：uniapp开发的鸿蒙应用上架后，竟然月入4000+｜热度：热度:774｜平台：juejin\n链接：https://juejin.cn/post/7610338991925936162",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "我用Claude Code搭了个四个AI的团队，居然真的能协作开发（附项目地址）",
-      "url": "https://juejin.cn/post/7608759940800544818",
-      "published": "2026-02-26T00:13:39.277627+00:00",
-      "summary": "hot_value: 热度:675 platform: juejin",
-      "content_text": "热榜信号：我用Claude Code搭了个四个AI的团队，居然真的能协作开发（附项目地址）｜热度：热度:675｜平台：juejin\n链接：https://juejin.cn/post/7608759940800544818",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "构建工具的第三次革命：从 Rollup 到 Rust Bundler，我是如何设计 robuild 的",
-      "url": "https://juejin.cn/post/7609660097765097482",
-      "published": "2026-02-26T00:13:39.277627+00:00",
-      "summary": "hot_value: 热度:540 platform: juejin",
-      "content_text": "热榜信号：构建工具的第三次革命：从 Rollup 到 Rust Bundler，我是如何设计 robuild 的｜热度：热度:540｜平台：juejin\n链接：https://juejin.cn/post/7609660097765097482",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "用 OpenClaw + 飞书，快速搭建 5 个可协作的 AI 助理团队",
-      "url": "https://juejin.cn/post/7609481369001492499",
-      "published": "2026-02-26T00:13:39.277627+00:00",
-      "summary": "hot_value: 热度:540 platform: juejin",
-      "content_text": "热榜信号：用 OpenClaw + 飞书，快速搭建 5 个可协作的 AI 助理团队｜热度：热度:540｜平台：juejin\n链接：https://juejin.cn/post/7609481369001492499",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "年过完了，该上班了，我用Compose给大家放个烟花喜庆喜庆",
-      "url": "https://juejin.cn/post/7609288132602101760",
-      "published": "2026-02-26T00:13:39.277627+00:00",
-      "summary": "hot_value: 热度:504 platform: juejin",
-      "content_text": "热榜信号：年过完了，该上班了，我用Compose给大家放个烟花喜庆喜庆｜热度：热度:504｜平台：juejin\n链接：https://juejin.cn/post/7609288132602101760",
+      "published": "2026-02-26T00:39:36.973885+00:00",
+      "summary": "hot_value: 热度:1908 platform: juejin",
+      "content_text": "热榜信号：我的网站被黑了：一天灌入 227 万条垃圾数据，AI 写的代码差点让我社死｜热度：热度:1908｜平台：juejin\n链接：https://juejin.cn/post/7608953699230384168",
       "cover_image_url": null
     }
   ],
   "meta": {
     "mode": "hotboard",
     "types_fetched": [
-      "ithome",
-      "sspai",
+      "juejin",
+      "zhihu",
       "36kr",
-      "juejin"
+      "ithome"
     ],
     "live_ok": true,
     "picked": {
-      "platform": "juejin",
-      "title": "我的网站被黑了：一天灌入 227 万条垃圾数据，AI 写的代码差点让我社死",
-      "url": "https://juejin.cn/post/7608953699230384168",
-      "hot_value": "热度:1899",
-      "score": 2088.9
+      "platform": "zhihu",
+      "title": "重庆一家四口爬山祈福，妻子深夜失踪，10 天后遗体在山顶悬崖处被发现，哪些信息值得关注？",
+      "url": "https://www.zhihu.com/question/2010101507849154680",
+      "hot_value": "597 万热度",
+      "score": 9050146.875000002
     }
   }
 }

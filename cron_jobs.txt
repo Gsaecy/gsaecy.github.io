@@ -1,0 +1,14 @@
+# AI博客自动化定时任务
+# 每天发布3篇文章
+
+# 10:00发布 - 科技行业
+0 10 * * * cd /Users/guohongyu/clawd && ./scripts/enhanced_daily_publishing.sh >> logs/cron_10_00.log 2>&1
+
+# 14:00发布 - 电商行业
+0 14 * * * cd /Users/guohongyu/clawd && ./scripts/enhanced_daily_publishing.sh >> logs/cron_14_00.log 2>&1
+
+# 18:00发布 - 制造行业
+0 18 * * * cd /Users/guohongyu/clawd && ./scripts/enhanced_daily_publishing.sh >> logs/cron_18_00.log 2>&1
+
+# 监控任务（每30分钟检查一次）
+*/30 * * * * cd /Users/guohongyu/clawd && python3 scripts/monitor_publish_status_enhanced.py --target-hour-cst 18 --check-phase 30 >> logs/monitor.log 2>&1

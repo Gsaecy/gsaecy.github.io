@@ -1,0 +1,508 @@
+name: Auto Publish WeChat Articles
+
+concurrency:
+  # 允许同一天手动补发多篇，不互相取消（Pages 部署仍会在 GitHub 侧排队）
+  group: auto-publish-${{ github.workflow }}
+  cancel-in-progress: false
+
+"on":
+  # 定时触发：
+  # - 主发布：每天 2 篇（北京时间 08:00 / 18:00）
+  # - 失败重试：每 2 小时检查一次是否有待重试任务（无则跳过不发布）
+  schedule:
+    # UTC: 00:00, 10:00  (CN: 08:00, 18:00)
+    - cron: '0 0,10 * * *'
+    # retry checker
+    - cron: '0 */2 * * *'
+
+  # 手动触发
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: '文章主题（留空则使用预设主题）'
+        required: false
+        type: string
+        default: ''
+      industry:
+        description: '行业选择'
+        required: false
+        type: choice
+        default: 'technology'
+        options:
+          - technology
+          - finance
+          - healthcare
+          - education
+          - automotive
+          - retail
+          - manufacturing
+          - foreign_trade
+          - scientific_instruments
+          - reagents
+          - lab_consumables
+      force_timestamp:
+        description: '强制时间戳（用于补发/复现，例如 20260203-080000；留空则自动生成北京时间时间戳）'
+        required: false
+        type: string
+        default: ''
+
+env:
+  HUGO_VERSION: '0.155.1'
+  BLOG_URL: 'https://gsaecy.github.io'
+  VOLC_REGION: 'cn-north-1'
+  VOLC_SERVICE: 'cv'
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: recursive
+          fetch-depth: 0
+      
+      - name: Clean up any residual submodule configs
+        run: |
+          # 移除可能残留的 chrome-extension submodule 配置
+          if [ -f .gitmodules ]; then
+            # 备份原文件
+            cp .gitmodules .gitmodules.backup
+            # 移除 chrome-extension 相关行
+            grep -v "chrome-extension" .gitmodules > .gitmodules.tmp && mv .gitmodules.tmp .gitmodules
+          fi
+          # 从 git config 中移除
+          git config --local --remove-section submodule.chrome-extension 2>/dev/null || true
+          git config --local --remove-section submodule."chrome-extension/" 2>/dev/null || true
+          echo "Submodule cleanup completed"
+      
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Determine article topic
+        id: topic
+        run: |
+          echo "🎯 确定文章主题..."
+
+          # schedule 触发时 github.event.inputs 为空，这里兜底
+          INDUSTRY="${{ github.event.inputs.industry }}"
+
+          # retry checker: schedule 事件在非 08:00/18:00（CN）时，只做失败重试检查，不正常发文
+          CN_HOUR=$(TZ=Asia/Shanghai date +%H)
+          CN_EVENT="${{ github.event_name }}"
+          IS_MAIN_WINDOW=0
+          if [ "$CN_HOUR" = "08" ] || [ "$CN_HOUR" = "18" ]; then
+            IS_MAIN_WINDOW=1
+          fi
+
+          if [ "$CN_EVENT" = "schedule" ] && [ "$IS_MAIN_WINDOW" = "0" ]; then
+            if [ -f data/pending_retry.json ]; then
+              DUE=$(python3 -c "import json, time; s=json.load(open('data/pending_retry.json','r',encoding='utf-8')); print(int(s.get('next_retry_epoch',0)))")
+              NOW=$(TZ=Asia/Shanghai date +%s)
+              if [ "$NOW" -ge "$DUE" ]; then
+                INDUSTRY=$(python3 -c "import json; print(json.load(open('data/pending_retry.json','r',encoding='utf-8')).get('industry',''))")
+                TOPIC_FORCE=$(python3 -c "import json; print(json.load(open('data/pending_retry.json','r',encoding='utf-8')).get('topic',''))")
+                FORCE_TS=$(python3 -c "import json; print(json.load(open('data/pending_retry.json','r',encoding='utf-8')).get('force_timestamp',''))")
+                echo "🔁 retry mode: industry=$INDUSTRY topic=$TOPIC_FORCE ts=$FORCE_TS"
+              else
+                echo "⏳ pending retry exists but not due yet, skip publishing"
+                echo "skip=true" >> $GITHUB_OUTPUT
+                exit 0
+              fi
+            else
+              echo "🟦 retry checker tick: no pending retry, skip publishing"
+              echo "skip=true" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+          fi
+
+          # ✅ 行业轮换与数量平衡：统计仓库现有文章数量，要求最大-最小不超过 2
+          # - 若手动指定 industry，则完全尊重用户输入
+          # - 若未指定，则优先选发布最少的行业；当差距>2 时只从最少行业中选，直到追平
+          if [ -z "$INDUSTRY" ]; then
+            CN_WDAY=$(TZ=Asia/Shanghai date +%u)  # 1(Mon)-7(Sun)
+            CN_DATE=$(TZ=Asia/Shanghai date +%F)
+            INDUSTRY=$(python3 -c "import re; from pathlib import Path; industries=['technology','finance','healthcare','education','automotive','retail','manufacturing','foreign_trade','scientific_instruments','reagents','lab_consumables']; pat={k:re.compile(r'^'+re.escape(k)+r'-\\d{8}-\\d{6}\\.md$') for k in industries}; counts={k:0 for k in industries}; [counts.__setitem__(k, counts[k]+(1 if pat[k].match(p.name) else 0)) for p in Path('content/posts').glob('*.md') for k in industries]; minc=min(counts.values()) if counts else 0; cands=[k for k,v in counts.items() if v==minc]; hour=int('$CN_HOUR'); wday=int('$CN_WDAY'); is_weekend=(wday>=6); scores={k:0 for k in cands}; [scores.__setitem__(k, scores[k] + (3 if ((not is_weekend and k in ('technology','finance','manufacturing','foreign_trade')) or (is_weekend and k in ('retail','automotive','healthcare'))) else 0) + (2 if ((hour<12 and k in ('technology','education','manufacturing','scientific_instruments')) or (hour>=12 and k in ('finance','foreign_trade','retail','healthcare'))) else 0) + (1 if k in ('reagents','lab_consumables') else 0)) for k in cands]; print(sorted(cands, key=lambda x:(-scores.get(x,0), industries.index(x)))[0])")
+          fi
+
+          # 主题：手动指定 > retry 指定 > 预设
+          if [ -n "${{ github.event.inputs.topic }}" ]; then
+            TOPIC="${{ github.event.inputs.topic }}"
+            echo "使用手动指定主题: $TOPIC"
+          elif [ -n "$TOPIC_FORCE" ]; then
+            TOPIC="$TOPIC_FORCE"
+            echo "使用重试任务主题: $TOPIC"
+          else
+            case $INDUSTRY in
+              technology) TOPIC="AI技术发展趋势与行业应用";;
+              finance) TOPIC="数字金融创新与风险管理";;
+              healthcare) TOPIC="智慧医疗技术突破与市场前景";;
+              education) TOPIC="在线教育模式创新与未来趋势";;
+              automotive) TOPIC="新能源汽车产业链分析与投资机会";;
+              retail) TOPIC="新零售数字化转型与消费趋势";;
+              manufacturing) TOPIC="智能制造技术升级与产业变革";;
+              foreign_trade) TOPIC="中日外贸交易动态与产业机会";;
+              scientific_instruments) TOPIC="科研仪器行业动态与采购趋势";;
+              reagents) TOPIC="生物试剂行业供需与价格趋势";;
+              lab_consumables) TOPIC="科研耗材行业变化与供应链观察";;
+              *) TOPIC="行业技术发展趋势分析";;
+            esac
+            echo "使用预设主题 [$INDUSTRY]: $TOPIC"
+          fi
+
+          FORCE_TS_INPUT="${{ github.event.inputs.force_timestamp }}"
+          if [ -n "$FORCE_TS_INPUT" ]; then
+            TIMESTAMP="$FORCE_TS_INPUT"
+          elif [ -n "$FORCE_TS" ]; then
+            TIMESTAMP="$FORCE_TS"
+          else
+            # 统一用北京时间生成时间戳，便于对齐“8点/10点”这种承诺
+            TIMESTAMP=$(TZ=Asia/Shanghai date +%Y%m%d-%H%M%S)
+          fi
+
+          # 文件名只用英文，避免中文 slug 为空导致路径异常
+          FILENAME="${INDUSTRY}-${TIMESTAMP}"
+
+          echo "skip=false" >> $GITHUB_OUTPUT
+          echo "industry=$INDUSTRY" >> $GITHUB_OUTPUT
+          echo "topic=$TOPIC" >> $GITHUB_OUTPUT
+          echo "filename=$FILENAME" >> $GITHUB_OUTPUT
+          echo "timestamp=$TIMESTAMP" >> $GITHUB_OUTPUT
+      
+      - name: Generate article (from top media)
+        if: steps.topic.outputs.skip != 'true'
+        id: generate
+        env:
+          TOPIC: ${{ steps.topic.outputs.topic }}
+          INDUSTRY: ${{ steps.topic.outputs.industry }}
+          FILENAME: ${{ steps.topic.outputs.filename }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          VOLC_ACCESS_KEY_ID: ${{ secrets.VOLC_ACCESS_KEY_ID }}
+          VOLC_SECRET_ACCESS_KEY: ${{ secrets.VOLC_SECRET_ACCESS_KEY }}
+        run: |
+          echo "🗞️ 采集行业头部媒体RSS并生成文章..."
+
+          ORIGINAL_FILE="content/posts/${FILENAME}.md"
+          WECHAT_FILE="content/posts/${FILENAME}-wechat.md"
+          NEWS_JSON="data/raw/news_${FILENAME}.json"
+
+          mkdir -p content/posts data/raw
+
+          # 如果是重试/重复触发，且同名文章已存在：不要再生成一遍（避免出现多篇“同内容不同配图”）
+          if [ -f "${ORIGINAL_FILE}" ]; then
+            echo "🟨 文章已存在，跳过重新生成：${ORIGINAL_FILE}"
+            echo "original_file=${ORIGINAL_FILE}" >> $GITHUB_OUTPUT
+            echo "wechat_file=${WECHAT_FILE}" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # 采集 RSS
+          python3 scripts/collect_news.py --industry "${INDUSTRY}" --hours 24 --limit 25 --out "${NEWS_JSON}"
+
+          COUNT=$(python3 -c "import json; print(json.load(open('${NEWS_JSON}','r',encoding='utf-8')).get('count',0))")
+          echo "RSS collected count=${COUNT} (industry=${INDUSTRY})"
+
+          # 兜底1：RSS=0 时，优先用“全网热榜聚合”选题（更实时），并生成可引用的来源列表
+          if [ "${COUNT}" = "0" ]; then
+            echo "⚠️ 当前行业 RSS=0，尝试从热榜聚合API选择热点选题..."
+            if read HB_INDUSTRY HB_TOPIC < <(python3 scripts/fetch_hotboard_topics.py --out "${NEWS_JSON}" --shell); then
+              echo "hotboard pick industry=${HB_INDUSTRY} topic=${HB_TOPIC}"
+              INDUSTRY="${HB_INDUSTRY}"
+              TOPIC="${HB_TOPIC}"
+              FILENAME="${INDUSTRY}-${TIMESTAMP}"
+              ORIGINAL_FILE="content/posts/${FILENAME}.md"
+              WECHAT_FILE="content/posts/${FILENAME}-wechat.md"
+
+              # 将热榜素材文件改名到与新 FILENAME 一致，便于追踪
+              NEW_NEWS_JSON="data/raw/news_${FILENAME}.json"
+              if [ "${NEWS_JSON}" != "${NEW_NEWS_JSON}" ]; then
+                mv "${NEWS_JSON}" "${NEW_NEWS_JSON}" || true
+                NEWS_JSON="${NEW_NEWS_JSON}"
+              fi
+
+              COUNT=$(python3 -c "import json; print(json.load(open('${NEWS_JSON}','r',encoding='utf-8')).get('count',0))")
+              echo "hotboard sources count=${COUNT}"
+            else
+              echo "⚠️ hotboard API 失败，继续使用本地热门话题池兜底"
+            fi
+          fi
+
+          # 兜底2：如果热榜也不可用（COUNT仍为0 或脚本失败），使用本地热门话题池并再抓一次RSS
+          if [ "${COUNT}" = "0" ]; then
+            echo "⚠️ 热榜不可用或无候选，启用本地热门话题池兜底..."
+            read FB_INDUSTRY FB_TOPIC < <(python3 scripts/pick_hot_topic.py --shell)
+            echo "fallback industry=${FB_INDUSTRY} topic=${FB_TOPIC}"
+            INDUSTRY="${FB_INDUSTRY}"
+            TOPIC="${FB_TOPIC}"
+            FILENAME="${INDUSTRY}-${TIMESTAMP}"
+            ORIGINAL_FILE="content/posts/${FILENAME}.md"
+            WECHAT_FILE="content/posts/${FILENAME}-wechat.md"
+            NEWS_JSON="data/raw/news_${FILENAME}.json"
+            python3 scripts/collect_news.py --industry "${INDUSTRY}" --hours 24 --limit 25 --out "${NEWS_JSON}"
+            COUNT=$(python3 -c "import json; print(json.load(open('${NEWS_JSON}','r',encoding='utf-8')).get('count',0))")
+            echo "fallback RSS collected count=${COUNT} (industry=${INDUSTRY})"
+          fi
+
+          # 标题：包含行业 + 更贴合内容（不在标题里写日期，日期已在文章元信息里体现）
+          case $INDUSTRY in
+            technology) IND_CN="科技";;
+            finance) IND_CN="金融";;
+            healthcare) IND_CN="医疗";;
+            education) IND_CN="教育";;
+            automotive) IND_CN="汽车";;
+            retail) IND_CN="零售";;
+            manufacturing) IND_CN="制造";;
+            foreign_trade) IND_CN="外贸(中日)";;
+            scientific_instruments) IND_CN="科研仪器";;
+            reagents) IND_CN="试剂";;
+            lab_consumables) IND_CN="科研耗材";;
+            *) IND_CN="$INDUSTRY";;
+          esac
+
+          TITLE="【${IND_CN}】${TOPIC}"
+
+          COVER_OUT_DIR="static/images/posts/${FILENAME}"
+          COVER_OUT_FILE="${COVER_OUT_DIR}/cover.jpg"
+          COVER_REL="/images/posts/${FILENAME}/cover.jpg"
+          mkdir -p "${COVER_OUT_DIR}" || true
+
+          # 先生成文章（封面路径先固定为 /images/.../cover.jpg），便于后续用“标题+小标题+来源关键词”选封面
+          python3 scripts/generate_news_post.py --in "${NEWS_JSON}" --slug "${FILENAME}" --industry "${INDUSTRY}" --title "${TITLE}" --out "${ORIGINAL_FILE}" --cover "${COVER_REL}"
+
+          # ✅ 训练：更新“活水”公共图片池（仅元数据，global cap=2000）
+          python3 scripts/update_public_image_pool.py --industry "${INDUSTRY}" --title "${TITLE}" --md "${ORIGINAL_FILE}" --news-json "${NEWS_JSON}" --pool "data/public_image_pool.json" --cap 2000 --page-size 25 || true
+
+          # 封面优先：公共图片池（免费、可控）；即梦作为保底（超额收费）
+          if python3 scripts/pick_public_cover.py --pool "data/public_image_pool.json" --industry "${INDUSTRY}" --title "${TITLE}" --slug "${FILENAME}" --out "${COVER_OUT_FILE}" --md "${ORIGINAL_FILE}" --news-json "${NEWS_JSON}" >/tmp/cover_meta.json; then
+            echo "✅ cover from public pool"
+          else
+            echo "⚠️ public cover not available, fallback to jimeng"
+            if python3 scripts/jimeng_generate_cover.py --slug "${FILENAME}" --title "${TITLE}" --industry "${INDUSTRY}" --out "${COVER_OUT_FILE}"; then
+              python3 scripts/jimeng_usage.py --file data/usage/jimeng_usage.json --mark success || true
+            else
+              python3 scripts/jimeng_usage.py --file data/usage/jimeng_usage.json --mark fail || true
+            fi
+          fi
+
+          # 复制一份用于公众号格式转换
+          cp "${ORIGINAL_FILE}" "${WECHAT_FILE}"
+
+          echo "✅ 文章已生成: ${ORIGINAL_FILE}"
+          echo "original_file=${ORIGINAL_FILE}" >> $GITHUB_OUTPUT
+          echo "wechat_file=${WECHAT_FILE}" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: Auto add charts (data-driven illustrations)
+        if: steps.topic.outputs.skip != 'true'
+        run: |
+          echo "根据表格数据生成插图（图表）..."
+          ORIGINAL_FILE="${{ steps.generate.outputs.original_file }}"
+          
+          if [ -f "$ORIGINAL_FILE" ]; then
+            python3 scripts/auto_illustrate.py "$ORIGINAL_FILE"
+            echo "已为文章生成图表插图并写入 static/images"
+          else
+            echo "未找到文章文件，跳过插图生成"
+          fi
+
+      - name: Auto add public images (Wikimedia Commons)
+        if: steps.topic.outputs.skip != 'true'
+        run: |
+          echo "从公开数据源获取配图（Wikimedia Commons，无需API Key）..."
+          ORIGINAL_FILE="${{ steps.generate.outputs.original_file }}"
+          
+          if [ -f "$ORIGINAL_FILE" ]; then
+            python3 scripts/auto_add_public_images.py "$ORIGINAL_FILE" || true
+            echo "已尝试为文章插入公开配图（并在文中写明来源与许可）"
+          else
+            echo "未找到文章文件，跳过公开配图"
+          fi
+
+      - name: Validate illustrations (non-blocking)
+        if: steps.topic.outputs.skip != 'true'
+        run: |
+          echo "校验插图规则：至少1张公开配图 + 每个关键表格1张图表..."
+          ORIGINAL_FILE="${{ steps.generate.outputs.original_file }}"
+          python3 scripts/validate_illustrations.py "$ORIGINAL_FILE" || echo "::warning::illustrations validation failed (will continue publishing)"
+
+      - name: Record failure (commit to repo)
+        if: failure()
+        run: |
+          echo "记录失败信息到仓库，并写入待重试任务（2小时后重试）..."
+          mkdir -p logs/auto-publish-failures data
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          TS="$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+          FILE="logs/auto-publish-failures/${{ github.run_id }}.md"
+          {
+            echo "# Auto Publish Failure";
+            echo "";
+            echo "- time(UTC): ${TS}";
+            echo "- run: ${RUN_URL}";
+            echo "- event: ${{ github.event_name }}";
+            echo "- ref: ${{ github.ref }}";
+            echo "";
+            echo "This file is generated automatically when the workflow fails.";
+          } > "$FILE"
+
+          # 写入待重试任务（2小时后）
+          NEXT_EPOCH=$(python3 -c "import time; print(int(time.time())+7200)")
+          python3 -c "import json; from pathlib import Path; Path('data').mkdir(parents=True, exist_ok=True); industry='${{ steps.topic.outputs.industry }}'; topic='${{ steps.topic.outputs.topic }}'; ts='${{ steps.topic.outputs.timestamp }}'; Path('data/pending_retry.json').write_text(json.dumps({'industry':industry,'topic':topic,'force_timestamp':ts,'next_retry_epoch':int(${NEXT_EPOCH}),'reason':'workflow_failed','run':'${RUN_URL}'}, ensure_ascii=False, indent=2)+'\\n', encoding='utf-8'); print('pending_retry written')"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$FILE" data/pending_retry.json || true
+          git commit -m "🧾 记录自动发布失败并排队重试：run ${{ github.run_id }}" || true
+          git push origin main || true
+      
+      - name: Format for WeChat
+        if: steps.topic.outputs.skip != 'true'
+        id: wechat
+        run: |
+          echo "转换为微信公众号格式..."
+          ORIGINAL_FILE="${{ steps.generate.outputs.original_file }}"
+
+          if [ ! -f "$ORIGINAL_FILE" ]; then
+            echo "未找到文章文件，无法转换"
+            exit 1
+          fi
+
+          # 生成公众号排版文件（注意：不要让它参与 Hugo 构建，否则会导致博客出现重复文章）
+          python3 format-wechat.py "$ORIGINAL_FILE"
+
+          WECHAT_FILE="${ORIGINAL_FILE%.md}-wechat.md"
+          if [ ! -f "$WECHAT_FILE" ]; then
+            echo "微信公众号格式文件未生成"
+            exit 1
+          fi
+
+          # 将公众号文件移出 content/posts，避免 Hugo 生成第二个同 slug 页面
+          mkdir -p logs/wechat
+          MOVED="logs/wechat/$(basename "$WECHAT_FILE")"
+          mv "$WECHAT_FILE" "$MOVED"
+
+          echo "微信公众号格式已生成(不发布到博客): $MOVED"
+          echo "wechat_file=$MOVED" >> $GITHUB_OUTPUT
+      
+      - name: Commit generated post & assets (persist history)
+        if: steps.topic.outputs.skip != 'true'
+        run: |
+          echo "📝 将新文章与图片写回 main 分支，保证历史文章不会被覆盖..."
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 若这是一次重试成功，清理 pending 标记
+          if [ -f data/pending_retry.json ]; then
+            rm -f data/pending_retry.json
+          fi
+
+          # 新文章 + 静态资源 + 数据（用于审计/回溯，可按需删减）
+          # 注意：不要把“可能不存在”的路径放进同一个 git add，否则会导致整条命令失败，从而一个文件也没被 stage。
+          git add content/posts static/images logs/wechat || true
+          if [ -d data/raw ]; then git add -f data/raw || true; fi
+          if [ -f data/pending_retry.json ]; then git add data/pending_retry.json || true; fi
+
+          if git diff --cached --quiet; then
+            echo "没有需要提交的变更（可能是重复时间戳/无新增资源）"
+          else
+            git commit -m "📝 保存新文章源文件与资源: ${{ steps.topic.outputs.filename }}"
+            git push origin HEAD:main
+          fi
+
+      - name: Build Hugo site
+        if: steps.topic.outputs.skip != 'true'
+        run: |
+          echo "🏗️ 构建Hugo网站..."
+          hugo --minify
+      
+      - name: Deploy to GitHub Pages
+        if: steps.topic.outputs.skip != 'true'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          # 不强制 orphan，保留 pages 分支提交历史（可选，但有助排查）
+          force_orphan: false
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: '🚀 自动发布文章: ${{ steps.topic.outputs.topic }} [$(date +%Y%m%d-%H%M%S)]'
+      
+      - name: Generate deployment report
+        if: steps.topic.outputs.skip != 'true'
+        run: |
+          echo "# 自动发布报告" > deployment-report.md
+          echo "生成时间: $(date)" >> deployment-report.md
+          echo "" >> deployment-report.md
+          
+          echo "## 📋 发布详情" >> deployment-report.md
+          echo "- 文章主题: ${{ steps.topic.outputs.topic }}" >> deployment-report.md
+          echo "- 生成时间: ${{ steps.topic.outputs.timestamp }}" >> deployment-report.md
+          echo "- 原始文章: ${{ steps.generate.outputs.original_file }}" >> deployment-report.md
+          echo "- 微信公众号格式: ${{ steps.wechat.outputs.wechat_file }}" >> deployment-report.md
+          echo "" >> deployment-report.md
+          
+          echo "## 🌐 访问链接" >> deployment-report.md
+          echo "- 博客首页: ${BLOG_URL}" >> deployment-report.md
+          FILENAME="${{ steps.topic.outputs.filename }}"
+          echo "- 文章页面: ${BLOG_URL}/posts/${FILENAME}/" >> deployment-report.md
+          echo "" >> deployment-report.md
+          
+          echo "## ⏰ 下次发布时间" >> deployment-report.md
+          echo "系统将在以下时间自动发布新文章：" >> deployment-report.md
+          echo "- 08:00 (北京时间)" >> deployment-report.md
+          echo "- 18:00 (北京时间)" >> deployment-report.md
+          echo "" >> deployment-report.md
+          
+          echo "## 🔧 手动触发" >> deployment-report.md
+          echo "如需立即发布文章，可在GitHub Actions页面手动触发此工作流。" >> deployment-report.md
+          
+          cat deployment-report.md
+      
+      - name: Upload artifacts
+        if: steps.topic.outputs.skip != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: published-articles
+          path: |
+            content/posts/*.md
+            deployment-report.md
+          retention-days: 7
+      
+      - name: Send success notification
+        if: success() && steps.topic.outputs.skip != 'true'
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+        run: |
+          echo "✅ 文章发布成功！"
+          echo "主题: ${{ steps.topic.outputs.topic }}"
+          echo "时间: $(date)"
+          echo "博客地址: ${BLOG_URL}"
+          echo "文章链接: ${BLOG_URL}/posts/${{ steps.topic.outputs.filename }}/"
+
+          # Jimeng usage summary (self-tracked)
+          if [ -f data/usage/jimeng_usage.json ]; then
+            USAGE=$(cat data/usage/jimeng_usage.json | python3 -c "import sys,json; j=json.load(sys.stdin); t=j.get('total',{}); print(f\"Jimeng本月 用量：成功{t.get('success',0)}，失败{t.get('fail',0)}\")")
+          else
+            USAGE="Jimeng本月 用量：暂无统计"
+          fi
+          echo "$USAGE"

@@ -16,16 +16,12 @@
       "原理",
       "发布",
       "事故",
-      "Kimi",
-      "OpenClaw",
-      "Skills",
       "Vibe",
-      "AGENTS",
-      "AI Coding",
       "Flutter",
       "Roadmap",
       "Rollup",
-      "Rust Bundler"
+      "Rust Bundler",
+      "OpenClaw"
     ],
     "image_tags": [],
     "match_score": 0.3,
@@ -33,12 +29,12 @@
     "meta_categories": [],
     "score": 10.0,
     "key": "wikimedia:64544182",
-    "first_seen": 1772014819,
-    "last_seen": 1772014819,
+    "first_seen": 1772064863,
+    "last_seen": 1772064863,
     "used_count": 0
   },
   "slug": "technology-",
   "article_type": "analysis",
-  "best_score": 330.0,
+  "best_score": 210.0,
   "threshold": 150
 }

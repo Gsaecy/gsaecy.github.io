@@ -416,3 +416,47 @@ gh API exception: [Errno 2] No such file or directory: 'gh'
    命令：gh workflow run auto-publish-wechat.yml --repo...
 ❌ 重试触发异常：[Errno 2] No such file or directory: 'gh'
 ::alert::【发布监控】18:00 CST 文章发布失败（12:00 CST 检查），智能修复尝试未成功（原因：no_run_found），请手动检查。
+错误：无法导入原监控脚本
+/Users/guohongyu/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+gh API exception: [Errno 2] No such file or directory: 'gh'
+❌ 18:00 CST 发布失败（12:30 CST 检查）
+   未找到运行记录，可能未触发
+🔧 智能修复 18:00 CST 发布失败（原因：no_run_found）
+🚀 执行智能重试：industry=technology, timestamp=20260226-123001
+   命令：gh workflow run auto-publish-wechat.yml --repo...
+❌ 重试触发异常：[Errno 2] No such file or directory: 'gh'
+::alert::【发布监控】18:00 CST 文章发布失败（12:30 CST 检查），智能修复尝试未成功（原因：no_run_found），请手动检查。
+错误：无法导入原监控脚本
+/Users/guohongyu/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+gh API exception: [Errno 2] No such file or directory: 'gh'
+❌ 18:00 CST 发布失败（13:00 CST 检查）
+   未找到运行记录，可能未触发
+🔧 智能修复 18:00 CST 发布失败（原因：no_run_found）
+🚀 执行智能重试：industry=technology, timestamp=20260226-130000
+   命令：gh workflow run auto-publish-wechat.yml --repo...
+❌ 重试触发异常：[Errno 2] No such file or directory: 'gh'
+::alert::【发布监控】18:00 CST 文章发布失败（13:00 CST 检查），智能修复尝试未成功（原因：no_run_found），请手动检查。
+错误：无法导入原监控脚本
+/Users/guohongyu/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+gh API exception: [Errno 2] No such file or directory: 'gh'
+❌ 18:00 CST 发布失败（13:30 CST 检查）
+   未找到运行记录，可能未触发
+🔧 智能修复 18:00 CST 发布失败（原因：no_run_found）
+🚀 执行智能重试：industry=technology, timestamp=20260226-133001
+   命令：gh workflow run auto-publish-wechat.yml --repo...
+❌ 重试触发异常：[Errno 2] No such file or directory: 'gh'
+::alert::【发布监控】18:00 CST 文章发布失败（13:30 CST 检查），智能修复尝试未成功（原因：no_run_found），请手动检查。
+错误：无法导入原监控脚本
+/Users/guohongyu/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+gh API exception: [Errno 2] No such file or directory: 'gh'
+❌ 18:00 CST 发布失败（14:00 CST 检查）
+   未找到运行记录，可能未触发
+🔧 智能修复 18:00 CST 发布失败（原因：no_run_found）
+🚀 执行智能重试：industry=technology, timestamp=20260226-140001
+   命令：gh workflow run auto-publish-wechat.yml --repo...
+❌ 重试触发异常：[Errno 2] No such file or directory: 'gh'
+::alert::【发布监控】18:00 CST 文章发布失败（14:00 CST 检查），智能修复尝试未成功（原因：no_run_found），请手动检查。

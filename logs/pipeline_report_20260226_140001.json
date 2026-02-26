@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-26T14:00:01.438218",
+  "pipeline_status": "completed",
+  "data_collection": {
+    "sources_count": 3,
+    "sources": [
+      "科技新闻",
+      "金融资讯",
+      "教育动态"
+    ]
+  },
+  "analysis": {
+    "model": "deepseek-chat",
+    "result_length": 621
+  },
+  "publishing": {
+    "post_file": "content/posts/industry-analysis-20260226-140001.md",
+    "hugo_ready": true
+  },
+  "next_steps": [
+    "运行 hugo server -D 预览文章",
+    "提交更改到GitHub触发自动部署",
+    "访问 https://gsaecy.github.io 查看发布结果"
+  ]
+}

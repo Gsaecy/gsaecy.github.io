@@ -445,6 +445,18 @@ jobs:
             git push origin HEAD:main
           fi
 
+      - name: Clean problematic image cache before build
+        if: steps.topic.outputs.skip != 'true'
+        run: |
+          echo "🧹 构建前清理可能损坏的图片缓存..."
+          # 删除包含冒号的文件名（已知问题：wikimedia:101060661.jpg）
+          find data -name "*:*" -type f -delete 2>/dev/null || true
+          # 删除过小的文件（可能损坏）
+          find data -name "*.jpg" -type f -size -100c -delete 2>/dev/null || true
+          find data -name "*.png" -type f -size -100c -delete 2>/dev/null || true
+          find data -name "*.webp" -type f -size -100c -delete 2>/dev/null || true
+          echo "✅ 缓存清理完成，准备构建..."
+      
       - name: Build Hugo site
         if: steps.topic.outputs.skip != 'true'
         run: |

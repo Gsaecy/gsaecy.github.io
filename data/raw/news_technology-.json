@@ -1,6 +1,6 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-27T00:15:59.534567+00:00",
+  "collected_at": "2026-02-27T00:41:51.469044+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
@@ -8,31 +8,11 @@
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "怎么看待 18-65 岁申请在俄长期居留男性，须同意在俄军事单位等至少服役 1 年？",
-      "url": "https://www.zhihu.com/question/2010288799117250988",
-      "published": "2026-02-27T00:15:59.534535+00:00",
-      "summary": "hot_value: 675 万热度 platform: zhihu",
-      "content_text": "热榜信号：怎么看待 18-65 岁申请在俄长期居留男性，须同意在俄军事单位等至少服役 1 年？｜热度：675 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010288799117250988",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
       "title": "津巴布韦暂停锂矿出口，暂无明确恢复时间表，多家中企回应，具体影响大吗？",
       "url": "https://www.zhihu.com/question/2010358162679670624",
-      "published": "2026-02-27T00:15:59.534535+00:00",
-      "summary": "hot_value: 528 万热度 platform: zhihu",
-      "content_text": "热榜信号：津巴布韦暂停锂矿出口，暂无明确恢复时间表，多家中企回应，具体影响大吗？｜热度：528 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010358162679670624",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "男篮世界杯预选赛，中国男篮 87-80 逆转日本男篮，如何评价本场比赛？",
-      "url": "https://www.zhihu.com/question/2010391207130391871",
-      "published": "2026-02-27T00:15:59.534535+00:00",
-      "summary": "hot_value: 430 万热度 platform: zhihu",
-      "content_text": "热榜信号：男篮世界杯预选赛，中国男篮 87-80 逆转日本男篮，如何评价本场比赛？｜热度：430 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010391207130391871",
+      "published": "2026-02-27T00:41:51.469017+00:00",
+      "summary": "hot_value: 634 万热度 platform: zhihu",
+      "content_text": "热榜信号：津巴布韦暂停锂矿出口，暂无明确恢复时间表，多家中企回应，具体影响大吗？｜热度：634 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010358162679670624",
       "cover_image_url": null
     },
     {
@@ -40,9 +20,19 @@
       "source": "hotboard:zhihu",
       "title": "李嘉诚旗下长和系出售英国电网业务，套现逾 1100 亿港元，为何选择此时出售？将带来哪些影响？",
       "url": "https://www.zhihu.com/question/2010291462642885826",
-      "published": "2026-02-27T00:15:59.534535+00:00",
-      "summary": "hot_value: 375 万热度 platform: zhihu",
-      "content_text": "热榜信号：李嘉诚旗下长和系出售英国电网业务，套现逾 1100 亿港元，为何选择此时出售？将带来哪些影响？｜热度：375 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010291462642885826",
+      "published": "2026-02-27T00:41:51.469017+00:00",
+      "summary": "hot_value: 426 万热度 platform: zhihu",
+      "content_text": "热榜信号：李嘉诚旗下长和系出售英国电网业务，套现逾 1100 亿港元，为何选择此时出售？将带来哪些影响？｜热度：426 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010291462642885826",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "男篮世界杯预选赛，中国男篮 87-80 逆转日本男篮，如何评价本场比赛？",
+      "url": "https://www.zhihu.com/question/2010391207130391871",
+      "published": "2026-02-27T00:41:51.469017+00:00",
+      "summary": "hot_value: 401 万热度 platform: zhihu",
+      "content_text": "热榜信号：男篮世界杯预选赛，中国男篮 87-80 逆转日本男篮，如何评价本场比赛？｜热度：401 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010391207130391871",
       "cover_image_url": null
     },
     {
@@ -50,9 +40,9 @@
       "source": "hotboard:zhihu",
       "title": "如何看待消息称 2026 年中国手机行业将正式迎来全面涨价潮，3 月起新品最低涨 1000，老款也将调价？",
       "url": "https://www.zhihu.com/question/2010317954231788192",
-      "published": "2026-02-27T00:15:59.534535+00:00",
-      "summary": "hot_value: 295 万热度 platform: zhihu",
-      "content_text": "热榜信号：如何看待消息称 2026 年中国手机行业将正式迎来全面涨价潮，3 月起新品最低涨 1000，老款也将调价？｜热度：295 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010317954231788192",
+      "published": "2026-02-27T00:41:51.469017+00:00",
+      "summary": "hot_value: 274 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何看待消息称 2026 年中国手机行业将正式迎来全面涨价潮，3 月起新品最低涨 1000，老款也将调价？｜热度：274 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010317954231788192",
       "cover_image_url": null
     },
     {
@@ -60,19 +50,9 @@
       "source": "hotboard:zhihu",
       "title": "K692 次列车 3 名无座旅客在车厢内公然打电话找人安排座位，官方展开调查，具体是怎么回事？",
       "url": "https://www.zhihu.com/question/2010338443201308616",
-      "published": "2026-02-27T00:15:59.534535+00:00",
-      "summary": "hot_value: 149 万热度 platform: zhihu",
-      "content_text": "热榜信号：K692 次列车 3 名无座旅客在车厢内公然打电话找人安排座位，官方展开调查，具体是怎么回事？｜热度：149 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010338443201308616",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "夫妻因晚 5 秒驶出高速错过免费时段，被收 1700 元高速费，你遇到过类似情况吗？有哪些经验分享？",
-      "url": "https://www.zhihu.com/question/2010318673798194867",
-      "published": "2026-02-27T00:15:59.534535+00:00",
-      "summary": "hot_value: 142 万热度 platform: zhihu",
-      "content_text": "热榜信号：夫妻因晚 5 秒驶出高速错过免费时段，被收 1700 元高速费，你遇到过类似情况吗？有哪些经验分享？｜热度：142 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010318673798194867",
+      "published": "2026-02-27T00:41:51.469017+00:00",
+      "summary": "hot_value: 191 万热度 platform: zhihu",
+      "content_text": "热榜信号：K692 次列车 3 名无座旅客在车厢内公然打电话找人安排座位，官方展开调查，具体是怎么回事？｜热度：191 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010338443201308616",
       "cover_image_url": null
     },
     {
@@ -80,19 +60,39 @@
       "source": "hotboard:zhihu",
       "title": "朋友因得罪部门经理被扣年终奖，离职时领导了解原因后，又私下补发两万，这种情况该如何理解？",
       "url": "https://www.zhihu.com/question/2009211089863332119",
-      "published": "2026-02-27T00:15:59.534535+00:00",
-      "summary": "hot_value: 134 万热度 platform: zhihu",
-      "content_text": "热榜信号：朋友因得罪部门经理被扣年终奖，离职时领导了解原因后，又私下补发两万，这种情况该如何理解？｜热度：134 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2009211089863332119",
+      "published": "2026-02-27T00:41:51.469017+00:00",
+      "summary": "hot_value: 159 万热度 platform: zhihu",
+      "content_text": "热榜信号：朋友因得罪部门经理被扣年终奖，离职时领导了解原因后，又私下补发两万，这种情况该如何理解？｜热度：159 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2009211089863332119",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "朝鲜举行劳动党九大纪念阅兵，金正恩称朝鲜军队已为应对任何情况做好准备，释放哪些信号？哪些装备可关注？",
-      "url": "https://www.zhihu.com/question/2010291118428936132",
-      "published": "2026-02-27T00:15:59.534535+00:00",
-      "summary": "hot_value: 124 万热度 platform: zhihu",
-      "content_text": "热榜信号：朝鲜举行劳动党九大纪念阅兵，金正恩称朝鲜军队已为应对任何情况做好准备，释放哪些信号？哪些装备可关注？｜热度：124 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010291118428936132",
+      "title": "夫妻因晚 5 秒驶出高速错过免费时段，被收 1700 元高速费，你遇到过类似情况吗？有哪些经验分享？",
+      "url": "https://www.zhihu.com/question/2010318673798194867",
+      "published": "2026-02-27T00:41:51.469017+00:00",
+      "summary": "hot_value: 140 万热度 platform: zhihu",
+      "content_text": "热榜信号：夫妻因晚 5 秒驶出高速错过免费时段，被收 1700 元高速费，你遇到过类似情况吗？有哪些经验分享？｜热度：140 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010318673798194867",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "怎么看待 18-65 岁申请在俄长期居留男性，须同意在俄军事单位等至少服役 1 年？",
+      "url": "https://www.zhihu.com/question/2010288799117250988",
+      "published": "2026-02-27T00:41:51.469017+00:00",
+      "summary": "hot_value: 131 万热度 platform: zhihu",
+      "content_text": "热榜信号：怎么看待 18-65 岁申请在俄长期居留男性，须同意在俄军事单位等至少服役 1 年？｜热度：131 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010288799117250988",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "2 月 26 日恒生科技指数大跌 2.87%，互联网科技股普遍走低，如何看待？怎样理解其近期走势？",
+      "url": "https://www.zhihu.com/question/2010395085326480507",
+      "published": "2026-02-27T00:41:51.469017+00:00",
+      "summary": "hot_value: 121 万热度 platform: zhihu",
+      "content_text": "热榜信号：2 月 26 日恒生科技指数大跌 2.87%，互联网科技股普遍走低，如何看待？怎样理解其近期走势？｜热度：121 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010395085326480507",
       "cover_image_url": null
     },
     {
@@ -100,27 +100,27 @@
       "source": "hotboard:zhihu",
       "title": "如何看待这种观点：废掉一个孩子最快的方式，就是暑假带他到处旅游？",
       "url": "https://www.zhihu.com/question/2009586005603267308",
-      "published": "2026-02-27T00:15:59.534535+00:00",
-      "summary": "hot_value: 112 万热度 platform: zhihu",
-      "content_text": "热榜信号：如何看待这种观点：废掉一个孩子最快的方式，就是暑假带他到处旅游？｜热度：112 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2009586005603267308",
+      "published": "2026-02-27T00:41:51.469017+00:00",
+      "summary": "hot_value: 118 万热度 platform: zhihu",
+      "content_text": "热榜信号：如何看待这种观点：废掉一个孩子最快的方式，就是暑假带他到处旅游？｜热度：118 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2009586005603267308",
       "cover_image_url": null
     }
   ],
   "meta": {
     "mode": "hotboard",
     "types_fetched": [
-      "ithome",
-      "juejin",
+      "36kr",
       "zhihu",
-      "sspai"
+      "ithome",
+      "juejin"
     ],
     "live_ok": true,
     "picked": {
       "platform": "zhihu",
-      "title": "怎么看待 18-65 岁申请在俄长期居留男性，须同意在俄军事单位等至少服役 1 年？",
-      "url": "https://www.zhihu.com/question/2010288799117250988",
-      "hot_value": "675 万热度",
-      "score": 10232578.125000002
+      "title": "津巴布韦暂停锂矿出口，暂无明确恢复时间表，多家中企回应，具体影响大吗？",
+      "url": "https://www.zhihu.com/question/2010358162679670624",
+      "hot_value": "634 万热度",
+      "score": 9153375.000000002
     }
   }
 }

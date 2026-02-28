@@ -1,6 +1,6 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-28T00:12:22.840641+00:00",
+  "collected_at": "2026-02-28T00:37:05.538759+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
@@ -8,21 +8,21 @@
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "FIBA 发布声明，为措辞不当向中国男篮及中国球迷致歉，如何看待这一举措？",
-      "url": "https://www.zhihu.com/question/2010786901813135237",
-      "published": "2026-02-28T00:12:22.840608+00:00",
-      "summary": "hot_value: 310 万热度 platform: zhihu",
-      "content_text": "热榜信号：FIBA 发布声明，为措辞不当向中国男篮及中国球迷致歉，如何看待这一举措？｜热度：310 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010786901813135237",
+      "title": "美使馆建议相关人员撤离以色列，若要离开务必「今天离开」，释放出什么信号？这次真的要打起来了吗？",
+      "url": "https://www.zhihu.com/question/2010812735596750717",
+      "published": "2026-02-28T00:37:05.538727+00:00",
+      "summary": "hot_value: 311 万热度 platform: zhihu",
+      "content_text": "热榜信号：美使馆建议相关人员撤离以色列，若要离开务必「今天离开」，释放出什么信号？这次真的要打起来了吗？｜热度：311 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010812735596750717",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "美使馆建议相关人员撤离以色列，若要离开务必「今天离开」，释放出什么信号？这次真的要打起来了吗？",
-      "url": "https://www.zhihu.com/question/2010812735596750717",
-      "published": "2026-02-28T00:12:22.840608+00:00",
-      "summary": "hot_value: 208 万热度 platform: zhihu",
-      "content_text": "热榜信号：美使馆建议相关人员撤离以色列，若要离开务必「今天离开」，释放出什么信号？这次真的要打起来了吗？｜热度：208 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010812735596750717",
+      "title": "FIBA 发布声明，为措辞不当向中国男篮及中国球迷致歉，如何看待这一举措？",
+      "url": "https://www.zhihu.com/question/2010786901813135237",
+      "published": "2026-02-28T00:37:05.538727+00:00",
+      "summary": "hot_value: 325 万热度 platform: zhihu",
+      "content_text": "热榜信号：FIBA 发布声明，为措辞不当向中国男篮及中国球迷致歉，如何看待这一举措？｜热度：325 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010786901813135237",
       "cover_image_url": null
     },
     {
@@ -30,39 +30,9 @@
       "source": "hotboard:zhihu",
       "title": "巴基斯坦与阿富汗此次开战会带来哪些影响？双方矛盾有何历史渊源？",
       "url": "https://www.zhihu.com/question/2010818098232520758",
-      "published": "2026-02-28T00:12:22.840608+00:00",
-      "summary": "hot_value: 194 万热度 platform: zhihu",
-      "content_text": "热榜信号：巴基斯坦与阿富汗此次开战会带来哪些影响？双方矛盾有何历史渊源？｜热度：194 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010818098232520758",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "有一个神秘人，你如果猜对他的年龄就奖励 500 个亿，但每猜一次需要支付 1 元，你愿意吗？",
-      "url": "https://www.zhihu.com/question/1992732388074231124",
-      "published": "2026-02-28T00:12:22.840608+00:00",
-      "summary": "hot_value: 169 万热度 platform: zhihu",
-      "content_text": "热榜信号：有一个神秘人，你如果猜对他的年龄就奖励 500 个亿，但每猜一次需要支付 1 元，你愿意吗？｜热度：169 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/1992732388074231124",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "为什么刘邦、李渊统一天下只用了 7 年，而曹操统一北方却用了 34 年？差异在哪里？",
-      "url": "https://www.zhihu.com/question/40709242",
-      "published": "2026-02-28T00:12:22.840608+00:00",
-      "summary": "hot_value: 162 万热度 platform: zhihu",
-      "content_text": "热榜信号：为什么刘邦、李渊统一天下只用了 7 年，而曹操统一北方却用了 34 年？差异在哪里？｜热度：162 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/40709242",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:zhihu",
-      "title": "为何一些几乎必死的晚期癌症患者会选择花费巨款治疗以勉强延续生命？",
-      "url": "https://www.zhihu.com/question/30861365",
-      "published": "2026-02-28T00:12:22.840608+00:00",
-      "summary": "hot_value: 170 万热度 platform: zhihu",
-      "content_text": "热榜信号：为何一些几乎必死的晚期癌症患者会选择花费巨款治疗以勉强延续生命？｜热度：170 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/30861365",
+      "published": "2026-02-28T00:37:05.538727+00:00",
+      "summary": "hot_value: 220 万热度 platform: zhihu",
+      "content_text": "热榜信号：巴基斯坦与阿富汗此次开战会带来哪些影响？双方矛盾有何历史渊源？｜热度：220 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010818098232520758",
       "cover_image_url": null
     },
     {
@@ -70,29 +40,29 @@
       "source": "hotboard:zhihu",
       "title": "86 岁畅销书作家杨本芬承认抄袭，如何看待她的回应？文学作品中，「抄袭」是怎样界定的？",
       "url": "https://www.zhihu.com/question/2010701547059766104",
-      "published": "2026-02-28T00:12:22.840608+00:00",
-      "summary": "hot_value: 156 万热度 platform: zhihu",
-      "content_text": "热榜信号：86 岁畅销书作家杨本芬承认抄袭，如何看待她的回应？文学作品中，「抄袭」是怎样界定的？｜热度：156 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010701547059766104",
+      "published": "2026-02-28T00:37:05.538727+00:00",
+      "summary": "hot_value: 172 万热度 platform: zhihu",
+      "content_text": "热榜信号：86 岁畅销书作家杨本芬承认抄袭，如何看待她的回应？文学作品中，「抄袭」是怎样界定的？｜热度：172 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010701547059766104",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "中国手机行业将迎来全面涨价，将是 5 年最显著涨幅，存储芯片成本较去年同期上涨超 80%，将产生哪些影响？",
-      "url": "https://www.zhihu.com/question/2010325784494114258",
-      "published": "2026-02-28T00:12:22.840608+00:00",
-      "summary": "hot_value: 144 万热度 platform: zhihu",
-      "content_text": "热榜信号：中国手机行业将迎来全面涨价，将是 5 年最显著涨幅，存储芯片成本较去年同期上涨超 80%，将产生哪些影响？｜热度：144 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010325784494114258",
+      "title": "为什么刘邦、李渊统一天下只用了 7 年，而曹操统一北方却用了 34 年？差异在哪里？",
+      "url": "https://www.zhihu.com/question/40709242",
+      "published": "2026-02-28T00:37:05.538727+00:00",
+      "summary": "hot_value: 168 万热度 platform: zhihu",
+      "content_text": "热榜信号：为什么刘邦、李渊统一天下只用了 7 年，而曹操统一北方却用了 34 年？差异在哪里？｜热度：168 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/40709242",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:zhihu",
-      "title": "张无忌为什么那么有女人缘？",
-      "url": "https://www.zhihu.com/question/19846984",
-      "published": "2026-02-28T00:12:22.840608+00:00",
-      "summary": "hot_value: 137 万热度 platform: zhihu",
-      "content_text": "热榜信号：张无忌为什么那么有女人缘？｜热度：137 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/19846984",
+      "title": "有一个神秘人，你如果猜对他的年龄就奖励 500 个亿，但每猜一次需要支付 1 元，你愿意吗？",
+      "url": "https://www.zhihu.com/question/1992732388074231124",
+      "published": "2026-02-28T00:37:05.538727+00:00",
+      "summary": "hot_value: 143 万热度 platform: zhihu",
+      "content_text": "热榜信号：有一个神秘人，你如果猜对他的年龄就奖励 500 个亿，但每猜一次需要支付 1 元，你愿意吗？｜热度：143 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/1992732388074231124",
       "cover_image_url": null
     },
     {
@@ -100,27 +70,57 @@
       "source": "hotboard:zhihu",
       "title": "巴基斯坦对阿富汗公开宣战，双方在边境激烈交火，各称造成对方大量伤亡，此次开战原因是什么？目前局势如何？",
       "url": "https://www.zhihu.com/question/2010620160533296868",
-      "published": "2026-02-28T00:12:22.840608+00:00",
-      "summary": "hot_value: 122 万热度 platform: zhihu",
-      "content_text": "热榜信号：巴基斯坦对阿富汗公开宣战，双方在边境激烈交火，各称造成对方大量伤亡，此次开战原因是什么？目前局势如何？｜热度：122 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010620160533296868",
+      "published": "2026-02-28T00:37:05.538727+00:00",
+      "summary": "hot_value: 124 万热度 platform: zhihu",
+      "content_text": "热榜信号：巴基斯坦对阿富汗公开宣战，双方在边境激烈交火，各称造成对方大量伤亡，此次开战原因是什么？目前局势如何？｜热度：124 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010620160533296868",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "伊美第三轮间接谈判结束，伊拒绝向国外转移浓缩铀，美 11 架 F-22 抵达以，伊美要「摊牌」了吗？",
+      "url": "https://www.zhihu.com/question/2010650292102903081",
+      "published": "2026-02-28T00:37:05.538727+00:00",
+      "summary": "hot_value: 123 万热度 platform: zhihu",
+      "content_text": "热榜信号：伊美第三轮间接谈判结束，伊拒绝向国外转移浓缩铀，美 11 架 F-22 抵达以，伊美要「摊牌」了吗？｜热度：123 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/2010650292102903081",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "张无忌为什么那么有女人缘？",
+      "url": "https://www.zhihu.com/question/19846984",
+      "published": "2026-02-28T00:37:05.538727+00:00",
+      "summary": "hot_value: 124 万热度 platform: zhihu",
+      "content_text": "热榜信号：张无忌为什么那么有女人缘？｜热度：124 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/19846984",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:zhihu",
+      "title": "为何一些几乎必死的晚期癌症患者会选择花费巨款治疗以勉强延续生命？",
+      "url": "https://www.zhihu.com/question/30861365",
+      "published": "2026-02-28T00:37:05.538727+00:00",
+      "summary": "hot_value: 120 万热度 platform: zhihu",
+      "content_text": "热榜信号：为何一些几乎必死的晚期癌症患者会选择花费巨款治疗以勉强延续生命？｜热度：120 万热度｜平台：zhihu\n链接：https://www.zhihu.com/question/30861365",
       "cover_image_url": null
     }
   ],
   "meta": {
     "mode": "hotboard",
     "types_fetched": [
-      "huxiu",
+      "juejin",
+      "ithome",
       "zhihu",
-      "36kr",
-      "juejin"
+      "huxiu"
     ],
     "live_ok": true,
     "picked": {
       "platform": "zhihu",
-      "title": "FIBA 发布声明，为措辞不当向中国男篮及中国球迷致歉，如何看待这一举措？",
-      "url": "https://www.zhihu.com/question/2010786901813135237",
-      "hot_value": "310 万热度",
-      "score": 4475625.000000001
+      "title": "美使馆建议相关人员撤离以色列，若要离开务必「今天离开」，释放出什么信号？这次真的要打起来了吗？",
+      "url": "https://www.zhihu.com/question/2010812735596750717",
+      "hot_value": "311 万热度",
+      "score": 4714565.625000001
     }
   }
 }

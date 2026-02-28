@@ -1,4 +1,100 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>News on AI智汇观察</title><link>https://gsaecy.github.io/tags/news/</link><description>Recent content in News on AI智汇观察</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 28 Feb 2026 08:38:36 +0800</lastBuildDate><atom:link href="https://gsaecy.github.io/tags/news/index.xml" rel="self" type="application/rss+xml"/><item><title>【科技】美使馆建议相关人员撤离以色列，若要离开务必「今天离开」，释放出什么信号？这次真的要打起来了吗？</title><link>https://gsaecy.github.io/posts/technology/</link><pubDate>Sat, 28 Feb 2026 08:38:36 +0800</pubDate><guid>https://gsaecy.github.io/posts/technology/</guid><description>&lt;p&gt;&lt;img src="https://gsaecy.github.io/images/posts/technology-/cover.jpg" loading="lazy" alt="封面图"&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>News on AI智汇观察</title><link>https://gsaecy.github.io/tags/news/</link><description>Recent content in News on AI智汇观察</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 28 Feb 2026 10:33:29 +0800</lastBuildDate><atom:link href="https://gsaecy.github.io/tags/news/index.xml" rel="self" type="application/rss+xml"/><item><title>AI十字路口：技术自主、国家安全与商业伦理的激烈碰撞</title><link>https://gsaecy.github.io/posts/technology-20260228-103006/</link><pubDate>Sat, 28 Feb 2026 10:33:29 +0800</pubDate><guid>https://gsaecy.github.io/posts/technology-20260228-103006/</guid><description>&lt;p&gt;&lt;img src="https://gsaecy.github.io/images/posts/technology-20260228-103006/cover.jpg" loading="lazy" alt="封面图"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;核心摘要&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;政府与AI巨头关系破裂&lt;/strong&gt;：美国国防部将领先AI公司Anthropic列为供应链风险，核心矛盾在于AI模型在&lt;strong&gt;大规模国内监控&lt;/strong&gt;和&lt;strong&gt;完全自主武器&lt;/strong&gt;上的使用限制[1][2]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;企业伦理立场遭遇国家强力反制&lt;/strong&gt;：Anthropic以“有效利他主义”和模型可靠性为由拒绝两项军事应用，被政府高层指责为将硅谷意识形态置于美国士兵生命之上[1]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;行业内部出现分裂与声援&lt;/strong&gt;：科技从业者发起联署支持Anthropic的立场，显示出AI社区在技术伦理与国家义务间的深刻分歧[3]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;企业级AI架构进入新阶段&lt;/strong&gt;：谷歌和OpenAI分别通过“智能体步骤”和“有状态运行时环境”，推动AI从静态工具向动态、自主的“AI同事”演进[8][9]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;基础设施与安全需求驱动巨额投资&lt;/strong&gt;：从空军耗资巨大的新洲际弹道导弹部署计划，到OpenAI获得来自亚马逊、英伟达等巨头高达&lt;strong&gt;1100亿美元&lt;/strong&gt;的新融资，表明AI与国家安全、基础设施的绑定日益加深[4][9]。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="今日要点"&gt;&lt;a href="#%e4%bb%8a%e6%97%a5%e8%a6%81%e7%82%b9" class="header-anchor"&gt;&lt;/a&gt;今日要点
+&lt;/h2&gt;&lt;h3 id="一-摊牌时刻ai伦理与国家安全不可调和的冲突"&gt;&lt;a href="#%e4%b8%80-%e6%91%8a%e7%89%8c%e6%97%b6%e5%88%bbai%e4%bc%a6%e7%90%86%e4%b8%8e%e5%9b%bd%e5%ae%b6%e5%ae%89%e5%85%a8%e4%b8%8d%e5%8f%af%e8%b0%83%e5%92%8c%e7%9a%84%e5%86%b2%e7%aa%81" class="header-anchor"&gt;&lt;/a&gt;一、 摊牌时刻：AI伦理与国家安全不可调和的冲突
+&lt;/h3&gt;&lt;p&gt;本周，人工智能领域爆发了一场前所未有的公开对峙，将技术公司、政府与从业者卷入了一场关于权力、伦理与生存的辩论中心。事件的导火索是美国国防部长皮特·赫格塞斯正式将AI公司Anthropic指定为“供应链风险”[1]。这一严厉的行政认定，远非寻常的商业纠纷，它标志着硅谷引以为傲的“科技向善”伦理与华盛顿的国家安全机器之间，出现了难以弥合的裂痕。&lt;/p&gt;
+&lt;p&gt;根据国防部的声明，冲突的根源在于Anthropic为其AI模型Claude设定了两项使用例外：&lt;strong&gt;大规模国内监控美国公民&lt;/strong&gt;和&lt;strong&gt;完全自主武器系统&lt;/strong&gt;[2]。Anthropic声称，这两项例外是基于两大原则：第一，当前的前沿AI模型尚不够可靠，用于完全自主武器会危及美国军人和平民；第二，大规模国内监控侵犯了公民的基本权利[2]。该公司强调，除了这两项“狭窄的例外”，其支持AI用于国家安全的所有合法用途，且据其所知，这些例外至今未影响任何一项政府任务[2]。&lt;/p&gt;
+&lt;p&gt;然而，在政府高层看来，这并非简单的技术或伦理考量，而是一场“傲慢与背叛”的表演，是试图“强压美国军方屈服”的“懦弱的公司美德信号”[1]。声明措辞激烈，指责Anthropic及其CEO达里奥·阿莫代伊披着“有效利他主义”的虚伪外衣，真实目的是“夺取对美国军事行动决策的否决权”[1]。这种将企业服务条款置于“战场上的美国部队的安全、战备状态或生命”之上的行为，被认定为“不可接受”[1]。政府的立场极其强硬，宣称唯有总统和美国人民能决定军队的命运，而非“未经选举的科技高管”[1]。&lt;/p&gt;
+&lt;p&gt;这场对峙的核心，是&lt;strong&gt;技术主权的归属问题&lt;/strong&gt;。当AI成为一种具有战略威慑力的通用技术时，开发它的公司是否拥有对其最终用途的裁量权？还是说，在国家安全的绝对需求面前，任何商业伦理条款都必须让路？Anthropic事件为全球的AI公司、政府和监管机构提供了一个残酷的案例研究：当技术力量增长到足以影响国家安全基石时，原有的游戏规则将被彻底改写[1][2]。&lt;/p&gt;
+&lt;h3 id="二-分裂的科技界从业者的伦理抉择与匿名抵抗"&gt;&lt;a href="#%e4%ba%8c-%e5%88%86%e8%a3%82%e7%9a%84%e7%a7%91%e6%8a%80%e7%95%8c%e4%bb%8e%e4%b8%9a%e8%80%85%e7%9a%84%e4%bc%a6%e7%90%86%e6%8a%89%e6%8b%a9%e4%b8%8e%e5%8c%bf%e5%90%8d%e6%8a%b5%e6%8a%97" class="header-anchor"&gt;&lt;/a&gt;二、 分裂的科技界：从业者的伦理抉择与匿名抵抗
+&lt;/h3&gt;&lt;p&gt;政府与公司的公开决裂，在科技行业内部激起了巨大涟漪。几乎在官方声明发布的同时，一个名为“我们不会被分裂”(We Will Not Be Divided)的网站悄然上线，开始征集谷歌和OpenAI现任及前任员工的匿名联署，以声援Anthropic的立场[3]。&lt;/p&gt;
+&lt;p&gt;这份联署信的目标明确而集中：支持Anthropic拒绝将其AI技术用于大规模国内监控和完全自主武器的决定。组织者强调，当前与国防部的局势“如此明确”，足以凝聚一个非常广泛的联盟[3]。签署这封信并不意味着签署者认为这是唯一需要做的事，而仅仅是同意这一底线原则[3]。值得注意的是，组织者自称是“几位关心AI可能被滥用于对付美国公民的普通公民”，与任何政党、 advocacy 团体、组织或AI公司均无隶属关系，也非受雇于此[3]。&lt;/p&gt;
+&lt;p&gt;为了最大程度保护签署者，该网站设置了严格的匿名机制。如果选择匿名签署，个人的姓名和邮箱信息会在验证后的24小时内从数据库中自动永久删除。删除后，仅保留匿名的公开列表（例如“匿名，已验证的[公司]现任员工”）[3]。这种高度谨慎的数据处理方式，折射出签署者可能面临的压力与风险，也凸显了科技从业者在公司立场、个人伦理与潜在职业后果之间的艰难权衡。&lt;/p&gt;
+&lt;p&gt;这场来自行业内部的声援运动，揭示了一个更深层次的分裂。它不仅是企业与政府之间的冲突，也是科技共同体内部的价值观分化。当AI从实验室走向战场和 surveillance 系统时，构建这些技术的工程师和研究员们，不得不直面自己工作的终极影响。联署行动表明，一部分从业者选择将伦理底线置于职业沉默之上，即使这意味着要匿名对抗世界上最强大的军事机构之一[3]。&lt;/p&gt;
+&lt;h3 id="三-另一条赛道企业级ai向自主智能体时代跃迁"&gt;&lt;a href="#%e4%b8%89-%e5%8f%a6%e4%b8%80%e6%9d%a1%e8%b5%9b%e9%81%93%e4%bc%81%e4%b8%9a%e7%ba%a7ai%e5%90%91%e8%87%aa%e4%b8%bb%e6%99%ba%e8%83%bd%e4%bd%93%e6%97%b6%e4%bb%a3%e8%b7%83%e8%bf%81" class="header-anchor"&gt;&lt;/a&gt;三、 另一条赛道：企业级AI向自主“智能体”时代跃迁
+&lt;/h3&gt;&lt;p&gt;当Anthropic与政府在AI的军事应用上激烈交锋时，商业AI领域正悄然经历一场同样深刻的范式转移。焦点从“工具”转向了“智能体”，从执行预设命令转向自主完成任务。本周，谷歌和OpenAI的两项重大更新，为这场变革描绘了清晰的蓝图。&lt;/p&gt;
+&lt;p&gt;谷歌实验室对其无代码可视化智能体构建工具Opal进行了关键更新，引入了“智能体步骤”功能[8]。这彻底改变了Opal之前静态的、拖放式的工作流，使其转变为动态的、交互式的体验。现在，构建者只需定义一个目标，智能体便能自行决定达成该目标的最佳路径——选择工具、调用Gemini 3 Flash或Veo（用于视频生成）等模型，甚至在需要更多信息时主动发起与用户的对话[8]。谷歌所交付的，是一个可用于生产环境的参考架构，展示了如何在赋予智能体足够自由以发挥价值的同时，通过设计来约束其行为，防止灾难性错误[8]。&lt;/p&gt;
+&lt;p&gt;无独有偶，OpenAI在宣布获得来自软银、英伟达和亚马逊高达&lt;strong&gt;1100亿美元&lt;/strong&gt;新融资的同时，披露了与亚马逊AWS更深度的合作计划：在AWS上建立全新的“有状态运行时环境”[9]。这&lt;strong&gt;1100亿美元&lt;/strong&gt;融资中，软银和英伟达各出资&lt;strong&gt;300亿美元&lt;/strong&gt;，亚马逊出资&lt;strong&gt;500亿美元&lt;/strong&gt;[9]。这一举措标志着OpenAI和亚马逊对AI经济下一阶段的共同愿景——从聊天机器人转向自主的“AI同事”（即智能体）[9]。对于企业决策者而言，这不仅仅是一个资本头条，更是一份关于下一代智能体将在何处生存和发展的技术路线图[9]。&lt;/p&gt;
+&lt;p&gt;这两项进展共同指向一个未来：企业AI将不再是需要精确指令的脆弱工具，而是能够理解上下文、记忆交互历史、并自主规划行动的持久性数字实体。谷歌的“智能体步骤”解决了“如何安全地构建”的问题，而OpenAI与AWS的“有状态”环境则解决了“在哪里持续运行”的问题[8][9]。它们共同为企业提供了将AI智能体规模化、安全地集成到核心业务流程中的基础设施和方法论。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="数据与指标"&gt;&lt;a href="#%e6%95%b0%e6%8d%ae%e4%b8%8e%e6%8c%87%e6%a0%87" class="header-anchor"&gt;&lt;/a&gt;数据与指标
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://gsaecy.github.io/images/posts/technology-20260228-103006/wikimedia-1.jpg" loading="lazy" alt="相关配图（公共素材）"&gt;
+图1：相关配图（公共素材）
+图片来源：Wikimedia Commons（https://commons.wikimedia.org/wiki/File:Immunohistochemistry_technologies_with_AI.png）；许可：CC BY 4.0（https://creativecommons.org/licenses/by/4.0）&lt;/p&gt;
+&lt;h3 id="一-巨额资本流动与国防开支"&gt;&lt;a href="#%e4%b8%80-%e5%b7%a8%e9%a2%9d%e8%b5%84%e6%9c%ac%e6%b5%81%e5%8a%a8%e4%b8%8e%e5%9b%bd%e9%98%b2%e5%bc%80%e6%94%af" class="header-anchor"&gt;&lt;/a&gt;一、 巨额资本流动与国防开支
+&lt;/h3&gt;&lt;p&gt;本周披露的几组数字，揭示了AI与国家安全领域令人咋舌的资本规模：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AI巨头融资额&lt;/strong&gt;：OpenAI获得了总额高达&lt;strong&gt;1100亿美元&lt;/strong&gt;的新一轮融资，投资方包括软银（&lt;strong&gt;300亿美元&lt;/strong&gt;）、英伟达（&lt;strong&gt;300亿美元&lt;/strong&gt;）和亚马逊（&lt;strong&gt;500亿美元&lt;/strong&gt;）[9]。这笔天文数字般的资金将用于支持其下一代AI智能体架构的开发与部署。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;国防现代化成本&lt;/strong&gt;：美国空军新的“哨兵”洲际弹道导弹项目，总成本已超过&lt;strong&gt;1410亿美元&lt;/strong&gt;，并且这一数字已经过时，因为空军后来决定为新型导弹建造全新的发射井，而非改造旧的“民兵III”发射井[4]。这项工程被描述为自州际公路系统建成以来美国最大的政府民用工程项目[4]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;基础设施规模&lt;/strong&gt;：“哨兵”导弹项目涉及在科罗拉多、蒙大拿、内布拉斯加、北达科他和怀俄明州挖掘数百个新发射井，包括&lt;strong&gt;24个新的前沿发射中心&lt;/strong&gt;、&lt;strong&gt;3个集中的联队指挥中心&lt;/strong&gt;以及超过&lt;strong&gt;5000英里&lt;/strong&gt;的光纤连接[4]。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="二-技术部署与风险指标"&gt;&lt;a href="#%e4%ba%8c-%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%8e%e9%a3%8e%e9%99%a9%e6%8c%87%e6%a0%87" class="header-anchor"&gt;&lt;/a&gt;二、 技术部署与风险指标
+&lt;/h3&gt;&lt;p&gt;在具体的AI技术应用与风险评估方面，当前素材未披露具体的数值指标，但明确了关键的定性风险与架构特征：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;自主武器风险&lt;/strong&gt;：Anthropic明确指出，其反对在当前部署完全自主武器，理由是“当今的前沿AI模型可靠性不足”[2]。这是一种基于技术成熟度的定性风险评估，而非量化的故障率数据。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能体架构演进&lt;/strong&gt;：谷歌Opal的更新标志着企业AI工作流从“静态”向“动态”的转变，其核心是引入了能自主规划路径的“智能体步骤”[8]。OpenAI与AWS规划的“有状态运行时环境”，则旨在为长期运行、保有记忆的AI智能体提供基础[9]。这些是架构范式的定性描述。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;供应链风险认定&lt;/strong&gt;：美国国防部对Anthropic的“供应链风险” designation，是一个最高级别的行政风险定性，意味着该公司及其技术被视为对国家安全的潜在威胁[1]。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="影响与机会"&gt;&lt;a href="#%e5%bd%b1%e5%93%8d%e4%b8%8e%e6%9c%ba%e4%bc%9a" class="header-anchor"&gt;&lt;/a&gt;影响与机会
+&lt;/h2&gt;&lt;h3 id="给企业的建议在合规伦理与商业之间走钢丝"&gt;&lt;a href="#%e7%bb%99%e4%bc%81%e4%b8%9a%e7%9a%84%e5%bb%ba%e8%ae%ae%e5%9c%a8%e5%90%88%e8%a7%84%e4%bc%a6%e7%90%86%e4%b8%8e%e5%95%86%e4%b8%9a%e4%b9%8b%e9%97%b4%e8%b5%b0%e9%92%a2%e4%b8%9d" class="header-anchor"&gt;&lt;/a&gt;给企业的建议：在合规、伦理与商业之间走钢丝
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;重新评估政府业务的风险与边界&lt;/strong&gt;：Anthropic的案例表明，为政府（尤其是国防和安全部门）提供AI服务，已远超普通的商业合作范畴。企业在涉足此类业务前，必须进行极端情景推演，明确自身不可逾越的伦理与技术红线，并评估这些红线与客户需求冲突时可能带来的政治、法律和声誉风险[1][2]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;积极构建可解释、可审计的AI系统&lt;/strong&gt;：无论是为了应对政府监管，还是为了获得商业客户的信任，企业都必须投资于AI的可解释性和可审计性。这意味着需要建立清晰的模型决策日志、使用限制的硬编码机制，以及第三方审计的接口。谷歌Opal在赋予智能体自主权的同时，通过设计约束其行为，是一个值得研究的范例[8]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关注“有状态”智能体的企业级需求&lt;/strong&gt;：OpenAI与AWS的合作指明了下一代企业AI的方向[9]。企业应开始思考自身业务流程中，哪些环节需要能够长期记忆、持续学习和自主协调的AI智能体，并提前进行技术储备和概念验证，而不是停留在聊天机器人或简单自动化层面。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="给从业者工程师研究员的建议明晰个人伦理与职业责任"&gt;&lt;a href="#%e7%bb%99%e4%bb%8e%e4%b8%9a%e8%80%85%e5%b7%a5%e7%a8%8b%e5%b8%88%e7%a0%94%e7%a9%b6%e5%91%98%e7%9a%84%e5%bb%ba%e8%ae%ae%e6%98%8e%e6%99%b0%e4%b8%aa%e4%ba%ba%e4%bc%a6%e7%90%86%e4%b8%8e%e8%81%8c%e4%b8%9a%e8%b4%a3%e4%bb%bb" class="header-anchor"&gt;&lt;/a&gt;给从业者（工程师、研究员）的建议：明晰个人伦理与职业责任
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;深入了解所参与项目的最终用途&lt;/strong&gt;：在加入一个AI项目，特别是涉及政府、金融、监控等敏感领域的项目时，从业者有责任尽己所能了解技术的潜在应用场景。Anthropic员工的联署行动表明，当个人伦理与公司或客户行为产生冲突时，做出选择是可能的，尽管可能是艰难且需要保护的[3]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;发展“负责任的AI”实践技能&lt;/strong&gt;：市场对既懂技术又深刻理解AI伦理、安全、公平性的复合型人才需求将急剧增长。从业者应主动学习相关框架、标准和最佳实践，将安全性、公平性和可问责性设计融入开发流程，这不仅是道德要求，也将成为重要的职业竞争力。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;利用内部渠道表达关切&lt;/strong&gt;：在可能的情况下，优先通过公司内部的伦理审查委员会、负责任AI团队或管理层渠道，对存在潜在风险的项目提出专业性质疑和改进建议。建立健康的内部质疑文化，是预防灾难性后果的第一道防线。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="给投资者的建议在风暴眼中寻找长期价值"&gt;&lt;a href="#%e7%bb%99%e6%8a%95%e8%b5%84%e8%80%85%e7%9a%84%e5%bb%ba%e8%ae%ae%e5%9c%a8%e9%a3%8e%e6%9a%b4%e7%9c%bc%e4%b8%ad%e5%af%bb%e6%89%be%e9%95%bf%e6%9c%9f%e4%bb%b7%e5%80%bc" class="header-anchor"&gt;&lt;/a&gt;给投资者的建议：在风暴眼中寻找长期价值
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;将“政治与监管风险”纳入核心估值模型&lt;/strong&gt;：AI，尤其是前沿基础模型，已成为地缘政治博弈的关键棋子。投资AI公司必须将其应对国内外监管压力、伦理争议和政府关系的能力，作为与技术创新同等重要的评估维度。Anthropic事件绝非孤例，而是一个开端[1]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;聚焦于解决具体、高价值问题的企业级AI应用&lt;/strong&gt;：相比处于舆论风口浪尖的通用大模型，那些专注于垂直行业（如医疗研发、工业质检、供应链优化）、拥有深厚领域知识、并能通过“智能体”形式深度融入企业工作流（如谷歌Opal和OpenAI-AWS架构所展示的）的AI公司，可能面临更少的伦理争议和更清晰的商业化路径[8][9]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关注AI基础设施与安全工具赛道&lt;/strong&gt;：随着AI应用日益复杂和自主，对运行环境（如“有状态运行时”）、监控工具、安全护栏、测试评估平台的需求将爆炸式增长。投资于这些赋能型和保障型的技术提供商，可能比投资于应用层巨头面临更少的直接伦理冲击，且市场空间广阔[8][9]。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;来源列表&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;[1] Defense secretary Pete Hegseth designates Anthropic a supply chain risk - The Verge
+&lt;a class="link" href="https://www.theverge.com/policy/886632/pentagon-designates-anthropic-supply-chain-risk-ai-standoff" target="_blank" rel="noopener"
+ &gt;https://www.theverge.com/policy/886632/pentagon-designates-anthropic-supply-chain-risk-ai-standoff&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] Statement on the comments from Secretary of War Pete Hegseth - Hacker News (Frontpage)
+&lt;a class="link" href="https://www.anthropic.com/news/statement-comments-secretary-war" target="_blank" rel="noopener"
+ &gt;https://www.anthropic.com/news/statement-comments-secretary-war&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] We Will Not Be Divided - Hacker News (Frontpage)
+&lt;a class="link" href="https://notdivided.org" target="_blank" rel="noopener"
+ &gt;https://notdivided.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[4] The Air Force&amp;rsquo;s new ICBM is nearly ready to fly, but there’s nowhere to put it - Ars Technica
+&lt;a class="link" href="https://arstechnica.com/space/2026/02/the-air-forces-new-icbm-is-nearly-ready-to-fly-but-theres-nowhere-to-put-them/" target="_blank" rel="noopener"
+ &gt;https://arstechnica.com/space/2026/02/the-air-forces-new-icbm-is-nearly-ready-to-fly-but-theres-nowhere-to-put-them/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[5] The best instant cameras for 2026 - The Verge
+&lt;a class="link" href="https://www.theverge.com/23133103/best-instant-cameras-fujifilm-polaroid-kodak" target="_blank" rel="noopener"
+ &gt;https://www.theverge.com/23133103/best-instant-cameras-fujifilm-polaroid-kodak&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[6] 18 Best Wireless Chargers, All Tested and Reviewed (2026) - Wired
+&lt;a class="link" href="https://www.wired.com/gallery/best-wireless-chargers/" target="_blank" rel="noopener"
+ &gt;https://www.wired.com/gallery/best-wireless-chargers/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[7] Qt45: A small polymerase ribozyme that can synthesize itself - Hacker News (Frontpage)
+&lt;a class="link" href="https://www.science.org/doi/10.1126/science.adt2760" target="_blank" rel="noopener"
+ &gt;https://www.science.org/doi/10.1126/science.adt2760&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[8] Google&amp;rsquo;s Opal just quietly showed enterprise teams the new blueprint for building AI agents - VentureBeat
+&lt;a class="link" href="https://venturebeat.com/technology/googles-opal-just-quietly-showed-enterprise-teams-the-new-blueprint-for" target="_blank" rel="noopener"
+ &gt;https://venturebeat.com/technology/googles-opal-just-quietly-showed-enterprise-teams-the-new-blueprint-for&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[9] OpenAI&amp;rsquo;s big investment from AWS comes with something else: new &amp;lsquo;stateful&amp;rsquo; architecture for enterprise agents - VentureBeat
+&lt;a class="link" href="https://venturebeat.com/orchestration/openais-big-investment-from-aws-comes-with-something-else-new-stateful" target="_blank" rel="noopener"
+ &gt;https://venturebeat.com/orchestration/openais-big-investment-from-aws-comes-with-something-else-new-stateful&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[10] NASA is pushing back its plans for a Moon landing - The Verge
+&lt;a class="link" href="https://www.theverge.com/science/886656/nasa-artemis-moon-landing-delayed-2028" target="_blank" rel="noopener"
+ &gt;https://www.theverge.com/science/886656/nasa-artemis-moon-landing-delayed-2028&lt;/a&gt;&lt;/p&gt;</description></item><item><title>【科技】美使馆建议相关人员撤离以色列，若要离开务必「今天离开」，释放出什么信号？这次真的要打起来了吗？</title><link>https://gsaecy.github.io/posts/technology/</link><pubDate>Sat, 28 Feb 2026 08:38:36 +0800</pubDate><guid>https://gsaecy.github.io/posts/technology/</guid><description>&lt;p&gt;&lt;img src="https://gsaecy.github.io/images/posts/technology-/cover.jpg" loading="lazy" alt="封面图"&gt;&lt;/p&gt;
 &lt;p&gt;好的，作为严谨的行业研究编辑，我将根据您提供的素材和规则，撰写一篇高质量的分析文章。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://gsaecy.github.io/images/posts/technology-/wikimedia-1.jpg" loading="lazy" alt="相关配图（公共素材）"&gt;
 图1：相关配图（公共素材）

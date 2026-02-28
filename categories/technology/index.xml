@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Technology on AI智汇观察</title><link>https://gsaecy.github.io/categories/technology/</link><description>Recent content in Technology on AI智汇观察</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 28 Feb 2026 18:10:39 +0800</lastBuildDate><atom:link href="https://gsaecy.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml"/><item><title>【科技】OpenClaw 的关键不在于安装，而在于你怎么用？29 个真实用例告诉你，AI 不是工具，是工作和生活方式</title><link>https://gsaecy.github.io/posts/technology/</link><pubDate>Sat, 28 Feb 2026 18:10:39 +0800</pubDate><guid>https://gsaecy.github.io/posts/technology/</guid><description>&lt;p&gt;&lt;img src="https://gsaecy.github.io/images/posts/technology-/cover.jpg" loading="lazy" alt="封面图"&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Technology on AI智汇观察</title><link>https://gsaecy.github.io/categories/technology/</link><description>Recent content in Technology on AI智汇观察</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 01 Mar 2026 00:32:56 +0800</lastBuildDate><atom:link href="https://gsaecy.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml"/><item><title>AI军备竞赛与认知债：技术狂飙下的十字路口</title><link>https://gsaecy.github.io/posts/technology-20260301-003007/</link><pubDate>Sun, 01 Mar 2026 00:32:56 +0800</pubDate><guid>https://gsaecy.github.io/posts/technology-20260301-003007/</guid><description>&lt;p&gt;&lt;img src="https://gsaecy.github.io/images/posts/technology-20260301-003007/cover.jpg" loading="lazy" alt="封面图"&gt;&lt;/p&gt;
+&lt;h3 id="核心摘要"&gt;&lt;a href="#%e6%a0%b8%e5%bf%83%e6%91%98%e8%a6%81" class="header-anchor"&gt;&lt;/a&gt;核心摘要
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;军事化应用成为焦点&lt;/strong&gt;：OpenAI与美国国防部达成协议，允许其AI模型在军方机密网络中使用，标志着尖端AI技术正式进入国家级安全与军事领域，同时也引发了关于AI伦理与“红线”的激烈争论[1]。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src="https://gsaecy.github.io/images/posts/technology-20260301-003007/wikimedia-1.jpg" loading="lazy" alt="相关配图（公共素材）"&gt;
+图1：相关配图（公共素材）
+图片来源：Wikimedia Commons（https://commons.wikimedia.org/wiki/File:Battery_cycle_charging_station_plugs.jpg）；许可：CC0（http://creativecommons.org/publicdomain/zero/1.0/deed.en）&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;&lt;strong&gt;“认知债”风险浮现&lt;/strong&gt;：在AI辅助开发极大提升代码产出速度的同时，工程师对系统架构的理解深度可能滞后，形成“认知债”，为未来系统的稳定性和可维护性埋下隐患[5]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;中国在具身智能赛道加速&lt;/strong&gt;：得益于强大的硬件供应链和制造基础，中国的人形机器人产业在迭代速度和商业化规模上展现出领先优势，被视为应对劳动力短缺和提升生产力的关键[8]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI深度融入安全与冲突&lt;/strong&gt;：从被黑客入侵用于发送心理战信息的祈祷应用，到拦截弹道导弹的复杂自动化防御系统，AI及其相关技术已成为现代地缘政治冲突中不可分割的一部分[4][6]。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id="今日要点"&gt;&lt;a href="#%e4%bb%8a%e6%97%a5%e8%a6%81%e7%82%b9" class="header-anchor"&gt;&lt;/a&gt;今日要点
+&lt;/h3&gt;&lt;h4 id="一-伦理红线失守ai巨头与军事机构的复杂共舞"&gt;&lt;a href="#%e4%b8%80-%e4%bc%a6%e7%90%86%e7%ba%a2%e7%ba%bf%e5%a4%b1%e5%ae%88ai%e5%b7%a8%e5%a4%b4%e4%b8%8e%e5%86%9b%e4%ba%8b%e6%9c%ba%e6%9e%84%e7%9a%84%e5%a4%8d%e6%9d%82%e5%85%b1%e8%88%9e" class="header-anchor"&gt;&lt;/a&gt;一、 伦理红线失守？AI巨头与军事机构的复杂共舞
+&lt;/h4&gt;&lt;p&gt;本周，AI领域最引人注目的动态并非技术突破，而是一份充满争议的协议。OpenAI首席执行官萨姆·阿尔特曼宣布，公司已与美国国防部达成一项协议，允许后者在其机密网络中使用OpenAI的AI模型[1]。这一决定将全球最领先的生成式AI技术直接引入了军事和国家安全的核心领域。&lt;/p&gt;
+&lt;p&gt;此举并非一帆风顺，其背景是国防部与OpenAI的竞争对手Anthropic之间一场备受瞩目的对峙。国防部曾向包括Anthropic在内的AI公司施压，要求允许其模型用于“所有合法用途”。而Anthropic则试图围绕大规模国内监控和完全自主武器划出“红线”[1]。Anthropic首席执行官达里奥·阿莫代伊在一份长篇声明中强调，公司“从未对特定的军事行动提出异议，也未曾试图以临时方式限制我们技术的使用”，但他同时主张，“在少数情况下，我们认为AI可能会破坏而非捍卫民主价值观”[1]。&lt;/p&gt;
+&lt;p&gt;这场价值观与商业利益的角力在科技公司内部也激起了波澜。超过60名OpenAI员工和300名谷歌员工签署了一封公开信，要求他们的雇主支持Anthropic的立场[1]。在Anthropic与五角大楼谈判破裂后，甚至引来了前总统特朗普在社交媒体上的抨击[1]。OpenAI的最终选择，标志着在巨大的商业与战略利益面前，企业自设的伦理边界正在被重新评估和跨越。这不仅是商业合同，更预示着AI技术发展路径的一个关键转折：从民用优先的探索，正式步入与国家级军事战略深度绑定的新阶段。&lt;/p&gt;
+&lt;h4 id="二-速度的代价ai编程催生认知债危机"&gt;&lt;a href="#%e4%ba%8c-%e9%80%9f%e5%ba%a6%e7%9a%84%e4%bb%a3%e4%bb%b7ai%e7%bc%96%e7%a8%8b%e5%82%ac%e7%94%9f%e8%ae%a4%e7%9f%a5%e5%80%ba%e5%8d%b1%e6%9c%ba" class="header-anchor"&gt;&lt;/a&gt;二、 速度的代价：AI编程催生“认知债”危机
+&lt;/h4&gt;&lt;p&gt;当技术发展的速度超越了人类理解与吸收的能力，会带来什么？一篇在开发者社区引发广泛共鸣的文章提出了“认知债”的概念，精准地描述了AI辅助开发浪潮下的一个潜在危机[5]。&lt;/p&gt;
+&lt;p&gt;文章描述了一个经典场景：一位工程师在单个冲刺周期内交付了七个功能，各项开发指标完美，晋升近在眼前。然而，六个月后，当需要进行架构调整时，团队中无人能解释某些组件为何存在以及它们如何交互。就连当初编写这些代码的工程师，看着自己的作品也如同面对陌生人的代码[5]。核心问题在于：&lt;strong&gt;代码的生产成本已经低于其理解成本&lt;/strong&gt;[5]。&lt;/p&gt;
+&lt;p&gt;在传统开发中，代码编写（生产）与理解（吸收）是两个并行且耦合的过程。敲击键盘的“摩擦感”迫使开发者进行思考，从而在构建的同时形成心智模型。然而，AI辅助开发将这两个过程解耦了。一个提示能在几秒钟内生成数百行代码。工程师进行审查、调整、迭代，产出速度急剧提升。但认知吸收的速度无法同比提升。真正理解所构建内容、其构建原因以及它与整个系统关系的认知工作，本质上仍然是线性的、缓慢的[5]。这种“理解滞后”不断累积，便形成了“认知债”。它不像技术债那样显性，却同样危险，可能导致系统在需要演进时变得异常脆弱和难以维护。这为所有积极拥抱AI编程工具的企业敲响了警钟：在追求开发“速度”的同时，必须建立新的流程和指标，来管理和保障系统的“可理解性”。&lt;/p&gt;
+&lt;h4 id="三-硬件竞赛与地缘ai从机器人到导弹防御"&gt;&lt;a href="#%e4%b8%89-%e7%a1%ac%e4%bb%b6%e7%ab%9e%e8%b5%9b%e4%b8%8e%e5%9c%b0%e7%bc%98ai%e4%bb%8e%e6%9c%ba%e5%99%a8%e4%ba%ba%e5%88%b0%e5%af%bc%e5%bc%b9%e9%98%b2%e5%be%a1" class="header-anchor"&gt;&lt;/a&gt;三、 硬件竞赛与地缘AI：从机器人到导弹防御
+&lt;/h4&gt;&lt;p&gt;本周的新闻清晰地展示了AI技术如何在不同维度上与硬件和地缘政治紧密结合。&lt;/p&gt;
+&lt;p&gt;在消费电子领域，竞争白热化。小米发布了与徕卡联合打造的旗舰手机Xiaomi 17 Ultra，突出其强大的影像能力，包括一颗200兆像素的变焦镜头和高达6000mAh的电池[7][10]。这体现了AI计算摄影与顶尖硬件传感器的深度融合，成为消费市场的核心卖点。&lt;/p&gt;
+&lt;p&gt;更具战略意义的竞争发生在&lt;strong&gt;具身智能（Embodied AI）&lt;/strong&gt; 赛道。分析指出，中国的人形机器人产业在早期市场中正取得领先[8]。这得益于中国更强大的硬件供应链（许多由电动汽车行业构建）和全球最强的制造基础，使得中国企业能够比西方竞争对手更快地迭代[8]。其结果不仅是机器人成本更低，而且新模型的发布速度也更快。例如，领先的中国企业宇树科技在2025年出货了大约1万台机器人，而美国的主要竞争对手Figure AI在同期仅出货了约100台[8]。中国将机器人技术视为抵消劳动力短缺和推动生产率增长的关键，这种国家层面的战略聚焦与产业能力结合，正在塑造全球人形机器人产业的早期格局。&lt;/p&gt;
+&lt;p&gt;另一方面，AI及其使能技术已成为现代冲突的基础设施。在近期的一次地区冲突中，一款下载量超过500万次的伊朗祈祷计时应用“BadeSaba Calendar”被黑客入侵，在爆炸发生后向用户手机推送敦促军方人员投降的信息[4]。与此同时，阿联酋的&lt;strong&gt;分层导弹防御系统&lt;/strong&gt;（包含“萨德”等高精度拦截系统）成功拦截了来袭的弹道导弹[6]。这两个事件一软一硬，共同揭示了AI时代混合战争的面貌：算法既能用于心理战和网络攻击，也能驱动每秒决策数千次、拦截高超音速目标的自动化防御网络。AI不再仅仅是工具，它本身就是战场。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="数据与指标"&gt;&lt;a href="#%e6%95%b0%e6%8d%ae%e4%b8%8e%e6%8c%87%e6%a0%87" class="header-anchor"&gt;&lt;/a&gt;数据与指标
+&lt;/h3&gt;&lt;h4 id="一-军事与伦理冲突中的关键数据"&gt;&lt;a href="#%e4%b8%80-%e5%86%9b%e4%ba%8b%e4%b8%8e%e4%bc%a6%e7%90%86%e5%86%b2%e7%aa%81%e4%b8%ad%e7%9a%84%e5%85%b3%e9%94%ae%e6%95%b0%e6%8d%ae" class="header-anchor"&gt;&lt;/a&gt;一、 军事与伦理冲突中的关键数据
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;本次OpenAI与美国国防部的协议，直接背景是与Anthropic谈判的破裂，后者试图为AI的军事应用设定明确限制[1]。&lt;/li&gt;
+&lt;li&gt;科技公司内部对此存在显著分歧：超过60名OpenAI员工和300名谷歌员工联合发声，支持Anthropic划定AI军事应用“红线”的立场[1]。&lt;/li&gt;
+&lt;li&gt;在早些时候伊朗的国内事件中，根据政府统计数据，至少有3117名平民死亡[4]。这一数据被用于描述相关地区冲突的背景。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="二-硬件与机器人产业量化对比"&gt;&lt;a href="#%e4%ba%8c-%e7%a1%ac%e4%bb%b6%e4%b8%8e%e6%9c%ba%e5%99%a8%e4%ba%ba%e4%ba%a7%e4%b8%9a%e9%87%8f%e5%8c%96%e5%af%b9%e6%af%94" class="header-anchor"&gt;&lt;/a&gt;二、 硬件与机器人产业量化对比
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;消费电子&lt;/strong&gt;：小米17 Ultra手机搭载6000mAh电池（中国版本为6800mAh），支持90W有线充电和50W无线充电[7][10]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;机器人出货量&lt;/strong&gt;：在2025年，中国宇树科技的人形机器人出货量约为10，000台，而美国Figure AI的出货量约为100台，两者相差两个数量级[8]。&lt;strong&gt;来源未披露具体数值&lt;/strong&gt;，但指出了显著的规模差距。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;应用渗透&lt;/strong&gt;：在伊朗被黑客利用的祈祷应用“BadeSaba Calendar”，在Google Play商店的下载量超过500万次[4]。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="影响与机会"&gt;&lt;a href="#%e5%bd%b1%e5%93%8d%e4%b8%8e%e6%9c%ba%e4%bc%9a" class="header-anchor"&gt;&lt;/a&gt;影响与机会
+&lt;/h3&gt;&lt;h4 id="给企业决策者的建议"&gt;&lt;a href="#%e7%bb%99%e4%bc%81%e4%b8%9a%e5%86%b3%e7%ad%96%e8%80%85%e7%9a%84%e5%bb%ba%e8%ae%ae" class="header-anchor"&gt;&lt;/a&gt;给企业决策者的建议
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;重新评估AI伦理框架&lt;/strong&gt;：OpenAI的案例表明，当面临国家级战略合同时，企业自定的伦理准则可能承受巨大压力。企业，尤其是处于技术前沿的AI公司，必须提前、透明地与其员工、用户及社会讨论其技术应用的边界，并建立更具韧性的治理结构，以避免未来的内部撕裂和声誉危机[1]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;管理“认知债”，投资“可理解性”&lt;/strong&gt;：在全面推行AI辅助开发以提升效率的同时，必须设立对应的“理解性”保障机制。这包括：强制性的架构文档（可由AI生成，但需人工深度审核）、定期的系统“知识传承”会议、以及将代码可读性和系统可解释性纳入工程师的考核指标。防止为短期交付速度牺牲长期的系统健康度[5]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关注具身智能的供应链优势&lt;/strong&gt;：对于制造业和物流业企业，中国在人形机器人领域展现出的迭代速度和成本优势是一个明确信号。在规划自动化升级时，可将中国机器人供应商纳入更优先的评估范围，并积极探索利用其快速迭代能力进行试点项目[8]。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="给科技从业者开发者研究者的建议"&gt;&lt;a href="#%e7%bb%99%e7%a7%91%e6%8a%80%e4%bb%8e%e4%b8%9a%e8%80%85%e5%bc%80%e5%8f%91%e8%80%85%e7%a0%94%e7%a9%b6%e8%80%85%e7%9a%84%e5%bb%ba%e8%ae%ae" class="header-anchor"&gt;&lt;/a&gt;给科技从业者（开发者、研究者）的建议
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;做“理解型”开发者，而非“提示型”工人&lt;/strong&gt;：在AI编程工具面前，你的核心价值正在从“编写代码”向“理解问题、设计解决方案并验证AI输出”转移。主动深化对系统架构、领域知识和AI模型原理的理解，确保自己始终是系统的“总工程师”，而不仅仅是AI的“提示员”[5]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拓宽技术视野至“AI+硬件”&lt;/strong&gt;：纯软件算法的竞争已白热化，下一个价值高地在于软硬结合。关注机器人学、传感器融合、边缘计算等方向。中国在硬件供应链和制造上的优势[8]，以及小米在计算摄影上的投入[7][10]，都指明了软硬件协同创新的重要性。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保持对技术社会影响的警觉&lt;/strong&gt;：从被武器化的社交应用[4]到自动化防御系统[6]，技术正深度卷入地缘冲突。从业者有必要思考自己工作的最终影响，并在可能的范围内做出符合个人价值观的职业选择。员工联合发声的行动表明，集体的伦理关切能形成不可忽视的影响力[1]。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="给投资者的启示"&gt;&lt;a href="#%e7%bb%99%e6%8a%95%e8%b5%84%e8%80%85%e7%9a%84%e5%90%af%e7%a4%ba" class="header-anchor"&gt;&lt;/a&gt;给投资者的启示
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;识别“认知债”管理工具的投资机会&lt;/strong&gt;：随着AI编程普及，“理解滞后”问题将催生新的市场需求。关注那些开发AI代码解释、系统知识图谱自动构建、智能架构分析等工具的企业，它们可能成为下一代开发基础设施的关键部分[5]。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;押注具身智能的全产业链&lt;/strong&gt;：中国在人形机器人领域的领先优势并非偶然，其背后是完整的电动汽车和消费电子供应链[8]。投资者不应只关注机器人整机公司，更应挖掘在精密减速器、高性能传感器、灵巧手、实时操作系统等核心零部件和底层技术上有突破的企业。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;谨慎看待AI军事化合作的长期风险&lt;/strong&gt;：虽然与政府、军方的合作能带来巨额、稳定的收入，但同时也引入了极高的政策风险、声誉风险和人才流失风险[1]。投资此类公司时，需格外评估其伦理立场与商业模式的平衡能力，以及应对潜在舆论危机的准备。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id="来源列表"&gt;&lt;a href="#%e6%9d%a5%e6%ba%90%e5%88%97%e8%a1%a8" class="header-anchor"&gt;&lt;/a&gt;来源列表
+&lt;/h3&gt;&lt;p&gt;[1] OpenAI’s Sam Altman announces Pentagon deal with ‘technical safeguards’ - TechCrunch
+&lt;a class="link" href="https://techcrunch.com/2026/02/28/openais-sam-altman-announces-pentagon-deal-with-technical-safeguards/" target="_blank" rel="noopener"
+ &gt;https://techcrunch.com/2026/02/28/openais-sam-altman-announces-pentagon-deal-with-technical-safeguards/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] You can still grab great deals on Bose headphones and Astro Bot this weekend - The Verge
+&lt;a class="link" href="https://www.theverge.com/gadgets/886520/bose-quietcomfort-headphones-samsung-galaxy-s26-ultra-deal-sale" target="_blank" rel="noopener"
+ &gt;https://www.theverge.com/gadgets/886520/bose-quietcomfort-headphones-samsung-galaxy-s26-ultra-deal-sale&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] NASA Is Making Big Changes to Speed Up the Artemis Program - Wired
+&lt;a class="link" href="https://www.wired.com/story/nasa-is-making-big-changes-to-speed-up-the-artemis-program/" target="_blank" rel="noopener"
+ &gt;https://www.wired.com/story/nasa-is-making-big-changes-to-speed-up-the-artemis-program/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[4] Hacked Prayer App Sends ‘Surrender’ Messages to Iranians Amid Israeli and US Strikes - Wired
+&lt;a class="link" href="https://www.wired.com/story/hacked-prayer-app-sends-surrender-messages-to-iranians-amid-israeli-strikes/" target="_blank" rel="noopener"
+ &gt;https://www.wired.com/story/hacked-prayer-app-sends-surrender-messages-to-iranians-amid-israeli-strikes/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[5] Cognitive Debt: When Velocity Exceeds Comprehension - Hacker News (Frontpage)
+&lt;a class="link" href="https://www.rockoder.com/beyondthecode/cognitive-debt-when-velocity-exceeds-comprehension/" target="_blank" rel="noopener"
+ &gt;https://www.rockoder.com/beyondthecode/cognitive-debt-when-velocity-exceeds-comprehension/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[6] This Is the System That Intercepted Iran&amp;rsquo;s Missiles Over the UAE - Wired
+&lt;a class="link" href="https://www.wired.com/story/uae-missile-intercept-system-iran/" target="_blank" rel="noopener"
+ &gt;https://www.wired.com/story/uae-missile-intercept-system-iran/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[7] Xiaomi launches 17 Ultra smartphone, an AirTag clone, and an ultra slim powerbank - TechCrunch
+&lt;a class="link" href="https://techcrunch.com/2026/02/28/xiaomi-launches-17-ultra-smartphone-an-airtag-clone-and-an-ultra-slim-powerbank/" target="_blank" rel="noopener"
+ &gt;https://techcrunch.com/2026/02/28/xiaomi-launches-17-ultra-smartphone-an-airtag-clone-and-an-ultra-slim-powerbank/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[8] Why China’s humanoid robot industry is winning the early market - TechCrunch
+&lt;a class="link" href="https://techcrunch.com/2026/02/28/why-chinas-humanoid-robot-industry-is-winning-the-early-market/" target="_blank" rel="noopener"
+ &gt;https://techcrunch.com/2026/02/28/why-chinas-humanoid-robot-industry-is-winning-the-early-market/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[9] GitHub - Krira-Labs/krira-chunker: ⚡ Production-grade RAG chunking engine powered by Rust. Process GBs of CSV, PDF, JSON, JSONL, DOCX, XLSX, URLs, ETC., in seconds with O(1) memory. 40x faster than LangChain. - Hacker News (Frontpage)
+&lt;a class="link" href="https://github.com/Krira-Labs/krira-chunker" target="_blank" rel="noopener"
+ &gt;https://github.com/Krira-Labs/krira-chunker&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[10] Review: Xiaomi 17 Ultra and Leitzphone Pack Leica Magic Into a Flagship Phone - Wired
+&lt;a class="link" href="https://www.wired.com/review/xiaomi-17-ultra-leitzphone/" target="_blank" rel="noopener"
+ &gt;https://www.wired.com/review/xiaomi-17-ultra-leitzphone/&lt;/a&gt;&lt;/p&gt;</description></item><item><title>【科技】OpenClaw 的关键不在于安装，而在于你怎么用？29 个真实用例告诉你，AI 不是工具，是工作和生活方式</title><link>https://gsaecy.github.io/posts/technology/</link><pubDate>Sat, 28 Feb 2026 18:10:39 +0800</pubDate><guid>https://gsaecy.github.io/posts/technology/</guid><description>&lt;p&gt;&lt;img src="https://gsaecy.github.io/images/posts/technology-/cover.jpg" loading="lazy" alt="封面图"&gt;&lt;/p&gt;
 &lt;p&gt;好的，作为一名严谨的行业研究编辑，我将基于您提供的素材，撰写一篇符合要求的高质量行业文章。&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://gsaecy.github.io/images/default-cover.png" loading="lazy" alt="封面图"&gt;
 图1：封面图

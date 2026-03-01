@@ -1,6 +1,6 @@
 {
   "industry": "technology",
-  "collected_at": "2026-02-28T10:09:12.730998+00:00",
+  "collected_at": "2026-03-01T00:15:00.051406+00:00",
   "hours": 24,
   "limit": 10,
   "count": 10,
@@ -10,19 +10,9 @@
       "source": "hotboard:juejin",
       "title": "OpenClaw 的关键不在于安装，而在于你怎么用？29 个真实用例告诉你，AI 不是工具，是工作和生活方式",
       "url": "https://juejin.cn/post/7610676768315342898",
-      "published": "2026-02-28T10:09:12.730967+00:00",
-      "summary": "hot_value: 热度:1503 platform: juejin",
-      "content_text": "热榜信号：OpenClaw 的关键不在于安装，而在于你怎么用？29 个真实用例告诉你，AI 不是工具，是工作和生活方式｜热度：热度:1503｜平台：juejin\n链接：https://juejin.cn/post/7610676768315342898",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "Flutter 2026 Roadmap 发布，未来计划是什么？",
-      "url": "https://juejin.cn/post/7609927980681314310",
-      "published": "2026-02-28T10:09:12.730967+00:00",
-      "summary": "hot_value: 热度:1323 platform: juejin",
-      "content_text": "热榜信号：Flutter 2026 Roadmap 发布，未来计划是什么？｜热度：热度:1323｜平台：juejin\n链接：https://juejin.cn/post/7609927980681314310",
+      "published": "2026-03-01T00:15:00.051377+00:00",
+      "summary": "hot_value: 热度:1782 platform: juejin",
+      "content_text": "热榜信号：OpenClaw 的关键不在于安装，而在于你怎么用？29 个真实用例告诉你，AI 不是工具，是工作和生活方式｜热度：热度:1782｜平台：juejin\n链接：https://juejin.cn/post/7610676768315342898",
       "cover_image_url": null
     },
     {
@@ -30,9 +20,9 @@
       "source": "hotboard:juejin",
       "title": "真的，你可以不用TypeScript",
       "url": "https://juejin.cn/post/7610711542346940435",
-      "published": "2026-02-28T10:09:12.730967+00:00",
-      "summary": "hot_value: 热度:1161 platform: juejin",
-      "content_text": "热榜信号：真的，你可以不用TypeScript｜热度：热度:1161｜平台：juejin\n链接：https://juejin.cn/post/7610711542346940435",
+      "published": "2026-03-01T00:15:00.051377+00:00",
+      "summary": "hot_value: 热度:1260 platform: juejin",
+      "content_text": "热榜信号：真的，你可以不用TypeScript｜热度：热度:1260｜平台：juejin\n链接：https://juejin.cn/post/7610711542346940435",
       "cover_image_url": null
     },
     {
@@ -40,9 +30,9 @@
       "source": "hotboard:juejin",
       "title": "Android 17 有什么需要适配的？2026 Android 禁止侧载又是什么？",
       "url": "https://juejin.cn/post/7610233341305389099",
-      "published": "2026-02-28T10:09:12.730967+00:00",
-      "summary": "hot_value: 热度:1035 platform: juejin",
-      "content_text": "热榜信号：Android 17 有什么需要适配的？2026 Android 禁止侧载又是什么？｜热度：热度:1035｜平台：juejin\n链接：https://juejin.cn/post/7610233341305389099",
+      "published": "2026-03-01T00:15:00.051377+00:00",
+      "summary": "hot_value: 热度:1089 platform: juejin",
+      "content_text": "热榜信号：Android 17 有什么需要适配的？2026 Android 禁止侧载又是什么？｜热度：热度:1089｜平台：juejin\n链接：https://juejin.cn/post/7610233341305389099",
       "cover_image_url": null
     },
     {
@@ -50,9 +40,9 @@
       "source": "hotboard:juejin",
       "title": "Go 为什么没成为游戏服务器主流语言",
       "url": "https://juejin.cn/post/7610403875611312155",
-      "published": "2026-02-28T10:09:12.730967+00:00",
-      "summary": "hot_value: 热度:1071 platform: juejin",
-      "content_text": "热榜信号：Go 为什么没成为游戏服务器主流语言｜热度：热度:1071｜平台：juejin\n链接：https://juejin.cn/post/7610403875611312155",
+      "published": "2026-03-01T00:15:00.051377+00:00",
+      "summary": "hot_value: 热度:1161 platform: juejin",
+      "content_text": "热榜信号：Go 为什么没成为游戏服务器主流语言｜热度：热度:1161｜平台：juejin\n链接：https://juejin.cn/post/7610403875611312155",
       "cover_image_url": null
     },
     {
@@ -60,29 +50,9 @@
       "source": "hotboard:juejin",
       "title": "Flutter 的真正价值是什么？深度解析再结合鸿蒙，告诉你 Flutter 的真正优势",
       "url": "https://juejin.cn/post/7610658784424460330",
-      "published": "2026-02-28T10:09:12.730967+00:00",
-      "summary": "hot_value: 热度:927 platform: juejin",
-      "content_text": "热榜信号：Flutter 的真正价值是什么？深度解析再结合鸿蒙，告诉你 Flutter 的真正优势｜热度：热度:927｜平台：juejin\n链接：https://juejin.cn/post/7610658784424460330",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "同事去年绩效是C，提离职领导死活不让走，后来领导私下说他走了，就没人背这个绩效了",
-      "url": "https://juejin.cn/post/7610790786008563753",
-      "published": "2026-02-28T10:09:12.730967+00:00",
-      "summary": "hot_value: 热度:963 platform: juejin",
-      "content_text": "热榜信号：同事去年绩效是C，提离职领导死活不让走，后来领导私下说他走了，就没人背这个绩效了｜热度：热度:963｜平台：juejin\n链接：https://juejin.cn/post/7610790786008563753",
-      "cover_image_url": null
-    },
-    {
-      "industry": "technology",
-      "source": "hotboard:juejin",
-      "title": "年过完了，该上班了，我用Compose给大家放个烟花喜庆喜庆",
-      "url": "https://juejin.cn/post/7609288132602101760",
-      "published": "2026-02-28T10:09:12.730967+00:00",
-      "summary": "hot_value: 热度:837 platform: juejin",
-      "content_text": "热榜信号：年过完了，该上班了，我用Compose给大家放个烟花喜庆喜庆｜热度：热度:837｜平台：juejin\n链接：https://juejin.cn/post/7609288132602101760",
+      "published": "2026-03-01T00:15:00.051377+00:00",
+      "summary": "hot_value: 热度:981 platform: juejin",
+      "content_text": "热榜信号：Flutter 的真正价值是什么？深度解析再结合鸿蒙，告诉你 Flutter 的真正优势｜热度：热度:981｜平台：juejin\n链接：https://juejin.cn/post/7610658784424460330",
       "cover_image_url": null
     },
     {
@@ -90,37 +60,67 @@
       "source": "hotboard:juejin",
       "title": "Modern.js 3.0 发布：聚焦 Web 框架，拥抱生态发展",
       "url": "https://juejin.cn/post/7610321700097884187",
-      "published": "2026-02-28T10:09:12.730967+00:00",
-      "summary": "hot_value: 热度:783 platform: juejin",
-      "content_text": "热榜信号：Modern.js 3.0 发布：聚焦 Web 框架，拥抱生态发展｜热度：热度:783｜平台：juejin\n链接：https://juejin.cn/post/7610321700097884187",
+      "published": "2026-03-01T00:15:00.051377+00:00",
+      "summary": "hot_value: 热度:927 platform: juejin",
+      "content_text": "热榜信号：Modern.js 3.0 发布：聚焦 Web 框架，拥抱生态发展｜热度：热度:927｜平台：juejin\n链接：https://juejin.cn/post/7610321700097884187",
       "cover_image_url": null
     },
     {
       "industry": "technology",
       "source": "hotboard:juejin",
-      "title": "Vite 8：从“混动”到“纯电”，构建性能提升10倍+",
-      "url": "https://juejin.cn/post/7609292480567853083",
-      "published": "2026-02-28T10:09:12.730967+00:00",
-      "summary": "hot_value: 热度:657 platform: juejin",
-      "content_text": "热榜信号：Vite 8：从“混动”到“纯电”，构建性能提升10倍+｜热度：热度:657｜平台：juejin\n链接：https://juejin.cn/post/7609292480567853083",
+      "title": "AI 可以让 WIFI 实现监控室内人体位置和姿态，无需摄像头？",
+      "url": "https://juejin.cn/post/7611424094525931561",
+      "published": "2026-03-01T00:15:00.051377+00:00",
+      "summary": "hot_value: 热度:810 platform: juejin",
+      "content_text": "热榜信号：AI 可以让 WIFI 实现监控室内人体位置和姿态，无需摄像头？｜热度：热度:810｜平台：juejin\n链接：https://juejin.cn/post/7611424094525931561",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "Android 官方正式官宣 AI 支持 AppFunctions ，Android 官方 MCP 和系统级 OpenClaw 雏形",
+      "url": "https://juejin.cn/post/7611069767160840246",
+      "published": "2026-03-01T00:15:00.051377+00:00",
+      "summary": "hot_value: 热度:720 platform: juejin",
+      "content_text": "热榜信号：Android 官方正式官宣 AI 支持 AppFunctions ，Android 官方 MCP 和系统级 OpenClaw 雏形｜热度：热度:720｜平台：juejin\n链接：https://juejin.cn/post/7611069767160840246",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "从 Vite 到 Vize：Vue 开发体验的下一次飞跃",
+      "url": "https://juejin.cn/post/7610626202176700458",
+      "published": "2026-03-01T00:15:00.051377+00:00",
+      "summary": "hot_value: 热度:729 platform: juejin",
+      "content_text": "热榜信号：从 Vite 到 Vize：Vue 开发体验的下一次飞跃｜热度：热度:729｜平台：juejin\n链接：https://juejin.cn/post/7610626202176700458",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:juejin",
+      "title": "Node.js 中间层退潮：从“前端救星”到“成本噩梦”",
+      "url": "https://juejin.cn/post/7610997952249921536",
+      "published": "2026-03-01T00:15:00.051377+00:00",
+      "summary": "hot_value: 热度:711 platform: juejin",
+      "content_text": "热榜信号：Node.js 中间层退潮：从“前端救星”到“成本噩梦”｜热度：热度:711｜平台：juejin\n链接：https://juejin.cn/post/7610997952249921536",
       "cover_image_url": null
     }
   ],
   "meta": {
     "mode": "hotboard",
     "types_fetched": [
-      "juejin",
-      "huxiu",
       "sspai",
-      "36kr"
+      "ithome",
+      "36kr",
+      "juejin"
     ],
     "live_ok": true,
     "picked": {
       "platform": "juejin",
       "title": "OpenClaw 的关键不在于安装，而在于你怎么用？29 个真实用例告诉你，AI 不是工具，是工作和生活方式",
       "url": "https://juejin.cn/post/7610676768315342898",
-      "hot_value": "热度:1503",
-      "score": 1822.7632500000004
+      "hot_value": "热度:1782",
+      "score": 2161.1205000000004
     }
   }
 }

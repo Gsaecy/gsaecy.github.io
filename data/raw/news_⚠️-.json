@@ -1,8 +1,124 @@
 {
-  "industry": "lab_consumables",
-  "collected_at": "2026-02-26T10:22:48.012481+00:00",
+  "industry": "technology",
+  "collected_at": "2026-03-02T10:23:36.376694+00:00",
   "hours": 24,
-  "limit": 25,
-  "count": 0,
-  "items": []
+  "limit": 10,
+  "count": 10,
+  "items": [
+    {
+      "industry": "technology",
+      "source": "hotboard:huxiu",
+      "title": "携程算是踢到钢板了",
+      "url": "https://www.huxiu.com/article/4837811.html",
+      "published": "2026-03-02T10:23:36.376653+00:00",
+      "summary": "hot_value: 收藏:73 评论:7 platform: huxiu",
+      "content_text": "热榜信号：携程算是踢到钢板了｜热度：收藏:73 评论:7｜平台：huxiu\n链接：https://www.huxiu.com/article/4837811.html",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:huxiu",
+      "title": "杨植麟暂时挺过风暴",
+      "url": "https://www.huxiu.com/article/4837231.html",
+      "published": "2026-03-02T10:23:36.376653+00:00",
+      "summary": "hot_value: 收藏:72 评论:5 platform: huxiu",
+      "content_text": "热榜信号：杨植麟暂时挺过风暴｜热度：收藏:72 评论:5｜平台：huxiu\n链接：https://www.huxiu.com/article/4837231.html",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:huxiu",
+      "title": "顶流网红，神话终结",
+      "url": "https://www.huxiu.com/article/4837549.html",
+      "published": "2026-03-02T10:23:36.376653+00:00",
+      "summary": "hot_value: 收藏:69 评论:8 platform: huxiu",
+      "content_text": "热榜信号：顶流网红，神话终结｜热度：收藏:69 评论:8｜平台：huxiu\n链接：https://www.huxiu.com/article/4837549.html",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:huxiu",
+      "title": "美以轰炸德黑兰，全球进入“霍尔木兹时刻”，投资者雪上加霜",
+      "url": "https://www.huxiu.com/article/4837764.html",
+      "published": "2026-03-02T10:23:36.376653+00:00",
+      "summary": "hot_value: 收藏:39 评论:6 platform: huxiu",
+      "content_text": "热榜信号：美以轰炸德黑兰，全球进入“霍尔木兹时刻”，投资者雪上加霜｜热度：收藏:39 评论:6｜平台：huxiu\n链接：https://www.huxiu.com/article/4837764.html",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:huxiu",
+      "title": "从电视台伸出的这把镰刀，割向最可怜的一群人",
+      "url": "https://www.huxiu.com/article/4837300.html",
+      "published": "2026-03-02T10:23:36.376653+00:00",
+      "summary": "hot_value: 收藏:35 评论:16 platform: huxiu",
+      "content_text": "热榜信号：从电视台伸出的这把镰刀，割向最可怜的一群人｜热度：收藏:35 评论:16｜平台：huxiu\n链接：https://www.huxiu.com/article/4837300.html",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:huxiu",
+      "title": "第一批租不掉的写字楼，酒店接盘了",
+      "url": "https://www.huxiu.com/article/4837314.html",
+      "published": "2026-03-02T10:23:36.376653+00:00",
+      "summary": "hot_value: 收藏:33 评论:2 platform: huxiu",
+      "content_text": "热榜信号：第一批租不掉的写字楼，酒店接盘了｜热度：收藏:33 评论:2｜平台：huxiu\n链接：https://www.huxiu.com/article/4837314.html",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:huxiu",
+      "title": "哈梅内伊陨落与美国的非对称斩首能力",
+      "url": "https://www.huxiu.com/article/4837960.html",
+      "published": "2026-03-02T10:23:36.376653+00:00",
+      "summary": "hot_value: 收藏:24 评论:3 platform: huxiu",
+      "content_text": "热榜信号：哈梅内伊陨落与美国的非对称斩首能力｜热度：收藏:24 评论:3｜平台：huxiu\n链接：https://www.huxiu.com/article/4837960.html",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:huxiu",
+      "title": "爱奇艺步子迈大了",
+      "url": "https://www.huxiu.com/article/4837448.html",
+      "published": "2026-03-02T10:23:36.376653+00:00",
+      "summary": "hot_value: 收藏:23 评论:1 platform: huxiu",
+      "content_text": "热榜信号：爱奇艺步子迈大了｜热度：收藏:23 评论:1｜平台：huxiu\n链接：https://www.huxiu.com/article/4837448.html",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:huxiu",
+      "title": "华纳90天易主大戏：28亿分手费、前首富豪赌、华盛顿暗手",
+      "url": "https://www.huxiu.com/article/4838029.html",
+      "published": "2026-03-02T10:23:36.376653+00:00",
+      "summary": "hot_value: 收藏:9 评论:0 platform: huxiu",
+      "content_text": "热榜信号：华纳90天易主大戏：28亿分手费、前首富豪赌、华盛顿暗手｜热度：收藏:9 评论:0｜平台：huxiu\n链接：https://www.huxiu.com/article/4838029.html",
+      "cover_image_url": null
+    },
+    {
+      "industry": "technology",
+      "source": "hotboard:ithome",
+      "title": "小米 Vision GT 双门超跑首发亮相：MWC 2026 公开展出，玩家未来可在《GT 赛车 7》内驾驶体验",
+      "url": "https://www.ithome.com/0/924/694.htm",
+      "published": "2026-03-02T10:23:36.376653+00:00",
+      "summary": "hot_value:  platform: ithome",
+      "content_text": "热榜信号：小米 Vision GT 双门超跑首发亮相：MWC 2026 公开展出，玩家未来可在《GT 赛车 7》内驾驶体验｜热度：｜平台：ithome\n链接：https://www.ithome.com/0/924/694.htm",
+      "cover_image_url": null
+    }
+  ],
+  "meta": {
+    "mode": "hotboard",
+    "types_fetched": [
+      "ithome",
+      "huxiu"
+    ],
+    "live_ok": false,
+    "picked": {
+      "platform": "huxiu",
+      "title": "携程算是踢到钢板了",
+      "url": "https://www.huxiu.com/article/4837811.html",
+      "hot_value": "收藏:73 评论:7",
+      "score": 60.7068
+    }
+  }
 }

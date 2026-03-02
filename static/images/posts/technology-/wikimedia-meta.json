@@ -1,18 +1,18 @@
 {
-  "query": "battery financial technology",
+  "query": "financial technology",
   "count": 1,
   "items": [
     {
-      "title": "File:2024 Yorkville Illinois Polar Plunge (53579306158).jpg",
-      "pageid": 154046007,
-      "descriptionurl": "https://commons.wikimedia.org/wiki/File:2024_Yorkville_Illinois_Polar_Plunge_(53579306158).jpg",
-      "file_page": "https://commons.wikimedia.org/wiki/File:2024_Yorkville_Illinois_Polar_Plunge_(53579306158).jpg",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/2024_Yorkville_Illinois_Polar_Plunge_%2853579306158%29.jpg/1920px-2024_Yorkville_Illinois_Polar_Plunge_%2853579306158%29.jpg",
+      "title": "File:FinTech Segments.png",
+      "pageid": 68997858,
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:FinTech_Segments.png",
+      "file_page": "https://commons.wikimedia.org/wiki/File:FinTech_Segments.png",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/FinTech_Segments.png",
       "mime": null,
-      "license": "CC BY-SA 2.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
-      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/181920661@N03\">Joseph Gage</a> from Yorkville, IL, USA",
-      "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/181920661@N03/53579306158/\">2024 Yorkville Illinois Polar Plunge</a>",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Kevin_Moseri&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Kevin Moseri (page does not exist)\">Kevin Moseri</a>",
+      "credit": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
       "attribution": null,
       "saved_as": "/home/runner/work/gsaecy.github.io/gsaecy.github.io/static/images/posts/technology-/wikimedia-1.jpg"
     }
